@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New & Popular | Netflix Inspired</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+  
+    .carousel-wrapper {
+      position: relative;
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 30px;
+      padding: 30px;
+      scroll-behavior: smooth;
+    }
+    .carousel-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .card-container {
+      scroll-snap-align: center;
+      flex: 0 0 70vw;
+      max-width: 590px;
+      transition: transform 0.3s, filter 0.3s;
+      position: relative;
+    }
+
+    .card-container.dim {
+      filter: brightness(0.4);
+      transform: scale(0.95);
+    }
+
+    .number-tag {
+      position: absolute;
+      top: -80px;
+      left: -35px;
+      font-size: 8rem;
+      font-weight: 1000;
+      color: rgba(255, 252, 252, 0.685);
+      z-index: 1;
+    }
+
+    .poster-card {
+      width: 90%;
+      height: 700px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    }
+    .card-container:first-child {
+  margin-left: 15vw;
+}
+.card-container:last-child {
+  margin-right: 15vw;
+}
+
+.video-container {
+  overflow: hidden;
+  height: 100%;
+  min-height: 200px;
+}
+
+.preview-img {
+  transition: opacity 0.3s ease;
+}
+
+.iframe-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Optional glowing effect for the "View My List" link */
+.glow-link {
+  transition: all 0.3s ease;
+}
+
+.glow-link:hover {
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  color: #ebebeb;
+}
+
+.scroll-btn {
+   border-radius: 50px; /* Makes it capsule-like */
+  padding: 8px 24px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid #460f12;
+  background: #e5091400;
+  color: white;
+  white-space: nowrap;
+}
+
+.scroll-btn:hover {
+  background: #3b0407;
+  transform: scale(1.05);
+}
+.scrollspy{
+  background-color: rgba(0, 0, 0, 0.5) !important; /* Black with 50% opacity */
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+.scrollspy-container {
+  position: relative;
+  height: calc(100vh - 50px);
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.sticky-top {
+  top: 2;
+}
+
+hr{
+  border: 2px solid azure;
+}
+
+</style>
+</head>
+<body>
+
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark  fixed-top ">
+  <div class="container-fluid">
+
+    <!-- Logo -->
+    <a class="navbar-brand me-3" href="#">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" class="img-fluid" style="width: 120px;" alt="Netflix Logo">
+    </a>
+
+    <!-- Toggle Button for Mobile -->
+    <button class="navbar-toggler text-ligh" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible Content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <!-- Left Side: Nav Links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row gap-3 align-items-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="landingPage.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="movies.html">Movies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="tvShows.html">TV Shows</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="newNhot.html">New & Popular</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="myList.html">My List</a>
+        </li>
+
+        <li class="nav-item dropdown">
+     
+               <button class="btn dropdown-toggle  nav-link" data-bs-toggle="dropdown"> <i class="bi bi-globe2"></i> <span class="d-none d-sm-inline">Browse by language 
+               </span>            </button>
+            
+               <ul class="dropdown-menu ">
+                  <li class="dropdown-item" >Hindi</li>
+                  <li class="dropdown-item" >Marathi</li>
+                  <li class="dropdown-item" >Korean</li>
+                  <li class="dropdown-item" >Chinese</li>
+                  <li class="dropdown-item" >Spanish</li>
+               </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- ScrollSpy Navigation -->
+    <div class="d-flex gap-3 mt-3" id="categoryNav">
+            <button class="btn btn-danger scroll-btn" data-bs-target="#comingSoon">Coming Soon</button>
+            <button class="btn btn-danger scroll-btn" data-bs-target="#top10s">Top 10 TV Shows</button>
+            <button class="btn btn-danger scroll-btn" data-bs-target="#top10m">Top 10 Movies</button>
+    </div>
+
+    </div>
+ 
+</nav>
+<div class="p-2 mb-5"></div>
+
+
+<!-- Scrollable Sections -->
+<div data-bs-target="#categoryNav" data-bs-offset="100" tabindex="0" class="scrollspy-container ">
+
+  <section id="comingSoon" class="mb-5">
+    <div class="container my-4">
+      <h2 class="text-white">Coming Soon</h2>
+      <hr>
+    <div class="row" id="verticalCardContainer"></div>
+  </div>
+
+  </section>
+
+  <section id="top10s" class="mb-5">
+    <div class="container py-5">
+      <h2 class="section-title">Top 10 TV Shows </h2>
+      <hr>
+      <div class="carousel-wrapper px-5" id="carousel">
+        <!-- Cards will be populated dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <section id="top10m" class="">
+    
+    <div class="container py-5">
+      <h2 class="section-title">Top 10 Movies </h2>
+      <hr>
+      <div class="carousel-wrapper" id="carousel1">
+        <!-- Cards will be populated dynamically -->
+      </div>
+    </div>
+  
+  </section>
+
+</div>
+
+
+  <!-- Modal -->
+  <div class="modal fade " id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content navbar text-light">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detailModalLabel">Modal Title</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="row g-4 py-4">
+              <div class="col-md-5">
+                <img id="modalImage" src="" class="img-fluid w-100 rounded" alt="Modal Image">
+              </div>
+              <div class="col-md-7">
+                <!-- <iframe class="img-fluid rounded-start" width="100%" height="100%" 
+                  src="https://www.youtube.com/embed/YOUR_VIDEO_ID?rel=0&autoplay=0&mute=1" 
+                  title="YouTube video" frameborder="0" allowfullscreen>
+                </iframe> -->
+
+                <img id="modal-subtitle" src="" class=" m-4 img-fluid w-75">
+                <p id="modalDescription">Modal description goes here.</p>
+                <button class="btn btn-danger mt-3">Watch Now</button>
+              </div>
+            </div>
+          </div>
+          
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- remind me pop up Modal -->
+<!-- Dark Mode Modal -->
+<div class="modal fade" id="remindModal" tabindex="-1" aria-labelledby="remindModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-white border-0 shadow-lg rounded-4">
+      
+      <div class="modal-header border-0">
+        <h5 class="modal-title" id="remindModalLabel">
+          <i class="bi bi-check-circle-fill text-success me-2"></i> Added to My List
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body fs-6">
+        <p id="modalMessage">
+    
+        </p>
+        <a href="myList.html" class="text-info text-decoration-none fw-semibold glow-link">
+          → View My List
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  <script>
+
+document.querySelectorAll(".scroll-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = document.querySelector(btn.getAttribute("data-bs-target"));
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+
+    const data = [
+      { title: "The Great Indian Kapil Show" , title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABfJHtZksZNuxC8Ld5j1deESJDW7f57px1SohRAPXoTrvY6ylykPeca_OrMCs4WGkbn1zvO_u6ve-p0ymBr6JzEsrlmo3JLacxw.webp?r=be0",
+      img: "https://media-cache.cinematerial.com/p/500x/rmaqps42/the-great-indian-kapil-show-indian-movie-poster.jpg?v=1726059820",description:"A Hindi-language sketch comedy talk show hosted by Kapil Sharma, featuring celebrity guests, comedic antics, and recurring sketches. It’s Netflix's first Indian series to trend globally for a month, now in its third season" },
+      { title: "Untamed " , title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABasO1bJdkJqAVolrtp6105m3mStLOV6i05Xx-H5oZS4iu5AymK7-xNC13A-81i96Wkp-HrHezPOC5eYV_lsIc8Py_5h853Pgqg.webp?r=bc6",
+      img: "https://i0.wp.com/thefutureoftheforce.com/wp-content/uploads/2025/07/en_us_untamed_main_kyle_vertical_27x40_rgb_pre_1.jpg?resize=640%2C948&ssl=1" ,description:"A six-part American crime thriller set in Yosemite National Park. Special Agent Kyle Turner (Eric Bana) investigates a woman’s death, unraveling deeper mysteries in the wilderness alongside rookie ranger Naya Vasquez." },
+      { title: "Vir Das " , title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABQIyL5p1-X_VSCvqY8i6-S9MxC1SrrCjdRU2U9NeKnGc_X3aFSfX2LltKlEyFefHe5SGIJvkGNxuZVGtjR1Wy79AsimiMKi07w.webp?r=e87",
+      img: "https://resizing.flixster.com/ZhEVJ2z26-z8dV-YFjTRctUTGno=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzdiOTYwNTk3LTFmMzYtNDFkNy1iMzRhLWQwNWJiNGU5MzI3ZC5qcGc=" ,description:"An Indian-English stand-up comedy special on Netflix. In “Landing,” Vir Das shares candid stories from his childhood and experiences with political controversy and personal growth." },
+      { title: "Squid game" , title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABbj5bOy5PlkwtR3uxuM5LYn62HPfQjAEFYg0X-NqLZAmXC9D3yKJgf2w1OHqgn7QP179ffJI6TSVIwn6I8kAa6lTQaMT2nXZYQ.webp?r=197",
+      img: "https://images.ctfassets.net/4cd45et68cgf/43om5LnJOfqPx29Hwb35MG/c0111a4e124c8d0afb7e80f2319c7fdc/EN-US_SG-S3_Teaser_TheDragFlowers-Unsafe_Vertical_27x40_sRGB_PRE.jpg?w=2000" ,description:"A South Korean dystopian survival thriller where 456 financially desperate people participate in deadly childhood games to win 45.6 billion KRW (~40 million USD)." },
+      { title: "Smack Down" , title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABbmdAozu9YLXglyGRo_dmHZEWglR1p-ojeA9EyH50uMWipABP_ONLHCJyHKUFdFsLxoPrNR3IzHHuG9QnEESVlscR3NcWyFOvIE.webp?r=548",
+      img: "https://preview.redd.it/smackdown-spoilers-official-poster-of-smackdown-on-usa-v0-pokp8lv43ood1.jpeg?auto=webp&s=41b1caa0950eb4352aa165e75bdf9e7094d37391" ,description:"A weekly professional wrestling program from WWE featuring top wrestling stars, championship matches, and storylines; one of WWE's flagship shows since its 1999 debut. " },
+      { title: "Rana Naidu" , title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABbr-sxMP0Ic-OCQTC_aBJ_E4N0q6FQ8YLlHBjfIoobvzhf6cTygjHH2HGWiE7vR6u2JWgtAF52-yFuLJYJmIN7FG5GKPF_-QLQ.webp?r=5bc",
+      img: "https://wallpapercave.com/wp/wp13749452.jpg" ,description:"An Indian action crime drama on Netflix featuring Rana Daggubati as a powerful 'celebrity fixer' in Bollywood. The series explores family drama and dark secrets, now in its second season."},
+      { title: "The Sandman" , title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABZovR6eIBRN7O-i7-as5AbDF9__R8-uLTsc2pKtelXG8SZ0zQaKlSlQC1FJoAUs2iCgLVFVm1NNaW-23XMAkCA0t1lWvnBZugw.webp?r=d67",
+      img: "https://preview.redd.it/film-tv-new-poster-for-the-sandman-dc-vertigo-tv-series-v0-79t0ytq6xk391.jpg?width=1080&crop=smart&auto=webp&s=3077563de447949a7c43f67a96538893eaa4ccb0" ,description:"A dark fantasy TV series adaptation of Neil Gaiman's comic. It follows Dream of the Endless, who rules over the realm of dreams, navigating mythological and supernatural journeys" },
+      { title: "Stranger Things" , title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABWCbEzpdkYL3YFByruGPW5g9h5GUnQI8cUijxlMF53i5kZYUzz6mOt0QN37RpbjdqWQhY3D6kXLdhPqrBj6r7Ij2PFYeO-C19g.webp?r=23b",
+      img: "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a58a7719-0dcf-4e0b-b7bb-d2b725dbbb8e/df8lyfo-23050178-87af-4a1f-8499-f66b51852a9b.png/v1/fill/w_710,h_1125,q_70,strp/stranger_things_5_s5_teaser_poster_2024_by_andrewvm_df8lyfo-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTYwMCIsInBhdGgiOiJcL2ZcL2E1OGE3NzE5LTBkY2YtNGUwYi1iN2JiLWQyYjcyNWRiYmI4ZVwvZGY4bHlmby0yMzA1MDE3OC04N2FmLTRhMWYtODQ5OS1mNjZiNTE4NTJhOWIucG5nIiwid2lkdGgiOiI8PTEwMTEifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.CQFuxnYlJZh6l7S6ZyBUainPHBnIK705JLSW2KzS7mE" ,description:"Set in 1980s Hawkins, Indiana, it follows a group of kids encountering supernatural forces after a boy goes missing and a mysterious girl appears, unveiling secret experiments and alternate dimensions" },
+      { title: "The Fragrant Flower" , title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABXsXPPQi7V1XjOZ8tS18jdpWWYyYGESkdQtAyp0rEJtVQFN6RUHESExCw1QHgHsv4ZrJKgClTfa_0mhYdO3rZxPuEOIXIfAzsg.webp?r=a5a",
+      img: "https://images.ctfassets.net/4cd45et68cgf/6TxHoU7ndTyjhW9tPG1CQ9/8fbd24bb19a5d9bdcf8f16716c7f5a99/en_us_TFFBWD_s1_vertical_27x40_rgb_pre_1.jpg" ,description:"No reliable description found. If it’s a new or less-popular series, you can draft your own storyline or check Netflix/promotional materials." },
+      { title: "C.I.D" , title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABTOF9uvYxzvS-alnpMgi8z2qe_tFBuv8ydfeKYOcJG5D7K0Pgux_Wrt53-lviiSFzJDsAUKRVOfo6YB1OLQef2vtqM-7U5DiFg.webp?r=e02",
+      img: "https://image.tmdb.org/t/p/original/26uEr3docGiJVEDlqepAjf99Vlq.jpg" ,description:"A long-running Indian crime investigation TV series focusing on a team of detective officers solving mysteries and criminal cases" }
+    ];
+
+    const data1 = [
+      { title: "Aap Jaisa Koi" , title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABVxg5ZGaRtSjX22XxwYySJpUoLGd-pkwlBcBNqh5FDdcr7qOTecOLyEFhr7N91BD4eAjjO-pP5-jz5Z-t0U-6kXKHbNhaNGffg.webp?r=73d",
+       img: "https://m.media-amazon.com/images/M/MV5BYzgwOGM4YTEtMmE1Ny00MWQxLTlhMzEtYWY0MDY1ZjY0NWJhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" ,description:"A 2025 Hindi romantic comedy-drama directed by Vivek Soni and produced by Karan Johar. R. Madhavan plays Shrirenu, a reserved Sanskrit professor, who enters a tender yet complicated romance with Madhu (Fatima Sana Shaikh), a young French instructor. The film delicately navigates themes of love, age gaps, and societal expectations while showcasing stylish visuals and warm chemistry" },
+      { title: "Raid 2" , title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABaEfTDRmL-MBSuAhJSt2HwF_dLpDgaVFaeH8iJYDNjsh77bF7BdT3Hp-1bgCaDuQKkifhZxDPKHw7LvmnldVqD-vGBNXiqO7oA.webp?r=431",
+      img: "https://m.media-amazon.com/images/M/MV5BNjQyOTRiYTQtNzU0MS00ZGM2LWE4MTktODI5ZjZiN2NkYjYyXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", description:"Released in 2025, this Hindi crime thriller by Raj Kumar Gupta is the sequel to the 2018 hit Raid. IRS officer Amay Patnaik (Ajay Devgn) returns to battle white-collar corruption. Set seven years after the first film, he investigates new criminal networks, facing high-stakes cat-and-mouse dynamics" },
+      { title: "8 VASANTALU" , title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABXfQeVaoJWNNozlYAkJ6Ml6g-1yZz9dcduIN-FTUUjrl88UaGpciB5UhoNgdoAO_DQjxNplP5I5SRh5nH_zAa9WFFXjKC-hMYQ.webp?r=632",
+      img: "https://m.media-amazon.com/images/M/MV5BNDg5NzRjYjQtZTgyNy00MWM1LWFkMzktNzI0ZTc2Mzc2MTkwXkEyXkFqcGc@._V1_.jpg", description:"A Telugu romance-drama following Shuddhi, a martial artist and writer from Ooty, who grapples with grief, self-discovery, and love. The story spans eight springs and focuses on her personal growth and emotional journey, punctuated by a brief romantic arc"  },
+      { title: "Brick" , title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABc3yxw5OXUgYlPbZ1ie81zRLnAZ-q7K6HD1UfCVWzpNQ8oC2mISBNe58t-4gT2foqKI3MyS4czku0CJsyz_67EOEjFarkzQZvQ.webp?r=3da",
+      img: "https://m.media-amazon.com/images/M/MV5BMGRjZTI5NmEtNWQzNi00ZDUxLWFmZmQtOGFiZmNkZGY1MDc5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" , description:'A 2005 neo-noir mystery thriller by Rian Johnson, starring Joseph Gordon‑Levitt. Teen loner Brendan Frye investigates his ex-girlfriend’s death in a high school crime underworld. The tension builds as he infiltrates cliques and confronts a dangerous kingpin known only as “The Pin”' },
+      { title: "Wall to Wall" , title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABWoXLWdWc3XPefU6QNPjikHo0JqwHPQN3FOs54UwRwJBPoFpYcAeS5Q6DeI325thvFn5s9oSqwtGJngJbt7TBeXHrr2GFvqBKQ.webp?r=b31",
+      img: "https://m.media-amazon.com/images/M/MV5BM2Y1MjcwMWMtN2IyZi00MGIwLWFiM2YtZjkzZWE1NmJlMGFhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" , description:"Also known as 84 Square Meters (2025), this Korean psychological thriller follows Woo-sung, who moves into a tiny apartment only to be tormented by relentless neighbor noises. He uncovers conspiracy, corruption, and moral dilemmas that challenge his sanity—culminating in a tense, socially conscious finale " },
+      { title: "Kungfu Panda 4" , title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABeZ4qUZXBbWPq2pEUTvohNHVZ5ZbG-80NW7R44fbicxvEs_44Q_zT4DIJS_hHWEPC-T5LIasbUMhfn7S97U8C4pQZ_JHbhjUAA.webp?r=81e",
+      img: "https://lh5.googleusercontent.com/proxy/-gmFODvb31i3wCcCr0e4FDyvOYtslx_ujnbCKgkACyPOiz3YCAqsF1nAfJwX_VmZ6tr-pzXaddYx19dOymnKvA0AMV_DFKqX4LzBLKm9Ug" , description:"Po returns in this animated adventure, being named Spiritual Leader of the Valley of Peace. He must train a successor while battling the sorceress Chameleon, who can resurrect villains from Po’s past. High-stakes action and emotional growth ensue" },
+      { title: "Thug Life" , title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABWTSTn_ZdIjdAyrHWXlP7U92YZQ5QVKtTBEfpZZhc0EC9R-3ekoZp_YrHOJyPtqTIwzylfLeHkkt70OrvsQ6NEJr-zDzAqkSMQ.webp?r=9a4",
+      img: "https://m.media-amazon.com/images/M/MV5BZDNjMjVmODgtNWJiYy00Njg4LTk2YmUtMDgxNmVmMGQxMDNkXkEyXkFqcGc@._V1_.jpg" , description:"A 2025 Tamil gangster drama directed by Mani Ratnam, starring Kamal Haasan. The film explores the rise and internal collapse of a powerful mafia empire—where pride, betrayal, family, and moral decay spiral into a dramatic downfall" },
+      { title: "Kpop Demon Hunters" , title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABR9pRDQkqJZ3p-sukukGpY-6aAjiH3_13rg2QAQuRZJSxha0mxHgi1exDGAclTbUY9M6PTPlwtXpNdED0FR3wKEGfXf1x4PgqQ.webp?r=c94",
+      img: "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/e1/15/42/e1154273-8ecd-5702-e6e6-597f28001681/25UMGIM82363.rgb.jpg/600x600bf-60.jpg", description:"This 2025 Netflix animated musical follows HUNTR/X, a K-pop girl group who are also demon hunters. They battle soul-sucking demons disguised as a rival boy band, the Saja Boys, to protect humanity and the magical barrier “Honmoon.” Stylish animation and catchy songs earned it global acclaim"  },
+      { title: "I.S.S" , title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABYySY_I1SV99U5BJqEOEYWi3CNn8hmZm9zIVijFp8Ow7BiLeGcX0gIrM4IJaUJGUifbt1BidAuXUvwmToAnFqf24RluZrui4Mg.webp?r=491",
+      img: "https://m.media-amazon.com/images/M/MV5BYTcxYWU0YzAtNjEwZi00MGFjLThiOTYtYmQ5OTAyYTVlOTk3XkEyXkFqcGc@._V1_.jpg" , description:"A space thriller directed by Gabriela Cowperthwaite, set amidst an escalating US–Russia conflict aboard the International Space Station. Tensions rise as crew members navigate diplomacy, safety, and survival in orbit" },
+      { title: "Detective Ujjwalan" , title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABaTI3YMgKxsmpAG4bYFO7cUMVM7VT2y6cFL3lL8NZsJdBblx5GN8nHR6PJL3Zh2rLA8CoMS83IN-042oqHtvX-s2tQDKcjEZbg.webp?r=5e8",
+      img: "https://images.news18.com/webstories/uploads/2025/07/FotoJet-2025-07-ecd38c989f002b3456eb9b666b5b7776.jpg" , description:"This Telugu-language crime-mystery series (or film) focuses on Detective Ujjwalan solving intricate cases. Though less documented, it's known to feature suspenseful storytelling." }
+    ];
+
+    // ----------------- CARD DATA -----------------
+const upcoming = [
+  {
+    title: "My Oxford Year",
+    title_img:'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABXIjmM9aJMEJ-gBCEhERSneU1Mk-UZCb3TOFZzaZ-G53WhyLO2VTn-xp0L3SWKN3b-AfsqE9lfrN6KoqE566nESW7-d54NSFlA.webp?r=97d',
+    img: 'https://images.t2online.in/cdn-cgi/image/width=640,quality=70/https://apis.t2online.in/image/journal/article.jpg?img_id=1519020&t=1752517906344',
+    genre: "Rom-Com, Drama",
+    coming:"Coming on 1st August",
+    description: "An ambitious American fulfilling her dream of studying at Oxford falls for a charming Brit hiding a secret that may upend her perfectly planned life.",
+    videoCode:"EKQPCiUSRAo"
+  },
+  {
+    title: "Mandala Murders",
+    title_img:'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABdvo1AUN-GzvLZ0NKIJrEGTL1IlhJRyc-8z9DVM0U69zjoQUy9mlKUa88XGn9qiL6xMzjgGFNXiChHiYAZTq9TwOuL48-qJ03Q.webp?r=437',
+    img: 'https://www.yashrajfilms.com/images/default-source/movies/mandala-murders/mm_767x430.jpg?sfvrsn=5cf9decc_10',
+    genre: "Drama ,  Mystery",
+    coming:"Coming on Friday",
+    description: "When a series of ritualistic murders shakes a small town, a detective and an ex-cop must investigate a mystery with deep ties to their pasts.",
+    videoCode:"KYD__HR-oac"
+  },
+  {
+    title: "My Melody Kuromi",
+    title_img:'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABR8rTd3i5_p5936_6M6L4jjVPA_0jliRKlBiqZJfaANZbQ2GbBVWVplcsZYEyvB_9FEZ7YlwdY18pyNeqXq09zyl_8OEmOygZA.webp?r=202',
+    img: 'https://img.youtube.com/vi/oCZNKiLhC8M/sddefault.jpg',
+    genre: "Anime , Family",
+    coming:"Coming on this Thursday",
+    description: "When My Melody's visit to the Cloud Kingdom leads to a whirlwind of trouble, can she, Kuromi and their friends save their home before it's too late?",
+    videoCode:"3oKamSmjono"
+  },
+  {
+    title: "Wednesday",
+    title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABf7_tIl-l4iXVPZBajuqNVm4vXGOaHlmNTcVokgEZWYbPYYyd-VCP8vtF8ApT9LAstlNCTZTMyvoo6dvqae8Y22s89Q_TobyUw.webp?r=50a",
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABc5URtqG36cHmUzXPrn9qaN1prCdZB3Llrhe8w4fvPKUxMp1phgN738mP1ctTe9QshMH8f0NlK-GdSAZDYJpXtvofUffd8o4BQuB7AKZogG-KbG0kR5H5w9kp3pXbogjGHSN.jpg?r=082',
+    genre: "Horror, Comedy",
+    coming:"A Torturous New Season: Aug 6",
+    description: "Wednesday Addams investigates a monster mystery. Follows Wednesday Addams' years as a student, when she attempts to master her emerging psychic ability, thwart a killing spree, and solve the mystery that embroiled her parents.",
+    videoCode:"03u4xyj0TH4"
+  },
+  {
+
+    title: "Until Dawn",
+    title_img:'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABZbxlnTZ3EzSzBCc-CA2sqMvuk1kgoDgOKUFN6O1qW8v-yI4kgTQSWIuvc2rQ81L0KwE0og-nA4VOZXQZZJAK7Lv46dl_5y5AbM.webp?r=b81',
+    img: 'https://static1.squarespace.com/static/63bb3e8a824d7e2f7eedf0d3/t/686fb2b7cd80873e483f4c12/1752150711978/Until+Dawn+Horizontal+1.jpeg?format=1500w',
+    genre: "Creature Feature, Horror ",
+    coming:"Coming on this Friday",
+    description: "A year after Melanie goes missing, her friends set out to find answers — only to get stuck fighting mysterious killers to the death over and over again.",
+    videoCode:"rZfwvLe961k"
+  },
+  {
+    
+    title: "The Sandman" , 
+    title_img:"https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABZovR6eIBRN7O-i7-as5AbDF9__R8-uLTsc2pKtelXG8SZ0zQaKlSlQC1FJoAUs2iCgLVFVm1NNaW-23XMAkCA0t1lWvnBZugw.webp?r=d67",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5S_Ri0JZC9RgszJXoBTP3krJy3j1ImAvxyQ&s" ,
+    description:"A dark fantasy TV series adaptation of Neil Gaiman's comic. It follows Dream of the Endless, who rules over the realm of dreams, navigating mythological and supernatural journeys" ,
+    genre: "Drama , Fantasy",
+    coming:"The Final Season begins now",
+    videoCode:"Er18gmgqy2k"
+  },
+  {
+    
+    title: "Happy Gilmore 2",
+    title_img:'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABewG28kkrXauQJktknC9ySAZE-XTb589Dxnqz9Ft-N8T77UB_zr93LQrqhZVbLNgILtuJ-7wm3h5L7DTrCDPqsx68_NG395dYA.webp?r=425',
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYmWTS214biZuO34asQmjT_MvarMIDnnUKOw&s',
+    genre: "Comedy , Sport",
+    coming:"Coming on Friday",
+    description: "Happy Gilmore isn't done with golf — not by a long shot. Adam Sandler's short-fused legend swings for a comeback to make his kid's dream come true.",
+    videoCode:"YKzRPFvky9Y"
+  }
+];
+
+    function populateCarousel(data, carouselId) {
+  const carousel = document.getElementById(carouselId);
+  carousel.innerHTML = "";
+
+  data.forEach((item, index) => {
+    const container = document.createElement("div");
+    container.className = "card-container";
+
+    container.innerHTML = `
+      <div class="number-tag">${String(index + 1).padStart(2, '0')}</div>
+      <img src="${item.img}" alt="${item.title}" class="poster-card">
+      <h5 class="p-3 fs-4">${item.title}</h5>
+    `;
+
+    container.addEventListener("click", () => {
+      document.getElementById("detailModalLabel").innerText = item.title;
+      document.getElementById("modal-subtitle").src = item.title_img;
+      document.getElementById("modalImage").src = item.img;
+      document.getElementById("modalDescription").innerText = item.description + ".";
+        
+      const modal = new bootstrap.Modal(document.getElementById("detailModal"));
+      modal.show();
+    });
+
+    carousel.appendChild(container);
+  });
+
+  // Highlight scroll logic
+  carousel.addEventListener("scroll", () => {
+    const cards = carousel.querySelectorAll(".card-container");
+    const centerX = carousel.scrollLeft + carousel.offsetWidth / 2;
+
+    cards.forEach(card => {
+      const cardX = card.offsetLeft + card.offsetWidth / 2;
+      const distance = Math.abs(centerX - cardX);
+      if (distance < card.offsetWidth / 2) {
+        card.classList.remove("dim");
+      } else {
+        card.classList.add("dim");
+      }
+    });
+  });
+
+  // Trigger scroll to highlight the initial center card
+  carousel.dispatchEvent(new Event("scroll"));
+}
+
+const container = document.getElementById("verticalCardContainer");
+
+upcoming.forEach((card) => {
+  const col = document.createElement("div");
+  col.className = "col-12 mb-4"; // full width each row
+  col.innerHTML = `
+  <div class="card navbar shadow-sm video-card">
+    <div class="row g-0">
+     <div class="col-md-4 video-container position-relative" data-video="${card.videoCode}">
+
+        <img src="${card.img}" class="img-fluid w-100 rounded-start preview-img" alt="${card.title}">
+
+        <div class="iframe-wrapper position-absolute top-0 start-0 w-100 h-100" style="display: none;"></div>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+        <img src="${card.title_img}" class="img-fluid w-25 rounded-start preview-img" alt="${card.title}">
+         
+          <p class="card-text text-muted mt-2">${card.genre}</p>
+          <p class="card-text">${card.description}</p>
+          <button class="btn btn-outline-danger mt-3 fs-5 myListBtn"   id="remindbtn"> <i class="bi bi-bell"></i> Remind me</button>
+        </div>
+      </div>
+    </div>
+  </div>
+`;
+
+container.appendChild(col);
+
+const remindBtn = col.querySelector(".myListBtn");
+
+  // Initial button state
+  const currentList = JSON.parse(localStorage.getItem("myList")) || [];
+  const isInList = currentList.some(item => item.title === card.title);
+  updateMyListButtonState(remindBtn, isInList);
+
+remindBtn.addEventListener("click", () => {
+  // Save the card to localStorage
+  const existingList = JSON.parse(localStorage.getItem("myList") || "[]");
+
+  const alreadyExists = existingList.some(item => item.title === card.title);
+    if (!alreadyExists) {
+      const cardToStore = {
+        img: card.img,
+        title: card.title,
+        genre: card.genre
+      };
+      existingList.push(cardToStore);
+      localStorage.setItem("myList", JSON.stringify(existingList));
+    }
+    updateMyListButtonState(remindBtn, true);
+
+    // Set card title in the modal message
+const modalMessage = document.getElementById("modalMessage");
+modalMessage.innerHTML = `<strong>${card.title}</strong> has been successfully added to your <strong>My List</strong>.`;
+
+  // Show the Bootstrap modal
+  const modal = new bootstrap.Modal(document.getElementById('remindModal'));
+  modal.show();
+});
+
+});
+
+  // Function to update the button style based on list state
+  function updateMyListButtonState(button, isInList) {
+  if (isInList) {
+    button.classList.add("btn-danger");
+    button.classList.remove("btn-outline-danger");
+    button.innerHTML = `<i class="bi bi-check2-circle"></i> Reminder set`;
+  } else {
+    button.classList.remove("btn-danger");
+    button.classList.add("btn-outline-danger");
+    button.innerHTML = `<i class="bi bi-bell"></i> Remind me`;
+  }
+}
+
+// On modal load (or card click), check if card is in list and style the button
+function checkMyListStateAndStyleButton() {
+  const myList = JSON.parse(localStorage.getItem("myList")) || [];
+  const isInList = myList.some(item => item.id === card.title);
+  const btn = document.querySelector("#remindbtn");
+  if (btn) {
+    updateMyListButtonState(btn, isInList);
+  }
+}
+
+document.querySelectorAll(".video-card .video-container").forEach(container => {
+  const previewImg = container.querySelector(".preview-img");
+  const iframeWrapper = container.querySelector(".iframe-wrapper");
+  const videoCode = container.dataset.video; // ✅ CORRECT: Get video code from data attribute
+
+  container.addEventListener("mouseenter", () => {
+    if (iframeWrapper.children.length === 0) {
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube.com/embed/${videoCode}?autoplay=1&mute=1&controls=0&rel=0&showinfo=0&enablejsapi=1`;
+      iframe.allow = "autoplay; encrypted-media";
+      iframe.loading = "lazy";
+      iframe.width = "100%";
+      iframe.height = "100%";
+      iframe.frameBorder = "0";
+      iframe.style.position = "absolute";
+      iframe.style.top = 0;
+      iframe.style.left = 0;
+      iframe.style.width = "100%";
+      iframe.style.height = "100%";
+      iframeWrapper.appendChild(iframe);
+    }
+    iframeWrapper.style.display = "block";
+    previewImg.style.opacity = "0";
+  });
+
+  container.addEventListener("mouseleave", () => {
+    iframeWrapper.innerHTML = ""; // remove iframe to stop playback
+    iframeWrapper.style.display = "none";
+    previewImg.style.opacity = "1";
+  });
+});
+
+  window.addEventListener("DOMContentLoaded", () => {
+      populateCarousel(data, "carousel");
+      populateCarousel(data1, "carousel1");
+    });
+   
+  </script>
+</body>
+</html>

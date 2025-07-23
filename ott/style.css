@@ -1,0 +1,322 @@
+.bg{
+  background-color: black;
+}
+
+.navbar {
+  background-color: rgba(0, 0, 0, 0.5) !important; /* Black with 50% opacity */
+  backdrop-filter: blur(10px); /* Optional glass blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  
+}
+
+.navbar .nav-link ,
+.navbar-brand {
+  color: white !important;
+}
+
+
+.darkened-image {
+  position: relative;
+  height: 920px;
+  width: 100%;
+  background-image: url('https://cdn.mos.cms.futurecdn.net/rDJegQJaCyGaYysj2g5XWY.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+/* 
+  .overlay {
+
+   
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+    }
+     */
+
+
+
+/* Dark overlay */
+.darkened-image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+.dynamic-text {
+  font-size: 5vw; /* 5% of viewport width */
+
+}
+
+.dynamic-button {
+  font-size: 3vw;
+  padding: 1vw 3vw; /* top-bottom, left-right */
+}
+.curve-divider {
+  width: 100%;
+  height: 20px; /* Controls depth of the "C" curve */
+  overflow: hidden;
+  line-height: 0;
+}
+
+.curve-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.picture-overlay-text {
+  position: absolute;
+  top: 60%;
+  left: 3%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.picture-overlay-text p {
+  /* font-size: 4rem; */
+
+  color: white;
+}
+
+.picture-overlay-text ul {
+  /* font-size: 4rem; */
+  list-style-type: square;
+  color: white;
+}
+
+.search-bar .form-control {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6); /* Optional white border */
+  color: white;
+}
+
+.search-bar .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5); /* Faint placeholder */
+}
+
+.search-bar .form-control:focus {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+  box-shadow: none;
+}
+
+/* .card-body{
+  background-color: transparent !important ;
+  color: white;
+} */
+
+/* Better card image appearance */
+
+
+/* Blur and transparency effect like navbar */
+/* .card-body {
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black 
+  backdrop-filter: blur(10px); /* Apply blur 
+  /* border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem; 
+ 
+}*/
+
+ 
+.card:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.card {
+  border: none;
+  overflow: hidden;
+  /* border-radius: 1rem; */
+}
+.card-img {
+  object-fit: cover;
+  height: auto;
+  /* border-radius: 1rem 1rem 0 0; */
+}
+.card-body {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+}
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+.picture {
+  position: relative;
+  overflow: hidden;
+  height: 900px;
+  background-color: black;
+}
+
+/* Main image styling */
+.picture-img,
+.picture-video {
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: translateX(300px); /* Shift image right */
+  
+  object-fit: cover;
+  filter: brightness(70%);
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .picture-img,
+  .picture-video {
+    transform: translateX(0); /* Reset the shift on small screens */
+  }
+
+  .picture-overlay-text {
+    left: 5%; /* Optional: Adjust text positioning if needed */
+    top:70%;
+    text-align: center;
+  }
+
+  .picture-overlay-text ul,p {
+    font-size: 2.5rem; /* Smaller heading */
+  }
+}
+
+
+/* Heavy vignette overlay */
+.picture::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 100% center, /* Shift center slightly right */
+    rgba(0, 0, 0, 0) 20%,
+    rgba(0, 0, 0, 0.6) 55%,
+    rgba(0, 0, 0, 0.85) 60%,
+    rgba(0, 0, 0, 1) 90%,
+    rgba(0, 0, 0, 1) 10%
+  );
+}
+
+
+.picture,.video {
+  position: relative;
+  overflow: hidden;
+  height: 900px;
+  background-color: black;
+}
+
+
+
+
+/* footer call to action */
+.cta-overlay {
+  position: relative;
+  margin-top: -1000px; /* Pull it over the previous carousels */
+  height: 1100px;
+  width: 100%;
+  padding: 50px 20px;
+  background: rgba(0, 0, 0, 0.4); /* Translucent dark */
+  backdrop-filter: blur(20px);    /* Blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  z-index: 10;
+  animation: fadeIn 2s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.footer {
+  background-color: #111;
+  border-top: 2px solid red;
+}
+
+/* Shared styling for both media */
+.picture-img,
+.picture-video {
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: translateX(200px);
+  object-fit: cover;
+  filter: brightness(70%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: opacity 0.5s ease;
+}
+
+
+
+.picture-video {
+  opacity: 0;
+  pointer-events: none;
+} 
+
+/* On hover, show video and hide image */
+.picture:hover .picture-img {
+  opacity: 0;
+}
+
+ .picture:hover .picture-video {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
+/* Keep content above both layers */
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+
+/* sugn in page */
+.signin-overlay {
+  position: fixed;
+  top: 100px;
+  left: 25vw;
+  height: 70vh;
+  width: 50vw;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 9999; /* Highest priority */
+}
+
+.signin-form {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  /* max-width: 400px; */
+  width: 100%;
+  height: 100%;
+  animation: fadeIn 1s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

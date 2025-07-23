@@ -1,0 +1,356 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Watch Now</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body, html {
+      height: 100%;
+      background: #000;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .progress-bar-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #e50914;
+      transition: width 0.2s ease;
+    }
+  </style>
+</head>
+<body>
+
+<div class="video-container">
+  <iframe id="ytplayer" src="" allow="autoplay" allowfullscreen></iframe>
+  <div class="progress-bar-container">
+    <div class="progress-bar" id="progress"></div>
+  </div>
+</div>
+
+<!- ✅ Load your script.js first ->
+<script src="script.js"></script>
+<!-- 
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const cardId = params.get("videoId");
+
+  // ✅ Find the matching card by ID from cardData
+  const selectedCard = carddata.find(item => item.id === cardId);
+
+  if (selectedCard && selectedCard.videoId) {
+    const iframe = document.getElementById("ytplayer");
+    iframe.src = `https://www.youtube-nocookie.com/embed/${selectedCard.videoId}?autoplay=1&controls=1&rel=0&modestbranding=1&showinfo=0&disablekb=0&iv_load_policy=3`;
+
+    // Load YouTube Iframe API
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.body.appendChild(tag);
+
+    let player;
+    window.onYouTubeIframeAPIReady = function () {
+      player = new YT.Player('ytplayer', {
+        events: {
+          'onReady': () => {
+            setInterval(() => {
+              if (player && player.getDuration) {
+                const duration = player.getDuration();
+                const current = player.getCurrentTime();
+                const percent = (current / duration) * 100;
+                document.getElementById('progress').style.width = percent + '%';
+              }
+            }, 500);
+          }
+        }
+      });
+    };
+  } else {
+    document.body.innerHTML = `<h2 style="color:white;text-align:center;padding:50px;">Video not found</h2>`;
+  }
+</script> -->
+
+</body>
+</html>
+
+  
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Watch Now</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      background: #000;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .progress-bar-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: #e50914;
+      transition: width 0.2s ease;
+    }
+  </style>
+</head>
+<body>
+
+<div class="video-container">
+  <iframe
+    id="ytplayer"
+    src="https://www.youtube-nocookie.com/embed/zAGVQLHvwOY?enablejsapi=1&autoplay=1&mute=1&controls=1&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&playsinline=1&disablekb=1"
+    title="Watch Now"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+
+  <div class="progress-bar-container">
+    <div class="progress-bar" id="progress"></div>
+  </div>
+</div>
+
+<script>
+  let player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('ytplayer', {
+      events: {
+        'onReady': onPlayerReady,
+        'onStateChange': updateProgress
+      }
+    });
+  }
+
+  function onPlayerReady() {
+    setInterval(() => {
+      if (player && player.getDuration) {
+        const duration = player.getDuration();
+        const current = player.getCurrentTime();
+        const percent = (current / duration) * 100;
+        document.getElementById('progress').style.width = percent + '%';
+      }
+    }, 500);
+  }
+
+  const tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  document.body.appendChild(tag);
+</script>
+
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <title>Watch Now</title>
+  
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 80%;
+      padding-top: 45%; /* 16:9 aspect ratio */
+      box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .controls button {
+      background: #222;
+      border: 2px solid #fff;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .controls button:hover {
+      background: magenta;
+      color: black;
+    }
+
+    .progress-container {
+      width: 80%;
+      margin-top: 20px;
+      background: #444;
+      height: 8px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: magenta;
+      transition: width 0.25s;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Watch Now</h2>
+
+  <div class="video-wrapper">
+    <iframe id="ytplayer" src="https://www.youtube.com/embed/oqxAJKy0ii4?enablejsapi=1&controls=0&modestbranding=1&rel=0&showinfo=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+
+  <div class="controls">
+    <button onclick="rewind10()"><i class="bi bi-arrow-anticlockwise"></i> 10s</button>
+    <button onclick="togglePlay()">▶️ / ⏸️</button>
+    <button onclick="forward10()">10s ⏩</button>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-bar" id="progress"></div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script>
+    let player;
+    let playing = false;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('ytplayer', {
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': updateProgress
+        }
+      });
+    }
+
+    function onPlayerReady() {
+      setInterval(() => {
+        if (player && player.getDuration) {
+          const duration = player.getDuration();
+          const current = player.getCurrentTime();
+          const percent = (current / duration) * 100;
+          document.getElementById('progress').style.width = percent + '%';
+        }
+      }, 500);
+    }
+
+    function togglePlay() {
+      const state = player.getPlayerState();
+      if (state === YT.PlayerState.PLAYING) {
+        player.pauseVideo();
+      } else {
+        player.playVideo();
+      }
+    }
+
+    function forward10() {
+      const current = player.getCurrentTime();
+      player.seekTo(current + 10, true);
+    }
+
+    function rewind10() {
+      const current = player.getCurrentTime();
+      player.seekTo(current - 10, true);
+    }
+
+    function updateProgress() {
+      // Already handled in setInterval
+    }
+
+    // Load YouTube Iframe API
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.body.appendChild(tag);
+  </script>
+
+</body>
+</html> --> --> -->

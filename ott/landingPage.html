@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+  
+    <title>landingPage</title>
+</head>
+<body class="bg">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
+    <div class="container-fluid">
+  
+      <!-- Logo -->
+      <a class="navbar-brand me-3" href="#">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" class="img-fluid" style="width: 120px;" alt="Netflix Logo">
+      </a>
+  
+      <!-- Toggle Button for Mobile -->
+      <button class="navbar-toggler text-ligh" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Collapsible Content -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+        <!-- Left Side: Nav Links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row gap-3 align-items-center">
+          <li class="nav-item">
+            <a class="nav-link active" href="landingPage.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="movies.html">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="tvShows.html">TV Shows</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="newNhot.html">New & Popular</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="myList.html">My List</a>
+          </li>
+
+
+          <li class="nav-item dropdown">
+     
+       
+                 <button class="btn dropdown-toggle  nav-link" data-bs-toggle="dropdown"> <i class="bi bi-globe2"></i> <span class="d-none d-sm-inline">Browse by language </span>            </button>
+                 
+                 <ul class="dropdown-menu ">
+                    <li class="dropdown-item" >Hindi</li>
+                    <li class="dropdown-item" >Marathi</li>
+                    <li class="dropdown-item" >Korean</li>
+                    <li class="dropdown-item" >Chinese</li>
+                    <li class="dropdown-item" >Spanish</li>
+                    
+                 </ul>
+             
+          </li>
+        </ul>
+  
+        <!-- Right Side: Search -->
+        <form class="d-flex search-bar">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-danger" type="submit">Search</button>
+        </form>
+        
+  
+      </div>
+    </div>
+  </nav>
+
+<!-- Squid Game -->
+  <section class="picture random-section d-none" id="section1"  >
+
+    <div class="picture-overlay-text text-center">
+
+      <div class="custom-mylist-card" 
+      data-title="Squid Game"
+      data-img="https://wallpapers.com/images/hd/squid-game-shapes-in-blood-2l6hyo9n941zjbf6.jpg" 
+      data-genre="Thriller, Gore">
+
+      <img class="img-fluid w-25 " src="https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABaM2HJhp57FNCb_x9CbHrMUUTkDtz7Bw66308aKPZkWx4O3JAM7s8s1bvNpiFPq6b1yRP0E_0u_8N3x3bzJiwVTVOWbdRTq0.webp?r=1de" alt="">
+      <br>
+      <img class="img-fluid m-4 " src="https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABbj5bOy5PlkwtR3uxuM5LYn62HPfQjAEFYg0X-NqLZAmXC9D3yKJgf2w1OHqgn7QP179ffJI6TSVIwn6I8kAa6lTQaMT2nXZYQ.webp?r=197" alt="">
+      <br>
+      <ul class="list-inline fs-5"  >
+        <li class="list-inline-item"><i class="bi bi-dot"></i> Korean  </li>
+        <li  class="list-inline-item"><i class="bi bi-dot"></i>Thriller</li>
+        <li  class="list-inline-item"><i class="bi bi-dot"></i>Gore</li>
+        <li class="list-inline-item"><i class="bi bi-dot"></i>Voilence</li>
+      </ul>
+      <button class="btn btn-danger btn-lg mt-3 me-3" type="button">Watch Now</button>
+      <button class="btn btn-outline-light btn-lg mt-3 mylist-btn " type="button"> <i class="bi bi-plus-circle"> </i> My List</button>
+
+    </div>
+    </div>
+   
+    <img class="picture-img img-fluid" src="https://wallpapers.com/images/hd/squid-game-shapes-in-blood-2l6hyo9n941zjbf6.jpg"  alt="">
+
+    <!-- To add vedio when hover on the image -->
+       <!-- Embedded YouTube video instead of local video -->
+  <div class="ratio ratio-16x9 picture-video">
+    <iframe 
+      src="https://www.youtube.com/embed/oqxAJKy0ii4?autoplay=1&mute=1&loop=1&playlist=oqxAJKy0ii4" 
+      title="YouTube video" 
+      allowfullscreen 
+      allow="autoplay"
+    ></iframe>
+  </div>
+    <!-- <video class="picture-video" muted loop preload="none">
+      <source src="https://static.videezy.com/system/resources/previews/000/001/279/original/waterfall2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video> -->
+  </section> 
+
+
+  <!-- Joker -->
+  <section class="picture random-section d-none" id="section2" background-image='https://cdn.mos.cms.futurecdn.net/rDJegQJaCyGaYysj2g5XWY.jpg'>
+    <div class="picture-overlay-text text-center">
+
+      <div class="custom-mylist-card" 
+      data-title="Joker"
+      data-img="https://cdn.wallpapersafari.com/59/99/KInvak.jpg" 
+      data-genre="Horror, Psychological Thriller, Crime Film, Suspense">
+
+
+      <img class="img-fluid w-25 " src="https://occ-0-4748-1009.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABaDUUMth7u4vOG-vYKipgYjQPE6Y4bEyyIguOo0gPEofraAn5eVYPJZeNsCJlDzmqkWM2GNiZxLzRH5b2SHxS2ELABMO7Gxo.webp?r=630" alt="">
+      <!-- <h1 class="text-white">Joker</h1> -->
+       <br>
+       <img class="img-fluid m-4" src="https://occ-0-4748-1009.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABR0Xuno86vK10CCfgrO3uJBkdmNQsb8xdfnSqMpY1WR-AUqb7L4_TOwSB8jgVL28k9NX-0OOiYlM1BiBQ07FqlX1AKl8sn-Muck.webp?r=979" alt="">
+       <br >
+       <ul class="list-inline fs-5"  >
+         <li class="list-inline-item"><i class="bi bi-dot"></i> Horror </li>
+         <li  class="list-inline-item"><i class="bi bi-dot"></i>Psychological Thriller</li>
+         <li  class="list-inline-item"><i class="bi bi-dot"></i>Crime Film</li>
+         <li class="list-inline-item"><i class="bi bi-dot"></i>Suspense</li>
+       </ul>
+       <button class="btn btn-danger btn-lg mt-3 me-3" type="button">Watch Now</button>
+       <button class="btn btn-outline-light btn-lg mt-3 mylist-btn" type="button"> <i class="bi bi-plus-circle"> </i> My List</button>
+      </div>
+    </div>
+    <img class="picture-img img-fluid" src="https://cdn.wallpapersafari.com/59/99/KInvak.jpg" alt="">
+
+        <!-- To add vedio when hover on the image -->
+       <!-- Embedded YouTube video instead of local video -->
+        <div class="ratio ratio-16x9 video picture-video">
+          <iframe
+
+          src="https://www.youtube.com/embed/zAGVQLHvwOY?autoplay=1&mute=1&controls=0&loop=1&playlist=zAGVQLHvwOY"
+          title="Joker Trailer"
+          frameborder="0"
+          allow="autoplay; encrypted-media"
+          allowfullscreen>
+        </iframe>
+        </div>
+  
+  </section>
+  
+  <!-- Dark -->
+     <section class="picture random-section d-none" id="section3" background-image='https://cdn.mos.cms.futurecdn.net/rDJegQJaCyGaYysj2g5XWY.jpg'>
+    <div class="picture-overlay-text text-center">
+
+      <div class="custom-mylist-card" 
+      data-title=" Dark "
+      data-img="https://images8.alphacoders.com/108/1084298.png" 
+      data-genre=" Supernatural , Suspense">
+
+      <img class="img-fluid w-25" src="https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABaM2HJhp57FNCb_x9CbHrMUUTkDtz7Bw66308aKPZkWx4O3JAM7s8s1bvNpiFPq6b1yRP0E_0u_8N3x3bzJiwVTVOWbdRTq0.webp?r=1de" alt="">
+      <br>
+      <img class="img-fluid m-4" src="https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABUwU8NxVAYrz7-d1ZeLT_n0Az18QVjxPPx0b3JLfdt-Kola0JBanfg1BzLD0sNtqODcGfwkaK6AQE0gvgyinmsSFItw_vrgr7Q.webp?r=50f" alt="">
+      <br >
+      <ul class="list-inline fs-5"  >
+        <li class="list-inline-item"><i class="bi bi-dot"></i> Supernatural </li>
+        <li  class="list-inline-item"><i class="bi bi-dot"></i>Thriller</li>
+        <li  class="list-inline-item"><i class="bi bi-dot"></i>Drama</li>
+        <li class="list-inline-item"><i class="bi bi-dot"></i>Suspense</li>
+      </ul>
+      <button class="btn btn-danger btn-lg mt-3 me-3" type="button">Watch Now</button>
+      <button class="btn btn-outline-light btn-lg mt-3 mylist-btn " type="button"> <i class="bi bi-plus-circle"> </i> My List</button>
+    </div>
+    </div>
+    <img class="picture-img img-fluid" src="https://images8.alphacoders.com/108/1084298.png" alt="">
+
+      <!-- To add vedio when hover on the image -->
+       <!-- Embedded YouTube video instead of local video -->
+  <div class="ratio ratio-16x9 picture-video">
+    <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/ESEUoa-mz2c?autoplay=1&mute=1&loop=1&playlist=ESEUoa-mz2c&controls=0"
+    title="Dark Trailer"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+  
+
+  </div>
+
+  </section>
+  
+  <!-- the guilty -->
+  <section class="picture random-section d-none" id="section4" background-image='https://cdn.mos.cms.futurecdn.net/rDJegQJaCyGaYysj2g5XWY.jpg'>
+    <div class="picture-overlay-text text-center">
+
+      <div class="custom-mylist-card" 
+      data-title=" The Guilty "
+      data-img="https://static1.srcdn.com/wordpress/wp-content/uploads/2021/10/The-Guilty-Ending-Twists-Explained-SR.jpg" 
+      data-genre=" Action, Mystery">
+
+      <img class="img-fluid w-25 mb-2" src="https://occ-0-4748-1009.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABaDUUMth7u4vOG-vYKipgYjQPE6Y4bEyyIguOo0gPEofraAn5eVYPJZeNsCJlDzmqkWM2GNiZxLzRH5b2SHxS2ELABMO7Gxo.webp?r=630" alt="">
+      <br>
+       <img class="img-fluid m-4" src="https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/S4oi7EPZbv2UEPaukW54OORa0S8/AAAABcwaRAeeh46Okdz2HRO024swiz0F3Yrbmz119qwa-utCvaHdXiQd0Jp_SwChWy8HfjTyPHZ6goxpavUSE-a0PXBeZzpP8fRdnw.webp?r=e92" alt="">
+       <br >
+       <ul class="list-inline fs-5"  >
+         <li class="list-inline-item"><i class="bi bi-dot"></i> Action</li>
+         <li  class="list-inline-item"><i class="bi bi-dot"></i>Thriller</li>
+         <li  class="list-inline-item"><i class="bi bi-dot"></i>Crime</li>
+         <li class="list-inline-item"><i class="bi bi-dot"></i>Mystery</li>
+       </ul>
+       <button class="btn btn-danger btn-lg mt-3 me-3" type="button">Watch Now</button>
+       <button class="btn btn-outline-light btn-lg mt-3 mylist-btn" type="button"> <i class="bi bi-plus-circle"> </i> My List</button>
+    </div>
+    </div>
+    <img class="picture-img img-fluid" src="https://static1.srcdn.com/wordpress/wp-content/uploads/2021/10/The-Guilty-Ending-Twists-Explained-SR.jpg" alt="">
+
+      <!-- To add vedio when hover on the image -->
+       <!-- Embedded YouTube video instead of local video -->
+  <div class="ratio ratio-16x9 picture-video">
+    <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/NaB_ERMAZu4?autoplay=1&mute=1&loop=1&playlist=NaB_ERMAZu4&controls=0"
+    title="The Guilty Trailer"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe> 
+  </div>
+  </section>
+
+  <div>
+     <div id="cardCarousel1" class="carousel slide "  data-bs-wrap="false">
+      <div class="ms-lg-5 me-lg-5   p-lg-5">
+        <div class="p-3 text-light">
+          <p class="fs-2">Top Picks For Today</p>
+        </div>
+        <div class="carousel-inner " id="carouselContent"></div>
+      </div>
+      <!-- Controls -->
+      <button class="carousel-control-prev btn-danger" type="button" data-bs-target="#cardCarousel1" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next btn-danger" type="button" data-bs-target="#cardCarousel1" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>  
+  
+  <div>
+    
+    <div id="cardCarousel2" class="carousel slide"  data-bs-wrap="false">
+      <div class="ms-lg-5 me-lg-5   p-lg-5">
+        <div class="p-3 text-light">
+          <p class="fs-2">Top Movies Globally</p>
+        </div>
+      <div class="carousel-inner" id="carouselContent1">  
+    
+      </div>
+      </div>
+    
+      <!-- Controls -->
+      <button class="carousel-control-prev btn-danger" type="button" data-bs-target="#cardCarousel2" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next btn-danger" type="button" data-bs-target="#cardCarousel2" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+  </div>
+
+  <div>
+    
+    <div id="cardCarousel3" class="carousel slide"  data-bs-wrap="false">
+      <div class="ms-lg-5 me-lg-5   p-lg-5">
+        <div class=" p-3 text-light">
+          
+          <p class="fs-2">Top Series Globally</p>
+        </div>
+      <div class="carousel-inner" id="carouselContent2">  
+    
+      </div>
+      </div>
+    
+      <!-- Controls -->
+      <button class="carousel-control-prev btn-danger" type="button" data-bs-target="#cardCarousel3" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next btn-danger" type="button" data-bs-target="#cardCarousel3" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+  </div>
+
+  <div>
+    
+    <div id="cardCarousel4" class="carousel slide"  data-bs-wrap="false">
+      <div class="ms-lg-5 me-lg-5   p-lg-5">
+        <div class="p-3 text-light">
+          
+          <p class="fs-2">Critically accaimled Series</p>
+        </div>
+      <div class="carousel-inner" id="carouselContent3">  
+    
+      </div>
+      </div>
+    
+      <!-- Controls -->
+      <button class="carousel-control-prev btn-danger" type="button" data-bs-target="#cardCarousel4" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next btn-danger" type="button" data-bs-target="#cardCarousel4" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+  </div>
+
+
+  <div>
+    
+    <div id="cardCarousel5" class="carousel slide"  data-bs-wrap="false">
+      <div class="ms-lg-5 me-lg-5   p-lg-5">
+        <div class="p-3 text-light">
+          
+          <p class="fs-2">Critically accaimled Series</p>
+        </div>
+      <div class="carousel-inner" id="carouselContent4">  
+    
+      </div>
+      </div>
+    
+      <!-- Controls -->
+      <button class="carousel-control-prev btn-danger" type="button" data-bs-target="#cardCarousel5" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next btn-danger" type="button" data-bs-target="#cardCarousel5" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+  </div>
+  <div>
+    
+    <div id="cardCarousel6" class="carousel slide"  data-bs-wrap="false">
+      <div class="ms-lg-5 me-lg-5   p-lg-5">
+        <div class="p-3 text-light">
+          
+          <p class="fs-2">Critically accaimled Series</p>
+        </div>
+      <div class="carousel-inner" id="carouselContent5">  
+    
+      </div>
+      </div>
+    
+      <!-- Controls -->
+      <button class="carousel-control-prev btn-danger" type="button" data-bs-target="#cardCarousel6" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next btn-danger" type="button" data-bs-target="#cardCarousel6" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+  </div>
+
+  <div class="modal fade" id="cardModal" tabindex="-1" aria-labelledby="cardModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content navbar text-white">
+        <div class="modal-header ">
+          <h5 class="modal-title" id="cardModalLabel">Loading...</h5>
+          <button type="button" class="btn-close btn-close-white " data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body ">
+     
+          <img id="modalImage" class="w-100 rounded" alt="Poster" />
+          <div></div>
+          <div class="modal-body text-white">
+            <h4 id="cardTitle" class="mb-1"></h4>
+            <p id="modalGenre" class="text-muted mb-2 fs-5"></p>
+            <p id="modalDescription" class="mb-4 fs-5"></p>
+          
+            <div id="modalExtraContent"> Loading...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+<!-- CTA Overlay Section -->
+<div id="ctaOverlay" class="cta-overlay d-flex flex-column justify-content-center align-items-center text-white text-center">
+  <h1 class="mb-3 display-1 ">Want to keep watching?</h1>
+  <a href="login.html" class="btn btn-danger btn-lg px-5 m-3 fs-2">Log In</a>
+</div>
+
+<!-- Footer -->
+<footer class="footer text-center text-white py-4">
+  <p>&copy; 2025 Netflix SM. All rights reserved.</p>
+</footer>
+
+
+
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+  <script>
+
+
+      // Fade in CTA when it enters the viewport
+      window.addEventListener('scroll', function () {
+        const cta = document.getElementById('ctaOverlay');
+        const rect = cta.getBoundingClientRect();
+        if (rect.top <= window.innerHeight - 100) {
+          cta.style.opacity = '1';
+          cta.style.animation = 'fadeIn 2s ease forwards';
+        }
+      });
+
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll('.random-section');
+        const randomIndex = Math.floor(Math.random() * sections.length);
+    
+        sections.forEach((section, index) => {
+          if (index === randomIndex) {
+            section.classList.remove('d-none');  // show this one
+          } else {
+            section.classList.add('d-none');     // hide others
+          }
+        });
+      });
+    </script>
+
+</body>
+</html>
