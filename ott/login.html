@@ -8,15 +8,72 @@
     <link rel="stylesheet" href="style.css">
     <title> Sign In</title>
 </head>
+<style>
+    
+/* sugn in page */
+.signin-overlay {
+  position: absolute;
+  top: 100px;
+  left: 25vw;
+  height: 70vh;
+  width: 50vw;
+  background: transparent;        /* ✅ no black overlay */
+  backdrop-filter: none;         /* ✅ no blur */
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 9999; /* Highest priority */
+}
+
+.signin-form {
+  background: rgba(0, 0, 0, 0.434);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  /* max-width: 400px; */
+  width: 50%;
+  height: 100%;
+  animation: fadeIn 1s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1200px) {
+
+    .signin-overlay {
+        position: absolute;
+        top: 100px;
+        left: 0vw;
+        /* right: 6vw; */
+        height: 60vh;
+        width: 110vw;
+        background: transparent;        /* ✅ no black overlay */
+        backdrop-filter: none;         /* ✅ no blur */
+        -webkit-backdrop-filter: blur(12px);
+        z-index: 9999; /* Highest priority */
+    }
+    .h2{
+        font-size: 1.5rem;
+    }
+    #sml {
+        font-size: 1rem;
+    }
+  }
+  
+</style>
+
 <body class="bg ">
 
+    <!-- Background Image -->
     <section class="darkened-image">
-   
     </section>
     
          <!-- Sign In Form Overlay -->
          <div class="signin-overlay d-flex justify-content-center align-items-center">
-            <div class="signin-form text-white p-3 rounded shadow-lg">
+            <div class="signin-form text-white p-3 rounded ">
                 <h2 class="m-4  ">Log In</h2>
                 <form>
                     <div class="m-4">
@@ -48,10 +105,10 @@
                         <a href="#" class="text-light">Need Help?</a>
                         </div>  
                         <div class="p-3"></div>
-                        <div class="p-5 px-0">
-                            <p>New to Netflix?   <a href="#" class="text-light "> Sign Up Now</a> </p>
+                        <p class="p-5 px-0" >
+                            <p id="sml">New to Netflix?   <a href="#" class="text-light "> Sign Up Now</a> </p>
                             
-                        </div>
+                        </p>
                     </div>
 
                 </form>

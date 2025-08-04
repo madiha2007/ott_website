@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+  <style>
+    body{
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+    .card {
+      top: 10vh;
+      margin: 5rem auto;
+      border-radius: 1rem;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.75);
+    }
+    .form-control {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+    }
+
+    .card-price {
+    font-size: 2rem;
+    font-weight: bold;
+    }
+
+    .card ul li {
+    margin-bottom: 0.5rem;
+    }
+
+  </style>
+</head>
+<body class="bg">
+
+<section class="darkened-image">
+  <div class="container ">
+    <div class="row flex-column-reverse flex-lg-row align-items-start g-4">
+      
+      <!-- SIGN UP FORM (left on desktop, below on mobile) -->
+      <div class="col-lg-4">
+        <div class="card">
+          <h2 class="text-center mb-4">Create Account</h2>
+          <form id="signupForm">
+            <div class="mb-3">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" id="name" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" id="email" class="form-control" required />
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" id="password" class="form-control" required minlength="6"/>
+            </div>
+            <div class="mb-3">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
+              <input type="password" id="confirmPassword" class="form-control" required />
+            </div>
+            <div id="error" class="text-danger mb-3"></div>
+            <button type="submit" class="btn btn-danger w-100">Sign Up</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- SUBSCRIPTION PLANS (right on desktop, top on mobile) -->
+      <div class="col-lg-8">
+        <!-- <h2 class="text-center text-white mb-4">Choose Your Plan</h2> -->
+        <div class="row g-4">
+
+          <!-- Weekly Plan -->
+          <div class="col-md-4">
+            <div class="card bg-dark text-white border-danger border-2 rounded-4 shadow">
+              <div class="card-body text-center">
+                <h4 class="card-title text-danger">Weekly Plan</h4>
+                <h2 class="card-price mb-3">₹49</h2>
+                <ul class="list-unstyled mb-4">
+                  <li>✔ 720p Quality</li>
+                  <li>✔ 1 Screen</li>
+                  <li>✔ No Ads</li>
+                </ul>
+                <button class="btn btn-outline-danger w-100">Subscribe</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Monthly Plan -->
+          <div class="col-md-4">
+            <div class="card bg-dark text-white border-danger border-3 rounded-4 shadow-lg">
+              <div class="card-body text-center">
+                <h4 class="card-title text-danger">Monthly Plan</h4>
+                <h2 class="card-price mb-3">₹199</h2>
+                <ul class="list-unstyled mb-4">
+                  <li>✔ 1080p Quality</li>
+                  <li>✔ 2 Screens</li>
+                  <li>✔ Download Option</li>
+                </ul>
+                <button class="btn btn-danger w-100">Subscribe</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Annual Plan -->
+          <div class="col-md-4">
+            <div class="card bg-dark text-white border-danger border-2 rounded-4 shadow">
+              <div class="card-body text-center">
+                <h4 class="card-title text-danger">Annual Plan</h4>
+                <h2 class="card-price mb-3">₹1499</h2>
+                <ul class="list-unstyled mb-4">
+                  <li>✔ 4K Quality</li>
+                  <li>✔ 4 Screens</li>
+                  <li>✔ Offline Access</li>
+                </ul>
+                <button class="btn btn-outline-danger w-100">Subscribe</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+      const errorDiv = document.getElementById("error");
+
+      if (password !== confirmPassword) {
+        errorDiv.textContent = "Passwords do not match!";
+        return;
+      }
+
+      // Optionally save to backend or localStorage
+      fetch("http://localhost:5000/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, password }),
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          alert("Signup successful!");
+          window.location.href = "index.html";
+        } else {
+          errorDiv.textContent = data.message || "Signup failed.";
+        }
+      })
+      .catch(err => {
+        console.error("Error:", err);
+        errorDiv.textContent = "Server error occurred.";
+      });
+    });
+  </script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign Up</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+  <style>
+    body{
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+    .card {
+      top: 10vh;
+      margin: 5rem auto;
+      border-radius: 1rem;
+      padding: 2rem;
+      background-color: rgba(0, 0, 0, 0.75);
+    }
+    .form-control {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+    }
+  </style>
+</head>
+<body class="bg">
+
+<section class="darkened-image">
+
+  <div class="card col-md-6 col-lg-4 col-sm-10">
+    <h2 class="text-center mb-4">Create Account</h2>
+    <form id="signupForm">
+      <div class="mb-3">
+        <label for="name" class="form-label">Full Name</label>
+        <input type="text" id="name" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" id="email" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" class="form-control" required minlength="6"/>
+      </div>
+      <div class="mb-3">
+        <label for="confirmPassword" class="form-label">Confirm Password</label>
+        <input type="password" id="confirmPassword" class="form-control" required />
+      </div>
+      <div id="error" class="text-danger mb-3"></div>
+      <button type="submit" class="btn btn-danger w-100">Sign Up</button>
+    </form>
+  </div>
+</section>
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+      const errorDiv = document.getElementById("error");
+
+      if (password !== confirmPassword) {
+        errorDiv.textContent = "Passwords do not match!";
+        return;
+      }
+
+      // Optionally save to backend or localStorage
+      fetch("http://localhost:5000/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, password }),
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          alert("Signup successful!");
+          window.location.href = "index.html";
+        } else {
+          errorDiv.textContent = data.message || "Signup failed.";
+        }
+      })
+      .catch(err => {
+        console.error("Error:", err);
+        errorDiv.textContent = "Server error occurred.";
+      });
+    });
+  </script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html> -->

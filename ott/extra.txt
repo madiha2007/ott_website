@@ -1,3 +1,68 @@
+//sign in code
+
+
+<body class="bg ">
+
+    <!-- Background Image -->
+    <section class="darkened-image">
+    </section>
+    
+         <!-- Sign In Form Overlay -->
+         <div class="signin-overlay d-flex justify-content-center align-items-center">
+            <div class="signin-form text-white p-3 rounded ">
+                <h2 class="m-4  ">Log In</h2>
+                <form>
+                    <div class="m-4">
+                    <!-- <label for="email" class="form-label text-light">Email address</label> -->
+                    <input type="email" class="form-control bg-dark text-light border-dark" id="email" placeholder="Email or phone number">
+                    </div>
+                    <div class="m-4">
+                    <!-- <label for="password" class="form-label">Password</label> -->
+                    <input type="password" class="form-control bg-dark text-white border-dark" id="password" placeholder="Password">
+                    </div>
+
+                    <div class="m-4 pt-4">
+                        <!-- <a href="home.html"> -->
+                            <button type="button" class="btn btn-danger w-100" >Log In</button>
+                        </a>
+                    
+                        <!-- Responsive wrapper -->
+                        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mt-3">
+                        
+                        <!-- Remember me checkbox -->
+                        <div class="form-check mb-2 mb-sm-0">
+                            <input class="form-check-input" type="checkbox" id="remember">
+                            <label class="form-check-label text-white" for="remember">
+                            Remember me
+                            </label>
+                        </div>
+                    
+                        <!-- Need Help link -->
+                        <a href="#" class="text-light">Need Help?</a>
+                        </div>  
+                        <div class="p-3"></div>
+                        <div class="p-5 px-0">
+                            <p>New to Netflix?   <a href="#" class="text-light "> Sign Up Now</a> </p>
+                            
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+
+
+
+
+
+
+
+
+
 .bg-image {
   position: relative; /* Required for absolute positioning of pseudo-element */
   overflow: hidden; /* Hide any overflow from the pseudo-element */
