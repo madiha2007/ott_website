@@ -28,6 +28,16 @@ const visitorSchema = new mongoose.Schema({
 
 const Visitor = mongoose.model('Visitor', visitorSchema);
 
+// Create a schema for users
+const userSchema = new mongoose.Schema({
+  name: String,
+  email: { type: String, unique: true },
+  password: String,  // For production, hash this!
+});
+
+const User = mongoose.model('User', userSchema);
+
+
 // Log visitor info
 app.post('/log-visitor', async (req, res) => {
     try {
@@ -49,6 +59,32 @@ app.post('/log-visitor', async (req, res) => {
     res.status(500).json({ message: 'Failed to log visitor' });
   }
 });
+
+app.post('/signup', async (req, res) => {
+  try {
+    const { name, email, password } = req.body;
+
+    if(!name || !email || !password) {
+      return res.status(400).json({ message: 'Missing fields' });
+    }
+
+    // Check if email already exists
+    const existingUser = await User.findOne({ email });
+    if(existingUser) {
+      return res.status(400).json({ message: 'Email already registered' });
+    }
+
+    // Create new user (password should be hashed in production)
+    const user = new User({ name, email, password });
+    await user.save();
+
+    res.status(201).json({ message: 'User registered successfully' });
+  } catch (error) {
+    console.error('Signup error:', error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
