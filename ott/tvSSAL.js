@@ -1,4 +1,3 @@
-// ----------------- CARD DATA -----------------
 const cardData = [
   {
     id: "money_heist",
@@ -89,6 +88,7 @@ const cardData = [
     description: "Wednesday Addams investigates a monster mystery. Follows Wednesday Addams' years as a student, when she attempts to master her emerging psychic ability, thwart a killing spree, and solve the mystery that embroiled her parents."
   }
 ];
+
 
 const cardData1 = [
   {
@@ -370,18 +370,15 @@ function createCarousel(containerId, cards, carouselId) {
     container.appendChild(slide);
   }
 }
-
-
-// ----------------- RENDER ALL CAROUSELS -----------------
 createCarousel("carouselContent", cardData, "carousel1");
 createCarousel("carouselContent1", cardData1, "carousel2");
 createCarousel("carouselContent2", cardData2, "carousel3");
 createCarousel("carouselContent3", cardData3, "carousel4");
-createCarousel("carouselContent4", cardData, "carousel5");
-createCarousel("carouselContent5", cardData1, "carousel6");
+createCarousel("carouselContent4", cardData1, "carousel5");
+createCarousel("carouselContent5", cardData2, "carousel6");
 
-// ----------------- MODAL HANDLING -----------------
 const allCards = [...cardData, ...cardData1, ...cardData2, ...cardData3];
+
 
 let selectedCardData = null;
 
@@ -448,14 +445,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
-  document.addEventListener('click', function (e) {
-    if (e.target.classList.contains('watch-now-btn')) {
-      const videoId = e.target.getAttribute('data-id');
-      window.location.href = `video.html?videoId=${videoId}`;
-    }
-  });
   
-
   document.addEventListener("click", function (e) {
     if (e.target.matches("#addToListBtn")) {
       const btn = e.target;
@@ -476,8 +466,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
-  
 
+  
   // Function to update the button style based on list state
 function updateMyListButtonState(button, isInList) {
   if (isInList) {
