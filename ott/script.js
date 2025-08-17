@@ -382,7 +382,7 @@ function createCarousel(containerId, cards, carouselId) {
       const col = document.createElement('div');
       col.className = 'col-4 col-md-3';
       col.innerHTML = `
-       <div class="card card-modal-trigger bg-dark text-white"
+       <div class="card card-modal-trigger navbar text-white"
          data-id="${card.id}"
          data-title="${card.title}"
          data-img="${card.img}"
