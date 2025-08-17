@@ -47,21 +47,17 @@
             <a class="nav-link active" href="myList.html">My List</a>
           </li>
 
-
-          <li class="nav-item dropdown">
-     
-       
-                 <button class="btn dropdown-toggle  nav-link" data-bs-toggle="dropdown"> <i class="bi bi-globe2"></i> <span class="d-none d-sm-inline">Browse by language </span>            </button>
-                 
+          <li class="nav-item dropdown">         
+                 <button class="btn dropdown-toggle  nav-link" data-bs-toggle="dropdown"> 
+                  <i class="bi bi-globe2"></i> <span class="d-none d-sm-inline">Browse by language</span>            
+                </button>                 
                  <ul class="dropdown-menu ">
                     <li class="dropdown-item" >Hindi</li>
                     <li class="dropdown-item" >Marathi</li>
                     <li class="dropdown-item" >Korean</li>
                     <li class="dropdown-item" >Chinese</li>
-                    <li class="dropdown-item" >Spanish</li>
-                    
-                 </ul>
-             
+                    <li class="dropdown-item" >Spanish</li>                    
+                 </ul>             
           </li>
         </ul>
   
@@ -69,18 +65,14 @@
         <form class="d-flex search-bar">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-danger" type="submit">Search</button>
-        </form>
-        
-  
+        </form>          
       </div>
     </div>
   </nav>
 
 <!-- Squid Game -->
   <section class="picture random-section d-none" id="section1"  >
-
     <div class="picture-overlay-text text-center">
-
       <div class="custom-mylist-card" 
       data-title="Squid Game"
       data-img="https://wallpapers.com/images/hd/squid-game-shapes-in-blood-2l6hyo9n941zjbf6.jpg" 
@@ -418,16 +410,12 @@
   <p>&copy; 2025 Netflix SM. All rights reserved.</p>
 </footer>
 
-
-
-  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <script src="script.js"></script>
   <script>
 
-
-      // Fade in CTA when it enters the viewport
+       // This is for the Movies showing in big with trailer and to hide the poster when on the scroll
       window.addEventListener('scroll', function () {
         const cta = document.getElementById('ctaOverlay');
         const rect = cta.getBoundingClientRect();
@@ -436,7 +424,6 @@
           cta.style.animation = 'fadeIn 2s ease forwards';
         }
       });
-
 
       document.addEventListener("DOMContentLoaded", function () {
         const sections = document.querySelectorAll('.random-section');
