@@ -97,18 +97,21 @@
             </div>
             <div class="modal-body">
                 <input type="text" id="editProfileName" class="form-control mb-3">
-                <input type="checkbox" id="editProfileKids" class="form-control mb-3"> Kids Profile
-                
+                <input type="checkbox" id="editProfileKids" class="mb-3"> Kids Profile
+                    <h5>Avatars</h5>
                     <div class="d-flex flex-wrap gap-3" id="avatarChoices">
-                        <img src="user2.jpg" class="avatar-option rounded-circle" data-img="user2.jpg" width="80">
-                        <img src="user3.jpg" class="avatar-option rounded-circle" data-img="user3.jpg" width="80">
-                        <img src="user4.jpg" class="avatar-option rounded-circle" data-img="user4.jpg" width="80">
+                        
+                        <img src="user1.png" class="avatar-option " data-img="user1.png" width="80">
+                        <img src="user2.jpg" class="avatar-option " data-img="user2.jpg" width="80">
+                        <img src="user3.jpg" class="avatar-option " data-img="user3.jpg" width="80">
+                        <img src="user4.jpg" class="avatar-option " data-img="user4.jpg" width="80">
+                        <img src="default.png" class="avatar-option " data-img="default.png" width="80">
                 </div>
 
                     <!-- ✅ Preview block goes here -->
-                <div class="text-center mt-3">
+                <div class="text-center mt-3 border-secondary pt-3">
                     <h6>Selected Profile Picture</h6>
-                    <img id="selectedAvatar" src="default.png" class="rounded-circle" width="100">
+                    <img id="selectedAvatar" src="default.png" class="" width="100">
                 </div>
                 </div>
                
@@ -132,17 +135,23 @@
     let profiles = JSON.parse(localStorage.getItem('profiles')) || [
     { 
       name: 'User 1', 
-      img: 'user1.png',  // replace with your own avatar URL
+      img: 'default.jpg',  // replace with your own avatar URL
       kids: false 
     },
     { 
       name: 'Kids', 
       img: 'kids.jpg',  
       kids: true 
+    },
+    { 
+        name: 'Test User', 
+        img: 'images/user1.png',
+        kids: false
     }
+
 ];
 
-    // let selectedProfileIndex = null;
+    let selectedProfileIndex = null;
     const profilesContainer = document.getElementById('profilesContainer');
 
     function renderProfiles() {
@@ -154,15 +163,18 @@
                 <div class="profile-card" data-index="${i}">
                     <img src="${p.img}" alt="${p.name}">
                     ${p.kids ? '<div class="kids-badge">KIDS</div>' : ''}
-                    <div>${p.name}</div>
+                    <div>${p.name} ${p.kids ? " 👶" : ""}</div>
                     <div class="manage-btns mt-3">
                         <button class="btn btn-sm btn-warning edit-btn">Edit</button>
                         <button class="btn btn-sm btn-danger remove-btn">Remove</button>
                     </div>
                 </div>
             `;
+            console.log("After Save:", profiles);
             profilesContainer.appendChild(col);
         });
+
+   
         // Add profile card
         const addCol = document.createElement('div');
         addCol.className = 'col-auto';
@@ -216,20 +228,47 @@ document.querySelectorAll('.avatar-option').forEach(img => {
     });
 });
 
+
 // ✅ Save changes from modal
 document.getElementById('saveEditBtn').addEventListener('click', () => {
-    // if (selectedProfileIndex !== null) {
-        profiles[selectedProfileIndex].name = document.getElementById('editProfileName').value;
-        profiles[selectedProfileIndex].kids = document.getElementById('editProfileKids').checked;
-        profiles[selectedProfileIndex].img = document.getElementById('selectedAvatar').src;
-        
-        saveProfiles();
-        renderProfiles();
-    // }
+  if (selectedProfileIndex !== null) {
+    profiles[selectedProfileIndex].name = document.getElementById('editProfileName').value;
+    profiles[selectedProfileIndex].kids = document.getElementById('editProfileKids').checked;
+    profiles[selectedProfileIndex].img = document.getElementById('selectedAvatar').src;
 
-    // Close modal
-    bootstrap.Modal.getInstance(document.getElementById('editProfileModal')).hide();
+    saveProfiles();
+    renderProfiles();
+
+    selectedProfileIndex = null;
+    console.log("before Save:", profiles);
+
+    const modal = bootstrap.Modal.getInstance(document.getElementById('editProfileModal'));
+    if (modal) modal.hide();
+  }
 });
+
+// document.getElementById('saveEditBtn').addEventListener('click', () => {
+//   if (selectedProfileIndex !== null) {
+//     profiles[selectedProfileIndex].name = document.getElementById('editProfileName').value;
+//     profiles[selectedProfileIndex].kids = document.getElementById('editProfileKids').checked;
+
+//     // ✅ Save the avatar correctly (from selectedAvatar.src)
+//     const avatar = document.getElementById('selectedAvatar').getAttribute('src');
+//     profiles[selectedProfileIndex].img = avatar;
+
+//     // Save and re-render
+//     saveProfiles();
+//     renderProfiles();
+
+//     // Reset selection
+//     selectedProfileIndex = null;
+
+//     // ✅ Close modal properly
+//     const modalEl = document.getElementById('editProfileModal');
+//     const modal = bootstrap.Modal.getInstance(modalEl);
+//     if (modal) modal.hide();
+//   }
+// });
 
 
       // Manage Profiles Toggle
