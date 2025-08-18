@@ -58,7 +58,14 @@
   <div class="row g-4" id="profilesContainer"></div>
 
   <!-- Optional sub-page -->
-  <iframe id="myListFrame" src="myList.html"></iframe>
+   <div class="container my-5">
+  <h2 class="mb-3 text-white">My List</h2>
+  <div id="profileMyList" class="d-flex overflow-auto gap-3 pb-3">
+    <!-- Cards will be injected here dynamically -->
+  </div>
+</div>
+
+  
 </div>
 
 <!-- Edit Profile Modal -->
@@ -306,6 +313,37 @@ editProfileModalEl.addEventListener("hidden.bs.modal", () => {
 
 /* ---------- Init ---------- */
 renderProfiles();
+
+
+  const profileList = JSON.parse(localStorage.getItem("myList")) || [];
+  const profileContainer = document.getElementById("profileMyList");
+
+  function renderProfileList() {
+    profileContainer.innerHTML = "";
+
+    if (profileList.length === 0) {
+      profileContainer.innerHTML = "<p class='text-white'>No items in your list yet.</p>";
+      return;
+    }
+
+    profileList.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "card bg-dark text-white";
+      card.style.minWidth = "180px";   // ensures horizontal layout
+      card.style.flex = "0 0 auto";    // prevents shrinking
+
+      card.innerHTML = `
+        <img src="${item.img}" class="card-img-top rounded" alt="${item.title}" style="height: 250px; object-fit: cover;">
+        <div class="card-body p-2">
+          <h6 class="card-title mb-1">${item.title}</h6>
+          <p class="card-text"><small>${item.genre}</small></p>
+        </div>
+      `;
+      profileContainer.appendChild(card);
+    });
+  }
+
+  renderProfileList();
 </script>
 </body>
 </html>
