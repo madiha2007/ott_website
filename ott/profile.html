@@ -143,11 +143,7 @@
       img: 'kids.jpg',  
       kids: true 
     },
-    { 
-        name: 'Test User', 
-        img: 'images/user1.png',
-        kids: false
-    }
+    
 
 ];
 
@@ -193,6 +189,21 @@
 
     // Initial render
     renderProfiles();
+
+         // Manage Profiles Toggle
+      document.getElementById("manageBtn").addEventListener("click", function () {
+        document.body.classList.toggle("manage-mode");
+    });
+    // document.getElementById('manageBtn').addEventListener('click', () => {
+    //     document.getElementById('profilesContainer').classList.toggle('manage-mode');
+    // });
+
+    // Logout
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+        alert('Logging out...');
+    });
+
+
 
     // Event Delegation
     profilesContainer.addEventListener('click', (e) => {
@@ -271,47 +282,7 @@ document.getElementById('saveEditBtn').addEventListener('click', () => {
 // });
 
 
-      // Manage Profiles Toggle
-      document.getElementById("manageBtn").addEventListener("click", function () {
-        document.body.classList.toggle("manage-mode");
-    });
-    // document.getElementById('manageBtn').addEventListener('click', () => {
-    //     document.getElementById('profilesContainer').classList.toggle('manage-mode');
-    // });
-
-    // Logout
-    document.getElementById('logoutBtn').addEventListener('click', () => {
-        alert('Logging out...');
-    });
-
-//     document.querySelectorAll('.avatar-option').forEach(img => {
-//   img.addEventListener('click', () => {
-//     // remove "selected" style from others
-//     document.querySelectorAll('.avatar-option').forEach(i => i.classList.remove('border', 'border-3', 'border-primary'));
-    
-//     // add highlight to clicked image
-//     img.classList.add('border', 'border-3', 'border-primary');
-    
-//     // update preview image
-//     document.getElementById('selectedAvatar').src = img.dataset.img;
-//   });
-// });
-//  // Save Edit Changes
-// document.getElementById('saveProfileBtn').addEventListener('click', () => {
-//   const chosenImg = document.getElementById('selectedAvatar').src;
-  
-//   // Example: update main profile picture on page
-//   document.getElementById('profilePic').src = chosenImg;
-
-//    profiles[selectedProfileIndex].name = document.getElementById('editProfileName').value;
-//         saveProfiles();
-//         renderProfiles();
-       
-//   // Close modal
-//   var modal = bootstrap.Modal.getInstance(document.getElementById('editProfileModal'));
-//   modal.hide();
-// });
-    
+ 
 
     // document.getElementById('saveEditBtn').addEventListener('click', () => {
     //     profiles[selectedProfileIndex].name = document.getElementById('editProfileName').value;
