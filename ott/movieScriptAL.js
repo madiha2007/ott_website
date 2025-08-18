@@ -1,181 +1,178 @@
 const cardData = [
-  {
-    id: "money_heist",
-    title: "Money Heist",
-    img: "https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABUmLgKmFrl2Tq5jDmIBIdp-L6_fRFsTE7KslWARHa4Yb8f8q32MOBiACOoYAGFn4k8Pc_1P7QlN-F41Btkx4q8bp2gg0yA4kCWxamkIcyRVtyIoln6PDWQVi1_IAZHe4PALj.jpg?r=326",
-    genre: "Action, Drama",
-    description: "A criminal mastermind plans the biggest heist in history. An unusual group of robbers attempt to carry out the most perfect robbery in Spanish history - stealing 2.4 billion euros from the Royal Mint of Spain.",
-    videoId:"_InqQJRqGW4"
-  },
-  {
-    id: "alice_borderland",
-    title: "Alice in Borderland",
-    img: "https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABY9MbR1kXcEjxQ3339N7chhCF9aaFDaQ7rvuYwI5RnTlNgAk1BmGN4tYZCxNuoOIivaRl-Z_siJeRMoBFisErN7PnAT1Q-eL5Ld8etFRR3K25MLAcI7jeOkkEuXbtOaOen-Z.jpg?r=400",
-    genre: "Thriller, Sci-Fi",
-    description: "A group of friends find themselves in a deadly game. Arisu - a listless, jobless and video-game-obsessed young man - suddenly finds himself in a strange, emptied-out version of Tokyo in which he and his friends must compete in dangerous games in order to survive.",
-    videoId:"49_44FFKZ1M"
-  },
-  {
-    id: "all_of_us_dead",
-    title: "All of us are dead",
-    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABdOdSuAwEvu_jZKZr4g_GHiP3YpfGSkqDi5yisAEpNVwAv-raxL1fcezQZn4aEu7ixtzlsbRg2GlY2_dkqo9QJyaJgz0Qkr1tH76wgOK9ulsSgZDe_QhgqxBTPeTJgIRGGSI.jpg?r=d40',
-    genre: "Horror, Thriller",
-    description: "A zombie outbreak traps students in their high school. A high school becomes ground zero for a zombie virus outbreak. Trapped students must fight their way out or turn into one of the rabid infected.",
-    videoId:"IN5TD4VRcSM"
-  },
-  {
-    id: "kpop_demon_hunters",
-    title: "Kpop Demon Hunters",
-    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRDc-cnVqrssAwUcUwKtpmcyKLgBnI2FEpjrCjLZT6LOnVktgaNSYtXCCvBGW0EWbAKjP1mJoAZ6JU72PC1a_tA9Rp31i5KJRvZJybfBtiP-pUYy96AquisPovRdV8slQAmepGcsDVQzcM_qUDzdZGPTTIczWyu8QfazIjAMWsz35zvd3AQhjHy1Q_ozGdjNkOkboY-ooQJdFTtx1jwkjQbrYsz-9S77cVmcKnOcxs9XgFMDeQwoi92kLOE0kFn5Nk8.jpg?r=b78',
-    genre: "Action, Musical",
-    description: "K-pop stars become demon hunters in secret. A world-renowned K-Pop girl group balance their lives in the spotlight with their secret identities as demon hunters.",
-    videoId:"bTtC6CRWKW8"
-  },
-  {
-    id: "vincenzo",
-    title: "Vincenzo",
-    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABSitjBhxTkmKXKaLTESIa5iQ58nAyggjQUOYupjSwRe4gUR-_YAITsOHD6tTTZNuBfh0ssBesZYcvf9X7kTOjYj9LklBcD2gEr8rFmNxUtSBec4jGBl4Faf5hCl09TqioZr0.jpg?r=c8b',
-    genre: "Drama, Action",
-    description: "A Korean-Italian mafia lawyer takes on corruption. During a visit to his motherland, a Korean-Italian Mafia lawyer gives an unrivaled conglomerate a taste of its own medicine with a side of justice."
-  },
-  {
-    id: "queen_of_tears",
-    title: "Queen of Tears",
-    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABauaf_pjBXX9G_dl-IYBIWLYWexsTpaSGU0ulKaCMLmsn_ew6nmLGev9nFJJ7bRDMaKAGE0G2Egdgy30VgHbVI7c0-IeOxmMp5j-0AoMIuToZbPzDmGzCQjZIN_OLvtEARjE.jpg?r=3e4',
-    genre: "Romance, Comedy",
-    description: "A royal couple navigates love and loss. A miraculous love story of a married couple overcoming a dizzying crisis."
-  },
-  {
-    id: "never_have_i_ever",
-    title: "Never have I Ever",
-    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABfyfO998JNWAx6snVHf7_ydlwuk8I1tPQCttH_W4OCzmhkWufyFODQaEnnftder7T2geYuzZuznJiFtGd8GxlgCATqrUxV8CkgdJkuyboFlkdXKsAmUwSH4kB8UeD0NT7SVp.jpg?r=fb2',
-    genre: "Romance, Comedy",
-    description: "Teen drama comedy of an Indian-American girl. The complicated life of a first-generation Indian-American teenage girl, inspired by Mindy Kaling's own childhood."
-  },
-  {
-    id: "one_piece",
-    title: "One Piece",
-    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABaSul_dyl7Vp3dMc_7KoET72knNATy8bgAjoJj9KpYYeqK3RaxRd2-S1pIqDUVsb74gPp5fiAYNFV5iNq-LYmTLFuZBVn3cOmyRhtJL0bHAqejMOv3T0kslLRDKvH6WujDZd.jpg?r=4fc',
-    genre: "Adventure, Fantasy",
-    description: "Monkey D. Luffy sails the Grand Line for treasure. Rubber-bodied dreamer Monkey D. Luffy gathers an eclectic pirate crew and braves the perilous Grand Line, battling tyrants and monsters to claim the legendary 'One Piece' and become King of the Pirates."
-  },
-  {
-    id: "stranger_things",
-    title: "Stranger Things",
-    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABc_QuOdHzJa9WwBiBlfEvpcFRKq9TAIgdJv0KoSilQZ8JMEsdCdQS4VGD6gwVg2CYCYNhTJIald5uVsXbMf-3QaF1k1fnFRbovQr6ddWUtkSOUzil_dtlD1wOIeD_pSI6pAx.jpg?r=c68',
-    genre: "Horror, Supernatural",
-    description: "Kids face creatures from another dimension. In 1980s Indiana, a group of young friends witness supernatural forces and secret government exploits. As they search for answers, the children unravel a series of extraordinary mysteries."
-  },
-  {
-    id: "weak_hero",
-    title: "Weak Hero",
-    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABVHwufC2TYmY7piel8bPWwvkzFWTSDSkw-rDAfAjybbU9gEVzlaTr59OKGzLGO91NafROT3m6kJGGMGV4WtWpTd8Cxm2vbVuKUajTVW6HOcm0zWj63qcr7HBxl_I5eAVHkDb.jpg?r=adc',
-    genre: "Action, Thriller",
-    description: "A quiet genius stands up to bullies in brutal ways. Yeon Shi-eun is a model student, who ranks at the top at his school. Physically, he appears like a weak boy, but, by using his smarts, tools, and psychology, he fights against violence that takes place inside and outside of his school."
-  },
-  {
-    id: "lucifer",
-    title: "Lucifer",
-    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABV7ZN16RyF_NX1jifDL0gUttbuv6g7dMEFopItw0DTCDV8GpTb0-9A30fpIkA7KrqihYndFFyYnTQSGOQrkL2K00kv6NUfoUWq4DlcZOYkCMoVwcuZFn9WkQLCg_HQoQkpM2.jpg?r=1c3',
-    genre: "Action, Comedy",
-    description: "The devil helps the LAPD solve crimes. Lucifer Morningstar has decided he's had enough of being the dutiful servant in Hell and decides to spend some time on Earth to better understand humanity. He settles in Los Angeles - the City of Angels."
-  },
-  {
-    id: "wednesday",
-    title: "Wednesday",
-    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABc5URtqG36cHmUzXPrn9qaN1prCdZB3Llrhe8w4fvPKUxMp1phgN738mP1ctTe9QshMH8f0NlK-GdSAZDYJpXtvofUffd8o4BQuB7AKZogG-KbG0kR5H5w9kp3pXbogjGHSN.jpg?r=082',
-    genre: "Horror, Comedy",
-    description: "Wednesday Addams investigates a monster mystery. Follows Wednesday Addams' years as a student, when she attempts to master her emerging psychic ability, thwart a killing spree, and solve the mystery that embroiled her parents."
-  }
+    {
+      id: "crew",
+      title: "Crew",
+      img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABSaxW7HqP8BldNO2q-jw9IpV0TUDjtjUmhXvK8nKLXcepLsdypyTzzB5QQqNL6Ow8crexz9qWkKeP9lVBcVPC3fb374Gui5CEC8.jpg?r=7dd",
+      genre: "Quirky, Comedy, Bollywood",
+      description: "When their airline faces bankruptcy, three desperate flight attendants resort to a high-flying gold smuggling ring to keep their careers afloat."
+    },
+    {
+      id: "shehzada",
+      title: "Shehzada",
+      img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABY0y6kuT4OM_py9HjB_q4ZoTkCx6GpQWfvoBq3s8H1rnnZMG6VNW3wFPA2dgYzL6g_hr3ZAMYVowIXK3p1CeQXpU2THTv-b6LOw.jpg?r=9f9",
+      genre: "Exciting, Comedy, Bollywood",
+      description: "After realizing he was switched at birth by a conniving father, a rakish Bantu's life is upended when he becomes the heir to a billionaire."
+    },
+    {
+      id: "aap_jaisa_koi",
+      title: "Aap Jaisa Koi",
+      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABVn7j1EiWUjaAB7alll1E4pvVifNPtHrlaJylpZsdCd3M6TmdpeZhnN6GCNTHSD9lc7QydD1C4jNjBl1j_AbxOAFmuUF8qOTqUsYvC-TsF8YxxpPz-HjRa7a-BFd0TZP-m-FVu72MldWU1OAYjEsR-hXXRWZBk_84ZljattGYukuXfdYm3aAevEmGuGbKQUItSoGxRv2tngbSG0IRVo6gTRY9uotwUpKL6VxS49IOUrpAOODgZ9kvwUzmHy4TL5Cje0.jpg?r=7aa',
+      genre: "Drama, Comedy, Bollywood",
+      description: "Shrirenu lives by tradition. Madhu lives unapologetically. When their paths cross, a tender romance unfolds — awkward, sweet but shadowed by patriarchy."
+    },
+    {
+      id: "dream_girl_2",
+      title: "Dream Girl 2",
+      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRbsl7e8nMksd4cUpSPml40BxI-N9GatiKO9kcR3Wj35KQN0KshmQOCmy1BB9-WtCVvUSRJEhpqW595IbAeAjkvPkI4zZIZSPnw.jpg?r=e35',
+      genre: "Goofy, Romantic, Comedy, Bollywood",
+      description: "Karam secretly turns his female alter ego into a dancer and woos a millionaire's son in hopes of paying family debts and impressing his fiancée's father."
+    },
+    {
+      id: "tu_jhooti_main_makkaar",
+      title: "Tu Jhoothi Main Makkaar",
+      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABXdseW6oX8Qw5IDoCFVzlqOoZOBZ6v7kkpykqfpJfsyTvUGV5BgSp-U1-oz4z-umy3nUaUdevsEC-Fpy4nIFK7HV941nc1YJDsY.jpg?r=b0a',
+      genre: "Bollywood, Romantic, Comedy",
+      description: "To earn extra cash, Mickey helps couples break up — but life gets complicated when he falls for Tinni, a career woman with an independent streak."
+    },
+    {
+      id: "doctorg",
+      title: "Doctor G",
+      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABSYrXdObr8v0pQkFqBhsl55wJXb8c-ANYCQm5VUrW-9rzJamOTW2nk7BsQuj9lYpn7811nW3XLq0UxtOBRL5upABblPJYvwI17k.jpg?r=6e4',
+      genre: "Quirky, Comedy, Drama",
+      description: "Medical student Uday Gupta grudgingly joins an all-women's gynecology class, but being a good doctor — and person — rests on pondering his prejudice."
+    },
+    {
+      id: "zindagi_na_milegi_dobara",
+      title: "Zindagi Na Milegi Dobara",
+      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABczg8ArwfH0ZvTy-pUhMnnOeCFj2c5o9G_0RuOWsUDC0hn39R2UyGn3NC73B7ZTxYrSyipRyNs9JPvshxsjk9LSkc9c0-uuivew.jpg?r=3f4',
+      genre: "Bollywood , Romance, Drama",
+      description: "Three friends on an adventurous road trip/bachelor party in Spain learn some lessons about themselves and each other that will change them forever."
+    },
+    {
+      id: "yeh_jawaani_hai_deewani",
+      title: "Yeh Jawaani Hai Deewani",
+      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABd31BvvySOebfiD3rvENzh6OlXUaEhgBRqlQJT9Mmk_R3fc4a58124SxYK-OfCN41VmVFwPSG40NaWE8cqRJAlA7gIVR00Wt2N8.jpg?r=8c0',
+      genre: "Emotional, Romantic, Bollywood",
+      description: "On a trekking trip, an introvert falls for a charming ex-classmate, whose thirst for adventure drives them apart. Years later, their paths cross again."
+    },
+    {
+      id: "dear_zindagi",
+      title: "Dear Zindagi",
+      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABb3bgUwc0rmOycDPfJ1_35tCWd3zgVIKDRwr_8u6kBaGurhAx-5YrNVsb4Kdomhxz1HWJqkfKC82PiLBiHxXNGhAxVcxJyJvFcE.jpg?r=d2a',
+      genre: "Drama, Bollywood",
+      description: "A young cinematographer with a bright professional future and a lack of empathy learns the importance of balancing ambition with humanity.."
+    },
+    {
+      id: "ginny_weds_sunny",
+      title: "Ginny Weds Sunny",
+      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABSfcc3kvh29G4AeNm3OBpOtKFfQCoD1hzwbUTr3fmCZYgPSZNhKUf1PItuzrMqwj4D52jrW_wPFBeJSO38h89tGfx2roIhnDWZiOeOYStDzUZtG6Ewe2Vuop6ifmD9w_PpZa.jpg?r=600',
+      genre: "Charming, Feel-good, Comedy",
+      description: "Eager to marry but constantly rejected by women, a bachelor hopes to win over a former crush by accepting help from an unlikely source: her mother."
+    },
+    {
+      id: "veere_di_wedding",
+      title: "Veere Di Wedding",
+      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABevA5ZcsVZbYRjosb_vDAW1pVcayermF3gX8yTfykMhMDq7j7dZofl3QGKX4DMGTKDYJJc5i2lnaUfh5pUQqPJ_mkOXYlZe-_o8.jpg?r=ff0',
+      genre: "Comedy, Bollywood, Raunchy",
+      description: "Four best friends come together after one gets engaged, working through relationship troubles, family expectations and marriage drama."
+    },
+    {
+      id: "soty",
+      title: "Student of the Year",
+      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABb7zRdlz15595ImInMQpc0fXTT4mHKBfFxAc8vGhlq-6vLd9TqN1ErhMUppDoD7LRHWOy-6n-DFAp8H3SioFMakS6aXH_Va0D3c.jpg?r=d97',
+      genre: "Emotional, Romantic, Bollywood, Drama",
+      description: "Rivals turned friends find their bromance tested when they battle it out to win not only a grueling school competition, but also the same girl's heart."
+    }
 ];
 
 
 const cardData1 = [
   {
-    id: "kpop_demon_hunters",
-    title: "Kpop Demon Hunters",
-    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRDc-cnVqrssAwUcUwKtpmcyKLgBnI2FEpjrCjLZT6LOnVktgaNSYtXCCvBGW0EWbAKjP1mJoAZ6JU72PC1a_tA9Rp31i5KJRvZJybfBtiP-pUYy96AquisPovRdV8slQAmepGcsDVQzcM_qUDzdZGPTTIczWyu8QfazIjAMWsz35zvd3AQhjHy1Q_ozGdjNkOkboY-ooQJdFTtx1jwkjQbrYsz-9S77cVmcKnOcxs9XgFMDeQwoi92kLOE0kFn5Nk8.jpg?r=b78',
-    genre: "Action, Musical",
-    description: "K-pop stars become demon hunters in secret. A world-renowned K-Pop girl group balance their lives in the spotlight with their secret identities as demon hunters."
-  },
-  {
-    id: 'trainwreck',
-    title: 'Trainwreck: Poop Cruise',
-    img: 'https://dnm.nflximg.net/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABWFiZZ41GGG3GbYUIc1LzYIUNBmuNpWdkJ3fnCIQHwbIuMrw_hjul9WJqKVsZfQ_P8ZvpMA7foyJjSaL4wfGiB1fKx-K7WlaAW8Wb8R4GX_oCVSP7PxqSg3-FeVXHreBOVRb.jpg?r=3fa',
-    genre:'Documentary ,Real life events',
-    description:'A luxury cruise turns disastrous when an engine fire cuts power to the entire ship. 4,000 passengers face failing systems, sewage leaks, and food shortages, sparking passenger unrest and media coverage of "The Poop Cruise."'
-  },
-  {
-    id: 'straw',
-    title: 'Straw',
-    img: 'https://dnm.nflximg.net/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABbhGGiTzSlOCFBL6eXtFGoiminkUkjB6PnYWNODTXczH4mY6GuKM30XixU2tui77nCM76ga3nRHodeVgEtYMPwmSR759BBIq3Fhi5DV2dtvZ6mJ4dfedHpi3eXCXaOXkNIG7.jpg?r=809',
-    genre:'Psychological, Thriller',
-    description:'A single mother navigates a series of unfortunate events, leading her down an unforeseen path where she becomes embroiled in a situation she never envisioned, finding herself at the center of suspicion in an indifferent world.'
-  },
-  {
-    id: 'the_intern',
-    title: 'The Intern',
-    img: 'https://dnm.nflximg.net/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABempONPM10G3shXnqkR3wRcw4KQi0O5VUlw9hISzjhn2b78CpyYWvsS9IQB4ICgmZ4kgTQQLZaUa6i8wLR9jwhZK3uZPWuUEUdo.jpg?r=d7e',
-    genre:'Comedy , Romance',
-    description:"Seventy-year-old widower Ben Whittaker has discovered that retirement isn't all it's cracked up to be. Seizing an opportunity to get back in the game, he becomes a senior intern at an online fashion site, founded and run by Jules Ostin."
-  },
-  {
-    id: 'land_of_bad',
-    title: 'Land of Bad',
-    img: 'https://dnm.nflximg.net/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABXU2CNHCK2qrvBC9jJP-7qMC3IgkN9gflPHOYwTyjjx6JaOYFgQAR8_LDTiLbzXqAbfL-TXxGGVgtq8qvb8vRUQdCvS25Psf-Mo.jpg?r=a7d',
-    genre:'Action ,Thriller',
-    description:'A Delta Force team fights for survival as an Air Force drone pilot becomes its eyes in the sky'
-  },
-  {
-    id: 'fate_of_furious',
-    title: 'Fate of Furious',
-    img: 'https://dnm.nflximg.net/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABXTi3YtZgBaBmttxbsO8HQI63MnKTrKJoukrngTE0HBLzUUH2zA4807rccAg2JUyvJw3d0tsZjzyqjvjpK_3184r9oJpC7baxeM.jpg?r=3a2',
-    genre:'Action ,Comedy',
-    description:'When a mysterious woman seduces Dominic Toretto into the world of terrorism and a betrayal of those closest to him, the crew face trials that will test them as never before.'
-  },
-  {
-    id: 'infinite',
-    title: 'Infinite',
-    img: 'https://dnm.nflximg.net/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABVjjyAHZclC5dwBBvyjP4q3_PL8wuTDtubKK4JQuo4WzsrS4eRzlnXn8lCejJl4aAYcD3kW5Rj7jjzSx11U5KIdEUfIMiMuOn3M.jpg?r=7c4',
-    genre:'Action ,Sci-fi',
-    description:'A man discovers that his hallucinations are actually visions from past lives.'
-  },
-  {
-    id: 'the_old_guard',
-    title: 'The Old Guard',
-    img: 'https://dnm.nflximg.net/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABZMz3ITTm4xtxwrdOH1OZLO-XxDGuIniTghMv3YDXk7gftic_8vImf7wQ7_y7m0hbFI7LxDoRvXhEJXMo6fMQBlrTjxTNF86sLxM9BxcVO6DrTenk9AXCSFKitbfq6q3Hfpg.jpg?r=75c',
-    genre:'Action , Fantasy',
-    description:'A covert group of tight-knit mercenaries with an inability to die have fought to protect the world for centuries. But when their abilities are suddenly exposed, they need to eliminate the threat of those who seek to replicate their power.'
-  }
-  ,
-  {
-    id: 'sing',
-    title: 'Sing',
-    img: 'https://dnm.nflximg.net/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABZ1e8IVzElN95RAGnrSEtlK5UKoAgIcH4yAbPxiG8gFdeQrL_FrgYLCyQcvjPMosNLQK3JIz0xALu2ZYUVmX6FgNC9LK5ynWT4A.jpg?r=df4',
-    genre:'Musical , Comedy',
-    description:"In a city of humanoid animals, a hustling theater impresario's attempt to save his theater with a singing competition becomes grander than he anticipates even as its finalists find that their lives will never be the same."
-  },
-  {
-      id: 'raid_2',
-      title: 'Raid 2',
-      img: 'https://dnm.nflximg.net/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABcUX3kCd9YueT8M2ZIXL5Ds-y2kDwNOHXKMxSYboksYSVj4LnQNFhr7Fcd8OHIIHSskwm1-G1NtwTtYGEJnLn4VW2s15CxY8qSE.jpg?r=f75',
-      genre:'Action , Thriller',
-      description:"In 1989 Rajasthan, IPS officer Patnaik raids a palace but fails. After requesting a bribe, he's transferred to Bhoj, where he investigates Dada Bhai, a respected local figure. Suspended after a failed raid, he uncovers hidden truths."
+      id: "dolittle",
+      title: "Dolittle",
+      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABboptFCpZtqmpBesEh4WM5R7CQT6V592Ktj6pGuOxahgWp4adDxjapUNxzSGAYwQ1_k5wVABEV1dqzPg9g5jLD18kZBgFDHn_ijPyIEq9E_Yf2y5I3UB2D18tvBWmcGETh2v3DBKdA9yf85hkVbKQ2X4KZPlLaPJkVg.jpg?r=f9d',
+      genre: "Family, Comedy, US",
+      description: "When Queen Victoria falls ill, the reclusive Dr. Dolittle, his young apprentice and his animal friends set sail on an epic quest to find a magical cure.."
     },
     {
-      id: 'exterritorial',
-      title: 'Exterritorial',
-      img: 'https://dnm.nflximg.net/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABVjss7LlfolpJWuDPeuYDnWZZpVSNxATncak2_BbfRKT-6LMurQflM9xhi5FAQLi6VvBuzyQjC7JREMeeJs_im97bm0MhrCtLJQOr5hnYyrnVCcBwX5DBJuKIA1A6CXhLakb.jpg?r=76e',
-      genre:'Thriller ,Drama',
-      description:"When a soldier's son vanishes at a US consulate, she illegally remains on the premises to search for him, unknowingly entangling herself in a dangerous conspiracy."
+      id: 'kungfu_panda_4',
+      title: 'Kung Fu Panda 4',
+      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABdM-Iwq3IrgPDL11bb4YJ3s-bKPxPBkmyv06CpSv7Pq_dG8zDyo8ga0h9hGN0K44RxOOGeHqpzTp2eVD_vtzpBE61l3odQvM8_cPw9oiH_MSQmOKqxMWlWWnADIQhZ5ssUjd85qPZ7sQNrNKdmJogGuZfuHn297t-I2MZ8CS4OdC.jpg?r=d64',
+      genre:'Feel-good, Family, Animation',
+      description:'Po kicked butt as the Dragon Warrior, and he thinks he may have found his successor – if they can defeat a new villain with shapeshifting powers.'
     },
     {
-      id: "a_widows_game",
-      title: "A Widow's Game",
-      img: 'https://dnm.nflximg.net/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABbEWAC_QeolWpGjlEDqNOCbpMIGAQpOGIeTm9QTKYjXS9YZelSCSoNZDKpZ_JHQZ9OEIQLOPi7QojyHHlD3kc6Fbu96qIsTngtghWgqIhlqVaHzFTUwbQmFOpsUq03t9V6yl.jpg?r=4f2',
-      genre:'Crime , Mystery',
-      description:"A murder mystery about a young widow who is the prime suspect in her husband's stabbing death."
+      id: 'my_oxford_year',
+      title: 'My Oxford Year',
+      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABQp5B0LdDWm1IgOCX3lCC4wZcftd-YdXghgxN0g4Je6baj0ZcC86tOn8QJoLikzJDyEWHoTYX5J_TdMAi4axJG9c0954gmyWw1W3D8H6vz2uLjg6NYhkJZZv1TwxGypEzsh7QshhywBglQrgeOzy6Mi5kw7V7B4geiJYB6rQ-NxbID8dkMDkrS6JA-W3zkdLDNHqddk0MGtNyKiwZwEpaJP58uOQC_3fuJ6gsa7lIJhEdRg195zmrFU2yN05D-bTZRA.jpg?r=63b',
+      genre:'Rom-com, Drama, Comedy',
+      description:'An ambitious American fulfilling her dream of studying at Oxford falls for a charming Brit hiding a secret that may upend her perfectly planned life.'
+    },
+    {
+      id: 'the_intern',
+      title: 'The Intern',
+      img: 'https://dnm.nflximg.net/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABempONPM10G3shXnqkR3wRcw4KQi0O5VUlw9hISzjhn2b78CpyYWvsS9IQB4ICgmZ4kgTQQLZaUa6i8wLR9jwhZK3uZPWuUEUdo.jpg?r=d7e',
+      genre:'Comedy , Romance',
+      description:"Seventy-year-old widower Ben Whittaker has discovered that retirement isn't all it's cracked up to be. Seizing an opportunity to get back in the game, he becomes a senior intern at an online fashion site, founded and run by Jules Ostin."
+    },
+    {
+      id: 'the_school_of_good_and_evil',
+      title: 'The School of Good and Evil',
+      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABUCc1z7CdoSA7UpNxEULxX00-VOiHyXpsBfTmnGzXQvCQ1SeEwbKkZ8hlCACDBCoMgjRGroDfIvg4n4BQOUEmeuBlL9snzFKkjdpV27w7ulw4Bd5xS4G-D6PfFZxFKzNr6uc.jpg?r=606',
+      genre:'Quirky, Fantasy, Family, Teen',
+      description:"Best friends Sophie and Agatha find their bond put to the test when they're whisked away to a magical school for future fairy-tale heroes and villains."
+    },
+    {
+      id: 'fate_of_furious',
+      title: 'Fate of Furious',
+      img: 'https://dnm.nflximg.net/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABXTi3YtZgBaBmttxbsO8HQI63MnKTrKJoukrngTE0HBLzUUH2zA4807rccAg2JUyvJw3d0tsZjzyqjvjpK_3184r9oJpC7baxeM.jpg?r=3a2',
+      genre:'Action ,Comedy',
+      description:'When a mysterious woman seduces Dominic Toretto into the world of terrorism and a betrayal of those closest to him, the crew face trials that will test them as never before.'
+    },
+    {
+      id: 'infinite',
+      title: 'Infinite',
+      img: 'https://dnm.nflximg.net/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABVjjyAHZclC5dwBBvyjP4q3_PL8wuTDtubKK4JQuo4WzsrS4eRzlnXn8lCejJl4aAYcD3kW5Rj7jjzSx11U5KIdEUfIMiMuOn3M.jpg?r=7c4',
+      genre:'Action ,Sci-fi',
+      description:'A man discovers that his hallucinations are actually visions from past lives.'
+    },
+    {
+      id: 'the_old_guard',
+      title: 'The Old Guard',
+      img: 'https://dnm.nflximg.net/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABZMz3ITTm4xtxwrdOH1OZLO-XxDGuIniTghMv3YDXk7gftic_8vImf7wQ7_y7m0hbFI7LxDoRvXhEJXMo6fMQBlrTjxTNF86sLxM9BxcVO6DrTenk9AXCSFKitbfq6q3Hfpg.jpg?r=75c',
+      genre:'Action , Fantasy',
+      description:'A covert group of tight-knit mercenaries with an inability to die have fought to protect the world for centuries. But when their abilities are suddenly exposed, they need to eliminate the threat of those who seek to replicate their power.'
     }
+    ,
+    {
+      id: 'sing-thriller',
+      title: 'Sing-Thriller',
+      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABV92Vf9puEIotjYg0gRn7VqbUkdtryjPmLFhMEfiKmy8ATtH1fvRr4yJ7vnd8gbZY1AydseGf3Q6Cixh4zWmbkbKInW-ctkN1yo4zBWSVNjb7ZEQWclwe0hGe_qdknqiQ1za.jpg?r=00f',
+      genre:'Musical , Comedy',
+      description:'Buster Moon dreams up a star-studded spectacle set to Michael Jacksons "Thriller" in this animated short featuring characters from the hit "Sing" films.'
+    },
+    {
+        id: 'we_can_be_heroes',
+        title: 'We Can Be Heroes',
+        img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABdya4_wM5qg0gbK9BOniNgbcYbkSchEnUOEgeuBjZVZ4adD1XncTZ3usxS2gbkbjDbcwUa4428AlKfcQ1eeYDd8pzKDjKIcVfh2y4eOOVXTbRlWyWgCwKcEAs1QmMbnzWjTf.jpg?r=0fd',
+        genre:'Family, Children, Comedy',
+        description:"When alien invaders capture Earth's superheroes, their kids must learn to work together to save their parents — and the planet."
+      },
+      {
+        id: 'the_amazing_spider-man',
+        title: 'The Amazing Spider-man',
+        img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABf2zczHI80brljN8c5jlbePfAJeb6K-yr_6K0580dd5OQ61GEOHcs05a-WaDSVDoWmxPuog9hqMj2G0GazfBul6IlBbCFQ0rv_w.jpg?r=a20',
+        genre:'Sci-fi, Action, Adventure',
+        description:"Andrew Garfield stars as Peter Parker, a high schooler learning to wield new powers while uncovering family secrets and battling a familiar archvillain."
+      },
+      {
+        id: "venom_the_last_dance",
+        title: "Venom: The Last Dance",
+        img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABcSgv0LeZ0fkOUz3vTnkqIwdUatNzXIWjIWSGYi3LLEqG1UkI8w2wDDK534g64GWTgikgJIjPDIzRgZtfEGTckehMjYAZIn7OYQ.jpg?r=bd8',
+        genre:'Sci-fi, Action, Adventure, US',
+        description:"Still on the run, journalist Eddie Brock and his alien companion Venom dodge threats from a vigilant military leader and ruthless invading symbiotes."
+      }
+    
 ];
 const cardData2 = [
   {
