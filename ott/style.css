@@ -2,6 +2,13 @@
   background-color: black;
 }
 
+.navbg {
+  background-color: rgba(0, 0, 0, 0.5) !important; /* Black with 50% opacity */
+  backdrop-filter: blur(10px); /* Optional glass blur effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  
+}
+
 .navbar {
   background-color: rgba(0, 0, 0, 0.5) !important; /* Black with 50% opacity */
   backdrop-filter: blur(10px); /* Optional glass blur effect */

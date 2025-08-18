@@ -5,21 +5,150 @@ const cardData = [
     img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABb509jgLJkqO_KEMFctI9a392FQn1JO_79UNnAikFssW1DtGhoN37IAAcaXSkWtA9NwxFk-jf1z4QeiOstBM32EfLlwyYVjD3IM0__l7qgF4ZCXZI7ACthd8PzmZez-MJxzH.jpg?r=4f9',
     genre:"Rom-com,Drama",
     description:"A young American woman from the Midwest is hired by a marketing firm in Paris to provide them with an American perspective on things.",
-    seasons: [
-    {
-      season: 1,
-      episodes: [
-        { ep: 1, title: "Episode 1", description: "Tommy Shelby begins his rise." },
-        { ep: 2, title: "Episode 2", description: "Gang tensions rise." }
-      ]
-    },
-    {
-      season: 2,
-      episodes: [
-        { ep: 1, title: "New alliances form.", description: "Shelby family expansion." }
-      ]
-    }
-  ]
+   seasons: [
+      {
+        season: 1,
+        episodes: [
+          { 
+            ep: 1, 
+            title: "Emily in Paris", 
+            description: "Emily brings her can-do American attitude and fresh ideas to her new office in Paris, but her inability to speak French turns out to be a major faux pas.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABc_cJ3eZN6e-sZxS4v129FcjGgPUMGJsU8Me2OtVGhY2TS1hgva7aJffZLB9aq1aIqBjAcYg9A8GuAX8ytb-AxYl6XBeXYWSy3XicTXEnGeTD_3puVIRIRir.webp?r=c2f" 
+          },
+          { 
+            ep: 2, 
+            title: "Masculin Féminin", 
+            description: "Emily navigates the intricacies of French amour when her enthusiasm at a work soirée impresses a flirtatious — and married — client.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABZptgWA2LxhcBjb6B-MMxcFkgwJGVzbeKiVWLdEk78JL5_BNVwgi3t1EOeuUCbcX2z017rgDLPPmdhLuDTzST7BDfhTurTpUi2zKyF8b7_mgH-nPjHVbA0Rb.webp?r=811" 
+          },
+          { 
+            ep: 3, 
+            title: "Sexy or Sexist", 
+            description: "Emily voices her concerns over a risqué new ad campaign while juggling plumbing problems, language lessons and disagreeable co-workers.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABZO4yzKyO9-QLr0Zm5cZRKe7M4uhuI5ME3JAjqIbVvgdF1oNkx-TdXmiaMyBWeZ6pzTSnbz6mWJZQKSWLIBgUI5xdKa8T2RFfUMfzNZRW_jS8Qu-4z3xsffy.webp?r=bb2" 
+          },
+          { 
+            ep: 4, 
+            title: "A Kiss Is Just a Kiss", 
+            description: "A sweet new acquaintance helps Emily sniff out a potentially huge new client, but a messy workplace liaison endangers the deal.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbslRYJbyYsddbKOvs09AZnVuEciB5nw7fv2R3ATPuz-nYXm4FdwpRkHsAPDHMn58Z50FLgnkgEU-567oiW6uPEei3y1RGSrvTy2cWmsmwIL4_70D3VhWAU1.webp?r=37a" 
+          },
+          { 
+            ep: 5, 
+            title: "Faux Amis", 
+            description: "Emily discovers that her growing social media following opens doors in Paris, and a friendly night out on the town leads to a tête-à-tête with Gabriel.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbzcTn87v55JkalI5I86GvR22kNSIvxtFnO-Ja9LRrFQig-x-9z-GbCPdwDI6BOE8dS5-9U_QM9rLdY5nkHgoDPV43KN6SK2xdk-t1d2Q-TAuvKZl_ZEy3t_.webp?r=c47" 
+          },
+          { 
+            ep: 6, 
+            title: "Ringarde", 
+            description: "When a meeting with an iconic couture house unravels over a basic mistake, Emily finds comfort in the company of a seemingly charming professor.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABY-I1CiUfrSKzyYQ162BamY4ygm40tDtSSxcI4OWgwQ5nixkiJu49swfLDeLS1U3ctizKfZxK8cGAXcHA-DQWgA-jyUeVuPlWgiRLgazUJDw2crPZ3GBYtHy.webp?r=f45" 
+          },
+          { 
+            ep: 7, 
+            title: "French Ending", 
+            description: "After agreeing to watch over an American actress at a chic red-carpet event, Emily finds her night — and her famous charge — spinning out of control.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQn-f1UNwVx1e_W8QZ8lCycZH0GuVLDAnAiU0cFqoV0eXzIkp7OI3vb03McOvL8HYF20CCB_uaGoWKM9pDYMIWXuOnrA-3ghn2YNcLN3OJ39sIzB7azLsi9y.webp?r=875" 
+          },
+          { 
+            ep: 8, 
+            title: "Family Affair", 
+            description: "Emily's weekend trip to a friend's château fizzles like day-old Champagne. Back in Paris, Mindy's reluctant meet-up with old friends ends on a high note.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABeLTjM-3TORgGcrfIJ0n32g5NXCaTghzpby2mY792rndocywDfjLhGD5qu5iZJEOFJa6kz3tbchlffzy0Yame1HLGEuIWF2u2bLGOQBPOThO60UfXwjXMOfn.webp?r=998" 
+          },
+          { 
+            ep: 9, 
+            title: " An American Auction in Paris", 
+            description: "A charity auction, a donated gown and an avant-garde design duo add up to trouble for Emily as she catches the eye of Pierre Cadault's heir apparent.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABU6VNApm8eyZn4uhONAmFeLD8f9YzIqNSwFQerlW23uqLGTNmB_lXVXyRmKqjwlPGVkdWuBRw_grEOVidZEf8YkN8PhrbMaMXfJ1IFzGN0zvil-5Ux3XHf7b.webp?r=db7" 
+          },
+          { 
+            ep: 10, 
+            title: " Cancel Couture", 
+            description: "With her job on the line over a Fashion Week debacle, Emily scrambles to devise a new plan while preparing to say adieu to a good friend.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABb2SXa_gi43DhYjMoDw23f45Cg9vRs-WG8fOVDcrV3fub_WWDdKiSLumCL_UsnRhsIiG-ibXw-fh3rkIZv89hksANDCXWDPFaEnuhkrV82KSj2iiUCSPbyzR.webp?r=438" 
+          }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { 
+            ep: 1, 
+            title: " Voulez-Vous Coucher Avec Moi?", 
+            description: "Feeling très guilty over her encounter with Gabriel, Emily decides to move on with a romantic weekend away. Mindy's new job turns out to be a total drag.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABa1ra_NtaNcYUH61l2IpPQXsqPl5-q32bHT92kitwpUC5C8fBlZqUZ2-KdbD4P-vtHm0fYd4TXd4Payh1oD6pLQMgdMaFC1xBgfAR8mSkpwvBOOzR9cxVvAV.webp?r=cdb" 
+          },
+           { 
+            ep: 2, 
+            title: " Do You Know the Way to St. Tropez?", 
+            description: "Working on a weekend? Quelle horreur. Even in Saint-Tropez, Emily can't leave her job behind, but after a social media gaffe, she may not have a choice.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABajIRdKwrxWFkBpChqqsrMwADWBlNA479XAJpkMKuJa-ya54ONCxc9wGr919GqdUQqgewSS6lzKmwZc0QJuPgg7SFnzh2-LQY6O2BWtzLJLcTYdgA9aVgEri.webp?r=1fc" 
+          }, 
+          { 
+            ep: 3, 
+            title: "Bon Anniversaire!", 
+            description: "While planning a dinner party for her birthday, Emily gets steamy with Camille’s friends and accepts Gabriel’s helping hand with the menu.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABRF_rR94gZ6AQFv3K6qHGJpYkyIIXVmpV6hDLFXm8DlMI6z1wzXK5cNe7HDgz94r8bVzCaO731bl_wadN1G-2KNoy8qx0hDEe26WcZ4Bf5vag0H0CY2yLkkz.webp?r=95e" 
+          },
+          { 
+            ep: 4, 
+            title: " Jules and Em", 
+            description: "When Emily's personal drama impacts her work at Savoir, it pushes her to focus harder on her French lessons. Mindy faces off with a mime at her new gig.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABWz6CJ2RPyGnQ8TRwsDQaEhZxVXxBgMSV6bDiXJ7vQPUx69RraZJ9H-WswIcA8TCyUEPsFFIQGxUcD5KNjp4Z6Y-tCMrbVTDUGhCzMJCXTNvOCtkBh46tjbg.webp?r=56c" 
+          }, 
+          { 
+            ep: 5, 
+            title: "An Englishman in Paris", 
+            description: "Emily tries to practice speaking en Français with a bored classmate while juggling Gabriel's restaurant debut, a Chopard soirée and a seething Camille.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaariiJr8EW_UASM0l4EvFrLv_qxMJzh7svezY4LbEkyX2pIlUxV8YeknAT4zvdLX0SjRQyxqXoyzvqhIY4Vjr2evjEYwcTUbUh88ra8PysIrsrvvH_m3Wua.webp?r=d91" 
+          }, 
+          { 
+            ep: 6, 
+            title: "Boiling Point", 
+            description: "Tempers flare on the opening night of Chez Lavaux. Emily feels Alfie has misjudged her style and joie de vivre. Sylvie catches the eye of a photographer.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQ-WXSLbtQqTtta3X5UMnqrifXNHllsh04qK4JU3zQe82CI8IW-q2jvOERDymU0ttFXY4FesDUeA1Lmx1g3G_ab45afcwnBS-NnHqT6aFisqm8vUp86KKjaF.webp?r=37c" 
+          }, 
+          { 
+            ep: 7, 
+            title: "The Cook, the Thief, Her Ghost and His Lover", 
+            description: "Emily finally establishes a rapport with Alfie, but a borrowed jacket makes things beaucoup awkward. Sylvie bristles over Savoir's new American client.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABTkt4CxeSCFRTmdmbIAJM_zjf-n3Z1r4j8kGRVAZg7LuRI1qPk1IJGthi_6NtCLBmauen2E-6dZeTgUGct_jo3JRSnBQQPH0iKd7c-uG6_Qs8v4y31epPXcx.webp?r=885" 
+          }, 
+          { 
+            ep: 8, 
+            title: "Champagne Problems", 
+            description: "After a suspiciously decadent dinner with Alfie, Emily heads to Camille's family chateau, where more than just the tops of Champére bottles pop off.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABcCPvO5BFlBycqxRLpkU6Coc_adzEz5saXybu6umw5-SdlfmV6St01QrSJK_oB01o2ruq4EOp6SPyGI_nR-h-ytOD-EjbZuWkEi32XLMB6SOsLOj8Ruq7BVY.webp?r=331" 
+          }, 
+          { 
+            ep: 9, 
+            title: "Scents & Sensibility", 
+            description: "Emily's boss from Chicago digs deeper into Savoir's accounts, putting Sylvie on edge. Mindy's budding romance suffers a blow when her secret comes out.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABa0LUgjjcutAP3HeTSS2WMYiQc3ueTnTZZuwux5qIhkrMx6TSnuc6SLl9Yo9b8iKx6U0P0cgTgfMtjVNKFm8MCNWzcLAjJRGH8rW34xpGQpvDvMqQZ552UDn.webp?r=3ca" 
+          }, 
+          { 
+            ep: 10, 
+            title: "French Revolution", 
+            description: "Emily finds her loyalties torn when a fashion show at Versailles sets the stage for a showdown that could determine Savoir's future — and her own.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABWLqiqa-xTodBa0tIshO5hRdU4bgqyxJo4rRNwtBdZeh7dgI0nAckuBBSnfLDIvm_b00dobkVkTqyUwHoQaayrA3Y0YBOIX33WjYAFjPv-RxpoRUImh3Ck6s.webp?r=594" 
+          }
+        ]
+      },
+      {
+        season: 3,
+        episodes: [
+         
+        ]
+      },
+      {
+        season: 4,
+        episodes: [
+         
+        ]
+      }
+    ]
 
   },
   {
@@ -224,24 +353,31 @@ let selectedCardData = null;
 document.addEventListener("DOMContentLoaded", () => {
   const modal = new bootstrap.Modal(document.getElementById("cardModal"));
 
-  document.addEventListener("click", function (e) {
-    const card = e.target.closest(".card-modal-trigger");
-    if (!card) return;
+document.addEventListener("click", function (e) {
+  const card = e.target.closest(".card-modal-trigger");
+  if (!card) return;
 
-    // Set modal content
-    const title = card.dataset.title;
-    const img = card.dataset.img; 
-    const genre = card.dataset.genre;
-    const description = card.dataset.description;
-    const id = card.dataset.id;
+  const id = card.dataset.id;
 
-    selectedCardData = { id, title, img, genre, description };
+  // ✅ Get full card object (from allCards) so seasons aren’t lost
+  selectedCardData = allCards.find(c => c.id === id) || {
+    id: card.dataset.id,
+    title: card.dataset.title,
+    img: card.dataset.img,
+    genre: card.dataset.genre,
+    description: card.dataset.description
+  };
 
-    document.getElementById("cardTitle").textContent = title;
-    document.getElementById("cardModalLabel").textContent = card.dataset.title;
-    document.getElementById("modalImage").src = img;
-    document.getElementById("modalGenre").textContent = genre;
-    document.getElementById("modalDescription").textContent = description;
+  document.getElementById("cardTitle").textContent = selectedCardData.title;
+  document.getElementById("cardModalLabel").textContent = selectedCardData.title;
+  document.getElementById("modalImage").src = selectedCardData.img;
+  document.getElementById("modalGenre").textContent = selectedCardData.genre;
+  document.getElementById("modalDescription").textContent = selectedCardData.description;
+
+  populateSeasons(selectedCardData);   // ✅ now works for shows with seasons
+  checkMyListStateAndStyleButton();
+
+  modal.show();
 
     // // Fetch movieDetails.html and insert
     // const contentDiv = document.getElementById("modalExtraContent");
@@ -259,11 +395,8 @@ document.addEventListener("DOMContentLoaded", () => {
     //   // ✅ Check and update button once modal is loaded
     //   checkMyListStateAndStyleButton();
     //   });
-populateMoreLikeThis(genre, id);
-populateSeasons(selectedCardData);
-checkMyListStateAndStyleButton();
+// populateMoreLikeThis(genre, id);
 
-    modal.show();
 
       // 🔥 This is the right place to safely bind .onclick
   const myListBtn = document.getElementById("myListBtn");
@@ -336,61 +469,340 @@ function checkMyListStateAndStyleButton() {
 }
 
 });
+
+
+
 // ------------------------------------- SEASONS AND EPISODES POPULATION -------------------------------------------------------------
 function populateSeasons(card) {
   const container = document.getElementById("seasonsContainer");
   container.innerHTML = "";
 
-  if (!card.seasons) return; // If movie, skip
-
-  // Create nav tabs
-  let tabs = `
+  // --- Tabs (2 tabs: Episodes + More Like This) ---
+  const tabs = `
     <ul class="nav nav-tabs" id="seasonTabs" role="tablist">
-      ${card.seasons
-        .map((s, i) => `
-          <li class="nav-item" role="presentation">
-            <button class="nav-link ${i === 0 ? "active" : ""}" 
-                    id="season${s.season}-tab" 
-                    data-bs-toggle="tab" 
-                    data-bs-target="#season${s.season}" 
-                    type="button" role="tab">
-              Season ${s.season}
-            </button>
-          </li>
-        `)
-        .join("")}
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active text-dark fs-4" 
+                id="episodes-tab" 
+                data-bs-toggle="tab" 
+                data-bs-target="#episodes" 
+                type="button" role="tab">
+          Seasons & Episodes
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link text-dark fs-4" 
+                id="morelike-tab" 
+                data-bs-toggle="tab" 
+                data-bs-target="#morelike" 
+                type="button" role="tab">
+          More Like This
+        </button>
+      </li>
     </ul>
   `;
 
-  // Create tab content
-  let content = `
+  // --- Dropdown for Seasons ---
+  let dropdownHTML = "";
+  if (card.seasons && card.seasons.length > 0) {
+    dropdownHTML = `
+      <div class="mt-3">
+        <label for="seasonSelect" class="form-label fw-bold"></label>
+        <select class="form-select w-auto d-inline-block fs-4" id="seasonSelect">
+          ${card.seasons
+            .map(
+              (s, i) =>
+                `<option value="${i}" ${i === 0 ? "selected" : ""}>Season ${s.season}</option>`
+            )
+            .join("")}
+        </select>
+      </div>
+      <div id="episodesContainer" class="m-4 p-4"></div>
+    `;
+  } else {
+    dropdownHTML = `<p class="mt-3 text-muted">No episodes available (this might be a movie).</p>`;
+  }
+
+  // --- Full Tab Content ---
+  const content = `
     <div class="tab-content mt-3">
-      ${card.seasons
-        .map(
-          (s, i) => `
-          <div class="tab-pane fade ${i === 0 ? "show active" : ""}" 
-               id="season${s.season}" role="tabpanel">
-            <div class="list-group">
-              ${s.episodes
-                .map(
-                  (ep) => `
-                <div class="list-group-item bg-dark text-white">
-                  <strong>Episode ${ep.ep}: ${ep.title}</strong>
-                  <p class="mb-0 small">${ep.description}</p>
-                </div>
-              `
-                )
-                .join("")}
-            </div>
-          </div>
-        `
-        )
-        .join("")}
+      <!-- Episodes Tab -->
+      <div class="tab-pane fade show active" id="episodes" role="tabpanel">
+        ${dropdownHTML}
+      </div>
+
+      <!-- More Like This Tab -->
+      <div class="tab-pane fade" id="morelike" role="tabpanel">
+        <div id="morelikethiscontainer" class="mt-3"></div>
+      </div>
     </div>
   `;
 
+  // Inject into container
   container.innerHTML = tabs + content;
+
+  // Function to render episodes for selected season
+  function renderEpisodes(seasonIndex) {
+    const season = card.seasons[seasonIndex];
+    const episodesDiv = document.getElementById("episodesContainer");
+    if (!season) return;
+
+    episodesDiv.innerHTML = season.episodes
+      .map(
+        (ep) => `
+        <div class="card text-white flex-row navbg mb-3 border-0 rounded shadow-sm p-2">
+          <div class="col-4">
+                 <img src="${ep.img || card.img}" 
+                   class="img-fluid h-100 object-fit-cover rounded-start" 
+                   alt="Episode ${ep.ep}: ${ep.title}" />
+          </div>
+          <div class="col-8 ps-3 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="card-title mb-1">Episode ${ep.ep}: ${ep.title}</h5>
+              <p class="card-text small fs-6 text-muted">${ep.description}</p>
+            </div>
+            <div class="mb-2">
+              
+              <button class="btn btn-danger btn-md w-25 me-2 watch-now-btn" type="button" data-id="${ep.ep}">Watch Now</button>
+            </div>
+          </div>
+        </div>
+      `
+      )
+      .join("");
+  }
+
+  // Initialize with first season
+  if (card.seasons && card.seasons.length > 0) {
+    renderEpisodes(0);
+
+    // Dropdown change event
+    document.getElementById("seasonSelect").addEventListener("change", (e) => {
+      renderEpisodes(e.target.value);
+    });
+  }
+
+  // Populate "More Like This"
+  if (card.genre) {
+    populateMoreLikeThis(card.genre, card.id);
+  }
 }
+// ------------------------------------- SEASONS AND EPISODES POPULATION  saglyat changla chalnara -------------------------------------------------------------
+// function populateSeasons(card) {
+//   const container = document.getElementById("seasonsContainer");
+//   container.innerHTML = "";
+
+//   // Create nav tabs (2 tabs: Episodes + More Like This)
+//   const tabs = `
+//     <ul class="nav nav-tabs " id="seasonTabs" role="tablist">
+//       <li class="nav-item" role="presentation">
+//         <button class="nav-link active text-dark fs-4 " 
+//                 id="episodes-tab" 
+//                 data-bs-toggle="tab" 
+//                 data-bs-target="#episodes" 
+//                 type="button" role="tab">
+//           Seasons & Episodes
+//         </button>
+//       </li>
+//       <li class="nav-item " role="presentation">
+//         <button class="nav-link text-dark fs-4" 
+//                 id="morelike-tab" 
+//                 data-bs-toggle="tab" 
+//                 data-bs-target="#morelike" 
+//                 type="button" role="tab">
+//           More Like This
+//         </button>
+//       </li>
+//     </ul>
+//   `;
+
+//   // --- Episodes content ---
+//   let episodesContent = "";
+//   if (card.seasons && card.seasons.length > 0) {
+//     card.seasons.forEach(season => {
+//       episodesContent += `<h5 class="mt-4">Season ${season.season}</h5>`;
+      
+//       season.episodes.forEach(ep => {
+//         episodesContent += `
+//           <div class="card text-white flex-row navbg mb-3 border-0 rounded shadow-sm">
+//             <div class="col-3">
+//               <img src="${ep.img || card.img}" 
+//                    class="img-fluid h-100 object-fit-cover rounded-start" 
+//                    alt="Episode ${ep.ep}: ${ep.title}" />
+//             </div>
+//             <div class="col-9 p-3 d-flex flex-column justify-content-between">
+//               <div>
+//                 <h6 class="card-title mb-1">Episode ${ep.ep}: ${ep.title}</h6>
+//                 <p class="card-text small text-muted">${ep.description}</p>
+//               </div>
+//               <div class="mt-2">
+//                 <button class="btn btn-danger btn-sm">▶ Watch Now</button>
+//               </div>
+//             </div>
+//           </div>
+//         `;
+//       });
+//     });
+//   } else {
+//     episodesContent = `<p class="mt-3 text-muted">No episodes available (this might be a movie).</p>`;
+//   }
+
+//   // --- Full Tab Content ---
+//   const content = `
+//     <div class="tab-content mt-3">
+//       <!-- Episodes Tab -->
+//       <div class="tab-pane fade show active" id="episodes" role="tabpanel">
+//         ${episodesContent}
+//       </div>
+
+//       <!-- More Like This Tab -->
+//       <div class="tab-pane fade" id="morelike" role="tabpanel">
+//         <div id="morelikethiscontainer" class="mt-3"></div>
+//       </div>
+//     </div>
+//   `;
+
+//   // Inject into container
+//   container.innerHTML = tabs + content;
+
+//   // Populate "More Like This" immediately
+//   if (card.genre) {
+//     populateMoreLikeThis(card.genre, card.id);
+//   }
+// }
+
+// function populateSeasons(card) {
+//   const container = document.getElementById("seasonsContainer");
+//   container.innerHTML = "";
+
+//   // Create nav tabs (fixed: only two)
+//   let tabs = `
+//     <ul class="nav nav-tabs" id="seasonTabs" role="tablist">
+//       <li class="nav-item" role="presentation">
+//         <button class="nav-link active" 
+//                 id="episodes-tab" 
+//                 data-bs-toggle="tab" 
+//                 data-bs-target="#episodes" 
+//                 type="button" role="tab">
+//           Seasons & Episodes
+//         </button>
+//       </li>
+//       <li class="nav-item" role="presentation">
+//         <button class="nav-link" 
+//                 id="morelike-tab" 
+//                 data-bs-toggle="tab" 
+//                 data-bs-target="#morelike" 
+//                 type="button" role="tab">
+//           More Like This
+//         </button>
+//       </li>
+//     </ul>
+//   `;
+
+//   // --- Seasons & Episodes content ---
+//   let episodesContent = "";
+//   if (card.seasons) {
+//     card.seasons.forEach(season => {
+//       episodesContent += `<h5 class="mt-3">Season ${season.season}</h5>`;
+//       season.episodes.forEach(ep => {
+//         episodesContent += `
+//           <div class="card navbar text-white flex-row bg-dark mb-3">
+//             <div class="col-3">
+//               <img src="${ep.img || card.img}" class="img-fluid h-100 object-fit-cover rounded-start" alt="${ep.title}" />
+//             </div>
+//             <div class="col-8 p-3 d-flex flex-column justify-content-between">
+//               <div>
+//                 <h5 class="card-title">Episode ${ep.ep}: ${ep.title}</h5>
+//                 <p class="card-text"><small>${ep.description}</small></p>
+//               </div>
+//               <div class="mt-3">
+//                 <button class="btn btn-danger">Watch Now</button>
+//               </div>
+//             </div>
+//           </div>
+//         `;
+//       });
+//     });
+//   } else {
+//     episodesContent = `<p class="mt-3">No episodes available (this might be a movie).</p>`;
+//   }
+
+//   // --- Tab Content ---
+//   let content = `
+//     <div class="tab-content mt-3">
+//       <!-- Episodes tab -->
+//       <div class="tab-pane fade show active" id="episodes" role="tabpanel">
+//         ${episodesContent}
+//       </div>
+
+//       <!-- More Like This tab -->
+//       <div class="tab-pane fade" id="morelike" role="tabpanel">
+//         <div id="morelikethiscontainer"></div>
+//       </div>
+//     </div>
+//   `;
+
+//   container.innerHTML = tabs + content;
+
+//   // Populate More Like This immediately so it's ready when switched
+//   if (card.genre) {
+//     populateMoreLikeThis(card.genre, card.id);
+//   }
+// }
+
+// function populateSeasons(card) {
+//   const container = document.getElementById("seasonsContainer");
+//   container.innerHTML = "";
+
+//   if (!card.seasons) return; // If movie, skip
+
+//   // Create nav tabs
+//   let tabs = `
+//     <ul class="nav nav-tabs" id="seasonTabs" role="tablist">
+//       ${card.seasons
+//         .map((s, i) => `
+//           <li class="nav-item" role="presentation">
+//             <button class="nav-link ${i === 0 ? "active" : ""}" 
+//                     id="season${s.season}-tab" 
+//                     data-bs-toggle="tab" 
+//                     data-bs-target="#season${s.season}" 
+//                     type="button" role="tab">
+//               Season ${s.season}
+//             </button>
+//           </li>
+//         `)
+//         .join("")}
+//     </ul>
+//   `;
+
+//   // Create tab content
+//   let content = `
+//     <div class="tab-content mt-3">
+//       ${card.seasons
+//         .map(
+//           (s, i) => `
+//           <div class="tab-pane fade ${i === 0 ? "show active" : ""}" 
+//                id="season${s.season}" role="tabpanel">
+//             <div class="list-group">
+//               ${s.episodes
+//                 .map(
+//                   (ep) => `
+//                 <div class="list-group-item bg-dark text-white">
+//                   <strong>Episode ${ep.ep}: ${ep.title}</strong>
+//                   <p class="mb-0 small">${ep.description}</p>
+//                 </div>
+//               `
+//                 )
+//                 .join("")}
+//             </div>
+//           </div>
+//         `
+//         )
+//         .join("")}
+//     </div>
+//   `;
+
+//   container.innerHTML = tabs + content;
+// }
 
 function populateMoreLikeThis(genreString, excludeId) {
   const container = document.getElementById("morelikethiscontainer");
