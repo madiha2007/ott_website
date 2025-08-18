@@ -1,57 +1,5 @@
 const cardData = [
-  {
-    id: "money_heist",
-    title: "Money Heist",
-    img: "https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABUmLgKmFrl2Tq5jDmIBIdp-L6_fRFsTE7KslWARHa4Yb8f8q32MOBiACOoYAGFn4k8Pc_1P7QlN-F41Btkx4q8bp2gg0yA4kCWxamkIcyRVtyIoln6PDWQVi1_IAZHe4PALj.jpg?r=326",
-    genre: "Action, Drama",
-    description: "A criminal mastermind plans the biggest heist in history. An unusual group of robbers attempt to carry out the most perfect robbery in Spanish history - stealing 2.4 billion euros from the Royal Mint of Spain.",
-    videoId:"_InqQJRqGW4"
-  },
-  {
-    id: "alice_borderland",
-    title: "Alice in Borderland",
-    img: "https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABY9MbR1kXcEjxQ3339N7chhCF9aaFDaQ7rvuYwI5RnTlNgAk1BmGN4tYZCxNuoOIivaRl-Z_siJeRMoBFisErN7PnAT1Q-eL5Ld8etFRR3K25MLAcI7jeOkkEuXbtOaOen-Z.jpg?r=400",
-    genre: "Thriller, Sci-Fi",
-    description: "A group of friends find themselves in a deadly game. Arisu - a listless, jobless and video-game-obsessed young man - suddenly finds himself in a strange, emptied-out version of Tokyo in which he and his friends must compete in dangerous games in order to survive.",
-    videoId:"49_44FFKZ1M"
-  },
-  {
-    id: "all_of_us_dead",
-    title: "All of us are dead",
-    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABdOdSuAwEvu_jZKZr4g_GHiP3YpfGSkqDi5yisAEpNVwAv-raxL1fcezQZn4aEu7ixtzlsbRg2GlY2_dkqo9QJyaJgz0Qkr1tH76wgOK9ulsSgZDe_QhgqxBTPeTJgIRGGSI.jpg?r=d40',
-    genre: "Horror, Thriller",
-    description: "A zombie outbreak traps students in their high school. A high school becomes ground zero for a zombie virus outbreak. Trapped students must fight their way out or turn into one of the rabid infected.",
-    videoId:"IN5TD4VRcSM"
-  },
-  {
-    id: "kpop_demon_hunters",
-    title: "Kpop Demon Hunters",
-    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRDc-cnVqrssAwUcUwKtpmcyKLgBnI2FEpjrCjLZT6LOnVktgaNSYtXCCvBGW0EWbAKjP1mJoAZ6JU72PC1a_tA9Rp31i5KJRvZJybfBtiP-pUYy96AquisPovRdV8slQAmepGcsDVQzcM_qUDzdZGPTTIczWyu8QfazIjAMWsz35zvd3AQhjHy1Q_ozGdjNkOkboY-ooQJdFTtx1jwkjQbrYsz-9S77cVmcKnOcxs9XgFMDeQwoi92kLOE0kFn5Nk8.jpg?r=b78',
-    genre: "Action, Musical",
-    description: "K-pop stars become demon hunters in secret. A world-renowned K-Pop girl group balance their lives in the spotlight with their secret identities as demon hunters.",
-    videoId:"bTtC6CRWKW8"
-  },
-  {
-    id: "vincenzo",
-    title: "Vincenzo",
-    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABSitjBhxTkmKXKaLTESIa5iQ58nAyggjQUOYupjSwRe4gUR-_YAITsOHD6tTTZNuBfh0ssBesZYcvf9X7kTOjYj9LklBcD2gEr8rFmNxUtSBec4jGBl4Faf5hCl09TqioZr0.jpg?r=c8b',
-    genre: "Drama, Action",
-    description: "A Korean-Italian mafia lawyer takes on corruption. During a visit to his motherland, a Korean-Italian Mafia lawyer gives an unrivaled conglomerate a taste of its own medicine with a side of justice."
-  },
-  {
-    id: "queen_of_tears",
-    title: "Queen of Tears",
-    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABauaf_pjBXX9G_dl-IYBIWLYWexsTpaSGU0ulKaCMLmsn_ew6nmLGev9nFJJ7bRDMaKAGE0G2Egdgy30VgHbVI7c0-IeOxmMp5j-0AoMIuToZbPzDmGzCQjZIN_OLvtEARjE.jpg?r=3e4',
-    genre: "Romance, Comedy",
-    description: "A royal couple navigates love and loss. A miraculous love story of a married couple overcoming a dizzying crisis."
-  },
-  {
-    id: "never_have_i_ever",
-    title: "Never have I Ever",
-    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABfyfO998JNWAx6snVHf7_ydlwuk8I1tPQCttH_W4OCzmhkWufyFODQaEnnftder7T2geYuzZuznJiFtGd8GxlgCATqrUxV8CkgdJkuyboFlkdXKsAmUwSH4kB8UeD0NT7SVp.jpg?r=fb2',
-    genre: "Romance, Comedy",
-    description: "Teen drama comedy of an Indian-American girl. The complicated life of a first-generation Indian-American teenage girl, inspired by Mindy Kaling's own childhood."
-  },
+
   {
     id: "one_piece",
     title: "One Piece",
