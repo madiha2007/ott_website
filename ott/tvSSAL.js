@@ -156,21 +156,319 @@ const cardData = [
     title: 'Peaky Blinders',
     img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABTU3_q-CINXVdjlijgk1THbgnzWIGC-eFlZzAVkXiaY66_AYRGgPdX_j3weXYTi9qY_Wv0oDnzFazhGgquAoUQzOBgv6k8bfObyn3uuD0-u2WpNCTsdsBvqUE40uLdZmJWvo.jpg?r=c0e',
     genre:"History,Crime",
-    description:"A gangster family epic set in 1900s England, centering on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby."
+    description:"A gangster family epic set in 1900s England, centering on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby.",
+     seasons: [
+      {
+        season: 1,
+        episodes: [
+          { 
+            ep: 1, 
+            title: "", 
+            description: "Ambitious gang leader Thomas Shelby recognizes an opportunity to move up in the world thanks to a missing crate of guns.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABdXboDE8HuzY07uTd9hiLaJlsQNzaGG6tdo1w9k9I3lztKokOY1F2OpX9KMC5RgRefZeBIpUkSaRnVdlonmaE52mf6eZW5APOVi5bQboYAy8diSs0qicI8Ea.webp?r=c76" 
+          },
+          { 
+            ep: 2, 
+            title: "", 
+            description: "Thomas provokes a local kingpin by fixing a horse race and starts a war with a gypsy family; Inspector Campbell carries out a vicious raid.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABf9vorP0O85zMsmyVQ0NdXlq2gIDYX4Yy_-h3urr0gZFDBgfF9zDJqzlWRzaMk25y2xW4FryEzlNa-iMJxaXTu6J4Ole7wrcD_E9HmLcbrNQj_WYsaM0iSZ_.webp?r=c06" 
+          },
+          { 
+            ep: 3, 
+            title: "", 
+            description: "Thomas schemes to get closer to Billy Kimber at the Cheltenham races, and considers an offer from IRA sympathizers to buy his stolen guns.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaCYn3bDH50DZ5_qTvBzocxQ0SoglZ0wOxTlYz3QBs3OZIBh6JuiZhPRCdFsJxwDTh9Xr4CILLkIGE9qHy9DOULAZ7yP2_3_O4PxLfNHRwYRWdSx7eWP5JFF.webp?r=b69" 
+          },
+          { 
+            ep: 4, 
+            title: "", 
+            description: "As his war with the Lee family escalates, Thomas harbors suspicions about his brother's fiancée; Campbell pressures the gang to deliver the guns.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABfcGz3ctwYSlE8oc2m1pwVmwqqVnl9e3CYvQ_ru6oDcjawKb3EtLaD1LKAJWYYyiptHTgp9u06F2yLQIAZl8g0E_xmuv636UDXqEEC74j4FNAk0WpIO98Pk3.webp?r=753" 
+          },
+          { 
+            ep: 5, 
+            title: "", 
+            description: "Thomas deals with an IRA chief bent on avenging his cousin's death; Grace must decide whether her loyalties lie with Campbell or Thomas.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUBA4blFQBpiWrHpHh5JqOi0MZ1_19dL2rf0Y1nmyIzxStGPSPcBN_mfr0Gd46Ftd72WkHluPw8NoZFxztGzDCbORn6opFzBtpuhsrakagbfT5fThzjCXV0e.webp?r=a07" 
+          },
+          { 
+            ep: 6, 
+            title: "", 
+            description: "Thomas prepares to oust Billy Kimber from power, but family secrets that come to light and the obsessed Campbell may prove his undoing.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbp7vfgygpxV5AYbO9sZ5POGocZQqUdpKepQpCBK6da2zWa_n1rBC4JdTOnj8050Ki_JF0iqgsWXci-XRJSWblV3uZj08fGcl8PPoesR2B-MOTU4mCjg49TB.webp?r=e86" 
+          }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { 
+            ep: 1, 
+            title: "", 
+            description: "When Birmingham crime boss Tommy Shelby's beloved Garrison pub is bombed, he finds himself blackmailed into murdering an Irish dissident.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABcjTGT5_fXSY4ZUnQfMooEQNXAQnmMd3ToZJ0uBjAZdhYF4kcyDHVQEERTOALVMSoBdhcC113poMV3GZTsPTkhcfE9WqTTvgv-myugOC98MhEggHyr4T1VVP.webp?r=f51" 
+          },
+           { 
+            ep: 2, 
+            title: " ", 
+            description: "After murdering an Irish dissident, Tommy has no choice but to be a pawn in Inspector Campbell's treacherous political game..", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABTO-8EZUW4dro9kze-skcj3swYs4cCUrX5aoF9KahWOz9l_T4f4i3LyUPiYbS1wRYcSihaNb67OAxjX5CSMrn3E1ZxgWxRNyogYF0ES7erZnD1YyyqkltsyE.webp?r=5a6" 
+          }, 
+          { 
+            ep: 3, 
+            title: "", 
+            description: "After joining London crime boss Alfie Solomons in a business venture, Tommy worries that Alfie's newly revealed volatility could pose a problem.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYG9m7AwG40jpH-fm9mz-Qw70ojrKuTxvElLucsB2dn-azzaUjQlVMSJ_c97AHD8-KCFfnxJs9SxV23YA0qVkHnndNmK1lbeW9zX9hV2DIEC3w5eDIWOPKTt.webp?r=a44" 
+          },
+          { 
+            ep: 4, 
+            title: " ", 
+            description: "The Peaky Blinders take over London's Eden Club; Sabini convinces his old adversary Alfie Solomons to join forces and eradicate the gang.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABf_P3p2kWXJP8DEhzhty070LljBdL-0ncc6AQW45UWnaG8ozZFNhVegalEhJfUJdVEUlNiSqcVGX9gE1qGeRuCH6DFfDtLjIJcZMZaKlZCLRODrJxyu4Pn3w.webp?r=fba" 
+          }, 
+          { 
+            ep: 5, 
+            title: "", 
+            description: "The Peaky Blinders are under attack. Tommy's power base in London is obliterated, and both Arthur and Michael are arrested and imprisoned.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABe1NxeyC_6lXifu5rOF9cutjir3mkduHXZXOKtuq5HJ9OmpigXTnTe3habUbI2TaLRFzw1vIpU6mUfUxD7PqI0Qy3Fnq3_qSLCMz8xWNYzpWO3ouMikIo2GX.webp?r=63b" 
+          }, 
+          { 
+            ep: 6, 
+            title: "", 
+            description: "Tommy plans to execute the mission given to him by Campbell: the assassination of a high-ranking member of the military establishment.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABTGk9UIbS-QQ5E5YKzRvVO5Whm1VLSfKn4qaCCqdb7dC7NaU-sVEWbqoqXgq7PVAQKfuaHe0iKRIwqzLKjfiggMeLUlDyNqyCuAas31Q8OXSkVxXm-KJWMN-.webp?r=856" 
+          }
+        ]
+      },
+      {
+        season: 3,
+        episodes: [
+         
+        ]
+      },
+      {
+        season: 4,
+        episodes: [
+         
+        ]
+      },
+      {
+        season: 5,
+        episodes: [
+         
+        ]
+      },
+      {
+        season: 6,
+        episodes: [
+         
+        ]
+      }
+    ]
   },
   {
     id: 'the_glory',
     title: 'The Glory',
     img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABVfPGa77dyP88-Xt_q-1tFannPOu5z0IK0DpvzCAZQUIPmWD5S8H2COg1wpWnIdBmRnxz3rFkobaI53h0zDaW9A7bNskvscjOkM9XWv7TT-_7KKnGgQqLt680sXelr48HssQ.jpg?r=3d2',
     genre:"thriller, Melodrama",
-    description:"A woman lives for absolute revenge against her childhood bullies who destroyed her life"
+    description:"A woman lives for absolute revenge against her childhood bullies who destroyed her life",
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { 
+            ep: 1, 
+            title: "", 
+            description: "Tormented by her high school classmates and with nowhere to turn for help, Moon Dong-eun sinks into despair before deciding on a new mission in life.",
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABZuUza6rFymCeUANLN2JJ2ReLe-6_p7dcv7gHEacQ8A_hnMPOX4zDALsORWHO2mIprxbLFLLh0boeVYwJGYfLX33xEh3hsIWnCSrzClt4U7aEJYzuO32LZLN.webp?r=324"
+          },
+          { 
+            ep: 2, 
+            title: "", 
+            description: "With Park Yeon-jin’s wedding on the way, Dong-eun’s revenge rolls out according to plan. Meanwhile, a fateful encounter at a hospital takes place.",
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbvJMhURKTrI9bP7c5LCCuvbkF0gjHeNqUzxm3y8IMUszR-JZDwsnLsW7EXE-Qm5rmPzVkAINNa8CfU-eDWaOxGzbmacG2WPCxjirtt7t1p8cGgg7gIw8wVn.webp?r=674"
+          },
+          { 
+            ep: 3, 
+            title: "", 
+            description: "After securing the services of an amateur sleuth, Dong-eun uncovers scandalous secrets that she leverages for the next phase of her scheme.",
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABSIgyyAwQ9zjGDt1OuD7hmxfuwl6RwyCBXG-d-WWMYDuo4wJHP466eVyWFCp6m7Vh9mpc8s4TLr37STgOD3mr1i_4Xa7S1PcWwy2vCTE_2052npOqlJoyJN1.webp?r=77b"
+          },
+          { 
+            ep: 4, 
+            title: "", 
+            description: "Already on edge over the past resurfacing, Yeon-jin grows more anxious when she learns about her daughter's new homeroom teacher — and of a sudden death.",
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABXMECk0swWWXwnFOLni7dyplgU-EPst7ovRXtrhM0wLUIXDLYiXyOHRRzD4bz7rNbBL8tZLojwprI2GapviPktjQWUDX4vVfPW3LkF-YUb9wX4ALPN8ivx5L.webp?r=614"
+          },
+          { 
+            ep: 5, 
+            title: "", 
+            description: "While Ha Do-yeong comes across an intriguing game opponent, Yeon-jin realizes her deepest secrets are at stake when she tries to intimidate Dong-eun.",
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABR5Lqpc4Ms6rE73gic3RwOqIO3pyE_WPDG9-QGZ0YCmLN2DUBiCCAGGHrN4p4qYC3JUYJDv8ATWs5Mk6mssJn3VZ86V6dSv3GtW5x2A-MVVje4z8D1krH-_j.webp?r=e0a"
+          },
+          { 
+            ep: 6, 
+            title: "", 
+            description: "Son Myeong-o's sudden absence causes tension in the friend group. Dong-eun finds her trust in Kang Hyeon-nam tested..",
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABZYGVrZLryInPHHmBSPwYfrhhOZm-mJ2b01hoClWINgAAmA3p9bFJpp2sNtmfsgaYKmWRVoCPkbGjkc15rVOEYtQMJUuIFt48OB74cAQTqGhVKnom4sb9yhu.webp?r=012"
+          },
+          { 
+            ep: 7, 
+            title: "", 
+            description: "Dong-eun shares her traumatic past with Joo Yeo-jeong, who has unfinished business of his own. A new plan is put in place for Hyeon-nam’s daughter.",
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABdgZBXmtVUOWzFjLH634HZO86q3ZXVSEoRXgOOcqXx0tP9bP5phJQ2yfJPWZadqihXeLLSeFbAsXazoiBcWvwDzIxWw9ZeyLPlzgFL--n8IleidvGuBAzjGr.webp?r=f02"
+          },
+          { 
+            ep: 8, 
+            title: "", 
+            description: "Do-yeong meets with Choi Hye-jeong to find out more about his wife — and her past. Yeon-jin digs into Dong-eun’s private life.",
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYtKA1QePD4j2DCkmiBOCm-J2ZQouvUvmOsywHhSlH8BroMnRaQSYH6fc71hUT63qrYV5YQK8t71eA3yoaEIDRO6IF9elLD-S1Zrz75l5nBufiFIbfXd3EyX.webp?r=343"
+          },
+          { 
+            ep: 9, 
+            title: "", 
+            description: "Questions arise over Myeong-o, Dong-eun gives Yeon-jin a chance to come clean about her past, and the circumstances of Yoon So-hee's death are revealed.",
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABc-E83boKoOL59dvD6P0j_rNqHtamBVw-Bhi1fmQaFUAzqxzvF1YCrlfbOw5LmrAW3mladKBD4Dr3igEbYd3E1BdrDczNyn1FxfzhAJtTienirpzYq6ji8cG.webp?r=a52"
+          },
+          { 
+            ep: 10, 
+            title: "", 
+            description: "Yeon-jin threatens Hyeon-nam after discovering her involvement with Dong-eun. Yeo-jeong devises a way to get the truth out of Yeon-jin.",
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABSFW1-SVgMS1Rkc9vMi1QZypGglhqP4UXoH6yMWk6T7J9WVt2ZEMa1VqIAfRGru5-JLviCI3grBVymqFrvUHIbvodll43weOToJfQwAk2oVh2lWhpsmSbie6.webp?r=7f5"
+          }
+        ]
+      }
+    ]
   },
   {
     id: 'the_crown',
     title: 'The Crown',
     img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABaSMGPuPUDfc6l_t-QWv4ZLQ_0gK38ne168mjsP-FUSdnPu6FUCQyyQ0Q4bSstaY55d2cq9kpBQLbOwY3h8YVXnX5cEgxxi09WTq-_JhgKxaFKHMre_IMwad8WYkV1ALTIQV.jpg?r=8c1',
     genre:"History, Drama",
-    description:"Follows the political rivalries and romances of Queen Elizabeth II's reign and the events that shaped Britain for the second half of the 20th century."
+    description:"Follows the political rivalries and romances of Queen Elizabeth II's reign and the events that shaped Britain for the second half of the 20th century.",
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { 
+            ep: 1, 
+            title: "Wolferton Splash", 
+            description: "In 1947, Elizabeth and Philip marry. In 1952, King George VI dies, and Elizabeth becomes queen. Winston Churchill is appointed prime minister.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQ52ldRYw_XMBRHQQMxuxA-aPysulcXmYo8LW7PzgzOuZv7ZZWhA3M0iJRW5kyYcK7mJU-PRCRk8wfMmbR1-80a-lM1zPigUNX2M_1G9rPyq8j5KbHi4aDrO.webp?r=83d" 
+          },
+          { 
+            ep: 2, 
+            title: "Hyde Park Corner", 
+            description: "Elizabeth struggles to adjust to her new role as queen. Churchill faces opposition from his own party and the press.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABXSVsk-IsfMMvOtfeWo5wwmxjVznpAFYtsgNP3gY5m8yh00uFzH9Mw4BBb-_1vh0rnS7CepiGDa8lvhEEBlRcuYVyz2lRN2O8taqsXPd1neVfxx9CDIyhkMr.webp?r=cc2" 
+          },
+          { 
+            ep: 3, 
+            title: "Windsor", 
+            description: "Elizabeth's coronation is planned, but she faces challenges from her family and the Church of England.", 
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABRQEByFdeUU1O9lV3uBl17FkGRDRO3xVMt4g2juyA74_xPUE9gCsre5KASCbwMlINLw4nIl42M3Eb_KyIeG8bgOiKQqGyWGWA-MtJUS67KdZGLjxqJxplG3A.webp?r=2c8"
+          },
+          {
+            ep: 4,
+            title: "Act of God",
+            description: "A storm hits London, causing chaos and destruction. Elizabeth and Churchill must navigate the aftermath and its impact on the monarchy.",
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABfA2JjjFRAYR1yO6io8pYP3T-5Ylbrm0ZsdHmpZHsPHfOwQL-HLP79Ng44wdxrWnBJ0pNYyobJDLGzjI-dYWUU_7eKz3W8HRmds_bYTBJUGNSsmhxvXFcCDT.webp?r=805" 
+          },
+          {
+            ep: 5,
+            title: "Smoke and Mirrors", 
+            description: "Churchill's health declines, and Elizabeth must consider her options for a new prime minister. Meanwhile, tensions rise with Egypt over the Suez Canal.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABai0AVBt1l1kXxTDA0U3X3_sa6xUcx2FHf_UkQ3MkbOg95gjRGczCZlt728CYrcaWsQPNfsiM7AOtMsFbD6ltQAj2XRiqA9eR1cuBGNzoIp_XJ-DFHkaomJO.webp?r=ee1"
+          },
+          {
+            ep: 6,
+            title: "Gelignite",
+            description: "Margaret and Peter come to the Queen with a request. With a royal scandal about to break in the newspapers, the Queen Mother intervenes.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbQfBkNnCTV3zaJ4YkIccnL1AOgod6exyRleGScULV1jcprXQ54l4VF6odpAv4S4rG5bQI22mY2hVLJHe2WIue1nniJOpgDstrpkOh48Mo1fM8tqvrY_yG7G.webp?r=9a9"
+          },
+          {
+            ep: 7,
+            title: "Scientia Potentia Est",
+            description: "Elizabeth and Philip's marriage is tested when he is sent on a royal tour of the Commonwealth. Churchill faces a crisis in Egypt.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABZ_nhp6RRWhTqMnnKeyROdgbENusAxti4ZzTFzNhih8-kZ4Wh-Iay9ATHoxW5goDStEJXvaoBizfOyGLju9r9x9CeZQVG5KY30SyROXPvT2s-5KirfyJi0ph.webp?r=104"
+          },
+          {
+            ep: 8,
+            title: "Pride and Joy",
+            description: "Elizabeth and Philip's relationship is strained when he is sent on a royal tour of the Commonwealth. Churchill faces a crisis in Egypt.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABc7LVkP3e82AHY-hNQXpSC136yXSwyNMPoxqoOtCLfhejxo7vHI0Cdki2pDCn7jBsVu-38NM0NkJFYC8QRptqR97OuRyMX78a0BbhtQ6cTQTtPR3YhDKTS10.webp?r=cd4"
+          },
+          {
+            ep: 9,
+            title: "Assassins",
+            description: "Elizabeth and Philip's relationship is tested when he is sent on a royal tour of the Commonwealth. Churchill faces a crisis in Egypt.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABf6Ys5spu-72dbasu_Esl4TlJe58a3Ipl3JRPaBxxGDgkwcGxiSJQjPih45Vf1Jj0c7D9j_FYuwXUvo-I7MgNQDeWfhY187y1XMRtqhlPe78Ej8VdWSedN5M.webp?r=c40"
+          },
+          {
+            ep: 10,
+            title: "Gloriana",
+            description: "Elizabeth and Philip's relationship is tested when he is sent on a royal tour of the Commonwealth. Churchill faces a crisis in Egypt.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABf1fz4FSEhTMTSJCMNfPFKoV5OnQmOcs0SCbetO_JvAaw9JwqhS7my2PzNaVM29y7augUheZdG3Y_g2cqeLgj1Oytf6QFZlP7dEsczKrGiK1nxla9xdNub2t.webp?r=835"
+          }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { 
+            ep: 1, 
+            title: "Misadventure", 
+            description: "In 1956, Elizabeth faces a crisis when her marriage to Philip is strained by his affair with a ballerina. Churchill is forced to resign as prime minister.",
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaKddNDJchS2JJ5oOZdmV0Q0kaW_k6T6TiqBoduEUChZRJG4vTi2mm5cxljyQsLIvotjnaBXYfBRo1UNt4uPqaxPnIyJL9vXot8qRCuRbcsayJKDPR5aa7ti.webp?r=096"
+          },
+          {
+            ep: 2, 
+            title:"A Company of Men",
+            description: "In 1956, Elizabeth faces a crisis when her marriage to Philip is strained by his affair with a ballerina. Churchill is forced to resign as prime minister.",
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABegmvaFpbpViN4bIet5PqKDK2vj7taf2jp8l6Aj8IE4aIwjURNo0Hnc49KOGTz4DEBZ0aPiHO8pnyZDIvfUK9bt2kbVuzDCBdsDYVFX9yT3wCpjNKH8-FXyO.webp?r=0a4"
+          },
+          {
+            ep: 3,
+            title: "Lisbon",
+            description: "Palace insiders try to prevent a scandal that could reflect poorly on Philip. Eden faces censure from his cabinet and the press.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABS0BeIs83O7mBWXo1i_syfEvT3lmUvx7Yjc361vAocRAb0MoMLQLmFCfMp9CyoVw9bUKbsedc22x0aAKjCbL0-cwe-AszcYkLkabnRDkDrUf9PmyNBVeUuAR.webp?r=aa2"
+          },
+          {
+            ep: 4,
+            title: "Beryl",
+            description: "When the Queen and Philip throw a grand party for their 10th anniversary, both Margaret and the new prime minister experience romantic tribulations.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABcWP3bzO8jpoh6Mrc08xsEK2_mVl9kcfCNTLmasPMmUmiMQ26xylSJQJY5EOZ-PygLllxv_hfiokYGdaaclrUl0B9DSgpJdYiAeT5Rvd_-uJCwzYO3h0NWFY.webp?r=dac"
+          },
+          {
+            ep: 5,
+            title: "Marionettes",
+            description: "As the Suez Crisis escalates, Eden's health deteriorates. Elizabeth and Philip's marriage is tested when he is sent on a royal tour of the Commonwealth.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUKxc4l2r2U6QKEfU4R-ULkbSgDcoxDOM4HB3EL6sVxQH26D7edOSevCowDMJa5ahGZ9lWnGsx6AUoRhJzWXv6cYU3qBFvvERi3NbkB16Utw7iF4o9GA3Nbx.webp?r=f02"
+          }
+        ]
+      },
+      {
+        season: 3,
+        episodes: [
+        ]   
+      },
+      {
+        season: 4,
+        episodes: [
+        ]   
+      },
+      {
+        season: 5,
+        episodes: [
+        ]   
+      },
+      {
+        season: 6,
+        episodes: [
+        ]   
+      }
+
+    ]
   },
   {
     id: 'gyeongseong_creature',
@@ -191,7 +489,74 @@ const cardData = [
     title: 'DAHMER',
     img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRltWuhErhcS6v8LsIuk4yVGFYSjC5Hx6eOYo79yd7X3dtGdKhFptBE76eJxwgb0m5G7Hh9st_7ht55c2rtfwPOLO2S7JNh-aX9I1VMUdhPYdhI9xo-fb7sXDYVr0RhHANEs.jpg?r=385',
     genre:"Drama, Suspense",
-    description:"Across more than a decade, 17 teen boys and young men were murdered by convicted killer Jeffrey Dahmer. How did he evade arrest for so long?"
+    description:"Across more than a decade, 17 teen boys and young men were murdered by convicted killer Jeffrey Dahmer. How did he evade arrest for so long?",
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { 
+            ep: 1, 
+            title: "Monster: The Jeffrey Dahmer Story", 
+            description: "After throwing his neighbor off the stench coming from his apartment, Jeff heads to a local bar, where a stranger takes him up on a tempting offer.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABSj-yCOkKDF__bq9nSKjuAJgLnLkplc4uGxTqtc18vt2g18eb8K_pMZ0GxrQChMIAQvwPWuvp_vmFhyu3rURgrekQjCXOLBieZoJLUfsWjgl_MG3hgSeV-X3.webp?r=1c1"
+          },
+          { 
+            ep: 2, 
+            title: "Please Don't Go", 
+            description: "A young Jeff contends with troubles at home and school. Years later, his strange behavior evolves into murderous deeds that slip past the police.",
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABcgnlrYke8TehERqPn9qkFIs06ff9oiJqZzdYbMyrXFypyvSRkdJ_SBxcAsCl1t_H3ClqJy7_sE5pmW7tV-Pn1ZcGZhW6AN_qUvD6dcrY1DVaE8ToP9CwR_V.webp?r=698"
+          },
+          {
+            ep: 3,
+            title:"Doin' A Dahmer",
+            description:"Left to live alone after his parents' turbulent divorce, high school senior Jeff breaks routine when he invites a hitchhiker into his home.",
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYXSxDVwZayBqSKucied9G0qzcqziorYzurLh1V4i-Rsalf4kwqt4_FM2CC6GVQDuBqVMhHAsAEds6W5Mdy5si1satDqAsmghjRnx3_Eqtqetl-hOw2BzBvn.webp?r=61a"
+          },
+          {
+            ep: 4,
+            title:"The Good Boy Box",
+            description:"From high school to the Army, Jeff struggles to find stability. While living in his grandmother's house, Jeff begins targeting young men at gay bars.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABXIBqO9AyxEOg1l69oaj6Du_ptb_QOOUCL-YzP9IJZ1VZeGg_LHAYcLhbrMWZYx_TzPStAs5f7xSW2a4jqsuMQFWO4WGbQQiFU4Mjqu2s-1xt70kjoPTj0ZI.webp?r=59a"
+          },
+          {
+            ep:5,
+            title:"Blood on Their Hands",
+            description:"Jeff's list of victims grows longer without a full police investigation. An encounter with a teen lands him in jail. Later, he gets his own apartment.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABVPysGJ4xzJkeFopjGARrxhGXv9whrZZ9BHxWR1r3fJWGtN6GPqiY7J6lproSpvITu6SuyDpNEydBwbfodZKE9p_QwyfVdqx21m6yy65GUPSXCBrty1LHdNx.webp?r=b7c"
+          },
+          {
+            ep: 6,
+            title: "Silenced",
+            description:"Aspiring model Tony moves to Madison and meets Jeff at a bar, beginning a relationship through handwritten notes that takes a dark turn.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbIvpIGmltitJ1R4F4FIh2XVm-v1psPMyL5duod4rwcHYPQXRqpRpET8_DkI9M5FjoALnV5vi6OiTFW4qBnHGwC-Jo-B4jU07viI0zufGnoUUMoxQlyS6HJo.webp?r=b08"
+          },
+          {
+            ep: 7,
+            title: "Cassandra",
+            description:"A prominent activist meets with Glenda, who recounts her harrowing experiences living next door to Jeff and how her concerns went largely ignored.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUVytjnto_9aozLWJiAVlvNmsjSEilXkJJ20LKe8zZpgfHeMMt6gGY_FS4fN1SNLuKuWpXyGz8w_oj5KOy7cgjtKOapDHrIf-XvCO10hm3z1fMS2wSnJgvCN.webp?r=2df"
+          },
+          {
+            ep: 8,
+            title: "Lionel Dahmer",
+            description:"Jeff's father, Lionel, returns home to find his son in a dark place. After Jeff is arrested, Lionel tries to understand what went wrong.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABacl8rEVglxIWmmOnoTw8BMroDWFvyXK85gl18jf2mCkYTKQvD9J1wL_fMj5D9nl7xKVS5ktfWQDlWYExDtJY65Wb3pE3z3WGUMd7WN4bt9S9uwF7nQHFHkm.webp?r=002"
+          },
+          {
+            ep: 9,
+            title: "The Bogeyman",
+            description:"Glenda, the victims and their families do their best to move forward despite haunting memories, while Jeff attracts fanfare from behind bars.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbwkKrHRLTCcByNFKkrs4kSsDrKClzKSfbGjngsbvDajRC_xuD4aIfCrGYn8oDbRErYgNP5815XZE5RR8lnMQgRIn20LfPE7MMZNFIwsuIQ5NF3v-tnsVxRY.webp?r=95f"
+          },
+          {
+            ep: 10,
+            title: "God of Forgiveness, God of Vengeance",
+            description:"As the trial begins, Jeff's family and the victims' families face off in court. Jeff's fate is decided, and his story comes to a close.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYXoNSO3K8963ulMiB9fAbW7-vqLVDNgjpP9ntmV0V3NwKlOP-9MGU7SVOW_RZQczYtuBAE9APkpEBue7GOlAefJ9iWBql33e4HEICHJTFziLenC6hIRKPUp.webp?r=e5e"
+          }
+        ]
+      },
+    ]
   },
   {
     id: '13_reasons_why',
@@ -214,7 +579,7 @@ const cardData = [
       img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABa6R0zawmvBIlpRMxH9N2cD-aKWcmyqM8q3d_u41QnzVuaTgU8vxi1cWa4Q5oLSVCRjVDIoC0opTfZO_s-hyMzZl1_8PGK449ohLgy9CvPNXpKKkgCeta667RBPXODjZ2UWr.jpg?r=095',
       genre:"Rom-Com, Action",
       description:"In disguise as her friend, Ha-ri shows up to a blind date to scare him away. But plans go awry when he turns out to be her CEO - and makes a proposal."
-    },
+  },
     {
       id: 'my_name',
       title: 'My Name',
@@ -227,8 +592,75 @@ const cardData = [
       title: "My Life With The Walter Boys",
       img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABbDtAv6HGIaSQvwDsHe1I1D9DrXIUH21Lwq2QoRd1EH56yCvEoR3xfR-BFr6hrdRxIu3GSbdWS_ZQ83ns4_lETpTUXNKvNwQrTwlcrW2F9-sTmg782-IgQe6ZGSIeZVJ8HX9.jpg?r=5b9',
       genre:"Romance, Drama",
-      description:"Jackie Howard's life is disrupted by a freak accident, she is ripped from her home and has to start over on a ranch in Colorado, with her guardian and a family of 9 boys, and 1 girl."
-    }
+      description:"Jackie Howard's life is disrupted by a freak accident, she is ripped from her home and has to start over on a ranch in Colorado, with her guardian and a family of 9 boys, and 1 girl.",
+      seasons:[
+        {
+          season: 1,
+          episodes: [
+            { 
+              ep: 1, 
+              title: "Welcome to Colorado", 
+              description: "After a tragic loss, Jackie moves in with the Walters and tries to adjust to small-town life. But a new home and new high school bring new challenges.",
+              img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABfV4IMLdkm5-7RYcVO6_mXtoAkjsM32vMz_sZ6VPIOv7zFJxTg8TMJX9JcbaNRjczrCsqryhoIXlpf1klGSE06Hh0-iqSWG_sgAIbBcMLgUHXjoNnX3qnpBm.webp?r=b1b"
+            },
+            {
+              ep: 2,
+              title:"Live a Little",
+              description:"When the brothers make a bet involving a prank on Jackie, she turns to Katherine but learns that the boys have their own way of handling their issues.",
+              img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQrs2tkQ06CN_bdmzfY2GZh3GnNvQNjZbJlh4HSPe2Vgq7sGkfBH89fmARPjRhyyHMVGz75TmNKHRqj8NDioD8sOU2Jp2JZU8xyYgL7rU7prRI_HpN8k-ewU.webp?r=a4e"
+            },
+            {
+              ep: 3,
+              title:"The Cole Effect",
+              description:"At the Homecoming Huddle, Alex and Jackie run the Walter family cider cart together with help from Cole, who struggles to accept life without football.",
+              img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABTTN3Noj_lxXeVnh1iFa7WDWl_1fj1khUGKm0fUEFux3nFAGjwIFVLQZmMvtoghcnCjXTu21Xem37uGN9DDjKadk81UvPrE7joBr4l07JyOoadimvfrGDUbk.webp?r=806"
+            },
+            {
+              ep: 4 ,
+              title:"Nineteen",
+              description:"On Lucy's birthday, Jackie decides to skip school and attend a lake house party with Cole, where the two play a high-stakes version of Truth or Dare.",
+              img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABXuS4fVhvwvPDez1C4do9iQAFBIN16IH8O9bWsPWMiGv-npoyj9p3UHIO6tvxLIvcE0_gGuIZFHfD4ILIKiEUlscF2ruY7UGzLCNhxOSJb7GHblnoi2qRZoe.webp?r=19b"
+            },
+            {
+              ep: 5,
+              title:"Thanksgiving",
+              description:"Jackie wants to avoid the first Thanksgiving without her family, but a surprise visitor lifts her mood and presents her with a difficult choice.",
+              img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABdC7D10M4PuVwDjnkzD6f1NwYh2MuUmySz6XF6d06bm2zfLYBjEu0yH2GwKN_weIQ_QBmDUctItgrwl4a6NS82FvLbv-VZdbfTL1zvkFcfXiNOQcBwegCv48.webp?r=cc9"
+            },
+            {
+              ep: 6,
+              title:" Baggage",
+              description:"Before the big bonfire, Jackie learns about Cole and Alex's history with another girl. At the party, relationships new and old go up in flames.",
+              img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaUcwcAyaf3MzfVS4BR8BJI6eVbfXKVMLPl0IgEOxNj_BgDgyBJLeX8Djx35ya8iGMaKHWxNwdqEd7Kj1Rr-wJ0QEXBlztqmPpMkCY0d-8pMVKqPKUAlFGok.webp?r=39d"
+            },
+            {
+              ep: 7,
+              title:"Small Town Rumors",
+              description:"As rumors fly about the Walter boys, Alex and Cole's sibling rivalry reaches its breaking point. Later, the family deals with an unsettling emergency.",
+              img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbIPkWaxUFjPNjeYeLsiAD35Kc_VToHmC-rQEfVfJEd1ZxP_f2Ld3V_2rJAh6TKbqksimppel8xMw9OcWPEtJjdRoFZuVIoampDEbVmI70zWuulctQvh2FmP.webp?r=d8a"
+            },
+            {
+              ep: 8,
+              title:"Spinning Out",
+              description:"When Katherine wins an award for her veterinarian work, the family jumps to support her — except Cole, who instead heads down a path of self-destruction.",
+              img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYzpVQr8sUswnKsJzAPBFkrPxpU-Qhw1xoE7hPAfwA1X5ypMYldHZ78J8DneMrNK0MjA3lQ3Yw0XZyyU0-fY8W975BQF6Uye5JnCtNfWSJBXaIUYUlJz1G5k.webp?r=b72"
+            },
+            {
+              ep: 9,
+              title:"Revolutions",
+              description:"Jackie misses Alex's county fair rodeo for an important interview and tries to keep her distance from Cole after their hurtful exchange.",
+              img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYAgHDVCbXjAzkuj4639YdXf88dS7x6w2lBkz2DlLnpDEoHL0_e4gNa0BUKXMFZAZsDyv8Bhb3d1mqcakmjALM3FGfJV1MKBLjg.webp?r=5f3"
+            },
+            {
+              ep: 10,
+              title:"Happily Ever After",
+              description:"With the Walter boys' help, Jackie diligently plans a picture-perfect ranch wedding. But no amount of checklists can prepare her for what happens next.",
+              img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABdpFOxMGvpFk9F07CmbNbKo5W9D5_taSBQztDqQSjyXZVspcCyu6nu8L8GYYV4TiVAGUjg2BVWw1R4GhdBUD0lhoKlH1zHuc4i-02EDHpF-mj9L4IxoWB059.webp?r=e00"
+            }    
+          ]
+        }
+    ]
+  }
 ];
 
 const cardData1 = [
