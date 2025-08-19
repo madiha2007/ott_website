@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Netflix Profiles</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+<style>
+  :root { color-scheme: dark; }
+  body {
+    /* Clean background (no 404s) */
+    background: linear-gradient(180deg, rgba(0,0,0,.85), rgba(20,20,20,1));
+    color: #fff; min-height: 100vh;
+  }
+  .profile-card {
+    text-align: center; cursor: pointer; position: relative;
+    animation: fadeZoom .6s ease forwards;
+  }
+  .profile-card img {
+    width: 150px; height: 150px; object-fit: cover;
+    border-radius: 6px; transition: transform .25s ease;
+    background:#222;
+  }
+  .profile-card:hover img { transform: scale(1.05); }
+  .kids-badge {
+    position: absolute; bottom: 8px; right: 8px;
+    background: #ffb300; color: #000; padding: 2px 6px;
+    font-size: .7rem; font-weight: 700; border-radius: 3px;
+  }
+  @keyframes fadeZoom { from {opacity:0; transform:scale(.92)} to {opacity:1; transform:scale(1)} }
+
+  .manage-btns { display: none; margin-top:.5rem; gap:.5rem }
+  .manage-mode .manage-btns { display: flex; justify-content: center; }
+  .add-profile {
+    width: 150px; height: 150px; border-radius: 6px;
+    border: 2px dashed gray; display:flex; align-items:center; justify-content:center;
+    flex-direction: column; color: #bbb;
+  }
+  .avatar-option { border-radius:6px; cursor:pointer }
+  .avatar-option.active { outline: 3px solid #0d6efd; outline-offset: 2px; }
+  iframe { width: 100%; height: 400px; border: none; margin-top: 30px; }
+</style>
+</head>
+<body>
+
+    
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
+    <div class="container-fluid">
+  
+      <!-- Logo -->
+      <a class="navbar-brand me-3" href="#">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" class="img-fluid" style="width: 120px;" alt="Netflix Logo">
+      </a>
+  
+      <!-- Toggle Button for Mobile -->
+      <button class="navbar-toggler text-ligh" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Collapsible Content -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+        <!-- Left Side: Nav Links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row gap-3 align-items-center">
+          <li class="nav-item">
+            <a class="nav-link active" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="movieAL.html">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="tvShowsAL.html">TV Shows</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="newNhot.html">New & Popular</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="myList.html">My List</a>
+          </li>
+
+          <li class="nav-item dropdown">         
+                 <button class="btn dropdown-toggle  nav-link" data-bs-toggle="dropdown"> 
+                  <i class="bi bi-globe2"></i> <span class="d-none d-sm-inline">Browse by language</span>            
+                </button>                 
+                 <ul class="dropdown-menu ">
+                    <li class="dropdown-item" >Hindi</li>
+                    <li class="dropdown-item" >Marathi</li>
+                    <li class="dropdown-item" >Korean</li>
+                    <li class="dropdown-item" >Chinese</li>
+                    <li class="dropdown-item" >Spanish</li>                    
+                 </ul>             
+          </li>
+        </ul>
+  
+        <!-- Right Side: Search -->
+        <form class="d-flex search-bar">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-danger" type="submit">Search</button>
+        </form>      
+        
+        <!-- Add this inside your navbar (far right side) -->
+<div id="authSection" class="d-flex align-items-center"></div>
+
+      
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5 pt-5">
+  <h1>My Profile</h1>
+  <hr>
+  <h3 id="profileName">Loading...</h3>
+  <p>Email: <span id="profileEmail">Loading...</span></p>
+  <p>Plan: <span id="profilePlan">Loading...</span></p>
+
+  <button id="logoutBtn" class="btn btn-danger mt-3">Sign Out</button>
+</div>
+<!-- 
+<div class="container text-center py-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3 m-0">Who's Watching?</h1>
+    <div class="d-flex gap-2">
+      <button id="manageBtn" class="btn btn-outline-light">Manage Profiles</button>
+      <button id="logoutBtn" class="btn btn-danger">Logout</button>
+      <button id="resetBtn" class="btn btn-secondary">Reset Profiles</button>
+    </div>
+  </div> -->
+<!-- 
+  <div class="row g-4" id="profilesContainer"></div>
+-->
+  <!-- Optional sub-page ->
+   <div class="container my-5">
+  <h2 class="mb-3 text-white">My List</h2>
+  <div id="profileMyList" class="d-flex overflow-auto gap-3 pb-3">
+    <!-- Cards will be injected here dynamically ->
+  </div>
+</div>
+<!-- 
+  
+</div>
+
+<!-- Edit Profile Modal --\>
+<div class="modal fade" id="editProfileModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Profile</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <input type="text" id="editProfileName" class="form-control mb-3" placeholder="Profile name">
+
+        <div class="form-check mb-3 text-start">
+          <input class="form-check-input" type="checkbox" id="editProfileKids">
+          <label class="form-check-label" for="editProfileKids">Kids Profile</label>
+        </div>
+
+        <h6 class="text-start">Avatars</h6>
+        <div class="d-flex flex-wrap gap-3" id="avatarChoices">
+         
+          <img src="user1.png" class="avatar-option" data-img="user1.png" width="80" height="80" alt="Avatar 1">
+          <img src="user2.jpg" class="avatar-option" data-img="user2.jpg" width="80" height="80" alt="Avatar 2">
+          <img src="user3.jpg" class="avatar-option" data-img="user3.jpg" width="80" height="80" alt="Avatar 3">
+          <img src="user4.jpg" class="avatar-option" data-img="user4.jpg" width="80" height="80" alt="Avatar 4">
+          <img src="default.png" class="avatar-option" data-img="default.png" width="80" height="80" alt="Default Avatar">
+        </div>
+
+        <div class="text-center mt-3 pt-3 border-top border-secondary">
+          <h6 class="mb-2">Selected Profile Picture</h6>
+          <img id="selectedAvatar" src="default.png" data-img="default.png" width="100" height="100" alt="Selected avatar" style="border-radius:8px;background:#222">
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="saveEditBtn" class="btn btn-primary">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<script src="navbar.js"></script>
+<script src="profile.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+
+/* ---------- State ---------- */
+
+// document.addEventListener("DOMContentLoaded", async () => {
+//   const token = localStorage.getItem("authToken");
+//   if (!token) {
+//     window.location.href = "login.html";
+//     return;
+//   }
+
+//   try {
+//     const res = await fetch('http://localhost:5000/profile', {
+//       headers: { 'Authorization': 'Bearer ' + token }
+//     });
+//     const data = await res.json();
+
+//     if (res.ok) {
+//       document.getElementById('profileName').textContent = data.name;
+//       document.getElementById('profileEmail').textContent = data.email;
+//       document.getElementById('profilePlan').textContent = data.plan;
+//     } else {
+//       alert(data.message);
+//       localStorage.removeItem('authToken');
+//       window.location.href = "login.html";
+//     }
+//   } catch (err) {
+//     console.error(err);
+//     alert("Error loading profile");
+//   }
+// });
+
+
+const LS_KEY = "profiles";
+
+/** Defaults used if no localStorage */
+const DEFAULT_PROFILES = [
+  { name: "User 1", img: "user1.png", kids: false },
+  { name: "Kids",   img: "kids.jpg",  kids: true  }
+];
+
+let profiles = loadProfiles();
+let selectedProfileIndex = null;
+
+/* ---------- DOM ---------- */
+
+const profilesContainer = document.getElementById("profilesContainer");
+const manageBtn  = document.getElementById("manageBtn");
+const logoutBtn  = document.getElementById("logoutBtn");
+const resetBtn   = document.getElementById("resetBtn");
+
+const editName   = document.getElementById("editProfileName");
+const editKids   = document.getElementById("editProfileKids");
+const avatarChoices = document.getElementById("avatarChoices");
+const selectedAvatar = document.getElementById("selectedAvatar");
+const saveEditBtn = document.getElementById("saveEditBtn");
+
+const editProfileModalEl = document.getElementById("editProfileModal");
+const editProfileModal = new bootstrap.Modal(editProfileModalEl);
+
+/* ---------- Utils ---------- */
+
+/** Load profiles from LS or defaults */
+function loadProfiles() {
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    if (!raw) return structuredClone(DEFAULT_PROFILES);
+    const parsed = JSON.parse(raw);
+    // Ensure required fields exist
+    return parsed.map(p => ({
+      name: p.name ?? "Profile",
+      img:  normalizeRelative(p.img ?? "default.png"),
+      kids: !!p.kids
+    }));
+  } catch {
+    return structuredClone(DEFAULT_PROFILES);
+  }
+}
+
+/** Save profiles to LS */
+function saveProfiles() {
+  localStorage.setItem(LS_KEY, JSON.stringify(profiles));
+}
+
+/** If a browser turned a path absolute, strip origin so we store relative paths */
+function normalizeRelative(path) {
+  if (!path) return "default.png";
+  const origin = window.location.origin + "/";
+  return path.startsWith(origin) ? path.slice(origin.length) : path;
+}
+
+/** Mark chosen avatar thumbnail */
+function highlightAvatar(path) {
+  document.querySelectorAll(".avatar-option").forEach(el => {
+    el.classList.toggle("active", el.dataset.img === path);
+  });
+}
+
+/* ---------- Render ---------- */
+
+function renderProfiles() {
+  profilesContainer.innerHTML = "";
+
+  profiles.forEach((p, i) => {
+    const col = document.createElement("div");
+    col.className = "col-auto";
+
+    col.innerHTML = `
+      <div class="profile-card" data-index="${i}">
+        <img src="${p.img}" alt="${p.name}">
+        ${p.kids ? '<div class="kids-badge">KIDS</div>' : ""}
+        <div class="mt-2 fw-semibold">${p.name} ${p.kids ? "👶" : ""}</div>
+
+        <div class="manage-btns">
+          <button class="btn btn-sm btn-warning edit-btn">Edit</button>
+          <button class="btn btn-sm btn-danger remove-btn">Remove</button>
+        </div>
+      </div>
+    `;
+
+    profilesContainer.appendChild(col);
+  });
+
+  // Add Profile tile
+  const addCol = document.createElement("div");
+  addCol.className = "col-auto";
+  addCol.innerHTML = `
+    <div class="add-profile" id="addProfileBtn" role="button" aria-label="Add profile">
+      <div style="font-size:2rem; line-height:1">+</div>
+      <small>Add Profile</small>
+    </div>
+  `;
+  profilesContainer.appendChild(addCol);
+}
+
+/* ---------- Event Wiring ---------- */
+
+// Manage toggle (applies CSS to show buttons)
+manageBtn.addEventListener("click", () => {
+  document.body.classList.toggle("manage-mode");
+});
+
+// Logout (demo)
+logoutBtn.addEventListener("click", () => {
+  alert("Logging out…");
+});
+
+// Reset all
+resetBtn.addEventListener("click", () => {
+  localStorage.removeItem(LS_KEY);
+  profiles = structuredClone(DEFAULT_PROFILES);
+  renderProfiles();
+});
+
+// Delegate clicks inside profiles grid
+profilesContainer.addEventListener("click", (e) => {
+  const addBtn = e.target.closest("#addProfileBtn");
+  if (addBtn) {
+    profiles.push({ name: "New Profile", img: "default.png", kids: false });
+    saveProfiles();
+    renderProfiles();
+    return;
+  }
+
+  const card = e.target.closest(".profile-card");
+  if (!card) return;
+
+  // Edit
+  if (e.target.classList.contains("edit-btn")) {
+    selectedProfileIndex = Number(card.dataset.index);
+    const p = profiles[selectedProfileIndex];
+
+    editName.value = p.name;
+    editKids.checked = p.kids;
+
+    // set current avatar into preview and highlight
+    selectedAvatar.src = p.img;
+    selectedAvatar.dataset.img = p.img;
+    highlightAvatar(p.img);
+
+    editProfileModal.show();
+    return;
+  }
+
+  // Remove
+  if (e.target.classList.contains("remove-btn")) {
+    const idx = Number(card.dataset.index);
+    profiles.splice(idx, 1);
+    saveProfiles();
+    renderProfiles();
+    return;
+  }
+
+  // Normal click on card → scroll iframe (your original behavior)
+  document.getElementById("myListFrame")?.scrollIntoView({ behavior: "smooth" });
+});
+
+// Choose avatar in modal
+avatarChoices.addEventListener("click", (e) => {
+  const choice = e.target.closest(".avatar-option");
+  if (!choice) return;
+  const path = choice.dataset.img; // already relative
+  selectedAvatar.src = path;
+  selectedAvatar.dataset.img = path;
+  highlightAvatar(path);
+});
+
+// Save changes from modal
+saveEditBtn.addEventListener("click", () => {
+  if (selectedProfileIndex === null) return;
+
+  const p = profiles[selectedProfileIndex];
+  p.name = editName.value.trim() || "Profile";
+  p.kids = !!editKids.checked;
+
+  // Always store the relative path we tracked on the preview element
+  const chosen = selectedAvatar.dataset.img || selectedAvatar.getAttribute("src");
+  p.img = normalizeRelative(chosen);
+
+  saveProfiles();
+  renderProfiles();
+
+  // clear selection + close
+  selectedProfileIndex = null;
+  editProfileModal.hide();
+});
+
+// Prevent the aria-hidden warning by letting Bootstrap handle focus safely
+editProfileModalEl.addEventListener("hidden.bs.modal", () => {
+  // No-op; Bootstrap returns focus to trigger automatically.
+});
+
+/* ---------- Init ---------- */
+renderProfiles();
+
+
+  const profileList = JSON.parse(localStorage.getItem("myList")) || [];
+  const profileContainer = document.getElementById("profileMyList");
+
+  function renderProfileList() {
+    profileContainer.innerHTML = "";
+
+    if (profileList.length === 0) {
+      profileContainer.innerHTML = "<p class='text-white'>No items in your list yet.</p>";
+      return;
+    }
+
+    profileList.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "card bg-dark text-white";
+      card.style.minWidth = "180px";   // ensures horizontal layout
+      card.style.flex = "0 0 auto";    // prevents shrinking
+
+      card.innerHTML = `
+        <img src="${item.img}" class="card-img-top rounded" alt="${item.title}" style="height: 250px; object-fit: cover;">
+        <div class="card-body p-2">
+          <h6 class="card-title mb-1">${item.title}</h6>
+          <p class="card-text"><small>${item.genre}</small></p>
+        </div>
+      `;
+      profileContainer.appendChild(card);
+    });
+  }
+
+  renderProfileList();
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Netflix Profiles</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+
+<style>
+  :root { color-scheme: dark; }
+  body {
+    background: linear-gradient(180deg, rgba(0,0,0,.85), rgba(20,20,20,1));
+    color: #fff;
+    min-height: 100vh;
+  }
+  .profile-card {
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    animation: fadeZoom .6s ease forwards;
+  }
+  .profile-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform .25s ease;
+    background:#222;
+  }
+  .profile-card:hover img { transform: scale(1.05); }
+  .kids-badge {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: #ffb300;
+    color: #000;
+    padding: 2px 6px;
+    font-size: .7rem;
+    font-weight: 700;
+    border-radius: 3px;
+  }
+  @keyframes fadeZoom { from {opacity:0; transform:scale(.92)} to {opacity:1; transform:scale(1)} }
+  .manage-btns { display: none; margin-top:.5rem; gap:.5rem }
+  .manage-mode .manage-btns { display: flex; justify-content: center; }
+  .add-profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 6px;
+    border: 2px dashed gray;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction: column;
+    color: #bbb;
+  }
+  .avatar-option { border-radius:6px; cursor:pointer }
+  .avatar-option.active { outline: 3px solid #0d6efd; outline-offset: 2px; }
+</style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand me-3" href="#">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
+           class="img-fluid" style="width: 120px;" alt="Netflix Logo">
+    </a>
+    <button class="navbar-toggler text-ligh" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row gap-3 align-items-center">
+        <li class="nav-item"><a class="nav-link active" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="movieAL.html">Movies</a></li>
+        <li class="nav-item"><a class="nav-link active" href="tvShowsAL.html">TV Shows</a></li>
+        <li class="nav-item"><a class="nav-link active" href="newNhot.html">New & Popular</a></li>
+        <li class="nav-item"><a class="nav-link active" href="myList.html">My List</a></li>
+        <li class="nav-item dropdown">
+          <button class="btn dropdown-toggle nav-link" data-bs-toggle="dropdown">
+            <i class="bi bi-globe2"></i> <span class="d-none d-sm-inline">Browse by language</span>
+          </button>
+          <ul class="dropdown-menu ">
+            <li class="dropdown-item">Hindi</li>
+            <li class="dropdown-item">Marathi</li>
+            <li class="dropdown-item">Korean</li>
+            <li class="dropdown-item">Chinese</li>
+            <li class="dropdown-item">Spanish</li>
+          </ul>
+        </li>
+      </ul>
+
+      <form class="d-flex search-bar">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-danger" type="submit">Search</button>
+      </form>
+      <div id="authSection" class="d-flex align-items-center"></div>
+    </div>
+  </div>
+</nav>
+
+<!-- Who's Watching + account summary -->
+<div class="container text-center py-5 mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+    <h1 class="h3 m-0">Who's Watching?</h1>
+    <div class="d-flex flex-wrap gap-3 align-items-center">
+
+     
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card bg-dark text-white p-4 rounded-3 shadow">
+          <h2 id="profileName">Loading name...</h2>
+          <p>Email: <span id="profileEmail">Loading...</span></p>
+          <p>Plan: <span id="profilePlan">Loading...</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <button id="manageBtn" class="btn btn-outline-light">Manage Profiles</button>
+      <button id="logoutBtn" class="btn btn-danger">Sign Out</button>
+      <button id="resetBtn" class="btn btn-secondary">Reset Profiles</button>
+    </div>
+  </div>
+  <div class="row g-4 justify-content-center" id="profilesContainer"></div>
+</div>
+
+<!-- My List -->
+<div class="container my-5">
+  <h2 class="mb-3 text-white">My List</h2>
+  <div id="profileMyList" class="d-flex overflow-auto gap-3 pb-3"></div>
+</div>
+
+<!-- Edit Profile Modal -->
+<div class="modal fade" id="editProfileModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Profile</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="editProfileName" class="form-control mb-3" placeholder="Profile name">
+        <div class="form-check mb-3 text-start">
+          <input class="form-check-input" type="checkbox" id="editProfileKids">
+          <label class="form-check-label" for="editProfileKids">Kids Profile</label>
+        </div>
+        <h6 class="text-start">Avatars</h6>
+        <div class="d-flex flex-wrap gap-3" id="avatarChoices">
+          <img src="user1.png" class="avatar-option" data-img="user1.png" width="80" height="80" alt="Avatar 1">
+          <img src="user2.jpg" class="avatar-option" data-img="user2.jpg" width="80" height="80" alt="Avatar 2">
+          <img src="user3.jpg" class="avatar-option" data-img="user3.jpg" width="80" height="80" alt="Avatar 3">
+          <img src="user4.jpg" class="avatar-option" data-img="user4.jpg" width="80" height="80" alt="Avatar 4">
+          <img src="default.png" class="avatar-option" data-img="default.png" width="80" height="80" alt="Default Avatar">
+        </div>
+        <div class="text-center mt-3 pt-3 border-top border-secondary">
+          <h6 class="mb-2">Selected Profile Picture</h6>
+          <img id="selectedAvatar" src="default.png" data-img="default.png" width="100" height="100" alt="Selected avatar" style="border-radius:8px;background:#222">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="saveEditBtn" class="btn btn-primary">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+(() => {
+  if (window.ProfileUIInitialized) return; // avoid double init
+  window.ProfileUIInitialized = true;
+
+  const LS_KEY = "profiles";
+  const DEFAULT_PROFILES = [
+    { name: "User 1", img: "user1.png", kids: false },
+    { name: "Kids",  img: "kids.jpg",  kids: true  }
+  ];
+
+  let profiles = loadProfiles();
+
+  /* ---------- DOM ---------- */
+  const profilesContainer = document.getElementById("profilesContainer");
+  const manageBtn = document.getElementById("manageBtn");
+  const logoutBtn = document.getElementById("logoutBtn");
+  const resetBtn = document.getElementById("resetBtn");
+
+  const editName = document.getElementById("editProfileName");
+  const editKids = document.getElementById("editProfileKids");
+  const avatarChoices = document.getElementById("avatarChoices");
+  const selectedAvatar = document.getElementById("selectedAvatar");
+  const saveEditBtn = document.getElementById("saveEditBtn");
+
+  const editProfileModalEl = document.getElementById("editProfileModal");
+  const editProfileModal = new bootstrap.Modal(editProfileModalEl);
+
+  /* ---------- Utils ---------- */
+  function normalizeRelative(path) {
+    if (!path) return "default.png";
+    const origin = window.location.origin + "/";
+    return path.startsWith(origin) ? path.slice(origin.length) : path;
+  }
+
+  function loadProfiles() {
+    try {
+      const raw = localStorage.getItem(LS_KEY);
+      if (!raw) return structuredClone(DEFAULT_PROFILES);
+      const parsed = JSON.parse(raw);
+      return parsed.map(p => ({
+        name: p.name ?? "Profile",
+        img: normalizeRelative(p.img ?? "default.png"),
+        kids: !!p.kids
+      }));
+    } catch {
+      return structuredClone(DEFAULT_PROFILES);
+    }
+  }
+
+  function saveProfiles() {
+    localStorage.setItem(LS_KEY, JSON.stringify(profiles));
+  }
+
+  function highlightAvatar(path) {
+    document.querySelectorAll(".avatar-option").forEach(el => {
+      el.classList.toggle("active", el.dataset.img === path);
+    });
+  }
+
+  /* ---------- Render ---------- */
+  function renderProfiles() {
+    profilesContainer.innerHTML = "";
+    profiles.forEach((p, i) => {
+      const col = document.createElement("div");
+      col.className = "col-auto";
+      col.innerHTML = `
+        <div class="profile-card" data-index="${i}">
+          <img src="${p.img}" alt="${p.name}" onerror="this.src='default.png'">
+          ${p.kids ? '<div class="kids-badge">KIDS</div>' : ""}
+          <div class="mt-2 fw-semibold">${p.name} ${p.kids ? "👶" : ""}</div>
+          <div class="manage-btns">
+            <button class="btn btn-sm btn-warning edit-btn">Edit</button>
+            <button class="btn btn-sm btn-danger remove-btn">Remove</button>
+          </div>
+        </div>
+      `;
+      profilesContainer.appendChild(col);
+    });
+
+    // Add Profile tile
+    const addCol = document.createElement("div");
+    addCol.className = "col-auto";
+    addCol.innerHTML = `
+      <div class="add-profile" id="addProfileBtn" role="button" aria-label="Add profile">
+        <div style="font-size:2rem; line-height:1">+</div>
+        <small>Add Profile</small>
+      </div>
+    `;
+    profilesContainer.appendChild(addCol);
+  }
+
+  /* ---------- Account Details ---------- */
+  function loadAccountDetails() {
+    const nameEl = document.getElementById('profileName');
+    const emailEl = document.getElementById('profileEmail');
+    const planEl = document.getElementById('profilePlan');
+
+    // Set defaults if not present
+    if (!localStorage.getItem('name'))  localStorage.setItem('name', 'Member');
+    if (!localStorage.getItem('email')) localStorage.setItem('email', 'member@example.com');
+    if (!localStorage.getItem('plan'))  localStorage.setItem('plan', 'Basic');
+
+    const name  = localStorage.getItem('name');
+    const email = localStorage.getItem('email');
+    const plan  = localStorage.getItem('plan');
+
+    // Update header
+    nameEl.textContent  = name;
+    emailEl.textContent = email;
+    planEl.textContent  = plan;
+
+    // Sync first profile card without overwriting custom avatar
+    if (!profiles[0]) {
+      profiles[0] = { name, img: 'default.png', kids: false };
+    } else {
+      profiles[0].name = name;
+      profiles[0].img  = profiles[0].img || 'default.png';
+    }
+
+    saveProfiles();
+    renderProfiles();
+  }
+
+  /* ---------- My List ---------- */
+  function renderProfileList() {
+    const profileList = JSON.parse(localStorage.getItem("myList")) || [];
+    const profileContainer = document.getElementById("profileMyList");
+    profileContainer.innerHTML = "";
+    if (profileList.length === 0) {
+      profileContainer.innerHTML = "<p class='text-white m-0'>No items in your list yet.</p>";
+      return;
+    }
+    profileList.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "card bg-dark text-white";
+      card.style.minWidth = "180px";
+      card.style.flex = "0 0 auto";
+      card.innerHTML = `
+        <img src="${item.img}" class="card-img-top rounded" alt="${item.title}"
+             style="height: 250px; object-fit: cover;" onerror="this.src='default.png'">
+        <div class="card-body p-2">
+          <h6 class="card-title mb-1">${item.title}</h6>
+          <p class="card-text"><small>${item.genre ?? ""}</small></p>
+        </div>
+      `;
+      profileContainer.appendChild(card);
+    });
+  }
+
+  /* ---------- Initialize ---------- */
+  loadAccountDetails();
+  renderProfileList();
+})();
+</script>
+
+<!-- 
+<script>
+(() => {
+  if (window.ProfileUIInitialized) return; // avoid double init if scripts are included twice
+  window.ProfileUIInitialized = true;
+
+  /* ---------- Config & State ---------- */
+  const LS_KEY = "profiles";
+  const DEFAULT_PROFILES = [
+    { name: "User 1", img: "user1.png", kids: false },
+    { name: "Kids",  img: "kids.jpg",  kids: true  }
+  ];
+  let profiles = loadProfiles();
+  let selectedProfileIndex = null;
+
+  /* ---------- DOM ---------- */
+  const profilesContainer = document.getElementById("profilesContainer");
+  const manageBtn = document.getElementById("manageBtn");
+  const logoutBtn = document.getElementById("logoutBtn");
+  const resetBtn = document.getElementById("resetBtn");
+
+  const editName = document.getElementById("editProfileName");
+  const editKids = document.getElementById("editProfileKids");
+  const avatarChoices = document.getElementById("avatarChoices");
+  const selectedAvatar = document.getElementById("selectedAvatar");
+  const saveEditBtn = document.getElementById("saveEditBtn");
+
+  const editProfileModalEl = document.getElementById("editProfileModal");
+  const editProfileModal = new bootstrap.Modal(editProfileModalEl);
+
+  /* ---------- Utils ---------- */
+  function normalizeRelative(path) {
+    if (!path) return "default.png";
+    const origin = window.location.origin + "/";
+    return path.startsWith(origin) ? path.slice(origin.length) : path;
+  }
+  function loadProfiles() {
+    try {
+      const raw = localStorage.getItem(LS_KEY);
+      if (!raw) return structuredClone(DEFAULT_PROFILES);
+      const parsed = JSON.parse(raw);
+      return parsed.map(p => ({
+        name: p.name ?? "Profile",
+        img: normalizeRelative(p.img ?? "default.png"),
+        kids: !!p.kids
+      }));
+    } catch {
+      return structuredClone(DEFAULT_PROFILES);
+    }
+  }
+  function saveProfiles() {
+    localStorage.setItem(LS_KEY, JSON.stringify(profiles));
+  }
+  function highlightAvatar(path) {
+    document.querySelectorAll(".avatar-option").forEach(el => {
+      el.classList.toggle("active", el.dataset.img === path);
+    });
+  }
+
+
+if (!localStorage.getItem('name'))  localStorage.setItem('name', 'Member');
+if (!localStorage.getItem('email')) localStorage.setItem('email', 'member@example.com');
+if (!localStorage.getItem('plan'))  localStorage.setItem('plan', 'Basic');
+
+
+  
+  /* ---------- Events ---------- */
+  manageBtn.addEventListener("click", () => {
+    document.body.classList.toggle("manage-mode");
+  });
+
+  logoutBtn.addEventListener("click", () => {
+    // Clear auth + redirect, adjust as needed
+    localStorage.removeItem("authToken");
+    window.location.href = "login.html";
+  });
+
+  resetBtn.addEventListener("click", () => {
+    localStorage.removeItem(LS_KEY);
+    profiles = structuredClone(DEFAULT_PROFILES);
+    renderProfiles();
+  });
+
+  profilesContainer.addEventListener("click", (e) => {
+    const addBtn = e.target.closest("#addProfileBtn");
+    if (addBtn) {
+      profiles.push({ name: "New Profile", img: "default.png", kids: false });
+      saveProfiles(); renderProfiles(); return;
+    }
+
+    const card = e.target.closest(".profile-card");
+    if (!card) return;
+
+    // Edit
+    if (e.target.classList.contains("edit-btn")) {
+      selectedProfileIndex = Number(card.dataset.index);
+      const p = profiles[selectedProfileIndex];
+      editName.value = p.name;
+      editKids.checked = p.kids;
+      selectedAvatar.src = p.img;
+      selectedAvatar.dataset.img = p.img;
+      highlightAvatar(p.img);
+      editProfileModal.show();
+      return;
+    }
+
+    // Remove
+    if (e.target.classList.contains("remove-btn")) {
+      const idx = Number(card.dataset.index);
+      profiles.splice(idx, 1);
+      saveProfiles(); renderProfiles();
+      return;
+    }
+
+    // Normal click — navigate or open their list; customize as needed
+    // Example: window.location.href = "home.html";
+  });
+
+  avatarChoices.addEventListener("click", (e) => {
+    const choice = e.target.closest(".avatar-option");
+    if (!choice) return;
+    const path = choice.dataset.img;
+    selectedAvatar.src = path;
+    selectedAvatar.dataset.img = path;
+    highlightAvatar(path);
+  });
+
+  saveEditBtn.addEventListener("click", () => {
+    if (selectedProfileIndex === null) return;
+    const p = profiles[selectedProfileIndex];
+    p.name = editName.value.trim() || "Profile";
+    p.kids = !!editKids.checked;
+    const chosen = selectedAvatar.dataset.img || selectedAvatar.getAttribute("src");
+    p.img = normalizeRelative(chosen);
+    saveProfiles(); renderProfiles();
+    selectedProfileIndex = null;
+    editProfileModal.hide();
+  });
+
+  /* ---------- Account header (name/email/plan) ---------- */
+//   
+
+// async function loadAccountDetails() {
+//   const nameEl = document.getElementById('profileName');
+//   const emailEl = document.getElementById('profileEmail');
+//   const planEl = document.getElementById('profilePlan');
+
+//   let lsName  = localStorage.getItem('name');
+//   let lsEmail = localStorage.getItem('email');
+//   let lsPlan  = localStorage.getItem('plan');
+
+//   if (!lsName)  { lsName = 'John Doe'; localStorage.setItem('name', lsName); }
+//   if (!lsEmail) { lsEmail = 'john@example.com'; localStorage.setItem('email', lsEmail); }
+//   if (!lsPlan)  { lsPlan = 'Premium'; localStorage.setItem('plan', lsPlan); }
+
+//   const token = localStorage.getItem("authToken");
+//   if (!token) {
+//     // Use localStorage fallback
+//     nameEl.textContent  = lsName;
+//     emailEl.textContent = lsEmail;
+//     planEl.textContent  = lsPlan;
+
+//     // Also update first profile card
+//     profiles[0] = { name: lsName, img: 'default.png', kids: false };
+//     saveProfiles();
+//     renderProfiles();
+//     return;
+//   }
+
+//   try {
+//     const res = await fetch('http://localhost:5000/profile', {
+//       headers: { 'Authorization': 'Bearer ' + token }
+//     });
+//     if (!res.ok) throw new Error('Failed to fetch profile');
+
+//     const data = await res.json();
+
+//     nameEl.textContent  = data.name  ?? lsName;
+//     emailEl.textContent = data.email ?? lsEmail;
+//     planEl.textContent  = data.plan  ?? lsPlan;
+
+//     // Update first profile card dynamically
+//     profiles[0] = {
+//       name: data.name ?? lsName,
+//       img: data.avatar ?? 'default.png', // if backend provides avatar
+//       kids: false
+//     };
+//     saveProfiles();
+//     renderProfiles();
+
+//   } catch {
+//     // fallback
+//     nameEl.textContent  = lsName;
+//     emailEl.textContent = lsEmail;
+//     planEl.textContent  = lsPlan;
+
+//     profiles[0] = { name: lsName, img: 'default.png', kids: false };
+//     saveProfiles();
+//     renderProfiles();
+//   }
+// }
+
+function loadAccountDetails() {
+  const nameEl = document.getElementById('profileName');
+  const emailEl = document.getElementById('profileEmail');
+  const planEl = document.getElementById('profilePlan');
+
+  const name  = localStorage.getItem('name');
+  const email = localStorage.getItem('email');
+  const plan  = localStorage.getItem('plan');
+
+  // Set the profile header
+  nameEl.textContent  = name;
+  emailEl.textContent = email;
+  planEl.textContent  = plan;
+
+   // Only update first profile card if it’s empty/default
+  if (!profiles[0] || profiles[0].name === "User 1") {
+    profiles[0] = { name, img: 'default.png', kids: false };
+    saveProfiles();
+    renderProfiles();
+  }
+}
+
+/* ---------- Render ---------- */
+  function renderProfiles() {
+    profilesContainer.innerHTML = "";
+    profiles.forEach((p, i) => {
+      const col = document.createElement("div");
+      col.className = "col-auto";
+      col.innerHTML = `
+        <div class="profile-card" data-index="${i}">
+          <img src="${p.img}" alt="${p.name}" onerror="this.src='default.png'">
+          ${p.kids ? '<div class="kids-badge">KIDS</div>' : ""}
+          <div class="mt-2 fw-semibold">${p.name} ${p.kids ? "👶" : ""}</div>
+          <div class="manage-btns">
+            <button class="btn btn-sm btn-warning edit-btn">Edit</button>
+            <button class="btn btn-sm btn-danger remove-btn">Remove</button>
+          </div>
+        </div>
+      `;
+      profilesContainer.appendChild(col);
+    });
+
+    // Add Profile tile
+    const addCol = document.createElement("div");
+    addCol.className = "col-auto";
+    addCol.innerHTML = `
+      <div class="add-profile" id="addProfileBtn" role="button" aria-label="Add profile">
+        <div style="font-size:2rem; line-height:1">+</div>
+        <small>Add Profile</small>
+      </div>
+    `;
+    profilesContainer.appendChild(addCol);
+  }
+
+
+  /* ---------- My List ---------- */
+  function renderProfileList() {
+    const profileList = JSON.parse(localStorage.getItem("myList")) || [];
+    const profileContainer = document.getElementById("profileMyList");
+    profileContainer.innerHTML = "";
+    if (profileList.length === 0) {
+      profileContainer.innerHTML = "<p class='text-white m-0'>No items in your list yet.</p>";
+      return;
+    }
+    profileList.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "card bg-dark text-white";
+      card.style.minWidth = "180px";
+      card.style.flex = "0 0 auto";
+      card.innerHTML = `
+        <img src="${item.img}" class="card-img-top rounded" alt="${item.title}"
+             style="height: 250px; object-fit: cover;" onerror="this.src='default.png'">
+        <div class="card-body p-2">
+          <h6 class="card-title mb-1">${item.title}</h6>
+          <p class="card-text"><small>${item.genre ?? ""}</small></p>
+        </div>
+      `;
+      profileContainer.appendChild(card);
+    });
+  }
+
+  /* ---------- Init ---------- */
+  renderProfiles();
+  renderProfileList();
+  loadAccountDetails();
+})();
+</script> -->
+
+<script src="navbar.js"></script>
+<!-- If your own profile.js duplicates the code below, remove that file or its overlapping parts -->
+<!-- <script src="profile.js"></script> -->
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Netflix Profiles</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+
+<style>
+:root { color-scheme: dark; }
+body { background: linear-gradient(180deg, rgba(0,0,0,.85), rgba(20,20,20,1)); color:#fff; min-height:100vh; }
+
+.profile-card { text-align:center; cursor:pointer; position:relative; animation: fadeZoom .6s ease forwards; }
+.profile-card img { width:150px; height:150px; object-fit:cover; border-radius:6px; transition:transform .25s ease; background:#222; }
+.profile-card:hover img { transform:scale(1.05); }
+.kids-badge { position:absolute; bottom:8px; right:8px; background:#ffb300; color:#000; padding:2px 6px; font-size:.7rem; font-weight:700; border-radius:3px; }
+@keyframes fadeZoom { from {opacity:0; transform:scale(.92)} to {opacity:1; transform:scale(1)} }
+.manage-btns { display:none; margin-top:.5rem; gap:.5rem; }
+.manage-mode .manage-btns { display:flex; justify-content:center; }
+.add-profile { width:150px; height:150px; border-radius:6px; border:2px dashed gray; display:flex; align-items:center; justify-content:center; flex-direction:column; color:#bbb; cursor:pointer; }
+.avatar-option { border-radius:6px; cursor:pointer; }
+.avatar-option.active { outline:3px solid #0d6efd; outline-offset:2px; }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand me-3" href="#">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
+           class="img-fluid" style="width:120px;" alt="Netflix Logo">
+    </a>
+    <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row gap-3 align-items-center">
+        <li class="nav-item"><a class="nav-link active" href="home.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="movieAL.html">Movies</a></li>
+        <li class="nav-item"><a class="nav-link active" href="tvShowsAL.html">TV Shows</a></li>
+        <li class="nav-item"><a class="nav-link active" href="newNhot.html">New & Popular</a></li>
+        <li class="nav-item"><a class="nav-link active" href="myList.html">My List</a></li>
+      </ul>
+      <form class="d-flex me-3">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-danger" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!-- Account Summary & Profiles -->
+<div class="container text-center py-5 mt-5">
+  <div class="row justify-content-center mb-4">
+    <div class="col-md-6">
+      <div class="card bg-dark text-white p-4 rounded-3 shadow">
+        <h2 id="profileName">Loading name...</h2>
+        <p>Email: <span id="profileEmail">Loading...</span></p>
+        <p>Plan: <span id="profilePlan">Loading...</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <button id="manageBtn" class="btn btn-outline-light">Manage Profiles</button>
+    <button id="logoutBtn" class="btn btn-danger">Sign Out</button>
+    <button id="resetBtn" class="btn btn-secondary">Reset Profiles</button>
+  </div>
+
+  <div class="row g-4 justify-content-center" id="profilesContainer"></div>
+</div>
+
+<!-- My List -->
+<div class="container my-5">
+  <h2 class="mb-3 text-white">My List</h2>
+  <div id="profileMyList" class="d-flex overflow-auto gap-3 pb-3"></div>
+</div>
+
+<!-- Edit Profile Modal -->
+<div class="modal fade" id="editProfileModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Profile</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="editProfileName" class="form-control mb-3" placeholder="Profile name">
+        <div class="form-check mb-3 text-start">
+          <input class="form-check-input" type="checkbox" id="editProfileKids">
+          <label class="form-check-label" for="editProfileKids">Kids Profile</label>
+        </div>
+        <h6 class="text-start">Avatars</h6>
+        <div class="d-flex flex-wrap gap-3" id="avatarChoices">
+          <img src="user1.png" class="avatar-option" data-img="user1.png" width="80" height="80" alt="Avatar 1">
+          <img src="user2.jpg" class="avatar-option" data-img="user2.jpg" width="80" height="80" alt="Avatar 2">
+          <img src="user3.jpg" class="avatar-option" data-img="user3.jpg" width="80" height="80" alt="Avatar 3">
+          <img src="user4.jpg" class="avatar-option" data-img="user4.jpg" width="80" height="80" alt="Avatar 4">
+          <img src="default.png" class="avatar-option" data-img="default.png" width="80" height="80" alt="Default Avatar">
+        </div>
+        <div class="text-center mt-3 pt-3 border-top border-secondary">
+          <h6 class="mb-2">Selected Profile Picture</h6>
+          <img id="selectedAvatar" src="default.png" width="100" height="100" alt="Selected avatar" style="border-radius:8px;background:#222">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="saveEditBtn" class="btn btn-primary">Save Changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="navbar.js"></script>
+<script src="profile.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+(() => {
+  if(window.ProfileUIInitialized) return; 
+  window.ProfileUIInitialized=true;
+
+  const LS_KEY="profiles";
+  const DEFAULT_PROFILES=[
+    { name:"User 1", img:"user1.png", kids:false },
+    { name:"Kids", img:"kids.jpg", kids:true }
+  ];
+
+  let profiles = loadProfiles();
+  let manageMode=false;
+  let selectedProfileIndex=null;
+
+  const profilesContainer=document.getElementById("profilesContainer");
+  const manageBtn=document.getElementById("manageBtn");
+  const logoutBtn=document.getElementById("logoutBtn");
+  const resetBtn=document.getElementById("resetBtn");
+
+  const editName=document.getElementById("editProfileName");
+  const editKids=document.getElementById("editProfileKids");
+  const avatarChoices=document.getElementById("avatarChoices");
+  const selectedAvatar=document.getElementById("selectedAvatar");
+  const saveEditBtn=document.getElementById("saveEditBtn");
+  const editProfileModalEl=document.getElementById("editProfileModal");
+  const editProfileModal=new bootstrap.Modal(editProfileModalEl);
+
+  function normalizeRelative(path){ return path?path:"default.png"; }
+
+  function loadProfiles(){ 
+    try{
+      const raw=localStorage.getItem(LS_KEY);
+      if(!raw)return structuredClone(DEFAULT_PROFILES);
+      const parsed=JSON.parse(raw);
+      return parsed.map(p=>({name:p.name||"Profile", img:normalizeRelative(p.img), kids:!!p.kids}));
+    }catch{return structuredClone(DEFAULT_PROFILES);}
+  }
+
+  function saveProfiles(){ localStorage.setItem(LS_KEY, JSON.stringify(profiles)); }
+
+  function renderProfiles(){
+    profilesContainer.innerHTML="";
+    profiles.forEach((p,i)=>{
+      const col=document.createElement("div");
+      col.className="col-auto";
+      col.innerHTML=`
+        <div class="profile-card ${manageMode?'manage-mode':''}" data-index="${i}">
+          <img src="${p.img}" alt="${p.name}" onerror="this.src='default.png'">
+          ${p.kids?'<div class="kids-badge">KIDS</div>':""}
+          <div class="mt-2 fw-semibold">${p.name} ${p.kids?"👶":""}</div>
+          <div class="manage-btns">
+            <button class="btn btn-sm btn-warning edit-btn">Edit</button>
+            <button class="btn btn-sm btn-danger remove-btn">Remove</button>
+          </div>
+        </div>
+      `;
+      profilesContainer.appendChild(col);
+    });
+    // Add profile
+    const addCol=document.createElement("div");
+    addCol.className="col-auto";
+    addCol.innerHTML=`<div class="add-profile" id="addProfileBtn"><div style="font-size:2rem">+</div><small>Add Profile</small></div>`;
+    profilesContainer.appendChild(addCol);
+
+    // Attach events
+    document.querySelectorAll(".edit-btn").forEach(btn=>btn.addEventListener("click",openEdit));
+    document.querySelectorAll(".remove-btn").forEach(btn=>btn.addEventListener("click",removeProfile));
+    document.getElementById("addProfileBtn")?.addEventListener("click",addProfile);
+  }
+
+  function loadAccountDetails(){
+    const nameEl=document.getElementById('profileName');
+    const emailEl=document.getElementById('profileEmail');
+    const planEl=document.getElementById('profilePlan');
+
+    // if(!localStorage.getItem('name')) localStorage.setItem('name','Member');
+    // if(!localStorage.getItem('email')) localStorage.setItem('email','member@example.com');
+    // if(!localStorage.getItem('plan')) localStorage.setItem('plan','Basic');
+
+      const name  = localStorage.getItem('name')  || 'Member';
+  const email = localStorage.getItem('email') || 'member@example.com';
+  const plan  = localStorage.getItem('plan')  || 'Basic';
+
+    nameEl.textContent=name;
+    emailEl.textContent=email;
+    planEl.textContent=plan;
+
+    // Update first profile card with logged-in user's name
+  if (!profiles[0]) profiles[0] = { name, img: 'default.png', kids: false };
+  else profiles[0].name = name;
+
+    saveProfiles();
+    renderProfiles();
+  }
+
+  function renderProfileList(){
+    const list=JSON.parse(localStorage.getItem("myList"))||[];
+    const container=document.getElementById("profileMyList");
+    container.innerHTML="";
+    if(list.length===0){container.innerHTML="<p class='text-white m-0'>No items in your list yet.</p>";return;}
+    list.forEach(item=>{
+      const card=document.createElement("div");
+      card.className="card bg-dark text-white"; card.style.minWidth="180px"; card.style.flex="0 0 auto";
+      card.innerHTML=`<img src="${item.img}" class="card-img-top rounded" alt="${item.title}" style="height:250px;object-fit:cover;" onerror="this.src='default.png'"><div class="card-body p-2"><h6 class="card-title mb-1">${item.title}</h6><p class="card-text"><small>${item.genre||""}</small></p></div>`;
+      container.appendChild(card);
+    });
+  }
+
+  function toggleManage(){
+    manageMode=!manageMode;
+    renderProfiles();
+  }
+
+  function openEdit(e){
+    const idx=parseInt(e.target.closest(".profile-card").dataset.index);
+    selectedProfileIndex=idx;
+    const p=profiles[idx];
+    editName.value=p.name;
+    editKids.checked=p.kids;
+    selectedAvatar.src=p.img;
+    avatarChoices.querySelectorAll(".avatar-option").forEach(img=>img.classList.remove("active"));
+    avatarChoices.querySelector(`[data-img='${p.img}']`)?.classList.add("active");
+    editProfileModal.show();
+  }
+
+  avatarChoices.querySelectorAll(".avatar-option").forEach(img=>{
+    img.addEventListener("click",()=>{ selectedAvatar.src=img.dataset.img; avatarChoices.querySelectorAll(".avatar-option").forEach(i=>i.classList.remove("active")); img.classList.add("active"); });
+  });
+
+  saveEditBtn.addEventListener("click",()=>{
+    if(selectedProfileIndex===null)return;
+    const p=profiles[selectedProfileIndex];
+    p.name=editName.value.trim()||"Profile";
+    p.kids=editKids.checked;
+    p.img=selectedAvatar.src;
+    saveProfiles();
+    if(selectedProfileIndex===0){ document.getElementById('profileName').textContent=p.name; localStorage.setItem('name',p.name); }
+    renderProfiles();
+    selectedProfileIndex=null;
+    editProfileModal.hide();
+  });
+
+  function removeProfile(e){
+    const idx=parseInt(e.target.closest(".profile-card").dataset.index);
+    if(idx===0){ alert("Cannot remove first profile"); return; }
+    profiles.splice(idx,1);
+    saveProfiles();
+    renderProfiles();
+  }
+
+  function addProfile(){
+    const newProfile={name:"New User",img:"default.png",kids:false};
+    profiles.push(newProfile);
+    saveProfiles();
+    renderProfiles();
+  }
+
+  manageBtn.addEventListener("click",toggleManage);
+  resetBtn.addEventListener("click",()=>{ localStorage.removeItem(LS_KEY); profiles=loadProfiles(); loadAccountDetails(); });
+
+  loadAccountDetails();
+  renderProfileList();
+})();
+</script>
+
+</body>
+</html>

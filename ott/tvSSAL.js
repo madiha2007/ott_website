@@ -241,11 +241,47 @@ const cardData = [
         ]
       },
       {
-        season: 3,
-        episodes: [
-         
-        ]
-      },
+  season: 3,
+  episodes: [
+    { 
+      ep: 1, 
+      title: "", 
+      description: "Tommy marries Grace, but an assassination at the reception threatens his happiness and pulls him deeper into criminal alliances.", 
+      img: "https://occ-0-116-114-80.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQLgPO93r8jLEyO1ybmNDvONwJ71nYmXjCF9y5vXO8HgU1nLpGLzk46j44_1x0uG7pFHWueKUG9PRHhf3r2mukB5GpW5mJKhPNTf0LoSyNqFd6dvJHLPh6g.webp?r=7c8" 
+    },
+    { 
+      ep: 2, 
+      title: "", 
+      description: "A Russian business deal forces Tommy into a dangerous conspiracy, while Polly's past comes back to haunt her.", 
+      img: "https://occ-0-116-114-80.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABfYjaLLXkVYbPkTSG4WUIybHSeR5vUZlGxNcHnbcqwzNYVheHTb5UqaEB-WXKx6paUEv5Fbcxh2_F7ESf4RQgFHYNGsG-4lG3MHq0rfhE2F1AojshHD4xyo.webp?r=8ae" 
+    }, 
+    { 
+      ep: 3, 
+      title: "", 
+      description: "Tommy must prove his loyalty to the Russians while Arthur struggles with his violent nature and family ties.", 
+      img: "https://occ-0-116-114-80.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUjpE6OEdO2vvppcTq3ZpDeHDQuG8nni97jB9ltHqXRGSC6puElBu85ZhyOiSoilfL0ReVxYl6yB2lwLjc5B7p7mLXqWfC1woXtT0ldKuVgclIYPsgAox44.webp?r=6f7" 
+    },
+    { 
+      ep: 4, 
+      title: "", 
+      description: "The Shelby family faces betrayal as their plan to rob the Russians grows more dangerous and complicated.", 
+      img: "https://occ-0-116-114-80.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABRlS5tV1qU9g1bnxX8mS1n8zoUTLGPNMDavA_vBhClK7yo4FbAFQZ8AUYxE7u18JfY8FEiJAlTgwJjEWbA38EZTrsnOm50wlV9Rrm2LqT_sOikdxOErypwE.webp?r=1f9" 
+    }, 
+    { 
+      ep: 5, 
+      title: "", 
+      description: "With enemies closing in, Tommy uses deception to protect his family, but the cost is higher than expected.", 
+      img: "https://occ-0-116-114-80.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABWbbm7X1VQ6gX6y2HzO3Z0zrdO6ilrH8kIMbeY1kY7gTW5K17IIVCjRjIM6HV7MUkOwZTLf9UgUZnL7IJQftrnCO7gSmPEJ1UnrKBlivE2IFqgbyy9piY_c.webp?r=8c5" 
+    }, 
+    { 
+      ep: 6, 
+      title: "", 
+      description: "In a tense finale, Tommy makes a deal that sacrifices those closest to him in order to secure power and survive.", 
+      img: "https://occ-0-116-114-80.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYb-Va8ayx6dNLqMbJQgeglOj7JWoZaNhphj3HoEbrpbOMfnR6ZW4fo0p8H6X9RTl0ayX9EHLCSdpujh_dQoT5Q2F4kHYxQsyMxhtDL0QvnAQYh3fgwsUFI.webp?r=b35" 
+    }
+  ]
+}
+,
       {
         season: 4,
         episodes: [
@@ -492,6 +528,71 @@ const cardData = [
     description:"Across more than a decade, 17 teen boys and young men were murdered by convicted killer Jeffrey Dahmer. How did he evade arrest for so long?",
     seasons: [
       {
+        season: 1,
+        episodes: [
+          { 
+            ep: 1, 
+            title: "Monster: The Jeffrey Dahmer Story", 
+            description: "After throwing his neighbor off the stench coming from his apartment, Jeff heads to a local bar, where a stranger takes him up on a tempting offer.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABSj-yCOkKDF__bq9nSKjuAJgLnLkplc4uGxTqtc18vt2g18eb8K_pMZ0GxrQChMIAQvwPWuvp_vmFhyu3rURgrekQjCXOLBieZoJLUfsWjgl_MG3hgSeV-X3.webp?r=1c1"
+          },
+          { 
+            ep: 2, 
+            title: "Please Don't Go", 
+            description: "A young Jeff contends with troubles at home and school. Years later, his strange behavior evolves into murderous deeds that slip past the police.",
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABcgnlrYke8TehERqPn9qkFIs06ff9oiJqZzdYbMyrXFypyvSRkdJ_SBxcAsCl1t_H3ClqJy7_sE5pmW7tV-Pn1ZcGZhW6AN_qUvD6dcrY1DVaE8ToP9CwR_V.webp?r=698"
+          },
+          {
+            ep: 3,
+            title:"Doin' A Dahmer",
+            description:"Left to live alone after his parents' turbulent divorce, high school senior Jeff breaks routine when he invites a hitchhiker into his home.",
+            img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYXSxDVwZayBqSKucied9G0qzcqziorYzurLh1V4i-Rsalf4kwqt4_FM2CC6GVQDuBqVMhHAsAEds6W5Mdy5si1satDqAsmghjRnx3_Eqtqetl-hOw2BzBvn.webp?r=61a"
+          },
+          {
+            ep: 4,
+            title:"The Good Boy Box",
+            description:"From high school to the Army, Jeff struggles to find stability. While living in his grandmother's house, Jeff begins targeting young men at gay bars.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABXIBqO9AyxEOg1l69oaj6Du_ptb_QOOUCL-YzP9IJZ1VZeGg_LHAYcLhbrMWZYx_TzPStAs5f7xSW2a4jqsuMQFWO4WGbQQiFU4Mjqu2s-1xt70kjoPTj0ZI.webp?r=59a"
+          },
+          {
+            ep:5,
+            title:"Blood on Their Hands",
+            description:"Jeff's list of victims grows longer without a full police investigation. An encounter with a teen lands him in jail. Later, he gets his own apartment.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABVPysGJ4xzJkeFopjGARrxhGXv9whrZZ9BHxWR1r3fJWGtN6GPqiY7J6lproSpvITu6SuyDpNEydBwbfodZKE9p_QwyfVdqx21m6yy65GUPSXCBrty1LHdNx.webp?r=b7c"
+          },
+          {
+            ep: 6,
+            title: "Silenced",
+            description:"Aspiring model Tony moves to Madison and meets Jeff at a bar, beginning a relationship through handwritten notes that takes a dark turn.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbIvpIGmltitJ1R4F4FIh2XVm-v1psPMyL5duod4rwcHYPQXRqpRpET8_DkI9M5FjoALnV5vi6OiTFW4qBnHGwC-Jo-B4jU07viI0zufGnoUUMoxQlyS6HJo.webp?r=b08"
+          },
+          {
+            ep: 7,
+            title: "Cassandra",
+            description:"A prominent activist meets with Glenda, who recounts her harrowing experiences living next door to Jeff and how her concerns went largely ignored.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUVytjnto_9aozLWJiAVlvNmsjSEilXkJJ20LKe8zZpgfHeMMt6gGY_FS4fN1SNLuKuWpXyGz8w_oj5KOy7cgjtKOapDHrIf-XvCO10hm3z1fMS2wSnJgvCN.webp?r=2df"
+          },
+          {
+            ep: 8,
+            title: "Lionel Dahmer",
+            description:"Jeff's father, Lionel, returns home to find his son in a dark place. After Jeff is arrested, Lionel tries to understand what went wrong.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABacl8rEVglxIWmmOnoTw8BMroDWFvyXK85gl18jf2mCkYTKQvD9J1wL_fMj5D9nl7xKVS5ktfWQDlWYExDtJY65Wb3pE3z3WGUMd7WN4bt9S9uwF7nQHFHkm.webp?r=002"
+          },
+          {
+            ep: 9,
+            title: "The Bogeyman",
+            description:"Glenda, the victims and their families do their best to move forward despite haunting memories, while Jeff attracts fanfare from behind bars.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbwkKrHRLTCcByNFKkrs4kSsDrKClzKSfbGjngsbvDajRC_xuD4aIfCrGYn8oDbRErYgNP5815XZE5RR8lnMQgRIn20LfPE7MMZNFIwsuIQ5NF3v-tnsVxRY.webp?r=95f"
+          },
+          {
+            ep: 10,
+            title: "God of Forgiveness, God of Vengeance",
+            description:"As the trial begins, Jeff's family and the victims' families face off in court. Jeff's fate is decided, and his story comes to a close.",
+            img:"https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYXoNSO3K8963ulMiB9fAbW7-vqLVDNgjpP9ntmV0V3NwKlOP-9MGU7SVOW_RZQczYtuBAE9APkpEBue7GOlAefJ9iWBql33e4HEICHJTFziLenC6hIRKPUp.webp?r=e5e"
+          }
+        ]
+      },
+       {
         season: 1,
         episodes: [
           { 
