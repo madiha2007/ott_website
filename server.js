@@ -1,61 +1,55 @@
+// 
 const express = require('express');
 const mongoose = require('mongoose');
-const cors = require('cors')
+const cors = require('cors');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-// const router = express.Router();
-
 const app = express();
 const PORT = 5000;
+const JWT_SECRET = process.env.JWT_SECRET || "secretkey";
 
-//middleware
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-// Replace with your actual connection string (keep password URL-encoded)
+// MongoDB connection
 mongoose.connect(
-    'mongodb+srv://madiha:maddu%400000@cluster0.zpxwtrx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', 
-    {
-        dbName: "visitorDB",
-    }
+  'mongodb+srv://madiha:maddu%400000@cluster0.zpxwtrx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', 
+  { dbName: "visitorDB" }
 )
 .then(() => console.log('Connected to MongoDB Atlas'))
-  .catch((err) => console.error('MongoDB connection error:', err));
+.catch((err) => console.error('MongoDB connection error:', err));
 
-// Create a schema for visitors
+// Schemas
 const visitorSchema = new mongoose.Schema({
   name: String,
   ip: String,
   userAgent: String,
   timestamp: Date,
 });
-
 const Visitor = mongoose.model('Visitor', visitorSchema);
 
-// Create a schema for users
 const userSchema = new mongoose.Schema({
   name: String,
   email: { type: String, unique: true, required: true },
-  password: { type: String, required: true },  // For production, hash this!
+  password: { type: String, required: true },
   plan: { type: String, default: 'Free' },
 });
-
 const User = mongoose.model('User', userSchema);
 
-// Log visitor info
+// Visitor logging
 app.post('/log-visitor', async (req, res) => {
-    try {
+  try {
+    const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
+    const { name, userAgent } = req.body;
 
-        const ip = req.headers["x-forwarded-for"] || req.socket.remoteAddress;
-        const { name, userAgent } = req.body;
-
-        const visitor = new Visitor({
-            name: name || "Anonymous",
-            ip,
-            userAgent,
-            timestamp: new Date(),
-        });
+    const visitor = new Visitor({
+      name: name || "Anonymous",
+      ip,
+      userAgent,
+      timestamp: new Date(),
+    });
 
     await visitor.save();
     res.status(201).json({ message: 'Visitor logged' });
@@ -65,25 +59,16 @@ app.post('/log-visitor', async (req, res) => {
   }
 });
 
-// Signup route
+// Signup
 app.post('/signup', async (req, res) => {
   try {
     const { name, email, password, plan } = req.body;
-
-    // if(!name || !email || !password || !plan) {
-    //   return res.status(400).json({ message: 'Missing fields' });
-    // }
-
-    // Check if email already exists
     const existingUser = await User.findOne({ email });
-    if(existingUser) {
+    if (existingUser) {
       return res.status(400).json({ success: false, message: 'Email already registered' });
     }
 
-    // Hash the password (in production, use a stronger salt and work factor)
     const hashedPassword = await bcrypt.hash(password, 10);
-
-    // Create new user (password should be hashed in production)
     const user = new User({ name, email, password: hashedPassword, plan });
     await user.save();
 
@@ -94,30 +79,53 @@ app.post('/signup', async (req, res) => {
   }
 });
 
-//login route
+// Login
 app.post('/login', async (req, res) => {
-  try{
-      const { email, password } = req.body;
+  try {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+    if (!user) return res.json({ success: false, message: "Invalid email or password" });
 
-        const user = await User.findOne({ email });
-        if (!user) {
-          return res.json({ success: false, message: "Invalid email or password" });
-        }
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) return res.json({ success: false, message: "Invalid email or password" });
 
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) {
-          return res.json({ success: false, message: "Invalid email or password"});
-        }
-
-        //create JWT token
-        const token = jwt.sign({ id: user.id}, 'secretkey', { expiresIn: '1h'});
-        res.json({ success: true, token, message: "Login successful"});
-      } 
-      catch (err) {
-        console.error('Login error:', error);
-        res.status(500).json({ success: false, message: 'Server error' });
-      }
+    const token = jwt.sign({ id: user.id }, JWT_SECRET, { expiresIn: '1h' });
+    res.json({ 
+      success: true, 
+      token, 
+      user: { name: user.name, email: user.email, plan: user.plan },
+      message: "Login successful"
     });
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  } catch (err) {
+    console.error('Login error:', err);
+    res.status(500).json({ success: false, message: 'Server error' });
+  }
 });
+
+// JWT middleware
+function authMiddleware(req, res, next) {
+  const authHeader = req.headers.authorization;
+  if (!authHeader) return res.status(401).json({ success: false, message: 'No token provided' });
+
+  const token = authHeader.split(' ')[1];
+  jwt.verify(token, JWT_SECRET, (err, decoded) => {
+    if (err) return res.status(401).json({ success: false, message: 'Invalid token' });
+    req.userId = decoded.id;
+    next();
+  });
+}
+
+// Protected route
+app.get('/profile', authMiddleware, async (req, res) => {
+  try {
+    const user = await User.findById(req.userId).select('-password');
+    if (!user) 
+      return res.status(404).json({ success: false, message: 'User not found' });
+    res.json({ success: true, user });
+  } catch (err) {
+    console.error('Fetch user error:', err);
+    res.status(500).json({ success: false, message: 'Server error' });
+  }
+});
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

@@ -118,43 +118,33 @@
         </div>
 
         <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                const loginForm = document.getElementById("loginForm");
-                const errorDiv = document.getElementById("error");
-            
+document.querySelector('#loginForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
 
-            loginForm.addEventListener("submit", function(e) {
-                e.preventDefault();
+  const email = document.querySelector('#email').value;
+  const password = document.querySelector('#password').value;
 
-                const email = document.getElementById("email").value.trim();
-                const password = document.getElementById("password").value.trim();
-                
-                fetch("http://localhost:5000/login" , {
-                    method: "POST",
-                    headers: {
-                        "Content-Type" : "application/json",
-                    },
-                    body: JSON.stringify({ email, password }),
-                })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.success) {
-                        alert("Login successful!");
-                        localStorage.setItem("token", data.token);
-                        window.location.href = "home.html";
-                    }
-                    else{
-                        errorDiv.textContent = data.message;
-                    }
-                })
-                .catch(err => {
-                    console.error("Error:", err);
-                    errorDiv.textContent = "Server error occurred.";
-                });
-            })
-         } );
-           
-        </script>
+  try {
+    const res = await fetch('http://localhost:5000/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+
+    const data = await res.json();
+    if(data.success){
+      localStorage.setItem('authToken', data.token);   // Save token
+      window.location.href = "home.html";              // Redirect after login
+    } else {
+      alert(data.message);
+    }
+  } catch (err) {
+    console.error(err);
+    alert("Server error");
+  }
+});
+</script>
+
         
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
