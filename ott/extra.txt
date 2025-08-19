@@ -1,853 +1,353 @@
-//profile code 
+<!-- "Pehle everything was working the profile pic wasnt showing aur ab vo kiya toh ye toggle hi nhi ho rhaa" -->
+<!-- HELP -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Netflix Profile Selection</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #141414;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-        .profile-card {
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-radius: 5px;
-            overflow: hidden;
-            position: relative;
-        }
-        .profile-card:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 15px rgba(255,255,255,0.5);
-        }
-        .profile-card.selected {
-            border: 3px solid #e50914;
-            transform: scale(1.15);
-        }
-        .profile-img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-        }
-        .profile-name {
-            text-align: center;
-            margin-top: 8px;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-        .profile-actions {
-            display: none;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 2;
-        }
-        .profile-card.selected .profile-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-        .profile-actions button {
-            background: rgba(20,20,20,0.8);
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            padding: 4px 10px;
-            font-size: 0.9rem;
-            transition: background 0.2s;
-        }
-        .profile-actions button:hover {
-            background: #e50914;
-            color: #fff;
-        }
-        .add-profile-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 200px;
-            background: rgba(255,255,255,0.05);
-            border: 2px dashed #555;
-            color: #888;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: border-color 0.3s;
-        }
-        .add-profile-card:hover {
-            border-color: #e50914;
-            color: #fff;
-        }
-        iframe {
-            width: 100%;
-            height: 400px;
-            border: none;
-            margin-top: 30px;
-        }
-        .logout-btn {
-            position: absolute;
-            top: 30px;
-            right: 40px;
-            background: #e50914;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            padding: 8px 18px;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: background 0.2s;
-            z-index: 10;
-        }
-        .logout-btn:hover {
-            background: #b0060f;
-        }
-        .edit-profile-modal {
-            background: rgba(0,0,0,0.7);
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 100;
-        }
-        .edit-profile-modal.active {
-            display: flex;
-        }
-        .edit-profile-content {
-            background: #222;
-            padding: 30px 40px;
-            border-radius: 8px;
-            min-width: 300px;
-            color: #fff;
-            box-shadow: 0 0 30px #000;
-        }
-        .edit-profile-content input {
-            width: 100%;
-            margin-bottom: 15px;
-            padding: 7px 10px;
-            border-radius: 3px;
-            border: 1px solid #444;
-            background: #181818;
-            color: #fff;
-        }
-        .edit-profile-content button {
-            margin-right: 10px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Netflix Profiles</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+<style>
+  :root { color-scheme: dark; }
+  body {
+    /* Clean background (no 404s) */
+    background: linear-gradient(180deg, rgba(0,0,0,.85), rgba(20,20,20,1));
+    color: #fff; min-height: 100vh;
+  }
+  .profile-card {
+    text-align: center; cursor: pointer; position: relative;
+    animation: fadeZoom .6s ease forwards;
+  }
+  .profile-card img {
+    width: 150px; height: 150px; object-fit: cover;
+    border-radius: 6px; transition: transform .25s ease;
+    background:#222;
+  }
+  .profile-card:hover img { transform: scale(1.05); }
+  .kids-badge {
+    position: absolute; bottom: 8px; right: 8px;
+    background: #ffb300; color: #000; padding: 2px 6px;
+    font-size: .7rem; font-weight: 700; border-radius: 3px;
+  }
+  @keyframes fadeZoom { from {opacity:0; transform:scale(.92)} to {opacity:1; transform:scale(1)} }
+
+  .manage-btns { display: none; margin-top:.5rem; gap:.5rem }
+  .manage-mode .manage-btns { display: flex; justify-content: center; }
+  .add-profile {
+    width: 150px; height: 150px; border-radius: 6px;
+    border: 2px dashed gray; display:flex; align-items:center; justify-content:center;
+    flex-direction: column; color: #bbb;
+  }
+  .avatar-option { border-radius:6px; cursor:pointer }
+  .avatar-option.active { outline: 3px solid #0d6efd; outline-offset: 2px; }
+  iframe { width: 100%; height: 400px; border: none; margin-top: 30px; }
+</style>
 </head>
 <body>
-    <button class="logout-btn" onclick="logout()">Log Out</button>
-    <div class="container text-center py-5">
-        <h1 class="mb-4">Who's Watching?</h1>
-        <div class="row justify-content-center g-4" id="profilesRow">
-            <!-- Profile 1 -->
-            <div class="col-6 col-sm-4 col-md-3">
-                <div class="profile-card" data-profile="User1">
-                    <div class="profile-actions">
-                        <button class="edit-btn">Edit</button>
-                        <button class="remove-btn">Remove</button>
-                    </div>
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAjVBMVEUNfoD///8Ae30AeHoAdXcAdnl6q6z2+/vo8vLx+Ph1sbIAdHfu9PQHfH8AgYPl8vI7kJKRvr+hx8jO4+PJ3d4eioxppqja6eni7OxdoqRSnqC42dqXxsaw09Ntra8ph4l/uLmGtrdapqeozc02lZdMmZuuzM3A2NnU4+SRvL2fy8xSmZpEkZO+1NV1qaqNxlfBAAAEIElEQVR4nO3bXXeiOhQGYNgJg6AiiIiggtbP0U7//8+beJzjoCYtSAQ7630uetVmvZuEEOnWMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvjNi3Ii8rkWtpuiLGCyKxA/dOchIZ3FPmGc5tVckGf4iPMUIA9/QGYNoEZr/c4Y+0zh2FSydX2KY00RfDDJ2ZlEnbadEa+EUYziBrlkkPzav2W4rJc5vYphzTQPTbYGixBZmkc/uYphDPTG29yObHb/p7YYSSQxzqSEGJbZs6FX9kavJQ1mMQV6/RDaVjWzaDU8i/ZDGMBf116knH1nH0FUoLrQ5qR2D3hQVhl0dwUvjihh2VHctsZVqaC3By6K1IoaZ1a2Qj5QXr68leznKpWQu6y5Tfv8wbKXC7HkV7hQjN1xh+rQKmeQkca6w0acFRaoKa9+HyosXci3Ry7Kk5w4de6lhKCps+nl4d+w+q/88VD0uHA3HpSpoLJ/ErH6FdHRkIw+b3GdOPOljK841DE2yvWaiYflXjLGWTKLtaolB9w8Me938uxq+uC8x0LMZUHRboqNh9T+QY3lb4ErXrUL92dXli6N23tPwt04xRsfV+MCi5O+Hl8Gy4W20EMMvXOrhRut1Jsrd+WQy2c82Wt9TVo7hpatY5FhlhvbXtsQsLmh/11w9x0vEAAAAAAAAAAAAAAAAgH8KMc/4l/8HRXyz3e2GLf07uqD/nO+fkLHZ2eeWgnZnkVi0ifSvJOLJpUXKTtoskfxdp9fZb7TWSETprtA50XCD3RWW/Qky19dUQCx3b7r2PV1jV+dd+sU6M88iDc0v1I2Cu5bextuzLqyrdrGgdhOHmL6xrGM/0hP3EfurIM42YY/fkMRYOpR2ZDvt3Yfe/iaLPVn4j7TBiL0l9xexooe24UbXIkvWL7n7uSGryh1JjEfjofQrQefV/7T8X2OuNFIvnq3FmisxlyR+zYoWo4Fi9oRB1kAhapbyytvT4OM9OpUpr1PUZhnR8SOYqosT4sxq99AmHvifxBuEo2G2iXiXc1bEeddYp8vtaN/55K9P9bntH0qJZV+kFHrh9HAI3P8sDodVqL7nCuzwrc0Wwr9YFEjbxGuy5+MWv1F+jcgPPr2XHtAL3l9j/v4Qny+CUguvHGfnvt7n3r44LSu+IFnVIDgarW8vUsSjmepQUnr24iB65dZZYt54NXi8vtEw9V64vDOx/fmHuPre6vSmWa6/r/s5xDls7W7D8lU64fZn6vFvUt4ZMcrfk2D69VnAmQbj95xefm3KiHMn73prN/g1CuO441zm1HacQRyHo19Btva6vMz5/JWd6jQ83z8mx48fZ8kx2fi5R9++tiKiPl1rOxEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALy43/ipMgzSotaqAAAAAElFTkSuQmCC" alt="Profile 1" class="profile-img">
-                    <div class="profile-name">User 1</div>
-                </div>
-            </div>
-            <!-- Profile 2 -->
-            <div class="col-6 col-sm-4 col-md-3">
-                <div class="profile-card" data-profile="User2">
-                    <div class="profile-actions">
-                        <button class="edit-btn">Edit</button>
-                        <button class="remove-btn">Remove</button>
-                    </div>
-                    <img src="https://i.imgur.com/fY2Y5iN.png" alt="Profile 2" class="profile-img">
-                    <div class="profile-name">User 2</div>
-                </div>
-            </div>
-            <!-- Profile 3 -->
-            <div class="col-6 col-sm-4 col-md-3">
-                <div class="profile-card" data-profile="User3">
-                    <div class="profile-actions">
-                        <button class="edit-btn">Edit</button>
-                        <button class="remove-btn">Remove</button>
-                    </div>
-                    <img src="https://i.imgur.com/AItCX1U.png" alt="Profile 3" class="profile-img">
-                    <div class="profile-name">User 3</div>
-                </div>
-            </div>
-            <!-- Kids Profile -->
-            <div class="col-6 col-sm-4 col-md-3">
-                <div class="profile-card" data-profile="Kids">
-                    <div class="profile-actions">
-                        <button class="edit-btn">Edit</button>
-                        <button class="remove-btn">Remove</button>
-                    </div>
-                    <img src="https://i.imgur.com/z1dI2Qz.png" alt="Kids Profile" class="profile-img">
-                    <div class="profile-name">Kids</div>
-                </div>
-            </div>
-            <!-- Add Profile -->
-            <div class="col-6 col-sm-4 col-md-3">
-                <div class="add-profile-card" id="addProfileBtn">
-                    <div style="font-size:2.5rem;">+</div>
-                    <div>Add Profile</div>
-                </div>
-            </div>
-        </div>
-        <!-- My List Frame -->
-        <iframe id="myListFrame" src="myList.html"></iframe>
+
+<div class="container text-center py-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3 m-0">Who's Watching?</h1>
+    <div class="d-flex gap-2">
+      <button id="manageBtn" class="btn btn-outline-light">Manage Profiles</button>
+      <button id="logoutBtn" class="btn btn-danger">Logout</button>
+      <button id="resetBtn" class="btn btn-secondary">Reset Profiles</button>
     </div>
+  </div>
 
-    <!-- Edit Profile Modal -->
-    <div class="edit-profile-modal" id="editProfileModal">
-        <div class="edit-profile-content">
-            <h4>Edit Profile</h4>
-            <input type="text" id="editProfileName" placeholder="Profile Name" />
-            <button class="btn btn-danger" id="saveProfileBtn">Save</button>
-            <button class="btn btn-secondary" id="cancelEditBtn">Cancel</button>
-        </div>
-    </div>
+  <div class="row g-4" id="profilesContainer"></div>
 
-    <script>
-        let selectedProfile = null;
-        let editingProfileCard = null;
-
-        function logout() {
-            alert('Logged out!');
-            // Redirect to login page or home
-            window.location.href = 'login.html';
-        }
-
-        // Profile selection
-        const profiles = document.querySelectorAll('.profile-card');
-        profiles.forEach(profile => {
-            profile.addEventListener('click', function(e) {
-                // Prevent click if clicking on action buttons
-                if (e.target.classList.contains('edit-btn') || e.target.classList.contains('remove-btn')) return;
-                profiles.forEach(p => p.classList.remove('selected'));
-                profile.classList.add('selected');
-                selectedProfile = profile;
-                // Example: Load different My List based on profile
-                // document.getElementById('myListFrame').src = `myList.html?profile=${profile.getAttribute('data-profile')}`;
-            });
-        });
-
-        // Edit Profile Modal
-        const editProfileModal = document.getElementById('editProfileModal');
-        const editProfileName = document.getElementById('editProfileName');
-        const saveProfileBtn = document.getElementById('saveProfileBtn');
-        const cancelEditBtn = document.getElementById('cancelEditBtn');
-
-        document.querySelectorAll('.edit-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                editingProfileCard = btn.closest('.profile-card');
-                editProfileName.value = editingProfileCard.querySelector('.profile-name').textContent;
-                editProfileModal.classList.add('active');
-                editProfileName.focus();
-            });
-        });
-
-        saveProfileBtn.addEventListener('click', function() {
-            if (editingProfileCard && editProfileName.value.trim() !== '') {
-                editingProfileCard.querySelector('.profile-name').textContent = editProfileName.value.trim();
-            }
-            editProfileModal.classList.remove('active');
-        });
-
-        cancelEditBtn.addEventListener('click', function() {
-            editProfileModal.classList.remove('active');
-        });
-
-        // Remove Profile
-        document.querySelectorAll('.remove-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                const card = btn.closest('.profile-card');
-                if (confirm('Are you sure you want to remove this profile?')) {
-                    card.parentElement.remove();
-                }
-            });
-        });
-
-        // Add Profile
-        document.getElementById('addProfileBtn').addEventListener('click', function() {
-            const name = prompt('Enter new profile name:');
-            if (name && name.trim() !== '') {
-                const newProfileHTML = `
-                    <div class="profile-card" data-profile="${name}">
-                        <div class="profile-actions">
-                            <button class="edit-btn">Edit</button>
-                            <button class="remove-btn">Remove</button>
-                        </div>
-                        <img src="https://i.imgur.com/8Km9tLL.png" alt="${name}" class="profile-img">
-                        <div class="profile-name">${name}</div>
-                    </div>
-                `;
-                const col = document.createElement('div');
-                col.className = 'col-6 col-sm-4 col-md-3';
-                col.innerHTML = newProfileHTML;
-                // Insert before the add profile card
-                const addProfileCol = document.getElementById('addProfileBtn').parentElement;
-                addProfileCol.parentElement.insertBefore(col, addProfileCol);
-
-                // Add event listeners to new profile
-                const newProfileCard = col.querySelector('.profile-card');
-                newProfileCard.addEventListener('click', function(e) {
-                    if (e.target.classList.contains('edit-btn') || e.target.classList.contains('remove-btn')) return;
-                    document.querySelectorAll('.profile-card').forEach(p => p.classList.remove('selected'));
-                    newProfileCard.classList.add('selected');
-                    selectedProfile = newProfileCard;
-                });
-                col.querySelector('.edit-btn').addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    editingProfileCard = newProfileCard;
-                    editProfileName.value = newProfileCard.querySelector('.profile-name').textContent;
-                    editProfileModal.classList.add('active');
-                    editProfileName.focus();
-                });
-                col.querySelector('.remove-btn').addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    if (confirm('Are you sure you want to remove this profile?')) {
-                        col.remove();
-                    }
-                });
-            }
-        });
-
-        // Close modal on outside click
-        editProfileModal.addEventListener('click', function(e) {
-            if (e.target === editProfileModal) {
-                editProfileModal.classList.remove('active');
-            }
-        });
-    </script>
-</body>
-</html>
-
-
-
-
-//sign in code
-
-
-<body class="bg ">
-
-    <!-- Background Image -->
-    <section class="darkened-image">
-    </section>
-    
-         <!-- Sign In Form Overlay -->
-         <div class="signin-overlay d-flex justify-content-center align-items-center">
-            <div class="signin-form text-white p-3 rounded ">
-                <h2 class="m-4  ">Log In</h2>
-                <form>
-                    <div class="m-4">
-                    <!-- <label for="email" class="form-label text-light">Email address</label> -->
-                    <input type="email" class="form-control bg-dark text-light border-dark" id="email" placeholder="Email or phone number">
-                    </div>
-                    <div class="m-4">
-                    <!-- <label for="password" class="form-label">Password</label> -->
-                    <input type="password" class="form-control bg-dark text-white border-dark" id="password" placeholder="Password">
-                    </div>
-
-                    <div class="m-4 pt-4">
-                        <!-- <a href="home.html"> -->
-                            <button type="button" class="btn btn-danger w-100" >Log In</button>
-                        </a>
-                    
-                        <!-- Responsive wrapper -->
-                        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mt-3">
-                        
-                        <!-- Remember me checkbox -->
-                        <div class="form-check mb-2 mb-sm-0">
-                            <input class="form-check-input" type="checkbox" id="remember">
-                            <label class="form-check-label text-white" for="remember">
-                            Remember me
-                            </label>
-                        </div>
-                    
-                        <!-- Need Help link -->
-                        <a href="#" class="text-light">Need Help?</a>
-                        </div>  
-                        <div class="p-3"></div>
-                        <div class="p-5 px-0">
-                            <p>New to Netflix?   <a href="#" class="text-light "> Sign Up Now</a> </p>
-                            
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-        </div>
-
-        <!-- SUBSCRIPTION PLANS (Horizontal on desktop) -->
-<div class="col-lg-8 mx-auto">
-  <div class="d-flex flex-column flex-md-row gap-4 justify-content-center">
-
-    <!-- Weekly Plan -->
-    <div class="card text-white  flex-fill flex-md-row " id="sub1">
-      <div class="card-body d-flex flex-column justify-content-center text-center text-md-start">
-        <h4 class="card-title text-danger">Weekly Plan</h4>
-        <h2 class="card-price mb-3">₹49</h2>
-        <ul class="list-unstyled mb-4">
-          <li>✔ 720p Quality</li>
-          <li>✔ 1 Screen</li>
-          <li>✔ No Ads</li>
-        </ul>
-        <button class="btn btn-outline-danger w-100 w-md-50">Subscribe</button>
-      </div>
-    </div>
-
-    <!-- Monthly Plan -->
-    <div class="card text-white flex-fill flex-md-row " id="sub2">
-      <div class="card-body d-flex flex-column justify-content-center text-center text-md-start ">
-        <h4 class="card-title text-danger">Monthly Plan</h4>
-        <h2 class="card-price mb-3">₹199</h2>
-        <ul class="list-unstyled mb-4">
-          <li>✔ 1080p Quality</li>
-          <li>✔ 2 Screens</li>
-          <li>✔ Download Option</li>
-        </ul>
-        <button class="btn btn-danger w-100 w-md-50">Subscribe</button>
-      </div>
-    </div>
-
-    <!-- Annual Plan -->
-    <div class="card text-white  flex-fill flex-md-row" id="sub3">
-      <div class="card-body d-flex flex-column justify-content-center text-center text-md-start">
-        <h4 class="card-title text-danger">Annual Plan</h4>
-        <h2 class="card-price mb-3">₹1499</h2>
-        <ul class="list-unstyled mb-4">
-          <li>✔ 4K Quality</li>
-          <li>✔ 4 Screens</li>
-          <li>✔ Offline Access</li>
-        </ul>
-        <button class="btn btn-outline-danger w-100 w-md-50">Subscribe</button>
-      </div>
-    </div>
-
+  <!-- Optional sub-page -->
+   <div class="container my-5">
+  <h2 class="mb-3 text-white">My List</h2>
+  <div id="profileMyList" class="d-flex overflow-auto gap-3 pb-3">
+    <!-- Cards will be injected here dynamically -->
   </div>
 </div>
 
-        
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
-
-
-
-
-
-
-
-
-
-
-.bg-image {
-  position: relative; /* Required for absolute positioning of pseudo-element */
-  overflow: hidden; /* Hide any overflow from the pseudo-element */
-}
-
-.bg-image::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("https://cdn.mos.cms.futurecdn.net/rDJegQJaCyGaYysj2g5XWY.jpg"); /* Replace with your image URL */
-  background-size: cover; /* Adjust as needed */
-  background-position: center; /* Adjust as needed */
-  opacity: 1; /* Adjust the opacity value */
-  z-index: -1; /* Ensure the pseudo-element is behind the content */
-}
-
-
-//working MOVIES PAGE 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="style.css">
-
-    <title>Movies</title>
-
-    <style>
-      .cta-overlay {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-    </style>
-</head>
-<body class="bg">
-
-
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
-    <div class="container-fluid">
   
-      <!-- Logo -->
-      <a class="navbar-brand me-3" href="#">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" class="img-fluid" style="width: 120px;" alt="Netflix Logo">
-      </a>
-  
-      <!-- Toggle Button for Mobile -->
-      <button class="navbar-toggler text-ligh" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <!-- Collapsible Content -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-  
-        <!-- Left Side: Nav Links -->
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row gap-3 align-items-center">
-          <li class="nav-item">
-            <a class="nav-link active" href="landingPage.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="movies.html">Movies</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#">TV Shows</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="#">New & Popular</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="myList.html">My List</a>
-          </li>
+</div>
 
-          <li class="nav-item dropdown">
-       
-                 <button class="btn dropdown-toggle  nav-link" data-bs-toggle="dropdown"> <i class="bi bi-globe2"></i> <span class="d-none d-sm-inline">Browse by language </span>            </button>
-                 
-                 <ul class="dropdown-menu ">
-                    <li class="dropdown-item" >Hindi</li>
-                    <li class="dropdown-item" >Marathi</li>
-                    <li class="dropdown-item" >Korean</li>
-                    <li class="dropdown-item" >Chinese</li>
-                    <li class="dropdown-item" >Spanish</li>
-                 </ul>             
-          </li>
-        </ul>
-  
-        <!-- Right Side: Search -->
-        <form class="d-flex search-bar">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-danger" type="submit">Search</button>
-        </form>
-        
+<!-- Edit Profile Modal -->
+<div class="modal fade" id="editProfileModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header">
+        <h5 class="modal-title">Edit Profile</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-    </div>
-  </nav>
 
+      <div class="modal-body">
+        <input type="text" id="editProfileName" class="form-control mb-3" placeholder="Profile name">
 
-
-  <div>
-    <div id="movieCarousel1" class="carousel slide "  data-bs-wrap="false">
-     <div class="ms-lg-5 me-lg-5   p-lg-5">
-       <div class="p-3 text-light">
-         <p class="fs-2">Top Picks For Today</p>
-       </div>
-       <div class="carousel-inner " id="movieContent">
-
-       </div>
-     </div>
-     <!-- Controls -->
-     <button class="carousel-control-prev btn-danger" type="button" data-bs-target="#movieCarousel1" data-bs-slide="prev">
-       <span class="carousel-control-prev-icon"></span>
-     </button>
-     <button class="carousel-control-next btn-danger" type="button" data-bs-target="#movieCarousel1" data-bs-slide="next">
-       <span class="carousel-control-next-icon"></span>
-     </button>
-   </div>
- </div>  
- 
- <div>
-   
-   <div id="movieCarousel2" class="carousel slide"  data-bs-wrap="false">
-     <div class="ms-lg-5 me-lg-5   p-lg-5">
-       <div class="p-3 text-light">
-         <p class="fs-2">Top Movies Globally</p>
-       </div>
-     <div class="carousel-inner" id="movieContent1">  
-   
-     </div>
-     </div>
-   
-     <!-- Controls -->
-     <button class="carousel-control-prev btn-danger" type="button" data-bs-target="#movieCarousel2" data-bs-slide="prev">
-       <span class="carousel-control-prev-icon"></span>
-     </button>
-     <button class="carousel-control-next btn-danger" type="button" data-bs-target="#movieCarousel2" data-bs-slide="next">
-       <span class="carousel-control-next-icon"></span>
-     </button>
-   </div>
-
- </div>
-
- <div>
-   
-   <div id="movieCarousel3" class="carousel slide"  data-bs-wrap="false">
-     <div class="ms-lg-5 me-lg-5   p-lg-5">
-       <div class=" p-3 text-light">
-         
-         <p class="fs-2">Top Series Globally</p>
-       </div>
-     <div class="carousel-inner" id="movieContent2">  
-   
-     </div>
-     </div>
-   
-     <!-- Controls -->
-     <button class="carousel-control-prev btn-danger" type="button" data-bs-target="#movieCarousel3" data-bs-slide="prev">
-       <span class="carousel-control-prev-icon"></span>
-     </button>
-     <button class="carousel-control-next btn-danger" type="button" data-bs-target="#movieCarousel3" data-bs-slide="next">
-       <span class="carousel-control-next-icon"></span>
-     </button>
-   </div>
-
- </div>
-
- <div>
-   
-   <div id="movieCarousel4" class="carousel slide"  data-bs-wrap="false">
-     <div class="ms-lg-5 me-lg-5   p-lg-5">
-       <div class="p-3 text-light">
-         
-         <p class="fs-2">Critically accaimled Series</p>
-       </div>
-     <div class="carousel-inner" id="movieContent3">  
-   
-     </div>
-     </div>
-   
-     <!-- Controls -->
-     <button class="carousel-control-prev btn-danger" type="button" data-bs-target="#movieCarousel4" data-bs-slide="prev">
-       <span class="carousel-control-prev-icon"></span>
-     </button>
-     <button class="carousel-control-next btn-danger" type="button" data-bs-target="#movieCarousel4" data-bs-slide="next">
-       <span class="carousel-control-next-icon"></span>
-     </button>
-   </div>
-
- </div>
-
-
- <div>
-   
-   <div id="movieCarousel5" class="carousel slide"  data-bs-wrap="false">
-     <div class="ms-lg-5 me-lg-5   p-lg-5">
-       <div class="p-3 text-light">
-         
-         <p class="fs-2">Critically accaimled Series</p>
-       </div>
-     <div class="carousel-inner" id="movieContent4">  
-   
-     </div>
-     </div>
-   
-     <!-- Controls -->
-     <button class="carousel-control-prev btn-danger" type="button" data-bs-target="#movieCarousel5" data-bs-slide="prev">
-       <span class="carousel-control-prev-icon"></span>
-     </button>
-     <button class="carousel-control-next btn-danger" type="button" data-bs-target="#movieCarousel5" data-bs-slide="next">
-       <span class="carousel-control-next-icon"></span>
-     </button>
-   </div>
-
- </div>
- <div>
-   
-   <div id="movieCarousel6" class="carousel slide"  data-bs-wrap="false">
-     <div class="ms-lg-5 me-lg-5   p-lg-5">
-       <div class="p-3 text-light">
-         
-         <p class="fs-2">Critically accaimled Series</p>
-       </div>
-     <div class="carousel-inner" id="movieContent5">  
-   
-     </div>
-     </div>
-   
-     <!-- Controls -->
-     <button class="carousel-control-prev btn-danger" type="button" data-bs-target="#movieCarousel6" data-bs-slide="prev">
-       <span class="carousel-control-prev-icon"></span>
-     </button>
-     <button class="carousel-control-next btn-danger" type="button" data-bs-target="#movieCarousel6" data-bs-slide="next">
-       <span class="carousel-control-next-icon"></span>
-     </button>
-   </div>
-
- </div>
-
-<!-- modal  -->
-<div class="modal fade" id="cardModal" tabindex="-1" aria-labelledby="cardModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content navbar text-white">
-      <div class="modal-header ">
-        <h5 class="modal-title" id="cardModalLabel">Loading...</h5>
-        <button type="button" class="btn-close btn-close-white " data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body ">
-   
-        <img id="modalImage" class="w-100 rounded" alt="Poster" />
-        <div></div>
-        <div class="modal-body text-white">
-          <h4 id="cardTitle" class="mb-1"></h4>
-          <p id="modalGenre" class="text-muted mb-2 fs-5"></p>
-          <p id="modalDescription" class="mb-4 fs-5"></p>
-        
-          <div id="modalExtraContent"> Loading...</div>
+        <div class="form-check mb-3 text-start">
+          <input class="form-check-input" type="checkbox" id="editProfileKids">
+          <label class="form-check-label" for="editProfileKids">Kids Profile</label>
         </div>
+
+        <h6 class="text-start">Avatars</h6>
+        <div class="d-flex flex-wrap gap-3" id="avatarChoices">
+          <!-- keep src and data-img the SAME (relative) -->
+          <img src="user1.png" class="avatar-option" data-img="user1.png" width="80" height="80" alt="Avatar 1">
+          <img src="user2.jpg" class="avatar-option" data-img="user2.jpg" width="80" height="80" alt="Avatar 2">
+          <img src="user3.jpg" class="avatar-option" data-img="user3.jpg" width="80" height="80" alt="Avatar 3">
+          <img src="user4.jpg" class="avatar-option" data-img="user4.jpg" width="80" height="80" alt="Avatar 4">
+          <img src="default.png" class="avatar-option" data-img="default.png" width="80" height="80" alt="Default Avatar">
+        </div>
+
+        <div class="text-center mt-3 pt-3 border-top border-secondary">
+          <h6 class="mb-2">Selected Profile Picture</h6>
+          <img id="selectedAvatar" src="default.png" data-img="default.png" width="100" height="100" alt="Selected avatar" style="border-radius:8px;background:#222">
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="saveEditBtn" class="btn btn-primary">Save Changes</button>
       </div>
     </div>
   </div>
 </div>
 
+<script src="navbar.js"></script>
+<script src="profile.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+/* ---------- State ---------- */
+
+const LS_KEY = "profiles";
+
+/** Defaults used if no localStorage */
+const DEFAULT_PROFILES = [
+  { name: "User 1", img: "user1.png", kids: false },
+  { name: "Kids",   img: "kids.jpg",  kids: true  }
+];
+
+let profiles = loadProfiles();
+let selectedProfileIndex = null;
+
+/* ---------- DOM ---------- */
+
+const profilesContainer = document.getElementById("profilesContainer");
+const manageBtn  = document.getElementById("manageBtn");
+const logoutBtn  = document.getElementById("logoutBtn");
+const resetBtn   = document.getElementById("resetBtn");
+
+const editName   = document.getElementById("editProfileName");
+const editKids   = document.getElementById("editProfileKids");
+const avatarChoices = document.getElementById("avatarChoices");
+const selectedAvatar = document.getElementById("selectedAvatar");
+const saveEditBtn = document.getElementById("saveEditBtn");
+
+const editProfileModalEl = document.getElementById("editProfileModal");
+const editProfileModal = new bootstrap.Modal(editProfileModalEl);
+
+/* ---------- Utils ---------- */
+
+/** Load profiles from LS or defaults */
+function loadProfiles() {
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    if (!raw) return structuredClone(DEFAULT_PROFILES);
+    const parsed = JSON.parse(raw);
+    // Ensure required fields exist
+    return parsed.map(p => ({
+      name: p.name ?? "Profile",
+      img:  normalizeRelative(p.img ?? "default.png"),
+      kids: !!p.kids
+    }));
+  } catch {
+    return structuredClone(DEFAULT_PROFILES);
+  }
+}
+
+/** Save profiles to LS */
+function saveProfiles() {
+  localStorage.setItem(LS_KEY, JSON.stringify(profiles));
+}
+
+/** If a browser turned a path absolute, strip origin so we store relative paths */
+function normalizeRelative(path) {
+  if (!path) return "default.png";
+  const origin = window.location.origin + "/";
+  return path.startsWith(origin) ? path.slice(origin.length) : path;
+}
+
+/** Mark chosen avatar thumbnail */
+function highlightAvatar(path) {
+  document.querySelectorAll(".avatar-option").forEach(el => {
+    el.classList.toggle("active", el.dataset.img === path);
+  });
+}
+
+/* ---------- Render ---------- */
+
+function renderProfiles() {
+  profilesContainer.innerHTML = "";
+
+  profiles.forEach((p, i) => {
+    const col = document.createElement("div");
+    col.className = "col-auto";
+
+    col.innerHTML = `
+      <div class="profile-card" data-index="${i}">
+        <img src="${p.img}" alt="${p.name}">
+        ${p.kids ? '<div class="kids-badge">KIDS</div>' : ""}
+        <div class="mt-2 fw-semibold">${p.name} ${p.kids ? "👶" : ""}</div>
+
+        <div class="manage-btns">
+          <button class="btn btn-sm btn-warning edit-btn">Edit</button>
+          <button class="btn btn-sm btn-danger remove-btn">Remove</button>
+        </div>
+      </div>
+    `;
+
+    profilesContainer.appendChild(col);
+  });
+
+  // Add Profile tile
+  const addCol = document.createElement("div");
+  addCol.className = "col-auto";
+  addCol.innerHTML = `
+    <div class="add-profile" id="addProfileBtn" role="button" aria-label="Add profile">
+      <div style="font-size:2rem; line-height:1">+</div>
+      <small>Add Profile</small>
+    </div>
+  `;
+  profilesContainer.appendChild(addCol);
+}
+
+/* ---------- Event Wiring ---------- */
+
+// Manage toggle (applies CSS to show buttons)
+manageBtn.addEventListener("click", () => {
+  document.body.classList.toggle("manage-mode");
+});
+
+// Logout (demo)
+logoutBtn.addEventListener("click", () => {
+  alert("Logging out…");
+});
+
+// Reset all
+resetBtn.addEventListener("click", () => {
+  localStorage.removeItem(LS_KEY);
+  profiles = structuredClone(DEFAULT_PROFILES);
+  renderProfiles();
+});
+
+// Delegate clicks inside profiles grid
+profilesContainer.addEventListener("click", (e) => {
+  const addBtn = e.target.closest("#addProfileBtn");
+  if (addBtn) {
+    profiles.push({ name: "New Profile", img: "default.png", kids: false });
+    saveProfiles();
+    renderProfiles();
+    return;
+  }
+
+  const card = e.target.closest(".profile-card");
+  if (!card) return;
+
+  // Edit
+  if (e.target.classList.contains("edit-btn")) {
+    selectedProfileIndex = Number(card.dataset.index);
+    const p = profiles[selectedProfileIndex];
+
+    editName.value = p.name;
+    editKids.checked = p.kids;
+
+    // set current avatar into preview and highlight
+    selectedAvatar.src = p.img;
+    selectedAvatar.dataset.img = p.img;
+    highlightAvatar(p.img);
+
+    editProfileModal.show();
+    return;
+  }
+
+  // Remove
+  if (e.target.classList.contains("remove-btn")) {
+    const idx = Number(card.dataset.index);
+    profiles.splice(idx, 1);
+    saveProfiles();
+    renderProfiles();
+    return;
+  }
+
+  // Normal click on card → scroll iframe (your original behavior)
+  document.getElementById("myListFrame")?.scrollIntoView({ behavior: "smooth" });
+});
+
+// Choose avatar in modal
+avatarChoices.addEventListener("click", (e) => {
+  const choice = e.target.closest(".avatar-option");
+  if (!choice) return;
+  const path = choice.dataset.img; // already relative
+  selectedAvatar.src = path;
+  selectedAvatar.dataset.img = path;
+  highlightAvatar(path);
+});
+
+// Save changes from modal
+saveEditBtn.addEventListener("click", () => {
+  if (selectedProfileIndex === null) return;
+
+  const p = profiles[selectedProfileIndex];
+  p.name = editName.value.trim() || "Profile";
+  p.kids = !!editKids.checked;
+
+  // Always store the relative path we tracked on the preview element
+  const chosen = selectedAvatar.dataset.img || selectedAvatar.getAttribute("src");
+  p.img = normalizeRelative(chosen);
+
+  saveProfiles();
+  renderProfiles();
+
+  // clear selection + close
+  selectedProfileIndex = null;
+  editProfileModal.hide();
+});
+
+// Prevent the aria-hidden warning by letting Bootstrap handle focus safely
+editProfileModalEl.addEventListener("hidden.bs.modal", () => {
+  // No-op; Bootstrap returns focus to trigger automatically.
+});
+
+/* ---------- Init ---------- */
+renderProfiles();
 
 
- <!-- CTA Overlay Section -->
-<div id="moviectaOverlay" class="cta-overlay d-flex flex-column justify-content-center align-items-center text-white text-center">
-    <h1 class="mb-3 display-1 ">Want to keep watching?</h1>
-    <a href="login.html" class="btn btn-danger btn-lg px-5 m-3 fs-2">Log In</a>
-  </div>
-  
-  <!-- Footer -->
-  <footer class="footer text-center text-white py-4">
-    <p>&copy; 2025 Netflix SM. All rights reserved.</p>
-  </footer>
-  
-  
-  
-    
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  
-      <script>
-  
-  
-        // Fade in CTA when it enters the viewport
-        window.addEventListener('scroll', function () {
-          const cta = document.getElementById('moviectaOverlay');
-          const rect = cta.getBoundingClientRect();
-          if (rect.top <= window.innerHeight - 100) {
-            cta.style.opacity = '1';
-            cta.style.animation = 'fadeIn 2s ease forwards';
-          }
-        });
-  
-  
-        document.addEventListener("DOMContentLoaded", function () {
-          const sections = document.querySelectorAll('.random-section');
-          const randomIndex = Math.floor(Math.random() * sections.length);
-      
-          sections.forEach((section, index) => {
-            if (index === randomIndex) {
-              section.classList.remove('d-none');  // show this one
-            } else {
-              section.classList.add('d-none');     // hide others
-            }
-          });
-        });
-      </script>
-      
- <script src="mspt.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
-</html>
+  const profileList = JSON.parse(localStorage.getItem("myList")) || [];
+  const profileContainer = document.getElementById("profileMyList");
 
+  function renderProfileList() {
+    profileContainer.innerHTML = "";
 
-//movieCarouseldata here 
-const movieData = [
-    {
-      id: "crew",
-      title: "Crew",
-      img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABSaxW7HqP8BldNO2q-jw9IpV0TUDjtjUmhXvK8nKLXcepLsdypyTzzB5QQqNL6Ow8crexz9qWkKeP9lVBcVPC3fb374Gui5CEC8.jpg?r=7dd",
-      genre: "Quirky, Comedy, Bollywood",
-      description: "When their airline faces bankruptcy, three desperate flight attendants resort to a high-flying gold smuggling ring to keep their careers afloat."
-    },
-    {
-      id: "shehzada",
-      title: "Shehzada",
-      img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABY0y6kuT4OM_py9HjB_q4ZoTkCx6GpQWfvoBq3s8H1rnnZMG6VNW3wFPA2dgYzL6g_hr3ZAMYVowIXK3p1CeQXpU2THTv-b6LOw.jpg?r=9f9",
-      genre: "Exciting, Comedy, Bollywood",
-      description: "After realizing he was switched at birth by a conniving father, a rakish Bantu's life is upended when he becomes the heir to a billionaire."
-    },
-    {
-      id: "aap_jaisa_koi",
-      title: "Aap Jaisa Koi",
-      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABVn7j1EiWUjaAB7alll1E4pvVifNPtHrlaJylpZsdCd3M6TmdpeZhnN6GCNTHSD9lc7QydD1C4jNjBl1j_AbxOAFmuUF8qOTqUsYvC-TsF8YxxpPz-HjRa7a-BFd0TZP-m-FVu72MldWU1OAYjEsR-hXXRWZBk_84ZljattGYukuXfdYm3aAevEmGuGbKQUItSoGxRv2tngbSG0IRVo6gTRY9uotwUpKL6VxS49IOUrpAOODgZ9kvwUzmHy4TL5Cje0.jpg?r=7aa',
-      genre: "Drama, Comedy, Bollywood",
-      description: "Shrirenu lives by tradition. Madhu lives unapologetically. When their paths cross, a tender romance unfolds — awkward, sweet but shadowed by patriarchy."
-    },
-    {
-      id: "dream_girl_2",
-      title: "Dream Girl 2",
-      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRbsl7e8nMksd4cUpSPml40BxI-N9GatiKO9kcR3Wj35KQN0KshmQOCmy1BB9-WtCVvUSRJEhpqW595IbAeAjkvPkI4zZIZSPnw.jpg?r=e35',
-      genre: "Goofy, Romantic, Comedy, Bollywood",
-      description: "Karam secretly turns his female alter ego into a dancer and woos a millionaire's son in hopes of paying family debts and impressing his fiancée's father."
-    },
-    {
-      id: "tu_jhooti_main_makkaar",
-      title: "Tu Jhoothi Main Makkaar",
-      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABXdseW6oX8Qw5IDoCFVzlqOoZOBZ6v7kkpykqfpJfsyTvUGV5BgSp-U1-oz4z-umy3nUaUdevsEC-Fpy4nIFK7HV941nc1YJDsY.jpg?r=b0a',
-      genre: "Bollywood, Romantic, Comedy",
-      description: "To earn extra cash, Mickey helps couples break up — but life gets complicated when he falls for Tinni, a career woman with an independent streak."
-    },
-    {
-      id: "doctorg",
-      title: "Doctor G",
-      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABSYrXdObr8v0pQkFqBhsl55wJXb8c-ANYCQm5VUrW-9rzJamOTW2nk7BsQuj9lYpn7811nW3XLq0UxtOBRL5upABblPJYvwI17k.jpg?r=6e4',
-      genre: "Quirky, Comedy, Drama",
-      description: "Medical student Uday Gupta grudgingly joins an all-women's gynecology class, but being a good doctor — and person — rests on pondering his prejudice."
-    },
-    {
-      id: "zindagi_na_milegi_dobara",
-      title: "Zindagi Na Milegi Dobara",
-      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABczg8ArwfH0ZvTy-pUhMnnOeCFj2c5o9G_0RuOWsUDC0hn39R2UyGn3NC73B7ZTxYrSyipRyNs9JPvshxsjk9LSkc9c0-uuivew.jpg?r=3f4',
-      genre: "Bollywood , Romance, Drama",
-      description: "Three friends on an adventurous road trip/bachelor party in Spain learn some lessons about themselves and each other that will change them forever."
-    },
-    {
-      id: "yeh_jawaani_hai_deewani",
-      title: "Yeh Jawaani Hai Deewani",
-      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABd31BvvySOebfiD3rvENzh6OlXUaEhgBRqlQJT9Mmk_R3fc4a58124SxYK-OfCN41VmVFwPSG40NaWE8cqRJAlA7gIVR00Wt2N8.jpg?r=8c0',
-      genre: "Emotional, Romantic, Bollywood",
-      description: "On a trekking trip, an introvert falls for a charming ex-classmate, whose thirst for adventure drives them apart. Years later, their paths cross again."
-    },
-    {
-      id: "dear_zindagi",
-      title: "Dear Zindagi",
-      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABb3bgUwc0rmOycDPfJ1_35tCWd3zgVIKDRwr_8u6kBaGurhAx-5YrNVsb4Kdomhxz1HWJqkfKC82PiLBiHxXNGhAxVcxJyJvFcE.jpg?r=d2a',
-      genre: "Drama, Bollywood",
-      description: "A young cinematographer with a bright professional future and a lack of empathy learns the importance of balancing ambition with humanity.."
-    },
-    {
-      id: "ginny_weds_sunny",
-      title: "Ginny Weds Sunny",
-      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABSfcc3kvh29G4AeNm3OBpOtKFfQCoD1hzwbUTr3fmCZYgPSZNhKUf1PItuzrMqwj4D52jrW_wPFBeJSO38h89tGfx2roIhnDWZiOeOYStDzUZtG6Ewe2Vuop6ifmD9w_PpZa.jpg?r=600',
-      genre: "Charming, Feel-good, Comedy",
-      description: "Eager to marry but constantly rejected by women, a bachelor hopes to win over a former crush by accepting help from an unlikely source: her mother."
-    },
-    {
-      id: "veere_di_wedding",
-      title: "Veere Di Wedding",
-      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABevA5ZcsVZbYRjosb_vDAW1pVcayermF3gX8yTfykMhMDq7j7dZofl3QGKX4DMGTKDYJJc5i2lnaUfh5pUQqPJ_mkOXYlZe-_o8.jpg?r=ff0',
-      genre: "Comedy, Bollywood, Raunchy",
-      description: "Four best friends come together after one gets engaged, working through relationship troubles, family expectations and marriage drama."
-    },
-    {
-      id: "soty",
-      title: "Student of the Year",
-      img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABb7zRdlz15595ImInMQpc0fXTT4mHKBfFxAc8vGhlq-6vLd9TqN1ErhMUppDoD7LRHWOy-6n-DFAp8H3SioFMakS6aXH_Va0D3c.jpg?r=d97',
-      genre: "Emotional, Romantic, Bollywood, Drama",
-      description: "Rivals turned friends find their bromance tested when they battle it out to win not only a grueling school competition, but also the same girl's heart."
+    if (profileList.length === 0) {
+      profileContainer.innerHTML = "<p class='text-white'>No items in your list yet.</p>";
+      return;
     }
-  ];
+
+    profileList.forEach(item => {
+      const card = document.createElement("div");
+      card.className = "card bg-dark text-white";
+      card.style.minWidth = "180px";   // ensures horizontal layout
+      card.style.flex = "0 0 auto";    // prevents shrinking
+
+      card.innerHTML = `
+        <img src="${item.img}" class="card-img-top rounded" alt="${item.title}" style="height: 250px; object-fit: cover;">
+        <div class="card-body p-2">
+          <h6 class="card-title mb-1">${item.title}</h6>
+          <p class="card-text"><small>${item.genre}</small></p>
+        </div>
+      `;
+      profileContainer.appendChild(card);
+    });
+  }
+
+  renderProfileList();
+</script>
+</body>
+</html>
