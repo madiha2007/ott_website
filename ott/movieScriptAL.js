@@ -3,28 +3,28 @@ const cardData = [
       id: "crew",
       title: "Crew",
       img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABSaxW7HqP8BldNO2q-jw9IpV0TUDjtjUmhXvK8nKLXcepLsdypyTzzB5QQqNL6Ow8crexz9qWkKeP9lVBcVPC3fb374Gui5CEC8.jpg?r=7dd",
-      genre: "Quirky, Comedy, Bollywood",
+      genre: " Bollywood, Quirky, Comedy ",
       description: "When their airline faces bankruptcy, three desperate flight attendants resort to a high-flying gold smuggling ring to keep their careers afloat."
     },
     {
       id: "shehzada",
       title: "Shehzada",
       img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABY0y6kuT4OM_py9HjB_q4ZoTkCx6GpQWfvoBq3s8H1rnnZMG6VNW3wFPA2dgYzL6g_hr3ZAMYVowIXK3p1CeQXpU2THTv-b6LOw.jpg?r=9f9",
-      genre: "Exciting, Comedy, Bollywood",
+      genre: "Bollywood, Exciting, Comedy ",
       description: "After realizing he was switched at birth by a conniving father, a rakish Bantu's life is upended when he becomes the heir to a billionaire."
     },
     {
       id: "aap_jaisa_koi",
       title: "Aap Jaisa Koi",
       img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABVn7j1EiWUjaAB7alll1E4pvVifNPtHrlaJylpZsdCd3M6TmdpeZhnN6GCNTHSD9lc7QydD1C4jNjBl1j_AbxOAFmuUF8qOTqUsYvC-TsF8YxxpPz-HjRa7a-BFd0TZP-m-FVu72MldWU1OAYjEsR-hXXRWZBk_84ZljattGYukuXfdYm3aAevEmGuGbKQUItSoGxRv2tngbSG0IRVo6gTRY9uotwUpKL6VxS49IOUrpAOODgZ9kvwUzmHy4TL5Cje0.jpg?r=7aa',
-      genre: "Drama, Comedy, Bollywood",
+      genre: "Bollywood,Drama, Comedy",
       description: "Shrirenu lives by tradition. Madhu lives unapologetically. When their paths cross, a tender romance unfolds — awkward, sweet but shadowed by patriarchy."
     },
     {
       id: "dream_girl_2",
       title: "Dream Girl 2",
       img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRbsl7e8nMksd4cUpSPml40BxI-N9GatiKO9kcR3Wj35KQN0KshmQOCmy1BB9-WtCVvUSRJEhpqW595IbAeAjkvPkI4zZIZSPnw.jpg?r=e35',
-      genre: "Goofy, Romantic, Comedy, Bollywood",
+      genre: "Bollywood,Goofy, Romantic, Comedy ",
       description: "Karam secretly turns his female alter ego into a dancer and woos a millionaire's son in hopes of paying family debts and impressing his fiancée's father."
     },
     {
@@ -38,7 +38,7 @@ const cardData = [
       id: "doctorg",
       title: "Doctor G",
       img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABSYrXdObr8v0pQkFqBhsl55wJXb8c-ANYCQm5VUrW-9rzJamOTW2nk7BsQuj9lYpn7811nW3XLq0UxtOBRL5upABblPJYvwI17k.jpg?r=6e4',
-      genre: "Quirky, Comedy, Drama",
+      genre: "Bollywood,Quirky, Comedy, Drama",
       description: "Medical student Uday Gupta grudgingly joins an all-women's gynecology class, but being a good doctor — and person — rests on pondering his prejudice."
     },
     {
@@ -52,14 +52,14 @@ const cardData = [
       id: "yeh_jawaani_hai_deewani",
       title: "Yeh Jawaani Hai Deewani",
       img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABd31BvvySOebfiD3rvENzh6OlXUaEhgBRqlQJT9Mmk_R3fc4a58124SxYK-OfCN41VmVFwPSG40NaWE8cqRJAlA7gIVR00Wt2N8.jpg?r=8c0',
-      genre: "Emotional, Romantic, Bollywood",
+      genre: " Bollywood,Emotional, Romantic ",
       description: "On a trekking trip, an introvert falls for a charming ex-classmate, whose thirst for adventure drives them apart. Years later, their paths cross again."
     },
     {
       id: "dear_zindagi",
       title: "Dear Zindagi",
       img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABb3bgUwc0rmOycDPfJ1_35tCWd3zgVIKDRwr_8u6kBaGurhAx-5YrNVsb4Kdomhxz1HWJqkfKC82PiLBiHxXNGhAxVcxJyJvFcE.jpg?r=d2a',
-      genre: "Drama, Bollywood",
+      genre: "Bollywood, Drama ",
       description: "A young cinematographer with a bright professional future and a lack of empathy learns the importance of balancing ambition with humanity.."
     },
     {
@@ -73,14 +73,14 @@ const cardData = [
       id: "veere_di_wedding",
       title: "Veere Di Wedding",
       img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABevA5ZcsVZbYRjosb_vDAW1pVcayermF3gX8yTfykMhMDq7j7dZofl3QGKX4DMGTKDYJJc5i2lnaUfh5pUQqPJ_mkOXYlZe-_o8.jpg?r=ff0',
-      genre: "Comedy, Bollywood, Raunchy",
+      genre: "Comedy,Bollywood , Raunchy",
       description: "Four best friends come together after one gets engaged, working through relationship troubles, family expectations and marriage drama."
     },
     {
       id: "soty",
       title: "Student of the Year",
       img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABb7zRdlz15595ImInMQpc0fXTT4mHKBfFxAc8vGhlq-6vLd9TqN1ErhMUppDoD7LRHWOy-6n-DFAp8H3SioFMakS6aXH_Va0D3c.jpg?r=d97',
-      genre: "Emotional, Romantic, Bollywood, Drama",
+      genre: "Bollywood,Emotional, Romantic, , Drama",
       description: "Rivals turned friends find their bromance tested when they battle it out to win not only a grueling school competition, but also the same girl's heart."
     }
 ];
@@ -176,176 +176,161 @@ const cardData1 = [
 ];
 const cardData2 = [
   {
-    id: 'the_great_wall',
-    title: 'The Great Wall',
-    img: 'https://imgcdn.media/poster/341/80133543.jpg',
-    genre:'Action,Adventure',
-    description:"Searching for gunpowder in Song dynasty China, European mercenaries discover an epic war being waged between the country's heroes and savage monsters."
+    id: 'the_waterfront',
+    title: 'The Waterfront',
+    img: 'https://dnm.nflximg.net/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABeCoyd1zhlQZkuW2r6h4FTiQ4h1T6b3vkbsYbC2dvvo12J1GYtoDTgtlPwiomd0GU6RZBdnQfaPjil9f4HYTKrtpTyr_kyBhypNPRT4m4xLGoVw3sZyOn2Lvil6Vz7swthWn.jpg?r=426',
+    genre:'Crime,Thriller',
+    description:"As their storied North Carolina fishing empire decays, the damaged Buckleys grapple to revive their imperiled maritime heritage."
   },
   {
-    id: 'pacific_rim',
-    title: 'Pacific Rim',
-    img: 'https://imgcdn.media/poster/h/70267241.jpg',
-    genre:'Sci-Fi, Action',
-    description:"When the world's defenses fail against the threat of alien sea creatures, the task of saving the planet falls to a former pilot and a raw trainee."
+    id: 'ginny_n_georgia',
+    title: 'Ginny & Georgia',
+    img: 'https://dnm.nflximg.net/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABaHcyuDQoCed0zXVd9tRu7mbJLj_7yYGFiJd2RdxB3lWst-ZUzUvJqNrMfBlwWbd2yMCT2pDXSQH0KSAUvw_uuKk-3E_NwFaYvoQcnqrCl5JJUgR8y9ie0ddOUvaXvY2-NQw.jpg?r=c0a',
+    genre:'Romance,Comedy',
+    description:"Angsty 15-year-old Ginny Miller often feels more mature than her 30-year-old mother, the irresistible and dynamic Georgia Miller."
   },
   {
-    id: 'damsel',
-    title: 'Damsel',
-    img: 'https://imgcdn.media/poster/h/80991090.jpg',
-    genre:'Action,Adventure',
-    description:"A young woman's marriage to a charming prince turns into a fierce fight for survival when she's offered up as a sacrifice to a fire-breathing dragon."
+    id: 'bridgerton',
+    title: 'Bridgerton',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABbb-nqVeQk4ZF2IdccUOo9MdTMg8k70FtYaCdlNHCKSH8IkcLn2Lj084doTDhYzzzwO0Rn6-F2Cl6zdiZLod5eIrmERbPaG4p0bNzrI3CUowPPZZl9AS-p8N9ISY_K8WC-4F.jpg?r=5e5',
+    genre:'Soap-opera ,Romance',
+    description:'The eight close-knit siblings of the Bridgerton family look for love and happiness in London high society.'
   },
   {
-    id: 'kalki',
-    title: 'Kalki 2898-AD',
-    img: 'https://imgcdn.media/poster/h/81726031.jpg',
-    genre:'Sci-Fi, Action',
-    description:"The future of those in the dystopian city of Kasi is altered when the destined arrival of Lord Vishnu's final avatar launches a war against darkness."
+    id: 'shadow_hunters',
+    title: 'Shadow Hunters',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABeo9yeZTCkMG66XzRP-vS0sNkegsw2chS1Z2hjBrieTZsf4_jBqdrDEm7GA1iCxGuPjdjgp7S-alv-u2gitZudaUqdUutYaYLfRq1V7RvVarN5uBGMYGg2J5mFR7Nyfn_0aC.jpg?r=158',
+    genre:'Fantasy,Drama',
+    description:"After her mother disappears, Clary must venture into the dark world of demon hunting, and embrace her new role among the Shadowhunters."
   },
   {
-    id: 'the_adam_project',
-    title: 'The Adam Project',
-    img: 'https://imgcdn.media/poster/h/81309354.jpg',
-    genre:'Sci-Fi, Action',
-    description:"After accidentally crash-landing in 2022, time-traveling fighter pilot Adam Reed teams up with his younger self on a mission to save the future."
+    id: 'queen_charlotte',
+    title: 'Queen Charlotte',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABWhaH3T6Ep4KBmAWzprFix0wPM9U8BdDPVH6Xa8FsVILOApcqDlYK0tDmdzDlxSQFzwzbeypizmFDiOzXuq3YWtYsxlzuW1_UGZt2L7vGJA5bHaF13VznEhvx5O6Nr3_HhiW.jpg?r=2f8',
+    genre:'History , Romance',
+    description:"Betrothed against her will to King George, young Charlotte arrives in London on her wedding day and faces scrutiny from the monarch's cunning mother."
   },
   {
-    id: 'world_war_z',
-    title: 'World War Z',
-    img: 'https://imgcdn.media/poster/h/70262639.jpg',
-    genre:'Sci-Fi, Horror',
-    description:"When a zombie pandemic threatens to destroy a former UN investigator goes on a perilous global journey to track down the source of the outbreak."
+    id: 'heeramandi',
+    title: 'Heeramandi',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABUH8NFZMMoPr4JHVJVTz0t8ZY3IKkRwitkL5wRWonK7zgc8Olm1rho7z8f0uIzkMcZmi6R8G4JLil1c3qM4UhfZ2EeRvrRGxkyX7vzbu4dynk5YVXTd4LUbrEeNsr7sSySHG.jpg?r=66f',
+    genre:'History,Drama',
+    description:"Sanjay Leela Bhansali brings his majestic signature flair to stories of love and betrayal in the lives of courtesans in pre-independence India."
   },
   {
-    id: 'van_helsing',
-    title: 'Van Helsing',
-    img: 'https://imgcdn.media/poster/h/60034569.jpg',
-    genre:'Action, Horror',
-    description:"Vampire hunter Van Helsing travels to a mysterious region of Europe on a quest to vanquish Count Draculla, the Wolf Man and Frankenstein's Monster."
+    id: 'mismatched',
+    title: 'Mismatched',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABfMvl5WgjF-iY3jVVYiHQNfDQ3fAJ5h_rBpcISEsI4FoB4mryZdrh_xfhM7lSrP40NxA2wfQATDvBvsJbtFmkLGcy00_kul-237PsbUOB4r5X2rYYRoILGMfYlMoWcZ2pOa9.jpg?r=73d',
+    genre:'Rom-com , Drama ',
+    description:"A romantic series featuring two people who are not right for each other. The story is about Prajakta's character who is a tech wizard and the guy who is interested in her."
   },
   {
-     id: 'tsfgae',
-    title: 'The School For Good And Evil',
-    img: 'https://imgcdn.media/poster/h/80218885.jpg',
-    genre:'Fantasy, Adventure',
-    description:"Best friends Sophie and Agatha find themselves on opposing sides of an epic battle when they're swept away into a magical school where they train to become fairy tale heroes and villains."
+    title: 'A Time Called You',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABWjUmYVsT56MdJXeyYwd32UU4gy2-3g7FD2W9ogJRzPb1Y5yM731jcFjlE7l3qoJ07xCpM3BOaEDdBgZSb1JuTFBaCqFIOnTFxrKgEp78fn-8EZIQf7Dj_8fprAkgfTpieeu.jpg?r=202'
   }
   ,
   {
-     id: 'geostorm',
-    title: 'Geostorm',
-    img: 'https://imgcdn.media/poster/h/80185871.jpg',
-    genre:'Action, Sci-Fi',
-    description:"When a weather-controlling satellite system malfunctions, it unleashes a series of catastrophic natural disasters around the world."
+    title: 'Nevertheless',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABUY1BKgDcKqxooFXv6dlxNXvF81_rFxWwaj0vWk6r3vptjW1RDO0Mgm_HdqQTLhn32yWwj-rVQewMyQj147z1T4R-K5osLcC2GR1NAwd6tted5iBq-k_3HkOc_pKJH8qZDuN.jpg?r=dff'
   },
   {
-       id: 'family_pack',
-    title: 'Family Pack',
-    img: 'https://imgcdn.media/poster/h/81686180.jpg',
-    genre:'French, Comedy',
-    description:"When an old card games comes to life, a family jumps back in time to a medieval world where they must navigate challenges and adventures to return home."
+      title: 'The Witcher',
+      img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABf5exow7YR19ou4F_Afma6lC9npbAZqCyzMa2cU0HVaz0mmeAQ5CkqLy_e8zNzjbZrbug44-W3LpYw4Ne-eVmcQD6n0VIJAw20tvFpphszMy_p5IiA-vBMtBr2n2BPbxuyml.jpg?r=23e'
     },
     {
-       id: 'dracula_untold',
-    title: 'Dracula Untold',
-    img: 'https://imgcdn.media/poster/h/70305899.jpg',
-    genre:'Action, Horror',
-    description:"A medieval warrior must become a vampire in order to repel the Ottoman Empire of his country in this action-packed tale."
+      title: 'Shadow & Bone',
+      img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRLlC9Wfhvxkkb0p1GTc96VHT5pBHGvLr886jOx4ByD5jVhKTa18wgubPr5O-87c1Pyj_IAOAmpgubkZPnF8Z6bCFKwYGe9hsFiCDGaK6SqjW7DNkszgl5lRariZb-Whrgz-.jpg?r=d5b'
     },
     {
-       id: 'ttsbd',
-    title: 'The Twilight Saga: Breaking Dawn - Part 2',
-    img: 'https://imgcdn.media/poster/h/70206632.jpg',
-    genre:'Action, Horror',
-    description:"In the epic series final chapter, Bella and Edward's newborn daughter forces the couple into a life-altering confrontation with the Volturi."
+      title: "Arcane",
+      img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRvoBpI1EKy7W7THnRK4LZ0wlxghT3PNvfctXgEJWJEtNg4MttH5M911iIrx-N9bz9-Vq76b-hAk17y9MQK-7kpaPiRnU_2cA18cskOjMZN_wGmsOKcxFLsOnsyc_nUH7SgR.jpg?r=273'
     }
 ];
 const cardData3 = [
   {
-    id: 'venom',
-    title: 'Venom',
-    img: 'https://imgcdn.media/poster/h/80991034.jpg',
-    genre:"Action, Sci-Fi",
-    description:"When Eddie Brock acquires the powers of a symbiote, he must fight a war against the corrupt corporation that experimented on him."
+    id: 'emily_in_paris',
+    title: 'Emily in Paris',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABb509jgLJkqO_KEMFctI9a392FQn1JO_79UNnAikFssW1DtGhoN37IAAcaXSkWtA9NwxFk-jf1z4QeiOstBM32EfLlwyYVjD3IM0__l7qgF4ZCXZI7ACthd8PzmZez-MJxzH.jpg?r=4f9',
+    genre:"Rom-com,Drama",
+    description:"A young American woman from the Midwest is hired by a marketing firm in Paris to provide them with an American perspective on things."
   },
   {
-    id: 'war_of_the_worlds',
-    title: 'War of the Worlds',
-    img: 'https://imgcdn.media/poster/h/70021644.jpg',
-    genre:"Sci-Fi, Action",
-    description:"When a violent alien takeover threatens Earth, an estranged dad must step up to protect his two kids - and he'll stop at nothing to keep them safe."
+    id: 'peaky_blinders',
+    title: 'Peaky Blinders',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABTU3_q-CINXVdjlijgk1THbgnzWIGC-eFlZzAVkXiaY66_AYRGgPdX_j3weXYTi9qY_Wv0oDnzFazhGgquAoUQzOBgv6k8bfObyn3uuD0-u2WpNCTsdsBvqUE40uLdZmJWvo.jpg?r=c0e',
+    genre:"History,Crime",
+    description:"A gangster family epic set in 1900s England, centering on a gang who sew razor blades in the peaks of their caps, and their fierce boss Tommy Shelby."
   },
   {
-    id: 'life',
-    title: 'Life',
-    img: 'https://imgcdn.media/poster/h/80158764.jpg',
-    genre:"Sci-Fi, Horror",
-    description:"The discovery of a single-celled organism in a sample from Mars causes excitement..... until the life-form starts displaying signs of intelligence."
+    id: 'the_glory',
+    title: 'The Glory',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABVfPGa77dyP88-Xt_q-1tFannPOu5z0IK0DpvzCAZQUIPmWD5S8H2COg1wpWnIdBmRnxz3rFkobaI53h0zDaW9A7bNskvscjOkM9XWv7TT-_7KKnGgQqLt680sXelr48HssQ.jpg?r=3d2',
+    genre:"thriller, Melodrama",
+    description:"A woman lives for absolute revenge against her childhood bullies who destroyed her life"
   },
   {
-    id: 'rim_of_the_world',
-    title: 'Rim of the World',
-    img: 'https://imgcdn.media/poster/h/80218306.jpg',
-    genre:"Sci-Fi, Adventure",
-    description:"Stranded at a summer camp when aliens attack planet, four teens with nothing in common embark on a perilous mission to save the world."
+    id: 'the_crown',
+    title: 'The Crown',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABaSMGPuPUDfc6l_t-QWv4ZLQ_0gK38ne168mjsP-FUSdnPu6FUCQyyQ0Q4bSstaY55d2cq9kpBQLbOwY3h8YVXnX5cEgxxi09WTq-_JhgKxaFKHMre_IMwad8WYkV1ALTIQV.jpg?r=8c1',
+    genre:"History, Drama",
+    description:"Follows the political rivalries and romances of Queen Elizabeth II's reign and the events that shaped Britain for the second half of the 20th century."
   },
   {
-    id: 'super',
-    title: 'Super 8',
-    img: 'https://imgcdn.media/poster/h/70171581.jpg',
-    genre:"Sci-Fi, Mystery",
-    description:"While filming a zombie movie on a Super 8 camera, a group of friends witnesses a train crash and soon realize that something unimaginable has escaped from the wreckage."
+    id: 'gyeongseong_creature',
+    title: 'Gyeongseong Creature',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABaQ6H8XsFP6xCa75gjZlmvzvrCxQ1SZmXeYFYhP2wVk93XAMpbrlu3Tsw7k8hG_sPYXsRNTlZD3IQOSQED7FR7NHmmfXILWBo0Nm__wkuBgjm-lQFMWRV8FE_qbLHunLQ6_m.jpg?r=868',
+    genre:"Horror, Action",
+    description:"In Spring 1945 in Gyeongseong, during Japanese rule over Korea, two young adults confront a strange creature born of greed, and battle against it for survival."
   },
   {
-    id: 'after_earth',
-    title: 'After Earth',
-    img: 'https://imgcdn.media/poster/h/70263889.jpg',
-    genre:"Sci-Fi, Adventure",
-    description:"After a crash landing on the long abandoned Earth, a young boy sets out to find a beacon that will save him -- and his dying father."
+    id: 'you',
+    title: 'YOU',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABZnV23ioUzxMyYq1vfXIoRQVcwe-Fad5gsc_PHHR2nZ96KIjtdGSY1Zf4PetEuTPaaqyJzAXPLpekwasxjVhkIrVuOWEeW7Ox_dN_kQl0QZ67yaZI2Tsenne8AeEHoY987Vn.jpg?r=c37',
+    genre:"Psychological Thriller, Romance",
+    description:"A dangerously charming, intensely obsessive young man goes to extreme measures to insert himself into the lives of those he is transfixed by"
   },
   {
-    id: 'spaceman',
-    title: 'Spaceman',
-    img: 'https://imgcdn.media/poster/h/81301595.jpg',
-    genre:"Sci-Fi, Drama",
-    description:"A washed-up baseball player is sent to space to collect cosmic dust, but his mission takes a turn when he discovers a mysterious alien artifact."
+    id: 'dahmer',
+    title: 'DAHMER',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRltWuhErhcS6v8LsIuk4yVGFYSjC5Hx6eOYo79yd7X3dtGdKhFptBE76eJxwgb0m5G7Hh9st_7ht55c2rtfwPOLO2S7JNh-aX9I1VMUdhPYdhI9xo-fb7sXDYVr0RhHANEs.jpg?r=385',
+    genre:"Drama, Suspense",
+    description:"Across more than a decade, 17 teen boys and young men were murdered by convicted killer Jeffrey Dahmer. How did he evade arrest for so long?"
   },
   {
-    id: 'the_extraterrestrial',
-    title: 'The Extra-terrestrial',
-    img: 'https://imgcdn.media/poster/h/60022398.jpg',
-    genre:"Sci-Fi, Drama",
-    description:"E.T wants to go home. But with government forces on his tail, a froup of kids must outwit the adults to save their intergalacyic friend."
+    id: '13_reasons_why',
+    title: '13 Reasons Why',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABWq8LpFBZgua51HS6zqDNme5_Cr_Q43mdqpqvr8QKKeUsXeOv9cy8J01QmMziB1xVWSh63jE4QiyLSmeu5B2QSG5x7B2Jt9OwiJLvnEZ5vKawZXjLP9nMBAvb6uDofgzyv7G.jpg?r=ba6',
+    genre:"Drama, Mystery",
+    description:"Follows teenager Clay Jensen, in his quest to uncover the story behind his classmate and crush, Hannah, and her decision to end her life."
   }
   ,
   {
-    id: 'extinction',
-    title: 'Extinction',
-    img: 'https://imgcdn.media/poster/h/80236421.jpg',
-    genre:"Sci-Fi, Thriller",
-    description:"Plagued by dreams of an alien invasion, a family man faces his worst nightmares when an extraterrestrial force begins exterminating Earts inhabitants."
+    id: 'inventing_anna',
+    title: 'Inventing Anna',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABXMJpokioAH5ge2GxnMq7TAlVO3utBWEG0SQGajtY-XAYbqU1e6FRLq05G4mFthoKLXxwZyE5kMR6fIP_cyGnc6nFOHZv9d0DEwLpvfEcC1Y2UBxYg0pyuZOZp43wpaJOH1K.jpg?r=44e',
+    genre:"Crime, Soap-Opera",
+    description:"A journalist with a lot to prove investigates the case of Anna Delvey, the Instagram-legendary German heiress who stole the hearts of New York's social scene - and stole their money as well."
   },
   {
-      id: 'gantz',
-      title: 'GANTZ:O',
-      img: 'https://imgcdn.media/poster/h/80149259.jpg',
-      genre:"Sci-Fi, Horror",
-      description:"In a post-apocalyptic world, a group of survivors must fight off hordes of monstrous creatures while uncovering the truth behind their existence."
+      id: 'business_proposal',
+      title: 'Business Proposal',
+      img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABa6R0zawmvBIlpRMxH9N2cD-aKWcmyqM8q3d_u41QnzVuaTgU8vxi1cWa4Q5oLSVCRjVDIoC0opTfZO_s-hyMzZl1_8PGK449ohLgy9CvPNXpKKkgCeta667RBPXODjZ2UWr.jpg?r=095',
+      genre:"Rom-Com, Action",
+      description:"In disguise as her friend, Ha-ri shows up to a blind date to scare him away. But plans go awry when he turns out to be her CEO - and makes a proposal."
     },
     {
-      id: 'blasted',
-      title: 'Blasted',
-      img: 'https://imgcdn.media/poster/h/81276518.jpg',
-      genre:"Sci-fi, Comedies",
-      description:"When an alien invasion interrupts a group of friends' weekend getaway, two childhood friends must work together to save the day."
+      id: 'my_name',
+      title: 'My Name',
+      img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABTAqZM4S68FUJu4QTWOQWZy-KYMh4kwn3TohXL_aBEYLrjgDlsQ2QZXyKSNLvRB24d5L-D3v0gXmfCmIM11M5ePWYSWRunVPd7MSxtngriUB8vLMH8-6Oq0m7A4Y-Rvvk4QM.jpg?r=c71',
+      genre:"Action, Thriller",
+      description:"The story about a woman who joins an organized crime ring and infiltrates the police as an undercover agent in order to find out the truth about her father's death."
     },
     {
-      id: "office_invasion",
-      title: "Office Invasion",
-      img: 'https://imgcdn.media/poster/h/81590587.jpg',
-      genre:"Sci-Fi, Comedy",
-      description:"When a group of office workers discovers an alien invasion, they must band together to save their jobs - and the world."
+      id: "mlwtwb",
+      title: "My Life With The Walter Boys",
+      img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABbDtAv6HGIaSQvwDsHe1I1D9DrXIUH21Lwq2QoRd1EH56yCvEoR3xfR-BFr6hrdRxIu3GSbdWS_ZQ83ns4_lETpTUXNKvNwQrTwlcrW2F9-sTmg782-IgQe6ZGSIeZVJ8HX9.jpg?r=5b9',
+      genre:"Romance, Drama",
+      description:"Jackie Howard's life is disrupted by a freak accident, she is ripped from her home and has to start over on a ranch in Colorado, with her guardian and a family of 9 boys, and 1 girl."
     }
 ];
 // ----------------- CAROUSEL CREATION FUNCTION -----------------

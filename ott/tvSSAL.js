@@ -669,28 +669,232 @@ const cardData1 = [
     title: 'The Waterfront',
     img: 'https://dnm.nflximg.net/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABeCoyd1zhlQZkuW2r6h4FTiQ4h1T6b3vkbsYbC2dvvo12J1GYtoDTgtlPwiomd0GU6RZBdnQfaPjil9f4HYTKrtpTyr_kyBhypNPRT4m4xLGoVw3sZyOn2Lvil6Vz7swthWn.jpg?r=426',
     genre:'Crime,Thriller',
-    description:"As their storied North Carolina fishing empire decays, the damaged Buckleys grapple to revive their imperiled maritime heritage."
+    description:"As their storied North Carolina fishing empire decays, the damaged Buckleys grapple to revive their imperiled maritime heritage.",
+     seasons: [
+    {
+      season: 1,
+      episodes: [
+        {
+          ep: 1,
+          title: "Deep Waters",
+          description: "Struggling to support his family, dockworker Miguel uncovers suspicious activity on the waterfront after his brother disappears.",
+          img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUhaie9GhxIr-UzbkbtlHfIEIAqKkyh2yqywXLOaLQMYkJSPRQxtg1-Zpng2zij9E8azLvfzMWisrG6eZ-NOmRuO8FSmPEVMpOemBKLLbw5lBHSu3agr1ybF.webp?r=276"
+        },
+        {
+          ep: 2,
+          title: "Shadows on the Docks",
+          description: "Miguel confronts the dock bosses about his brother but finds himself entangled in a dangerous union dispute.",
+          img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbC4MlxMAMhVfxbDWPOdfaUJCiLHgH_w_-sp4Urt14FwnC7sdW3iwXdb4XKCFt58CFolKVic0SQ6IEGpyHUgRiRtx6-IlYrwHhum_1SPx0vG2cC_6Ex0AKkp.webp?r=f86"
+        },
+        {
+          ep: 3,
+          title: "Blood Tides",
+          description: "A violent confrontation pushes Miguel to make a choice between loyalty to family and survival.",
+          img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABRaRpOl0Il50W-GONn3Vk3BVx-KXFTg9hl_T4hdfaDNHZrRNBXO-gM4S4TSTbyeM_i_x0zvUk_IyVNUvqN4ocvMf2ronlttGCobfdmrI2XUGEblL1jIyowCf.webp?r=2be"
+        },
+        {
+          ep: 4,
+          title: "Currents of Betrayal",
+          description: "Allies become enemies as the truth about the waterfront's smuggling operations begins to surface.",
+          img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABTjG807-JTXFeUlgxBnpGcvSMbJ3XVv7mLawHH5XxOuN7jyLWc4k0mk7vB8lO1eDFWGHRh09b_MWedSMxtv946LsyJ1bTOI6cKDBq7kuObLhsgYi5kuy4M23.webp?r=520"
+        },
+        {
+          ep: 5,
+          title: "The Last Dock",
+          description: "With the police closing in, Miguel risks everything to expose the corruption threatening his family and city.",
+          img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABW0n232A4Yafm67mobZ5hN7JVQYDObXK-OGTgjy8-phJO4M0m-cr6GEj3COy-6k-DQ8H89B-1jOcTQey4_aLVg0aFRMF2B3KaSigJBqEYGXB9HCjf67iJo2i.webp?r=799"
+        },
+        {
+          ep: 6,
+          title: "Storms of Change",
+          description: "As the storm hits, alliances are tested, and the future of the waterfront hangs in the balance.",
+          img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABdIcNce4l1nNhchzuNhZfCWT035SxoJF17uJTn0To_UcqYstQz5QUe73KE0N3aHyug0OTpAIW6JrlLoyncx5iWPtBnRzjIkb2_zR9q99uzn4XSlGdbQcInR3.webp?r=0ed"
+        },
+        {
+          ep: 7,
+          title: "Harbor of Hope",
+          description: "In the aftermath, Miguel must rebuild his life and the community as the waterfront faces a new dawn.",
+          img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABZkVshnEVCESMrZiF8ZhvIeeCQlHfKzEGfzUiPmiwk0kLCCIj7ZziaFvXUj2GzDZyNnkjSmx8ooF8fHjPLvDOiroE313jPUzeUFgemxHlUIkcUTmJ-NRrI7T.webp?r=605"
+        },
+        {
+          ep: 8,
+          title: "Lost at Sea",
+          description: "With the docks cleared of corruption, Miguel and his family look towards a hopeful future, but shadows of the past linger.",
+          img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABSFx8pR6P3WRlJjJZy7GFSjABgzOiTdkJg0CWMQtT0pX0wK2X5u6ikwyC0WQvWK_D3Y3GEtNk_Si2yx2x4wmtMsl_F3RroV4UDeLMgjSsbeuXPoFy8Qz7nHt.webp?r=d3e"
+        }
+      ]
+    }
+  ]
   },
   {
     id: 'ginny_n_georgia',
     title: 'Ginny & Georgia',
     img: 'https://dnm.nflximg.net/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABaHcyuDQoCed0zXVd9tRu7mbJLj_7yYGFiJd2RdxB3lWst-ZUzUvJqNrMfBlwWbd2yMCT2pDXSQH0KSAUvw_uuKk-3E_NwFaYvoQcnqrCl5JJUgR8y9ie0ddOUvaXvY2-NQw.jpg?r=c0a',
     genre:'Romance,Comedy',
-    description:"Angsty 15-year-old Ginny Miller often feels more mature than her 30-year-old mother, the irresistible and dynamic Georgia Miller."
+    description:"Angsty 15-year-old Ginny Miller often feels more mature than her 30-year-old mother, the irresistible and dynamic Georgia Miller.",
+     seasons: [
+    {
+      season: 1,
+      episodes: [
+        { ep: 1, title: "Pilot", description: "Georgia Miller arrives in the quaint New England town of Wellsbury with her daughter, Ginny, and her son, Austin. On her first day at her new school, Ginny faces challenges fitting in.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABdxs7EAwXlRY3x8ljsu7q1MaRJE_4PQAQDHZlZAvUFb31is998G7yUSNZPCK7cvKaVdht1pdA8cTxTj4Rxg_9oCmRycLI1vgylgc9TES6KwQ3UEWTozJwmag.webp?r=757" },
+        { ep: 2, title: "It's a Face Not a Mask", description: "Ginny struggles to fit in with her new friends and deals with fallout from a night with Marcus; Georgia tries to problem-solve for both Paul and Ellen.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQ6iixDV9SjkwgdXq31dliTgM9mvPnHnl16a_qdeszU9JaTWHRHWcESA6J3B6_CJPMH7L9Cqp1julzKNz8IFrZ6orZzgwfpgtm6_I64xg74dksR3tvSLKAJY.webp?r=324" },
+        { ep: 3, title: "Next Level Rich People Shit", description: "During a sophomore sleepover, Max bares her heart, Georgia resumes old habits, and Ginny forms connections with Hunter and Marcus.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABXneYP1_RFiv9QIoqHKa-ealjtyMPCUkjDV3HiJXh31wiVkasYCc-bTQFEh45St4pETnIA9MnnYdZtXjMZT8LbX1uIeEP5Cl-XQgdId8kIRer3CD8Lts91CM.webp?r=040" },
+        { ep: 4, title: "Lydia Bennett Is Hundo a Feminist", description: "Hunter’s aloofness makes Ginny insecure, Max obsesses over a new interest, and Georgia sells Paul a fundraiser idea she must deliver.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABW28a-j0O--zRMYnoNV_oJuJ2WoorjesKOW7bjzE7-4c11qiCtQFZHUIVvEZThC4-0KeRTeEh0YW8dwTET1gFoPExcKskdNtrBGHS755miX828F_NyKbB_D5.webp?r=133" },
+        { ep: 5, title: "Boo, Bitch", description: "Ginny’s popularity grows along with her identity questions; Paul discovers a new political rival after a night out with Georgia.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABf4-vkB-hAn4kX1M4TSQ1JwQePg3JCKEd2kiS1yZt6l_cP4bSsIfRLye1DXY4ioToFm9LCQUM1mcO3g3NWVJTLdrqCxyi59f9IqipKkFFDyy1sdkd2KWYJXA.webp?r=716" },
+        { ep: 6, title: "I'm Triggered", description: "Unplanned visitors cause chaos for Georgia and trust issues for Ginny arise as Georgia’s past begins to surface.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABTd79_CjECzqgjlBjY9Gjb5beUdVQju4G9vqN1eLQGE_2Aq0OaxtmWeE9Zacyedv6IVGvvgrulkQfjxI_saMfJQ5L13lGQEeVlU8AQ6mgnjdciI1bZ7CW0jA.webp?r=e4a" },
+        { ep: 7, title: "Happy Sweet Sixteen, Jerk", description: "On Ginny’s 16th birthday, Georgia plans a surprise party but Ginny and her friends have other big plans.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABWnkM4ztS0oI8Ad4PTB7yeEN-i-UDBuoZf-zYFEe2DNeIDdrYcitbHK8t5czA0g5A6fjMN1JZjB5-ibJE_4VIsLgI60qdUiuawNOjRpam_2lH1WooLcClnFc.webp?r=803" },
+        { ep: 8, title: "Check One, Check Other", description: "Ginny writes an essay inspired by her dad, causing friction with Hunter.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABTUFT8x4ZqXUiA_Sb3-63rGjxr6N7kbeZaLZWPkUl_ou7DfrpmGZABddO4fp-L3umko02GvDbzVfAn8rfA-W4_PtCCENIR2aXBAXdBGWdkrZUYxS-Monmo0j.webp?r=60a" },
+        { ep: 9, title: "Feelings Are Hard", description: "Ginny and Georgia find themselves caught between two potential partners while Max and Marcus face painful situations.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABT6-V46ERLTReJe86z5eRsuv9bNd6OpLu6JUEaAsqP-wNyZi1ySI6J6xdM8ZwWWAYbhtsynPZMrwJ5pjGTxvbt039fZ1TzqQPZA8hZddPjENrvebnZb0iQXQ.webp?r=5fd" },
+        { ep: 10, title: "The Worst Betrayal Since Jordyn and Kylie", description: "As Paul’s election nears, secrets catch up with Ginny and Georgia, threatening their futures.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABc2sypI9mmIaf4-wdb9K2ljocgSxFPk1OpOdFqocgqovk2qQ9pqpwEJZG0hjY6ec9A00mUPOgvHHcWQbBYItkk-iS3wY1gCo0Xhf6Zon0SjPHpMQKz5_lw5u.webp?r=091" }
+      ]
+    },
+    {
+      season: 2,
+      episodes: [
+        { ep: 1, title: "Welcome Back, Bitches!", description: "Thanksgiving with Zion brings emotional moments for Ginny; Georgia navigates awkward tension with Paul’s parents.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABRGDVkyhdqEvFKkuzrBonP9iHyIVAkbI6ZJO7oUtGgKek9a1_bdG8BwK2R9VYUQfarRAMaINrc_c2Y7ZO3qnuJb5X4Wig2OR1RBv07dsmoQvV1Y_TLsBnw4M.webp?r=912" },
+        { ep: 2, title: "Why Does Everything Have to Be So Terrible, All the Time, Forever?", description: "Georgia worries Nick might expose her secrets as she maneuvers politically; Ginny faces a chilly reception at school.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaGqCZ2eQI43za5vGw_tDVnacXZ1akrde29XIp9BdrmXRyKXrUjg4VdkSc3ZPqYB_fCngjqOul6HE5v95SWrhOGSTbINd1VOlghQ4_8ewZXo1f9bEAsxUsuM.webp?r=455" },
+        { ep: 3, title: "What Are You Playing at, Little Girl?", description: "Following a revenge plot against a school mom, Georgia reveals her troubled past to Ginny while Paul moves in.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABdc3he169PWfuZeXNbmNnqFgoT5JLyKECC6rUUfgdJhyYNyBqU6Vc0cZa77EFS3v9nMrba3pXySKHVB9aCPxtwetEgwXFuXMNLKBbp0BhFHg4juAnltMrfsz.webp?r=f94" },
+        { ep: 4, title: "Happy My Birthday to You", description: "Georgia and Paul clash over parenting styles; Ginny throws a huge party; Cynthia discovers love unexpectedly.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABULaviMrhoKt06qSnnfyePUKRm5RJyFRequRpTc7kg_XqD7EAZVru33plzFr-P02YywdzaH8fgDYtebMI6SZDx3qMSvEJjEQ2wqJtS-YxY67nLXT0thtZbnj.webp?r=dff" },
+        { ep: 5, title: "Latkes Are Lit", description: "After a night with Zion, Paul makes a startling discovery at home and Austin gets an unexpected visitor at school.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABRB2Mwg--aJngCNKWn0YYDonM1C5a71Pwjx0V5sQC0svTOgomTeOki8RDiJK6zhWeo6S3UaH-LVAftURRQqt5k-qr1rc1evwna36k_Srm6x8C4YiKimrtxEa.webp?r=86c" },
+        { ep: 6, title: "A Very Merry Ginny & Georgia Christmas Special", description: "Tensions flare in the Miller household when Paul’s and Zion’s families come together for holiday festivities.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABR4poX7qnVZYTmsIsWl6vowMEkvWHqLzhcsMxMBHTKTksk7_Lq1IiT_XJm9-lxIO8IBQuDP6utiY9vHc4dsQWWEJPPUvD19ioO8MChXuB6KDmKoFfVABmVC2.webp?r=980" },
+        { ep: 7, title: "Let Us Serenade the Sh*t Out of You", description: "Georgia forces her way into Ginny’s therapy; raw emotions bubble up and Gil intrudes on Austin’s life.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABTks74-sTLBAGiyFifeR7s2Ii8aID6xPSrUVHUHMMoQLygYco3FT1d93R71KKXtINJAd8R8efGyj8TEYemBZdq2HCGmoromsWFZs0S4V-BiWZ8PE_hOHzGrs.webp?r=478" },
+        { ep: 8, title: "Hark! Darkness Descends!", description: "Marcus struggles and surprises everyone; Austin witnesses something traumatic.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABZLV_WF0-WJTcfoip8tO_iTznth6yysVzfreFg4xhO1Plznx8aDRNHvTGfQbkEsfX5Qce9I2eBgFz9cMa3dpQNf3W1L_y-tPAtHztpewpKuHtuyAdm_kZDwh.webp?r=54b" },
+        { ep: 9, title: "Kill Gil", description: "Long-hidden secrets emerge; Joe and Georgia reminisce as Ginny struggles with a painful revelation.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABflkifSYwJaeWW4-YN7Rb7IKmEBhVGkp6pnq8XFYRgPipd8k0urTYT1CC0oueONWns_Vz1fpuWw2DtAx6uWmBFdrN7tEztbcnjD4tBTJgEprTeLxVPC7s5NS.webp?r=567" },
+        { ep: 10, title: "I'm No Cinderella", description: "As Gil threatens them, the Cordova case intensifies and shocking truths about Georgia’s past are revealed.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABZVbP1mTzSW53DiwCgSVScf-yaeIhGmBcNui5UrsxglqQXVp3AiVwRpQdlBe_Gz4V3HsWFEmTVDFYodBc8mbdAE0-hQlSgOKLZqce6xp8CUwV4667oIWFMC-.webp?r=5df" }
+      ]
+    },
+    {      season: 3,
+      episodes: []
+    }
+  ]
   },
   {
     id: 'bridgerton',
     title: 'Bridgerton',
     img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABbb-nqVeQk4ZF2IdccUOo9MdTMg8k70FtYaCdlNHCKSH8IkcLn2Lj084doTDhYzzzwO0Rn6-F2Cl6zdiZLod5eIrmERbPaG4p0bNzrI3CUowPPZZl9AS-p8N9ISY_K8WC-4F.jpg?r=5e5',
     genre:'Soap-opera ,Romance',
-    description:'The eight close-knit siblings of the Bridgerton family look for love and happiness in London high society.'
+    description:'The eight close-knit siblings of the Bridgerton family look for love and happiness in London high society.',
+      seasons: [
+    {
+      season: 1,
+      episodes: [
+        { ep: 1, title: "Episode 1", description: "The 1813 season begins, and a scandal sheet written by the mysterious 'Lady Whistledown' starts circulating London. Daphne Bridgerton makes her debut into society along with the three Featherington sisters… Simon suggests to her that they pretend to court to enhance her prospects and free him from any of his own.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABW_hzq5hvsG5L-v7XxOP5dRvKo0hs3y0pLAohV3jTLSmxUgk52KGvdP8E8QUO7Q4ykxtpNU0wDmYrzrQjCP2Yq4AuwNS2Btixd8ag6Sy_XfqeiU-1D6QACsf.webp?r=d07" },
+        { ep: 2, title: "Episode 2", description: "Flashbacks reveal Simon’s tragic childhood... Anthony threatens Lord Berbrooke’s marriage arrangement and intervenes to protect Daphne, forcing Berbrooke to leave London.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABXuml4Ro5FBUX0p-0p4_Uut7NNxSEa2AbN9rs-_Q5w9u8oQmKWsf1tkkKmNxAgHO4yZGviJxUVAyJ7H3IAZ1OPK33qhkjsZ11N7rxep6AMpJ94YpLGkZS5QJ.webp?r=3a7" },
+          {ep: 3,title: "Art of the Swoon",description: "The show explores Daphne’s growing feelings for Simon, set against the arrival of Prince Friedrich, and highlights Daphne’s sexual awakening and inner desires. Meanwhile, Marina Thompson’s pregnancy subplot and Eloise’s suspicions about Lady Whistledown add layers of intrigue.",img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUD5Q1RHdpMk8kW6zZq-OwjojmlxSCjUfGMF12YHto0LrYKlRvUlW-TIPs2BcDbwk9ay6yWcDdQ6tx4gylUoJVrA0GDZANR0NY5gV8oXZlcMMksW5PeRAk3-.webp?r=0ad"},
+        { ep: 4,title: "An Affair of Honor",description: "Daphne receives a necklace from Prince Friedrich and is courted as a princess. At a ball, Daphne and Simon share a passionate kiss in the garden, prompting Anthony to challenge Simon to a duel—and Daphne insists Simon must marry her for her honor.",img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaUa4wpNIZJYC1ZW7NypUwgLitWfcYSG3Om714fX-riXUQf9wsqoGhOtIcypUT3JLlZw0qS3EYApq6llemam-1DuqgqFTmRriUv44lspKbM3Q71SoHvRt3PK.webp?r=55c"},
+        {ep: 5,title: "The Duke and I",description: "Daphne and Simon’s engagement is announced. They petition the Queen for a special marriage license. Simultaneously, the Feathertons and Penelope's jealousy over Marina are revealed.",img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABY_C6qGatFzb7FAZnOUntUDdDr0zZ8IZe5P61SY8ukvbpvzsprr3ww7q1XseYK5bK0eVy_ozwsAYrSmwVhKqDZrI0VoeC6-KqSravo8jGhdKEqeRzv4svXzp.webp?r=906" },
+        {  ep: 6,title: "Swish",description: "Continuing Daphne and Simon’s wedding night struggles with intimacy and expectations — marked by tension, emotional vulnerability, and awkward advances handled with depth.",img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABRXiMwQabXKldWGGROefcAEdsHIOk2xFp9Dy8UqNk9aOqh3uunkCm2G_iqBQhc-ecyghJIFaH7fbtlkPEcdmutomIn3PvJW9oGNOUe9L6BcDXq1QJ6uw_1IQ.webp?r=fa0"
+        },
+        {
+          ep: 7,title: "Oceans Apart ",description: "Eloise’s suspicions about Lady Whistledown grow, while Daphne and Simon grapple with the hidden barriers in their marriage. ",img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABetLDN6CawYUQnjWthbK7LIzaabT-Bfoie_lWM-TyRFerxBpA-xHhMNOxWSFPYDlcoFWCstc6y1rhzNvEy-cg9zwX3lkW28kPV1XefCWySoWiTzRhRUAlHH1.webp?r=85c"
+        },
+        { ep: 8, title: "Episode 8", description: "The duke and duchess’s season-ending ball signals a turning point for their marriage — and ushers in changes of fortune and fate to those around them.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABS5JlbKjD3nKw_pVx-m5qHdfYuySxqEEtyWt3WpQuE17VHTLyfTApmCgkiZTBu5asxIxwGA3K-4wccRtnqWlZfyAPRfKrWwWq4XNPACki86sSoPncDW1P230.webp?r=af2" }
+      ]
+    },
+    {
+      season: 2,
+      episodes: [
+        { ep: 1, title: "Capital R Rake", description: "Anthony begins his search for a wife, Eloise braves her society debut, and Lady Danbury helps the Queen choose a diamond among the season's debutantes.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABfdJsHRumq_eiTeqV_RlA4WMn512q27WAkJsmp3RMM9uKd1n9sZcx0Y99Hyfu4wOkXAH-updcQ2HltTbjFPJiFa369P-d4DezqlmLgyltyLLnnN2Jp0P0Zzs.webp?r=100" },
+        { ep: 2, title: "Off to the Races", description: "Facing competition and rivalry, Anthony steps up his courtship; Eloise makes a Lady Whistledown discovery and family history resurfaces.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABXmRL7Gjq_E90GUna_6StQy5Icjjzq26icAZCmUid3xzDqV_DvErhhy1wh8s2giUk9M8yet6Kckap9Oe13m-Jgd-3FkC2RkRWqpt3vlR6tG7Hg6B6uJd2rV0.webp?r=1ec" },
+        { ep: 3, title: "A Bee in Your Bonnet", description: "The Sharmas arrive for a pall-mall game at Aubrey Hall; nostalgic memories weigh on Anthony as tensions rise with Kate.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbiYKViBrBCokxmina6SbEUTLPUhx40e3o44R89kgfdEdB82nzlpuWKttH4RQ7Ds8vLggAPQw_MVXyeXPMjl7oV-JdykYCGJy487BrL9QmYRAW74Piv5fRRO.webp?r=ac6" },
+        { ep: 4, title: "Victory", description: "At a ball, Anthony and Kate clash during a hunting party; Colin revisits his past; Lady Featherington schemes.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABWkkLa3GAVWs0ROgllFbXoQHSikibD0MOierl9M80FHc2mUwd9B3zrwMjU5TZu3ogICypi2CnGN35GW_Iw7CzulSDOpFNh2Gv2XJSR2rbgeH6BZfwExkwYE0.webp?r=8ee" },
+        { ep: 5, title: "An Unthinkable Fate", description: "Kate receives advice from Lady Danbury on pursuing Anthony; emotions run high at a dinner party as plans change.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaF7AU2wENrSAlsVKh5-fhfr8qBjR8plJ-MWnw2Z1PQvyFRLi4a6CYV2SiGPpNNs7beuZp_hHfxLkH_LL_5VjY8x9-HV1IyZKyHDt1cBhdKQ4242A9u_0kl_.webp?r=8af" },
+        { ep: 6, title: "The Choice", description: "On wedding morning, Anthony’s duty battles desire, and Edwina considers her future as Eloise’s rendezvous provokes suspicion.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABcTnuNjwC8OL6NmKrS2AZW_f-BZrjwp7DWCl67RQfJeUI6rD6i5xac4PeeXZRcvFpLOFaxT8WUVDWoLdVTRUsu6Rtf7lR0foSIDY1kECW0J7lHqy7ICoZk_X.webp?r=379" },
+        { ep: 7, title: "Harmony", description: "Scandals swirl as Lady Whistledown's writings create chaos; Eloise and Penelope face royal wrath.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABXRaKQpvGWvulEcqxK06I5gg1mY88VnVJpbJxPsjlP4BZS3HYiEeNQpsNrQWUeVR4ZKwg_Eon3QxAOlrlKfTU0BGy3-3_hfcku_Vx-QCdHwk1yQMkI79xz2W.webp?r=8af" },
+        { ep: 8, title: "The Viscount Who Loved Me", description: "Tensions climax at the Featherington ball; Anthony grapples with Kate’s condition while Penelope and Eloise face heartbreak and revelation.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABVOBubNQx3U_MdwVwnML1vbDFM_hMpPlv-ROL6SUqrXgdKvdkVE_nkxP7mELVjAq19plR_XVCGxSgTWF-dtf1gQjceAX0LzII82tX_P11ELZ05fRmNQhR7-p.webp?r=ef5" }
+      ]
+    },
+    {      season: 3,
+      episodes: []
+    }
+  ]
   },
   {
     id: 'shadow_hunters',
     title: 'Shadow Hunters',
     img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABeo9yeZTCkMG66XzRP-vS0sNkegsw2chS1Z2hjBrieTZsf4_jBqdrDEm7GA1iCxGuPjdjgp7S-alv-u2gitZudaUqdUutYaYLfRq1V7RvVarN5uBGMYGg2J5mFR7Nyfn_0aC.jpg?r=158',
     genre:'Fantasy,Drama',
-    description:"After her mother disappears, Clary must venture into the dark world of demon hunting, and embrace her new role among the Shadowhunters."
+    description:"After her mother disappears, Clary must venture into the dark world of demon hunting, and embrace her new role among the Shadowhunters.",
+     seasons: [
+    {
+      season: 1,
+      episodes: [
+        { ep: 1, title: "The Mortal Cup", description: "Clary Fray finds out she descends from a long line of Shadowhunters: human-angel hybrids who hunt demons.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABXfm9u5lhq-2wQO64hu1bYEh5tdw3ffUhADfs5JfywIjNs8-oUoG_diEOgoWfUv_3nwtr87Q_6QVBBu-KSilTxr15Yf8IMtm0cRm8CB6Zg9uDbZUMMBURa1c.webp?r=f35" },
+        { ep: 2, title: "The Descent Into Hell Isn’t Easy", description: "Clary and Simon familiarize themselves with the Institute and learn more about the Circle and the hidden world. Clary has visions and tries to find Dot to restore her memories.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaa6twoREoFebCibDtVv28GeFOjsjpefAfIBeBY5Rm7CH42h2KJXcxPuUTo-baCnHdlzXOTwb-7ZIstua4tDg_86gIn8tncz_qkCWNIVLIkEYsLBM1gAf31h.webp?r=f5b" },
+        { ep: 3, title: "Dead Man’s Party", description: "Jace trains Clary so she can join the rescue mission to free Simon from the Vampire Clan.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABZQCm3N7Sy8-75j5PiBFOECcJ29BWvRfGCwNAspLELrzOvdjehCEsT2Si1h6DwXX9wsfJPm6o-Xpc4wj6y9hF4gXwMTn3us_7mE3IMnZbxNhQ759zrkks-R4.webp?r=7c6" },
+        { ep: 4, title: "Raising Hell", description: "Magnus Bane is sought to help restore Clary’s memories by reaching out to the warlocks underground.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABeyNMizo3v5_K2ePSeettJMinvR5WpL41DoSyuhtN6YHuuSCQq95XtLvLts9FbQzaJtWbwjou1f14MMvEoV1xdyaPrtiGcvRFdnLxnJKIerHuS9SZU7sb4mq.webp?r=55d" },
+        { ep: 5, title: "Moo Shu to Go", description: "Clary’s apartment becomes a hub for clues about Jocelyn’s disappearance and the fate of the Mortal Cup.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABdsNxngm1SIoa7s_2pUDOjmitOXrfiBTFS_rgJgDf2Tla2YbJWW2Wl8qk-EtKZCvDE3XsjV0gN-YoGTLBZ6t8W3ttUbuYexjySSPXMdJCogS-6NtsawmO20O.webp?r=64d" },
+        { ep: 6, title: "Of Men and Angels", description: "With Luke gravely injured, Clary, Jace and Simon take him to Magnus’ lair. Clary also learns more about Valentine’s past—and the Mortal Cup.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABSLITSE4QhrH_H-734fax9L4GoSVsZhCbPPT0oH9SmOh_GhVckPensTB6qXCQe2hWXGkMEz7EJfLnxowlZwEBZy-M7LRlKAgKjPSaHU2iAP94g3Iy-38e1DC.webp?r=7ba" },
+        { ep: 7, title: "Major Arcana", description: "Clues about the Mortal Cup’s location emerge, and the team rushes to find it before Valentine does. Meanwhile Simon faces disturbing changes.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaOmfojuxPNwmTTvN-Ex6eLBFaQAQEc8vZ-yVQJpuamwu0tEdhxlN4YpQPfrmRH4-XC45CQBZ8x11BohnCCQdnlXJgeNld2rPS8qWHGKk8oKxES29vSJEYKM.webp?r=8c4" },
+        { ep: 8, title: "Bad Blood", description: "The Clave sends observers to monitor the Lightwoods at the Institute. Clary faces a life-altering choice.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUUFy86T5tXGl5tAzDC7BZNJh8roY3LYwq6NVozIFGEPBUgAcqLlJuHauOrL5mYGfS6zf4KLLsroi00e41GhiMOaeENu_oqI4PqwMNvSvNxPsNqGax2KPU0V.webp?r=03e" },
+        { ep: 9, title: "Rise Up", description: "Following a deadly attack, the Institute tightens security. Clary and the Shadowhunters take radical action as tensions escalate.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQPE8MnsAJ66pQcy2_ercRU6hetmX_1puhh12eTCE_KSuhPlSdQoGvcIebk3zxQ7Cu2cH7zVR4DVGDC9J6u_p1Hy8zFDpYmGYrBFVSHsrbGAALUjxYtFW8lm.webp?r=782" },
+        { ep: 10, title: "This World Inverted", description: "Clary enters an alternate universe where Shadowhunters don’t exist—but she may lose herself if she stays.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABTdpg3x3BFF_xRC_tFtwyyww2BmChA-BDpeD1wuGklxVqAYQMJV7c1h13Odw67D1wUe3GumR2fhOjER67pdYS1UGH7Ev0gvsqxCuY7mGnssSDCI8jQzWoQk4.webp?r=b05" }
+        // ,{ ep: 11, title: "Blood Calls to Blood", description: "Armed with new intel, Clary, Jace, and Luke launch a bold rescue mission for Jocelyn while the Inquisitor arrives for Isabelle's trial.", img: "" },
+        // { ep: 12, title: "Malec", description: "As Alec’s wedding approaches, tensions rise between Jace and Clary. Magnus steps in when their world collides with forbidden love.", img: "" },
+        // { ep: 13, title: "Morning Star", description: "The Shadowhunters rush to stop Valentine amidst rising threats—time is running out as tragedy and revelations converge.", img: "" }
+      ]
+    },
+    {
+      season: 2,
+      episodes: [
+        { ep: 1, title: "This Guilty Blood", description: "The Shadow World is in upheaval as Valentine and The Circle grow stronger, and the team becomes disillusioned with the Clave.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABWGkA0Pz6fBT9MfH7UtH8D7dKhFg7BotgO0tU8kUCqG0kMCLPUPj2XPwvHGEfCOMxPwKf6Yv1jNQZFboi8gHVIvoEELObdUYr9erCsEnL1xv39Gw8n463Tdg.webp?r=a44" },
+        { ep: 2, title: "A Door Into the Dark", description: "The hunt is on for Jace, and Simon seeks Magnus' help. Clary struggles with her identity between worlds.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABZR1Y5197wXa52-w2JDOJLBXtosiVTByfxKMbvu-AH-ChcpJwdcaHLnX5RYxZCIqRnKy4SDIguD8C6snzzzVJLsXddFjIbaRV0q26Ei4v24Bsme1xFZTapXJ.webp?r=14a" },
+        { ep: 3, title: "Parabatai Lost", description: "A mission to rescue Jace threatens Alec and Isabelle’s relationship with Clary and Simon.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYxhrZlg9HRcyf1J-vRiN0cVWe0mpwLbVJB49Pa0lneq-TFPfWwS0CGOl_bgj7o3RFAzBChcXkoMKjgz0TgXdtzZYclaz1zYoO4YAAlwfIYvXeBm_tFiRef7.webp?r=c4b" },
+        { ep: 4, title: "Day of Wrath", description: "Clary helps take down a demon at the Institute; Raphael and Simon search for Camille.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABVRTKIuFJHrVncigFnyLrF8J6caUNn3FTVOWKsC-X_-Ji91sn7R8a4ead9id3_kjV0jiCvQFU68hkD-r7o__a95s3AdOTB0MyRjsrqQ2U1eSwxhw9BLUe9Cx.webp?r=05c" },
+        { ep: 5, title: "Dust and Shadows", description: "Clary takes extreme actions after the Institute is attacked; Simon struggles adjusting to home life.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABXFr93qUhEJWVlrOsChNXD8ZG1tCeUIbUI6aQKoqcH0SqZM2XvtppMM7AW5-PTKq8oBtJgFiSAyBP02-nVSql25U0yYjQDnjQuQF52nl-B01XNpSSshpVO7w.webp?r=77f" },
+        { ep: 6, title: "Iron Sisters", description: "Clary and Isabelle meet the Iron Sisters to learn more about Valentine’s plans.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABcYd5cl-hgIm2sdGDiQAtv6_YmQtCg677PrT8lzZ2rPmEktyFW82IfCYV3zySke4VNh2J-8n5_l8QFlx_WWbH9kF2CMJL7lvkBgKVaF5a_DlwVIHUQYatNtV.webp?r=030" },
+        { ep: 7, title: "How Are Thou Fallen", description: "Luke’s sister Cleo causes tension with Clary; emotions run high at home.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbYK3go8vg_XfpKwXI1J-Qy-Q1kGyus8OuCba3PrGY1hdXzZM-4m8U2uzuQikBNNOBQKtBZXMZKDf7eibGMwwyXdE_KRAlsyFtnCvyC4I6MccdmKhngXjOTK.webp?r=080" },
+        { ep: 8, title: "Love Is a Devil", description: "Raphael saves Isabelle; Simon confesses his feelings; Valentine kidnaps Madzie.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABShyOMK6ddvxXNBlG6n4gxGnPoeidjKwty-UIuIQV--DDgzloTCbj9kV8ZAkzvMLGxfHslE32rEFbi1o-jMyN6g8kp3AcwqqxB02U62I7oDlg89cSgYXYk6m.webp?r=929" },
+        { ep: 9, title: "Bound by Blood", description: "The Downworld is in chaos. Clary must activate the Soul Sword to save them.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUxno3caqmLaX310kKTVvF2g95wxC5jR4fFfWWojsAyIHOTYhoE_vwTw4fuoPciGPA9N-nOQKAr3wPvAOMv3CZZzDC5UNTAdcnLnkUKbFeaLgSXkVi6hV4zn.webp?r=999" },
+        { ep: 10, title: "By the Light of Dawn", description: "Clary nearly sacrifices herself to save Simon, while Alec admits his feelings to Magnus.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABdCainIa9BZLrVk9_9Q0Q3Ow6LeDvk4ezpvH7qQFtJXONHtL3vZOqYHFJduMRbZ6ZLZ3piF_OibI7tLuPABk-OC5yIkeHdi5RUSSbFKHzNmWOx5LGay2w9wh.webp?r=a2f" }
+        // ,
+        // { ep: 11, title: "Mea Maxima Culpa", description: "Downworlders strike back. New allies emerge to help the Shadowhunters.", img: "" },
+        // { ep: 12, title: "You Are Not Your Own", description: "Jace deals with identity struggles; the Shadowhunters face a Downworlder uprising.", img: "" },
+        // { ep: 13, title: "Those of Demon Blood", description: "Shadowhunters begin dying mysteriously, stirring panic at the Institute.", img: "" },
+        // { ep: 14, title: "The Fair Folk", description: "Alec seeks peace with the Downworlders; Clary and Jace visit the Seelie Queen.", img: "" },
+        // { ep: 15, title: "A Problem of Memory", description: "Simon spirals while the team moves Valentine; the hunt intensifies.", img: "" },
+        // { ep: 16, title: "Day of Atonement", description: "Simon’s family dinner poses emotional challenges as Clary and Jace go rogue.", img: "" },
+        // { ep: 17, title: "A Dark Reflection", description: "With the Mortal Mirror missing, Jace confronts painful truths; Maia struggles with feelings for Simon.", img: "" },
+        // { ep: 18, title: "Awake, Arise, or Be Forever Fallen", description: "After a devastating attack, the team hunts Jonathan, while Magnus helps a Downworlder.", img: "" },
+        // { ep: 19, title: "Hail and Farewell", description: "Valentine and Sebastian force the Downworlders to choose sides in a chaos-filled world.", img: "" },
+        // { ep: 20, title: "Beside Still Water", description: "Jace and Clary prepare for the final battle; a traitor emerges and demons collide.", img: "" }
+      ]
+    },
+    {
+      season: 3,
+      episodes: [
+        { ep: 1, title: "On Infernal Ground", description: "After Valentine’s death, the team struggles to keep secrets; Lilith plots while Simon spends time in the Seelie Court.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQcqUO01mvxUEo1rYAJXu9NqEKM39LZyR7Q0HycaUIlX_XIOgmg4JNfB0zKUBDu5819ypPcUfSNMwSmQzRbQYQ_RYCOHA3fo7DgLCbdccPrJDptYErxryqEI.webp?r=b5e" },
+        { ep: 2, title: "The Powers That Be", description: "Ley lines are corrupted; Izzy and Luke seek answers as tension mounts between Shadowhunters and Warlocks.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABa4h1JOfpZsWm9k-1s9QpeWUknryipDen4y1adqQ0fDj7-SKClQF7nqTZ_jkLUri2owlwCone1iNDjky0FEcYn0vmx3-hD9mUDkOYJPlqed6ElNP9smN4iAB.webp?r=923" },
+        { ep: 3, title: "What Lies Beneath", description: "The team hunts a greater demon; Simon deals with the Seelie Queen's aftermath.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABXBTjJysU0U1eqxXh6njvsDrU53B_RXoGlWkX5CLeitRhcQQZMaSu_c-2JKX8GUYSpinLkuVr5r84mu7D3ct0ZBG5ylA72VssHjfH1s-_EAhlCic5vWynt0x.webp?r=5e7" },
+        { ep: 4, title: "Thy Soul Instructed", description: "Jace battles hallucinations; Clary and Izzy pursue a rogue vampire while Simon finds a new home.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABRxZJb-BOHv1PzDGvBF9kgsxQCE6iQPYkwE3AnAsALcQRSA46GJgI-V3tivRe6V7gzR-i-SzG8zVZUXAXb6FMDhc56N2zRvQxoin46XgK_3VoTmhDxhibN0r.webp?r=63d" },
+        { ep: 5, title: "Stronger Than Heaven", description: "Someone is targeting Simon; Clary turns to Luke for help managing Jace’s mental state.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABXADZb3hMEp_5f9NqNCG_9DKKqrVMEwHdanYWoJippNdQTmMpH7N3K3tyU3SAG-jjcGU4jhWn3-llGjd8j02Guz5Pe4gZN-aitmMYPZOSzWzHt3iNSEb3j07.webp?r=cc1" },
+        { ep: 6, title: "A Window Into an Empty Room", description: "Jace and Clary's secrets threaten stability; Simon battles new Seelie politics.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABRl7rv81MqPgWFd6Lf2cTqGUrbxfZRz9llXGRcM9w1QPHOXTOkb9aQFTJWu-urEak7og-xt6vix7T6YbwDLKzP-mrP_AAvaZ1lsCnVq92YKoLGIzEdXuKXFf.webp?r=f78" },
+        { ep: 7, title: "Salt in the Wound", description: "The ‘Owl’ identity is revealed; Clary risks everything to save Jace.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABWVuJ43SkgweXHZgEvsAila8KcwqXdG9jVCOvneC8vFMR3i2_wSHcglkv15JILX_74wY2fb2lLDFuWBOPq4XmLQ1tUSROZpE1rL0GIiAIlfMVtbmHjUCri37.webp?r=807" },
+        { ep: 8, title: "A Heart of Darkness", description: "Internal crises escalate; alliances fracture as the threat escalates.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABRCvpuL9ImOotj4lm1LLIB3vwcuBXAg672aLs6E4NxlYeBmET1aJli49mfVNcnIi-2K-6gIFyNaP7ktu5pGFRlv3AVtGfGPMVP1AWBzKwSpJPGLa3Rf6zU4i.webp?r=ff9" },
+        { ep: 9, title: "Familia Ante Omnia", description: "Family loyalty tests bond as dangerous threats close in.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaVt8vZoGjv6uuhVJJ5V8aktBQ0X_tny9MSfjRSwD5NKN9yKkAEHOsyT66WNiedzBoKHsRML1V8os0tPxBsW_uiyridRB9Dh1PhBaWhXgADydyh-Wona4Ofn.webp?r=010" },
+        { ep: 10, title: "Erchomai", description: "As day dawns, alliances form and truths collide.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABWTghPm4ULFnDuXJ2nBMeEq7QHRU5CwSFx8qeX1Ez74AAjUws9siiWr3EDwqVK4fgBlkNRePa7wfiIItMTfTH5N0PwBkVszLQfRy8Xg-6RmEzNKFyfR7KFro.webp?r=49a" }
+      ]
+    },
+    {
+      season: 3.2,
+      episodes: [
+    
+        { ep: 11, title: "Lost Souls", description: "Inner demons haunt Team Shadowhunter while the truth about Jonathan is revealed.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbKEfYeGm9lVOffO8Q7vp3BjL_No06DkH8ueKwuXdcDnlatFE3ddm7OTWt3xiPl_neO0G7UFc5PG0VmmLe4MIs5TMz9iSuGmxnIpc1RQhnV8MWmn-gJaokkb.webp?r=636" },
+        { ep: 12, title: "Original Sin", description: "Seekers of truth uncover past betrayals that will change the order.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUliPUjSHe8CVRKlWVYMH2DFpuS_UPYCo5gfYYzQykCkpVrl6MVr892hIxxGgY54RwQqjZuypvInfKQKjiSOxoJMQfLobU3ulp9ZOb7B-tHgZ6ndVtMeuscd.webp?r=2e3" },
+        { ep: 13, title: "Beati Bellicosi", description: "Peace may come at a price as old wounds sever new bonds.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABXqo2P-wPSRxHFDArI0y5kRU2xgejnD0BAlYiZ-nxl9qx31CfGMRUjhdyPqc0a4Zdp-ptOiy3Yzmbew9ieU7TltQk2u9XaPFw66SpX-ULBLjp7wtZYy7-3qJ.webp?r=e7b" },
+        { ep: 14, title: "A Kiss From a Rose", description: "Forbidden love blossoms against a backdrop of looming danger.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYy5Q5TFnKs3qQsjun19t0FqWT5kEXzdiiY9s2UsTM8A-WUohd6pqYrYTNnHOGmZlPAWFR_i8-3BXLPC2Iw_O03l8yQoaSdnVy8yG1vLM1gr-FqO5AvxqZfA.webp?r=3d9" },
+        { ep: 15, title: "To the Night Children", description: "Clary faces overwhelming threats as loyalties fracture.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABZsLWXKRzVPKjt_o27uXduE6_gkplvLHvqZr0v_9_f8bpqdnLhrTNIsYgGxKRYkq4JzfwotOnwgKgMIEhEaSU3SBf8WBDnBhiiRtqOnRnT-MNrcZbrDlhBXR.webp?r=0d9" },
+        { ep: 16, title: "Stay With Me", description: "Victory seems within reach, but cost may be too high.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQJnMlf0luaVjYNxzP6ypkaxBsgQTjWHJK4tIewEHODyjDhtyagdC249w63EyWw8VtevcN-eYxpEbP2OW164reoMmYvleruuLzpZa8nqzqC8Mir9--2F7wdj.webp?r=515" },
+        { ep: 17, title: "Heavenly Fire", description: "Rituals collide with reckoning as destinies are rewritten.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABcqYDlf-R6lYyuTSUfctcPQNs07PAK7eM1jQd_mgL-VM9bZypBjO1EChCZjezx6yQNo-7p2eVdy9P29JMLZr_jxYDyD5IlQ3FYbhGTCX9gviTWcLhec5Y8y7.webp?r=81b" },
+        { ep: 18, title: "The Beast Within", description: "Dark forces rise; family and friends are tested to their limits.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABWG7FiDjfTCZGfAbcvmf4c-fl7YhqE2mOWzXm4cKOsRchdXG4LzidpS4C9dbqOBgSPSNJXBHONc6d6C1gtqcVocl73tX9NnnrBnbFbSuO-tBvmWfpaYLCzQP.webp?r=b9c" },
+        { ep: 19, title: "Aku Cinta Kamu", description: "Love transcends war in a heartfelt stand against destruction.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABa8WSVK6JGWa3uKEI9phA3R_REd4eRC2vvJHVq9UwLAuQlFyuBEgv39UXPFlQJSKECNu3cuuyq5ppbajA5N-5W7h4K9M6UycIzxQWtxSbXMXj9GyRxMQCqOu.webp?r=1b8" },
+        { ep: 20, title: "City of Glass", description: "The final battle brings devastation and hope as truths come to light.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABcx_PFoJruzFt5ZS07hEN-vx1VLYnbp6w87L7PAPe-UAW6gpue8m6wuHaW2hm9jYiZmIokClmphimHcIyD5rUx4iQ_QmzkJp6SHppCeNWzi7j43x2neY--l_.webp?r=32f" }
+        // ,
+        // { ep: 21, title: "Alliance", description: "Fractured alliances reform amid the final storm.", img: "" },
+        // { ep: 22, title: "All Good Things...", description: "In the aftermath of war, peace is forged through love, loss, and survival.", img: "" }
+      ]
+    }
+  ]
   },
   {
     id: 'queen_charlotte',
@@ -735,7 +939,286 @@ const cardData1 = [
       img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRvoBpI1EKy7W7THnRK4LZ0wlxghT3PNvfctXgEJWJEtNg4MttH5M911iIrx-N9bz9-Vq76b-hAk17y9MQK-7kpaPiRnU_2cA18cskOjMZN_wGmsOKcxFLsOnsyc_nUH7SgR.jpg?r=273'
     }
 ];
-
+const cardData2 = [
+  {
+    id: 'scooby_doo',
+    title: 'Scooby-Doo!: Mystery Incorporated',
+    img: 'https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABW7GtLIm5DnXUttW2nkL-_Qo61020kxqn2lg42n53DMl-8t_zLzXAf6BbzVGsuRh1ujg3KiLWPjp2XHdTsnhM51h2hqdIWrKykA.jpg?r=38d',
+    genre:"Kids,Animation,TV Comedies",
+    description:"In this animated update of the cartoon classic, Scooby-Doo, Shaggy and their pals solve spooky mysteries in a hamlet bedeviled by supernatural bedlam.",
+     seasons: [
+    {
+      season: 1,
+      episodes: [
+        { ep: 1, title: "Beware the Beast from Below", description: "A sludge monster attacks Crystal Cove’s harbor, and the gang investigates while learning the town profits off its monster legends.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaoz6QTb2tgqUW7X89eIhjgIuld9VTXmljGyq6hDsVCwATy4P_ki96NaCWL4_PmVH3oDVlveA_j5bXMFlqtXAUdngAUAJe24hP7pWdmCQ-xp-FTa7oxLrisr.webp?r=e4f" },
+        { ep: 2, title: "The Creeping Creatures", description: "Strange lizard men are spotted near Gatorsburg, leading the gang to uncover the truth behind the swamp creatures.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABbx6oH7fDligpYk_VxQterQxsHxI8fUa7Wh7yqHCBvysciL-HTmO183Tj5KtMN3rGa1QJ0sUYSFpciOIBKqgNvHnDuT_xbrCX1Z6FJt5X3QLSfzaGFyq48-A.webp?r=f6d" },
+        { ep: 3, title: "The Secret of the Ghost Rig", description: "A mysterious phantom truck haunts Crystal Cove’s roads. The gang follows tire tracks to uncover the driver’s identity.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABZHmwegsrXiqpIgiC_FtPD4-J8MkL5m7oWnTaW7-aakMlFjUwPvLZkjZanmcHYx3tS3yT8tDKssdyAG3gTzSx8vpb5Ivpgd2x7wX_fIsqQQCWTJMufI6zjXc.webp?r=c80" },
+        { ep: 4, title: "Revenge of the Man Crab", description: "A beach party is terrorized by a giant crab monster. Daphne tries to get Fred’s attention while solving the case.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABa0SaHMCr8636m4kPZbSqD0XVICFn_Yx4lz8diohvfqWB6bZXQvToXQSIEOaNhjzHhHxtJp8h_yd3esIaOCKnz5oAVsv-NegNu1ghkphs4eXFGgWD2VR1kIO.webp?r=d5f" },
+        { ep: 5, title: "The Song of Mystery", description: "Children across town are hypnotized into acting strangely by an evil flute player. The gang races to stop the music.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABULUgUAXQp5EVqW2oB1rQ7-RToiHc9byTF2EZQvHvHx-yTnwjkACULWmk8FZgkLvC841jJ0yZr8xRL7TExvZ6PbauhK9WIBHgtTVwrfjk8BSLnrAjEsU-wI-.webp?r=7c8" },
+        { ep: 6, title: "The Legend of Alice May", description: "A ghostly bride stalks Crystal Cove High. The gang uncovers the mystery of Alice May, who hides a dark secret.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABT0gqSr-bf4dKy-BO7MJmJU_821YPEpH44TAqI6RrNLdPjCubDtATgsYstX58bnpqPeT0f4xKTyHxpegOXNIsRQKVqbRcjfonHZs-scCLB1JkyK8baqLBm8V.webp?r=02a" },
+        { ep: 7, title: "In Fear of the Phantom", description: "The Phantom stalks a local music group, and Daphne gets caught up in the mystery. Fred struggles with his obsession for traps.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABcs7q6JqE3wcW-Y3S-gF1GNKI19Mt3W2ZcK-HTxlcx7-nsPDU2EhscD5sXaBINimohrK4Jw0vkjI4wy6O0oX9JiyFFfl7UEgD62j92eYfvv6Z0thw8T6haOo.webp?r=aaf" },
+        { ep: 8, title: "The Grasp of the Gnome", description: "A gnome terrorizes a soccer team. The gang uncovers rivalries that connect to the attacks.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYLTe_-PwlhajIPH4mhoMdTzlS-YEU-Lzf6MoT9FOhVrGbjZijnQHXeSYQumMQQjenjUp-PO_xVPb4JExWsneYByOglfnV2txK9ex_E54jSOCFzeXTEra2Sr.webp?r=cb4" },
+        { ep: 9, title: "Battle of the Humungonauts", description: "Two giant robots fight across Crystal Cove. The gang discovers a rivalry between two designers fuels the destruction.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABd8iC9-JbtH92U1PRIz_u8iH8SSvwRbI_2PASxj-yDsMIC01yDfX6a1g_63jNhyrGNFukm4ioz652VkPlQAsIxNqGuKv6wkml7ZBzuaYR5drI-Bx6XkhHWmH.webp?r=559" },
+        { ep: 10, title: "Howl of the Fright Hound", description: "A robotic dog goes berserk, leading to Scooby being accused of being dangerous. The gang fights to prove his innocence.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABVbuQRfTMf-gzjrgj1K_S8_tryWWh2FzvkSiJGq6dSaRgvFoJ-YZT6P-bwKx6rXK813_st9w7GFKSJW0qZvyfIwc8bMCxaYWSOT9KSBn_jf2klkRjpJPLv56.webp?r=6c0" }
+      ]
+    },
+    {
+      season: 2,
+      episodes: [
+        { ep: 1, title: "The Night the Clown Cried", description: "A mysterious evil clown returns to Crystal Cove. The gang faces the legacy of an unsolved case tied to the town’s secrets.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQUVePKts9L9bx8WYQsy0u05leGcCHxrRZ_9ZUMtyiMTHxDIidJCZB2h0YNCPXa6WNsDoisini2Q86iHisxsx-KSpXt-YkueDwxLrQhSKn8zE6InBcDTYjaE.webp?r=209" },
+        { ep: 2, title: "The House of the Nightmare Witch", description: "A witch haunts a young girl and her family. The gang digs into cursed artifacts that point to something deeper.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABfCR8vHTGsv59o0zLrC3p1hjBlPPoG5owU17wemihHMvgPHpbj8sNeNZxRJsXDN4rZnjdxx5L6iX8M7zzRxpLrp0kY7-2KCsyJh6VT8EEM4oYLpbim_5n_p7.webp?r=a84" },
+        { ep: 3, title: "The Night the Clown Cried II: Tears of Doom!", description: "The evil clown returns with an even bigger plan. The gang connects the dots between the clown and a dark conspiracy.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQhyldIyk4zi7tGv0EjIQyYFUSEGrSsp8zUxYXmVPgC877SuNkkrn7x6tlxMDSkvBD-uRgOxI8GqnvtwMYzjVa-q9nu7ZKHSmWW3XxkvirI4aEmxM_9pxnVl.webp?r=468" },
+        { ep: 4, title: "Web of the Dreamweaver!", description: "A creature attacks people through their dreams. The gang investigates an experiment gone wrong.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABezRXoqs_h8Ojr32pG_YMufAjyXG2NP7ecpPPhmcXaPE5a86NKP4PWzYKLKrXcGQ9-I3-yrM3EQE9NRlWbPSsHEkQDd8BxLON18T24e7Ago4IZihdJ5ykbQ5.webp?r=15a" },
+        { ep: 5, title: "The Hodag of Horror", description: "The gang uncovers the truth behind a local legend about a ferocious beast. A twisted history is revealed.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABc3HGYRSGwZP5YBNBQ8ZM5f3WT-S0RJ8klwAit5VC0cHopBB4ctmqlNpcWaFvcjFalabGNJfBREIRzuIOtmDbjagexYr8UNbAclZ8lriW-A4Tl9onDWABTEq.webp?r=53a" },
+        { ep: 6, title: "Art of Darkness!", description: "A ghostly figure haunts an art contest. The gang races against time to solve the mystery before the big show.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABdfOCOuBGnZB3fWlSvj3BspqhPWPggWEMmCwwCpd6emRnkRscuXlc4ds1XjkCxvWsoflJc_KZUVb3VKxeDQRNixCjJnAu_MhWhArOo2cCv4iG2A-6E-BeJEz.webp?r=777" },
+        { ep: 7, title: "The Gathering Gloom", description: "The gang investigates a girl who believes she is cursed, and a ghostly bride haunts her home.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABfi8wbSMQ7u3CA31QcpVNy-YpKcvTYp0WqHEStMP5Srnf0Zz_rEbUu3dWdGMBZUiK9hWPcDZVHduFuUsWpF7eXBTozPBeCHRyuhiVHhKY0MYNZNhi_z7axAa.webp?r=ec6" },
+        { ep: 8, title: "Night Terrors", description: "A murder-mystery weekend at a mansion turns deadly when a phantom begins stalking the guests.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQcsHCZSZYxfTA-hzSMAlIQ4JjgV06pmDevxv0rSR8VJlV9Vclt8K1fNTXTNzWTzLkRRgVjkUPAc62ukdzYKXoDoh5xhU161bdpyIVzsCuTrlB7mkMyWrf5R.webp?r=50d" },
+        { ep: 9, title: "Grim Judgment", description: "A ghostly judge punishes Crystal Cove’s wrongdoers. The gang finds corruption at the root of the mystery.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABX92VXiOjKqVd4o8E9htFKVoBllfVnKJlGQczrSxymEew3qwWdXAUJ_9MrFVpWzXbO370zgWQQTh4JoyU3-jCytCWBfCi3vizE3FwTKstvaFZHzWJsUezZac.webp?r=e37" },
+        { ep: 10, title: "Night Terrors", description: "A ghostly conquistador stalks a mountain. The gang uncovers the history of Crystal Cove’s cursed land.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYsZqme1YoAAXvP2iOY708XKOfU6_R6qUFawIB4PtiLy10AWLiyAgfOh6ue-9lIYZoBhoIhR9YX982H_6rcM-vFiN7iHLq8IrVm-98BNiNnsW0KtYYhr9I4W.webp?r=776" }
+      ]
+    }
+  ]
+  },
+  {
+    id: "tom_and_jerry_show",
+    title: "The Tom and Jerry Show",
+    img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABTuE0AWB50FQhSOIjq3JK3O5rforF6HWuYtOBJv-QZ8565Z-vZW99ENZ72RpyvGWZGkRKOjPl_o7HK6FqBO4_NX3KROzQJa6-No.jpg?r=6f8",
+    genre: "Animation, Comedy, Family",
+    description: "The classic cat-and-mouse duo return in a modernized animated series full of slapstick comedy, mayhem, and timeless chases.",
+    seasons: [
+      {
+        season: 1,
+        episodes: [
+          { ep: 1, title: "Spike Gets Skooled / Cats Ruffled Furniture", description: "Spike trains Tom after his mischief goes too far. Later, Tom battles Jerry while trying to keep the house furniture intact.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABa9VugmZr99Wwv8dT8CNuctPKGwCZ1NxDRYnrw3iBkLU5FhoDdbtNPST_K1rUvIdeQhP3Pb4At81nJxLVP8eZeI7d7i0FUemYbYSlP_Row6sdtY6BAAZph6W.webp?r=e2a" },
+          { ep: 2, title: "Sleep Disorder / Tom’s In-Tents Adventure", description: "Tom struggles with sleepwalking; camping chaos follows when Tom and Jerry take their antics outdoors.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABWcta6Em3U57Z9UTo2EgJJE4caNINPIVboS18WApaXLmjfiZQiKYvsMjtYzHls4axZ51CmdsamK9Y_4HfiXhycoT8WdMV-ZxM-6vHPwwzBAKpTvOhuiS_Vg5.webp?r=1aa" },
+          { ep: 3, title: "Birthday Bashed / Feline Fatale", description: "Jerry ruins Tom’s birthday party; later, a female cat distracts Tom and complicates things for Jerry.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABcke-awty-JQkH6bdwAnwk2RiKr5_ZGbN-s-U51zefDeWm8bYfVNyd7QglNUkDLOhfyLjKMrzxoWidbSQOKRwKM2_rgsY5CsYlDc3uloKIjVyS9iWIpm1tMa.webp?r=f7b" },
+          { ep: 4, title: "Cat Napped / Black Cat", description: "A hypnotist causes Tom to act strangely. Then, bad luck follows when Tom crosses paths with a black cat.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABVbxgwJ1SFeFpTX1UEqJxc1VHZmuIfC83SaVdGJ95DI4A2WfSt_bRVgTHD_2i05oXnoHWTYQlTB64-nngc-9ClmAvRt0PfgLyfOfA4K-5hk1zf-8bVzo6cuZ.webp?r=a35" },
+          { ep: 5, title: "Hunger Strikes / Gravi-Tom", description: "Jerry raids the fridge, sparking chaos; later, Tom experiments with zero gravity and disaster strikes.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABVP_HwaM4G3kXSi8Cl7aTYVR51qc1c2hlAvvEB1w83Or0OVEoWXnLR9QdPihbR_vqqZDkx5zetIdxkTeUrwA7VDAGP_t8eYHnowNRTduwOD15WYzFf5yzM0Q.webp?r=031" },
+          { ep: 6, title: "Ghost of a Chance / Cat-Astrophe", description: "A haunted house adventure ensues. Then, Tom and Jerry’s chaos brings disaster to their neighborhood.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaIXQ1Vyfsq3THhrYk6i4z6KZqWzQ97XVtRgw3HhihoQXVgv7SK8VUwpVpRIVISZnK50lLz54XPqpKr9eQAAT7_d2Xr2dJTGyGw1Z4FZzAaT6bj3UYhtx-fR.webp?r=f31" },
+          { ep: 7, title: "Little Quacker and Mister Fuzzy Hide / Cry Uncle", description: "Quacker befriends Jerry and hides from Tom; later, Jerry’s uncle visits, causing more trouble for Tom.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABa-o3Vw30A7FWXnf80ieQ-os_LAQON8SuKQ-fYtB2l1AlPqIE3A_-rmKtrfjkBCXDCx4ujXkTbTqaVyDeIpWdTUK-zMaAZd8T4VOQ_jOS13Y0rAXCTbm9oE9.webp?r=985" },
+          { ep: 8, title: "Holed-Up / One of a Kind", description: "Tom tries to trap Jerry in new ways, while Jerry proves his cleverness yet again.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABVWUEHMgh3DvLSs0mmmHmf1PuhDNMGenF7K06vutGilpvUDf204VoV30zy-xYM5DAEK_Rb86CasLyjjAwOQDdGG7TLUw3ekoVgvImBs2iK5TxmmXPWycD5JY.webp?r=df3" },
+          { ep: 9, title: "Dog Daze / Birds of a Feather", description: "Spike gets frustrated with Tom’s antics. Later, Tom and Jerry clash over a new bird in the house.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQw0TnMEIQ1jkytYQIHZY6MyZB8709EjncBC7f7ckvdXnFXlpqK0YQpaxAZkmWN-UIFF48-hY9ZRK9N9DIK_OeCa89kIVL2MXBVQsJZvjca7cvfnrQCnWCHG.webp?r=897" },
+          { ep: 10, title: "Vampire Mouse / Entering of the Fangs", description: "Jerry is mistaken for a vampire, leading to spooky chases. Tom gets in over his head with vampire mischief.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABVdRtmlKJ8dSGNgSk77n4PuqidNwGIfvKGkoVy5Iqo4-c7CAbaRFaKXHXp4o-e_D3A8SjcGi7IDGEA2b22RcElH22QKcgSWOtBHydl-1wFH8j32Bs-RnDRAT.webp?r=e76" }
+        ]
+      },
+      {
+        season: 2,
+        episodes: [
+          { ep: 1, title: "Turn About / The Plight Before Christmas", description: "Tom and Jerry switch roles in a twist. Later, they wreck Christmas festivities in their usual style.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABc0YsPYSw78e2aN16Hnk3vPgSG6wyVIOmd6wt-b3R4vCDIj84udgOZA0NY4by0udrsVQYdBoIY84JRAwrkw3WTNBRB1mTlJ5E0IogvI26iw_tKCqw72eDPxU.webp?r=b4f" },
+          { ep: 2, title: "Say Cheese / A Game of Mouse and Cat", description: "Jerry finds a new stash of cheese; later, Tom sets up a high-tech game to catch Jerry.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABSLqLiXhE_Kip5ihKPP9zLt7ksCGN3SKnXrwKYvByKy8XilgT45joTQjkSlNnvDsYXKN4EAEb4HEAz7rl5mWK6u8fj7R6i0ZsSA42VIN59pzmmSXJh1btVfz.webp?r=3dd" },
+          { ep: 3, title: "Tuffy Love / Poof!", description: "Jerry babysits Tuffy; later, magic tricks go hilariously wrong when Tom meddles.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYrI6kgNT7Pu1vB10DHT2fk3hHt6g9bF4ubUkdn6kQOjew-8P4ey63n9bNNr5y23qufV6gNmJf97mY21giFQTqlBtvlsW7f_qF5y3Q55b3VbFckQy8vr2-4I.webp?r=84a" },
+          { ep: 4, title: "Top Cat / Mummy Dearest", description: "Tom dreams of becoming the ultimate cat; later, a mummy is awoken by Tom and Jerry’s chaos.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABevpplwEUz09mik5kvPYgAbAlGkQr6piy0Imz86kHzY1dCkCflllT-0itFWqiofPTCLxkmOaBLlZMGViA2jMdvXIYd1VHECV8HNAJeqkO-tQVZH2MXtMWQjO.webp?r=551" },
+          { ep: 5, title: "Pipeline / No Brain, No Gain", description: "Tom tries to cut off Jerry’s food supply; later, a mad scientist experiment turns wild.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUwGyhtk8aEfkbODFZJfz9SjlfH411ZgCVnjBzFL-1q7LB-8SUxWwOrloEpUtmXtNYiL0ARzSoxvKRAsFO-tnhVpwqgKcLxv5MmSZEbCuzYkcIJfTkXTxpBs.webp?r=ed4" },
+          { ep: 6, title: "Catfish Follies / Little Quacker and the She Duck", description: "A fishing trip goes wrong when Jerry interferes. Later, Quacker meets a female duck.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABecHux8PhgoC2xNZ805K363KCrPktVFeBmk4zvby5PL41zLrvfY2qUK0PQ0eamj2BjJ3tQoz7yjypaZ4fk4DH6eRXwEioMb7ZvyUvI5UFgz7uSv7cPOj_FFn.webp?r=06e" },
+          { ep: 7, title: "Uncle Pecos Rides Again / Cat-Astrophe Cruise", description: "Uncle Pecos returns to strum his guitar; later, Tom and Jerry wreak havoc on a luxury cruise.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABXum55Oduggti3p3G7NDO1KHReCC8V9ph-urU95rIIXeayo_CEe2SZS7MyatCYWpMlapZWBwCIypTmeLH55YwIzAiGE0kx45rblQh5gKancrjbC6tg6E2k2t.webp?r=565" },
+          { ep: 8, title: "Cheesy Ball Run / Tuffy's Lucky Day", description: "Jerry invents a cheese-ball machine; later, Tuffy thinks he’s found a lucky charm.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUyO5zIEKPD3Fr_qd6yF8wqOzlYe2Pm4Qj6eVxLhb1Qw-7TAdlFbj1TC9l2JnzNx9ju1ipNcjTCGizxnhnD0KhBPvOOmLSdQ-N2fCJCfAnxJVB-1Qj1gHggq.webp?r=dcd" },
+          { ep: 9, title: "Cat-Astrophic Construction / Mouse in Space", description: "Tom joins a construction crew but Jerry ruins his work. Later, Jerry blasts off into space!", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABW-U3zDhYK9uhQ2lnGuJgbsRMsOnE8cycW6fGdUx7WFU0MArj4icbGDEUoVpwljk_DSpN03we4NhdLadVYpWNYV6noOptQeijuYp1o6ZCAZUpwvofr5yhUWT.webp?r=908" },
+          { ep: 10, title: "Invasion of the Body Slammers / Haunted Mouse", description: "Aliens invade Tom and Jerry’s town; later, Jerry turns ghostly to outsmart Tom.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABV0CDDWQyHMKZlfBN1KVj5G6258qZpYxp-NGCU1u_GFlV-cPqAHJd6DUchleb8Y109_xdAyaUTysft8EB_Zg7MiYdt3dl9FoXzpR2EQl0_UGPHWnNFV3ukGb.webp?r=d21" }
+        ]
+      }
+    ]
+    },
+{
+  id: "miraculous_ladybug",
+  title: "Miraculous: Tales of Ladybug & Cat Noir",
+  img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABSxw0vNob_tUB_PIA-nKKVy6LsW7i-EwmvndXuYfz-iD58R7fFE-Z4o0TvqsZiXq4nUmTXM7wQq9yp1z_0PssW6mHjcmvC9yCVU.jpg?r=27b", // Replace with actual poster URL
+  genre: "Animation, Superhero, Magical Girl",
+  description: "Marinette and Adrien transform into Ladybug and Cat Noir to protect Paris from supervillains created by Hawk Moth, all while navigating high school and hidden identities.",
+  seasons: [
+    {
+      season: 1,
+      episodes: [
+        { ep: 1, title: "Stormy Weather", description: "Marinette fights weather-controlling Dupain-Cheng and learns her fate as Ladybug.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABdNhFGPYacOreCb9VxSaOUoeZ-P31-GXM7qxqXeedbn6-0WUOul6Dr3b3DItnmFFa-3AE3Xf51oywmyQea8ITXMVhVMXP6Rmnnqgv1XqDPvbr2wxwQ1FD94s.webp?r=cef" },
+        { ep: 2, title: "The Bubbler", description: "A magical water bottle creates monstrous bubbles around Paris that the team must contain.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABW1btY4DRzzDS0ikg0Flo87pdP1Vf4U8shJHzf9ZMyoNXWLssB8Kj82GgqSwjNE5fMx86NSPQXrAmRYjyyIc-Hei0wN754S40JuCqKpgB4L5SKm0a3Zxd-bN.webp?r=b25" },
+        { ep: 3, title: "Copycat", description: "A cat-themed copycat causes chaos, and Marinette must deal with mistaken heroics.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABenGXS9Ip52cXlRvJYuFt4Z7sKZWXdnrrHpEaac8tkMHsGaHOWUIKRoZSa3eP8nPFaRXm0PHfSTSrOxwkXMMGdNUFouAJsI_-DNeO-e7nBxHFg5avT-Qqtgl.webp?r=08e" },
+        { ep: 4, title: "Timebreaker", description: "A villain who slows time forces Ladybug to think fast to protect Adrien.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABadR2BfiPV1dKL21jmDw_0iUsp_Aljsgy4Ztp_FDfkhDVPDH1Zpha0IGixhaYBPDQDF7NPEmmYC04_TYTxme5dihe4uFf9UlCO3zOcGt9_DT5U_t2DJSczSc.webp?r=3cc" },
+        { ep: 5, title: "Mr. Pigeon", description: "Valentine transforms someone into a gigantic pigeon; the team must work together to stop it.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABWQrCpF4m3GHjbngEX-nJL0vhj-RuHpDAxW6W8m406beJiyRTtcT9Bxg3YgjMFCR4f4D8ensJ4VxSjA9aMmT909C5GC1l1eJ8OGKnXbK9p6dG8dPrtYow4X-.webp?r=cb8" },
+        { ep: 6, title: "Lady Wifi", description: "A tech-savvy villain takes away Paris’s Wi-Fi—only Ladybug can restore connection and peace.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaHoLWvrd-MSV-ALI0htO0oWsm7L4dzRpsqJhufXgjlKn5U0mslYgdpjtaQY8TsUtq075zOjblk64nnk9JcW8GjUWTmjwt57nViTVMCrJPy26E3LpQGONhHH.webp?r=3e1" },
+        { ep: 7, title: "The Pharaoh", description: "A cursed sarcophagus unleashes ancient chaos in the Louvre.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABX99-cvO6OObrACeRX8zkOjYhmJnjBNhTBogis_4TaUPwIFQuDW6aa2aPJi6PU4mWP3E9hyRykkz37rlMmXSDv4ysmj8B6pZbtqWiR52MbkCM3onaLUbMZJ5.webp?r=62b" },
+        { ep: 8, title: "Rogercop", description: "A sentient toy robotic policeman runs amok, and the team must shut it down.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABTvGsYlB7NsuAcsMU1a9W-Tcd5__c-0XbRsraDzqobcubynWT7d7bA35hmFffio-lOCn7XrhwzGdfrgDYiDcQQRP7U-OhKeMKitD8upA92ZEDXy65mkB2RSV.webp?r=f1f" },
+        { ep: 9, title: "The Evillustrator", description: "Valentine turns people into living cartoon characters with his evil illustrations.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABb3deQ9VsMANLnRKyFpsVOF33G191LUqpHt2-RBBujrgF3z4Djjv2WQxnX4Xcz2lfQ-JjT4GUTAOvDYqZYNJaWiijbJRv-zqPd0sHgmKugUUG6bkcb2JeYat.webp?r=4f9" },
+        { ep: 10, title: "Dark Cupid", description: "Cupid’s arrows go haywire, causing uncontrollable crushes across Paris.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABf0Ljag-uAotA5noIj0AI14r8tZXTaLKVN42c4eDMfbRFB6t4twrQXkRF-pL26b3Dzzw5cnqr0ychdBabZOzG3ygb4CnGsZWbXp-b6Hasv8mFeDEAv42c06E.webp?r=a83" }
+        
+      ]
+    },
+    {
+      season: 2,
+      episodes: [
+        { ep: 1, title: "Santa Claws", description: "Christmas turns grim when a clawed Santa causes mayhem." },
+        { ep: 2, title: "The Collector", description: "A villain collects Miraculouses, revealing larger conspiracies.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABaKS92drAaLH-DvVCs3KKpZGS4GMN4utHaMHtNsykNvQKJg078UdHpm-IwB7UcjmN9vj605qEAnOxtA0RchnLR6lwjyc0j22YYBnIwNYCeX5B1qyBujOTp-V.webp?r=e6a" },
+        { ep: 3, title: "Despair Bear", description: "A teddy bear fuels despair across the city.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABeo0_g8zzHLkbGZqffrvz6VbwJTg3EBMqjCuzeE1XiXTqTREIqp1ofjUYjCKNqlR61_2vZBpK4CWFMhTjTfS86SGcMxJ1dgKtOt7Sg4G7FZZiFsm3HPfA8Fn.webp?r=d56" },
+        { ep: 4, title: "Prime Queen", description: "An online math oracle becomes a calculating queen.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABb1961iiV9EnrFh7ab4l0o7jnHp6NTaWv2szgBcd6A1EsHtEwx8CHGdQvZgClE-3vLwCwOOAFTt1A9OAFj0b9o47ftPH7jIfB199UzbnnRah72sWLIB7aMIt.webp?r=b5d" },
+        { ep: 5, title: "Befana", description: "Italian folklore comes alive—Befana causes mayhem during Epiphany.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABffJP6374bRrO0FY-fE35EJM249WOrf0VJm4mAV4nRvzy9aP50kWvsr14s6RRHP3pP23cGtLwY7WFHjad7g_mJCwq36YzV3iVB4C61geHR2UojDy7LoyMEna.webp?r=7b3" },
+        { ep: 6, title: "Riposte", description: "A fencing villain strikes with precision and speed.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYPAG87sGplVRWegTQ1K61fw6aGTlMvgWrqapdH-WNSVPo7YCHwa0jbnqD4RUObWHFzCzVUyye2LQ7I6FchQXVYarZ3-1P5YR8B5b6TSSdQ35Yj_yUR6jy0t.webp?r=460" },
+        { ep: 7, title: "Robostus", description: "A robotic villain invades the city with mechanical minions.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABcT9D8pWwhAUKy5hd08tfylJA5PN1QbsR5o3merQJiTx4Bi7T1Y55egKg7wOkwZjatR2t_yfxUjvASly-X4M10sujhiU28E2Im8qsbOUzGjo0aYfFbtijT2G.webp?r=48a" },
+        { ep: 8, title: "Gigantitan", description: "Size-changing chaos hits Paris when a tiny bug becomes giant.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABTB8Vzsm6Ay9awpUhkCDKINrhWj68ND17GKiwZ0_wiiMbRB73SxjpW8XtZDPkWPy5vOdct57jfhdOUe0j8drf1LqFj3_D29SiULZIWgySjRBziyqHKrYkWl5.webp?r=979" },
+        { ep: 9, title: "The Dark Owl", description: "A wise but corrupted owl manipulates with illusions.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABdI3MOEDvOOqIomMvh9he3fcleAgDBAgEBphWy-4rpOwYvbeUNXk--3a_snPPnLov_coT5FE4jkrEOLH2-a1y8QsQ7w9wMP6Bk_ctuvVdwLffhqmCvhzrQvb.webp?r=f92" },
+        { ep: 10, title: "Glaciator", description: "Ice storms freeze the city; Ladybug must melt the plan.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABeA1YpGsmKiwdfC7Va3BmREFroka6mKCEnJMZ5c3mnGOVVn-f-ylbxF_3bmgbkPrPas9TPzXxPT5LXcNx001z4w9idxZYssgv6P-GIfqLqpWuVWKT3cuV99u.webp?r=b2d" },
+        { ep: 11, title: "Sapotis", description: "Sticky sap traps heroes in a sticky trap.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABZivRek5sbyDwAAW5K2SuhLE2NtEn-6MzlcXGTCnPAowm4WC4WktCRvXZkqP2TfpxYNNq-eo5y5STmhSvKDo7NvpC42l2G7CNjmHqCX7Prz7MNIIrPBm7o83.webp?r=277" },
+        { ep: 12, title: "Gorizilla", description: "Gorilla strength goes wild atop Paris rooftops.", img: "https://miraculous.to/global_data/img/211_2025-08-18_18-16-30.webp" },
+        { ep: 13, title: "Captain Hardrock", description: "A heroic singer becomes a stone-faced ruler." },
+        { ep: 14, title: "Zombizou", description: "Fashion-infected zombies invade the runway.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABYCcr_NRDZKX59hrd629WUR6d1l2Z05Gb4jjcDWsjycttdqmDrU8qzLs5kYwVnx267duDtr75XPigrFyDEKr4j6RJ89DXundAp0Qqc0zbqu0CNXGFHvODCIU.webp?r=4d1" },
+        { ep: 15, title: "Syren", description: "Siren song lures citizens to vanishing danger.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABSwm0VFxBLchuSXaBVbzSBTmr4zYL5IhGjVyeHqbrx2KZ0uo0pGwCd0rXJA0aw-CPS3QuQdOpE4wfvjtSDjbP6-pu2kkp2IwbMrUhsIkbCY9pZT6vY6tN15v.webp?r=f0a" },
+        { ep: 16, title: "Frightningale", description: "Nightmare opera brings fears to life.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUbM3BFJG8Th-N9TEkD6FwCWGWhSi4t0UGGcPK8VSDTIrijKFZTDre9aKomHADWct7CN7hSbf1vsIAiJFsU5MydTzQdH-5MYOFkIMDLC67pe3aET_63QXzeW.webp?r=233" },
+        { ep: 17, title: "Troublemaker", description: "Chaos incarnate makes trouble-making an art.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUwa3xPPjVaBglV5P2nbMbnttKZN3VLQj3q-jnogaLQ-EoPc0ZqbngQsodnWircRp-GrhjYS7E-55EFQjAMYrM9OXg720ofOU4cpCwHIovQTYYEdhxzv_npe.webp?r=8fb" },
+        { ep: 18, title: "Reverser", description: "Miraculous powers are inverted—backwards is forwards.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABUBSRKfnGeyaC7RqUxq0jYPasHtC3ULqf1ioRRD8lnUIjOeSoy1Grf_mqfLpjRJFNq2AuMU0J61sVCx-MK8OkyJ5-cQcEmocFEpiHLwiBOfz7uIWxp-Ya2jJ.webp?r=806" },
+        { ep: 19, title: "Anansi", description: "A spider weaves webs of betrayal.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABacBHje2cafMSRGgfEFvp6bQVD8TNt6p-MQTFaGrLqUnBEPsoPwvMY1J0d0cwKH-2O6ypXOkVU33trHE6HeEaWv6_EuJJURasnprlnWxvBwf_QI_2RGkH3Ns.webp?r=042" },
+        { ep: 20, title: "Sandboy", description: "A sand villain buries secrets deep." },
+        { ep: 21, title: "Queen's Battle – Part 1", description: "Queen Wasp emerges, starting a royal showdown.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABSrtpsBPa8Wg2iIkYN2LswAaSImBdfVVHwaDUE194fM6fT-jxkaYqcUgpHwphvWPLc8u1s_JcE9v45IeLhOyLGoEhanGg14yAkwN4cAj-xgKkA53pzqsDrEE.webp?r=bb2" },
+        { ep: 22, title: "Queen's Battle – Part 2", description: "Battle continues as heroes face a regal threat.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABU-JkHb8B5z_P7cVw6jngQfEtIkfMs9poZbs1wN9vycP9ASuURh31bQIFeVUX-4r9Xg1F91nKFsACfAcO5k9bG400lGMGMWNBT9kIjPmMzL1unnCuRBwhmat.webp?r=f32" },
+        { ep: 23, title: "Malediktator", description: "A dictator uses curses to control the populace."},
+        { ep: 24, title: "Frozer", description: "Icicles become Ladybug’s greatest obstacle.", img: "https://occ-0-8551-2164.1.nflxso.net/dnm/api/v6/9pS1daC2n6UGc3dUogvWIPMR_OU/AAAABQWBYMwDGobLWkz--nn84B6WSC1kOjhodhV7dnqfp0OkINZyt8XvcqjYaorrGT5xMraXmA36lAz00l0WTvZlg0UYE_2KfElUu-jQoqQ7ZcmWy_XeA4uvwpF0.webp?r=905" },
+        { ep: 25, title: "Heroes' Day – Part 1", description: "Celebrations turn risky when villains crash the party." },
+        { ep: 26, title: "Heroes' Day – Part 2", description: "Responding to evil threats threatens hero reputations." }
+      ]
+    },
+    {
+      season: 3,
+      episodes: [
+        
+      ]
+    },
+    {
+      season: 4,
+      episodes: [
+      
+      ]
+    }
+  ]
+},
+{
+  id: "oggy_and_the_cockroaches_next_generation",
+  title: "Oggy and the Cockroaches: Next Generation",
+  img: "https://somecdn.com/oggy_next_gen_poster.jpg", // Replace with actual poster URL
+  genre: "Animation, Comedy, Kids",
+  description: "In this reboot of the classic, Oggy becomes the caring CAT-sitter to his new pal Piya, a playful young elephant, while the mischievous trio of roaches continue to stir chaos—now with a little more heart and longadventure episodes.",
+  seasons: [
+    {
+      season: 1,
+      episodes: [
+        {
+          ep: 1,
+          title: "Episode 1",
+          description: "Playtime with Piya creates a mess. Oggy shows Piya how to enjoy the outdoors. Piya and the Cockroaches still want to play — but Oggy needs his sleep.",
+          img: ""
+        },
+        {
+          ep: 2,
+          title: "Episode 2",
+          description: "A fake copy of Piya's diary tricks Oggy into treating the Roaches nicely. Oggy and Piya go fishing—Oggy’s neighbor is a menace.",
+          img: ""
+        },
+        {
+          ep: 3,
+          title: "Episode 3",
+          description: "Aliens arrive from outer space—but Piya knows they're the Roaches in disguise! Roach Dee Dee turns veggies into art. Oggy’s paw has a mind of its own.",
+          img: ""
+        },
+        {
+          ep: 4,
+          title: "Episode 4",
+          description: "The Roaches are experts with Piya's hair. A camping trip isn’t what Piya thought it would be—and the Roaches still pester even while Oggy's injured.",
+          img: ""
+        },
+        {
+          ep: 5,
+          title: "Episode 5",
+          description: "Oggy can't get over his fear of clowns. Meanwhile, Piya's on the hunt for the last flower on her list. Oggy stays away thinking Piya's got something contagious.",
+          img: ""
+        },
+        {
+          ep: 6,
+          title: "Episode 6",
+          description: "Piya wants to play even though she can't stop sneezing. The Roaches nab Piya's doll after Oggy throws it out. Oggy leads them on a scary hike.",
+          img: ""
+        },
+        {
+          ep: 7,
+          title: "Episode 7",
+          description: "Oggy tries to take as many photos with Piya as possible. Oggy’s favorite tree takes a fall. Piya's scared of a tiny spider crawling around.",
+          img: ""
+        },
+        {
+          ep: 8,
+          title: "Episode 8",
+          description: "Oggy’s expecting a baby—but instead it’s Piya returning! Oggy quits cleaning, and tries to impress Piya with magic tricks.",
+          img: ""
+        },
+        {
+          ep: 9,
+          title: "Episode 9",
+          description: "Dee Dee thinks he’s a butler and starts tidying up. Who has the better pool, Oggy or Bob? Piya and the trio discover Oggy’s secret.",
+          img: ""
+        },
+        {
+          ep: 10,
+          title: "Episode 10",
+          description: "Oggy and the trio try to retrieve a spinning top from Piya. A day outdoors is just right—but Piya helps Oggy after a disastrous date with Olivia.",
+          img: ""
+        }
+      ]
+    }
+  ]
+}
+,
+  {
+    id: 'gyeongseong_creature',
+    title: 'Gyeongseong Creature',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABaQ6H8XsFP6xCa75gjZlmvzvrCxQ1SZmXeYFYhP2wVk93XAMpbrlu3Tsw7k8hG_sPYXsRNTlZD3IQOSQED7FR7NHmmfXILWBo0Nm__wkuBgjm-lQFMWRV8FE_qbLHunLQ6_m.jpg?r=868',
+    genre:"Horror, Action",
+    description:"In Spring 1945 in Gyeongseong, during Japanese rule over Korea, two young adults confront a strange creature born of greed, and battle against it for survival."
+  },
+  {
+    id: 'you',
+    title: 'YOU',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABZnV23ioUzxMyYq1vfXIoRQVcwe-Fad5gsc_PHHR2nZ96KIjtdGSY1Zf4PetEuTPaaqyJzAXPLpekwasxjVhkIrVuOWEeW7Ox_dN_kQl0QZ67yaZI2Tsenne8AeEHoY987Vn.jpg?r=c37',
+    genre:"Psychological Thriller, Romance",
+    description:"A dangerously charming, intensely obsessive young man goes to extreme measures to insert himself into the lives of those he is transfixed by"
+  },
+  {
+    id: 'dahmer',
+    title: 'DAHMER',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRltWuhErhcS6v8LsIuk4yVGFYSjC5Hx6eOYo79yd7X3dtGdKhFptBE76eJxwgb0m5G7Hh9st_7ht55c2rtfwPOLO2S7JNh-aX9I1VMUdhPYdhI9xo-fb7sXDYVr0RhHANEs.jpg?r=385',
+    genre:"Drama, Suspense",
+    description:"Across more than a decade, 17 teen boys and young men were murdered by convicted killer Jeffrey Dahmer. How did he evade arrest for so long?"
+  },
+  {
+    id: '13_reasons_why',
+    title: '13 Reasons Why',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABWq8LpFBZgua51HS6zqDNme5_Cr_Q43mdqpqvr8QKKeUsXeOv9cy8J01QmMziB1xVWSh63jE4QiyLSmeu5B2QSG5x7B2Jt9OwiJLvnEZ5vKawZXjLP9nMBAvb6uDofgzyv7G.jpg?r=ba6',
+    genre:"Drama, Mystery",
+    description:"Follows teenager Clay Jensen, in his quest to uncover the story behind his classmate and crush, Hannah, and her decision to end her life."
+  }
+  ,
+  {
+    id: 'inventing_anna',
+    title: 'Inventing Anna',
+    img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABXMJpokioAH5ge2GxnMq7TAlVO3utBWEG0SQGajtY-XAYbqU1e6FRLq05G4mFthoKLXxwZyE5kMR6fIP_cyGnc6nFOHZv9d0DEwLpvfEcC1Y2UBxYg0pyuZOZp43wpaJOH1K.jpg?r=44e',
+    genre:"Crime, Soap-Opera",
+    description:"A journalist with a lot to prove investigates the case of Anna Delvey, the Instagram-legendary German heiress who stole the hearts of New York's social scene - and stole their money as well."
+  },
+  {
+      id: 'business_proposal',
+      title: 'Business Proposal',
+      img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABa6R0zawmvBIlpRMxH9N2cD-aKWcmyqM8q3d_u41QnzVuaTgU8vxi1cWa4Q5oLSVCRjVDIoC0opTfZO_s-hyMzZl1_8PGK449ohLgy9CvPNXpKKkgCeta667RBPXODjZ2UWr.jpg?r=095',
+      genre:"Rom-Com, Action",
+      description:"In disguise as her friend, Ha-ri shows up to a blind date to scare him away. But plans go awry when he turns out to be her CEO - and makes a proposal."
+    },
+    {
+      id: 'my_name',
+      title: 'My Name',
+      img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABTAqZM4S68FUJu4QTWOQWZy-KYMh4kwn3TohXL_aBEYLrjgDlsQ2QZXyKSNLvRB24d5L-D3v0gXmfCmIM11M5ePWYSWRunVPd7MSxtngriUB8vLMH8-6Oq0m7A4Y-Rvvk4QM.jpg?r=c71',
+      genre:"Action, Thriller",
+      description:"The story about a woman who joins an organized crime ring and infiltrates the police as an undercover agent in order to find out the truth about her father's death."
+    },
+    {
+      id: "mlwtwb",
+      title: "My Life With The Walter Boys",
+      img: 'https://occ-0-4748-2164.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABbDtAv6HGIaSQvwDsHe1I1D9DrXIUH21Lwq2QoRd1EH56yCvEoR3xfR-BFr6hrdRxIu3GSbdWS_ZQ83ns4_lETpTUXNKvNwQrTwlcrW2F9-sTmg782-IgQe6ZGSIeZVJ8HX9.jpg?r=5b9',
+      genre:"Romance, Drama",
+      description:"Jackie Howard's life is disrupted by a freak accident, she is ripped from her home and has to start over on a ranch in Colorado, with her guardian and a family of 9 boys, and 1 girl."
+    }
+];
 // ----------------- CAROUSEL CREATION FUNCTION -----------------
 function createCarousel(containerId, cards, carouselId) {
   const container = document.getElementById(containerId);
@@ -772,12 +1255,12 @@ function createCarousel(containerId, cards, carouselId) {
 }
 createCarousel("carouselContent", cardData, "carousel1");
 createCarousel("carouselContent1", cardData1, "carousel2");
-// createCarousel("carouselContent2", cardData2, "carousel3");
+createCarousel("carouselContent2", cardData2, "carousel3");
 // createCarousel("carouselContent3", cardData3, "carousel4");
 // createCarousel("carouselContent4", cardData1, "carousel5");
 // createCarousel("carouselContent5", cardData2, "carousel6");
 
-const allCards = [...cardData, ...cardData1];
+const allCards = [...cardData, ...cardData1, ...cardData2 /*, ...cardData3, ...cardData4, ...cardData5 */];
 
 
 let selectedCardData = null;
