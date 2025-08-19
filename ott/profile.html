@@ -46,28 +46,94 @@
 </style>
 </head>
 <body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand me-3" href="#">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
+           class="img-fluid"
+           style="width: 120px;"
+           alt="Netflix Logo">
+    </a>
+    <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex flex-row gap-3 align-items-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="home.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="movieAL.html">Movies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="tvShowsAL.html">TV Shows</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="newNhot.html">New & Popular</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="myList.html">My List</a>
+        </li>
+        <li class="nav-item dropdown">
+          <button class="btn dropdown-toggle nav-link" data-bs-toggle="dropdown">
+            <i class="bi bi-globe2"></i>
+            <span class="d-none d-sm-inline">Browse by language</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item">Hindi</li>
+            <li class="dropdown-item">Marathi</li>
+            <li class="dropdown-item">Korean</li>
+            <li class="dropdown-item">Chinese</li>
+            <li class="dropdown-item">Spanish</li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex search-bar">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-danger" type="submit">Search</button>
+      </form>
+      <div id="authSection" class="d-flex align-items-center"></div>
+    </div>
+  </div>
+</nav>
 
-<div class="container text-center py-5">
-  <div class="d-flex justify-content-between align-items-center mb-4">
+<!-- Who's Watching + Account Summary -->
+<div class="container text-center py-5 mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
     <h1 class="h3 m-0">Who's Watching?</h1>
-    <div class="d-flex gap-2">
+    <div class="d-flex flex-wrap gap-3 align-items-center">
       <button id="manageBtn" class="btn btn-outline-light">Manage Profiles</button>
-      <button id="logoutBtn" class="btn btn-danger">Logout</button>
+      <button id="logoutBtn" class="btn btn-danger">Sign Out</button>
       <button id="resetBtn" class="btn btn-secondary">Reset Profiles</button>
     </div>
   </div>
-
-  <div class="row g-4" id="profilesContainer"></div>
-
-  <!-- Optional sub-page -->
-   <div class="container my-5">
-  <h2 class="mb-3 text-white">My List</h2>
-  <div id="profileMyList" class="d-flex overflow-auto gap-3 pb-3">
-    <!-- Cards will be injected here dynamically -->
+  <!-- Account Summary -->
+  <div class="container py-4">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card bg-dark text-white p-4 rounded-3 shadow">
+          <h2 id="profileName">Loading...</h2>
+          <p>Email: <span id="profileEmail">Loading...</span></p>
+          <p>Plan: <span id="profilePlan">Loading...</span></p>
+        </div>
+      </div>
+    </div>
   </div>
+  <!-- Profiles -->
+  <div class="row g-4 justify-content-center" id="profilesContainer"></div>
 </div>
 
-  
+<!-- My List -->
+<div class="container my-5">
+  <h2 class="mb-3 text-white">My List</h2>
+  <div id="profileMyList" class="d-flex overflow-auto gap-3 pb-3"></div>
 </div>
 
 <!-- Edit Profile Modal -->
@@ -76,33 +142,27 @@
     <div class="modal-content bg-dark text-white">
       <div class="modal-header">
         <h5 class="modal-title">Edit Profile</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
-
       <div class="modal-body">
         <input type="text" id="editProfileName" class="form-control mb-3" placeholder="Profile name">
-
         <div class="form-check mb-3 text-start">
           <input class="form-check-input" type="checkbox" id="editProfileKids">
-          <label class="form-check-label" for="editProfileKids">Kids Profile</label>
+          <label class="form-check-label">Kids Profile</label>
         </div>
-
         <h6 class="text-start">Avatars</h6>
         <div class="d-flex flex-wrap gap-3" id="avatarChoices">
-          <!-- keep src and data-img the SAME (relative) -->
           <img src="user1.png" class="avatar-option" data-img="user1.png" width="80" height="80" alt="Avatar 1">
           <img src="user2.jpg" class="avatar-option" data-img="user2.jpg" width="80" height="80" alt="Avatar 2">
           <img src="user3.jpg" class="avatar-option" data-img="user3.jpg" width="80" height="80" alt="Avatar 3">
           <img src="user4.jpg" class="avatar-option" data-img="user4.jpg" width="80" height="80" alt="Avatar 4">
-          <img src="default.png" class="avatar-option" data-img="default.png" width="80" height="80" alt="Default Avatar">
+          <img src="default.png" class="avatar-option" data-img="default.png" width="80" height="80" alt="Default">
         </div>
-
         <div class="text-center mt-3 pt-3 border-top border-secondary">
           <h6 class="mb-2">Selected Profile Picture</h6>
-          <img id="selectedAvatar" src="default.png" data-img="default.png" width="100" height="100" alt="Selected avatar" style="border-radius:8px;background:#222">
+          <img id="selectedAvatar" src="default.png" data-img="default.png" width="100" height="100" style="border-radius:8px;background:#222">
         </div>
       </div>
-
       <div class="modal-footer">
         <button id="saveEditBtn" class="btn btn-primary">Save Changes</button>
       </div>
@@ -111,243 +171,7 @@
 </div>
 
 <script src="navbar.js"></script>
-<script src="profile.js"></script>
+<script src="profile.js"></script></div></form></li>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-/* ---------- State ---------- */
-
-const LS_KEY = "profiles";
-
-/** Defaults used if no localStorage */
-const DEFAULT_PROFILES = [
-  { name: "User 1", img: "user1.png", kids: false },
-  { name: "Kids",   img: "kids.jpg",  kids: true  }
-];
-
-let profiles = loadProfiles();
-let selectedProfileIndex = null;
-
-/* ---------- DOM ---------- */
-
-const profilesContainer = document.getElementById("profilesContainer");
-const manageBtn  = document.getElementById("manageBtn");
-const logoutBtn  = document.getElementById("logoutBtn");
-const resetBtn   = document.getElementById("resetBtn");
-
-const editName   = document.getElementById("editProfileName");
-const editKids   = document.getElementById("editProfileKids");
-const avatarChoices = document.getElementById("avatarChoices");
-const selectedAvatar = document.getElementById("selectedAvatar");
-const saveEditBtn = document.getElementById("saveEditBtn");
-
-const editProfileModalEl = document.getElementById("editProfileModal");
-const editProfileModal = new bootstrap.Modal(editProfileModalEl);
-
-/* ---------- Utils ---------- */
-
-/** Load profiles from LS or defaults */
-function loadProfiles() {
-  try {
-    const raw = localStorage.getItem(LS_KEY);
-    if (!raw) return structuredClone(DEFAULT_PROFILES);
-    const parsed = JSON.parse(raw);
-    // Ensure required fields exist
-    return parsed.map(p => ({
-      name: p.name ?? "Profile",
-      img:  normalizeRelative(p.img ?? "default.png"),
-      kids: !!p.kids
-    }));
-  } catch {
-    return structuredClone(DEFAULT_PROFILES);
-  }
-}
-
-/** Save profiles to LS */
-function saveProfiles() {
-  localStorage.setItem(LS_KEY, JSON.stringify(profiles));
-}
-
-/** If a browser turned a path absolute, strip origin so we store relative paths */
-function normalizeRelative(path) {
-  if (!path) return "default.png";
-  const origin = window.location.origin + "/";
-  return path.startsWith(origin) ? path.slice(origin.length) : path;
-}
-
-/** Mark chosen avatar thumbnail */
-function highlightAvatar(path) {
-  document.querySelectorAll(".avatar-option").forEach(el => {
-    el.classList.toggle("active", el.dataset.img === path);
-  });
-}
-
-/* ---------- Render ---------- */
-
-function renderProfiles() {
-  profilesContainer.innerHTML = "";
-
-  profiles.forEach((p, i) => {
-    const col = document.createElement("div");
-    col.className = "col-auto";
-
-    col.innerHTML = `
-      <div class="profile-card" data-index="${i}">
-        <img src="${p.img}" alt="${p.name}">
-        ${p.kids ? '<div class="kids-badge">KIDS</div>' : ""}
-        <div class="mt-2 fw-semibold">${p.name} ${p.kids ? "👶" : ""}</div>
-
-        <div class="manage-btns">
-          <button class="btn btn-sm btn-warning edit-btn">Edit</button>
-          <button class="btn btn-sm btn-danger remove-btn">Remove</button>
-        </div>
-      </div>
-    `;
-
-    profilesContainer.appendChild(col);
-  });
-
-  // Add Profile tile
-  const addCol = document.createElement("div");
-  addCol.className = "col-auto";
-  addCol.innerHTML = `
-    <div class="add-profile" id="addProfileBtn" role="button" aria-label="Add profile">
-      <div style="font-size:2rem; line-height:1">+</div>
-      <small>Add Profile</small>
-    </div>
-  `;
-  profilesContainer.appendChild(addCol);
-}
-
-/* ---------- Event Wiring ---------- */
-
-// Manage toggle (applies CSS to show buttons)
-manageBtn.addEventListener("click", () => {
-  document.body.classList.toggle("manage-mode");
-});
-
-// Logout (demo)
-logoutBtn.addEventListener("click", () => {
-  alert("Logging out…");
-});
-
-// Reset all
-resetBtn.addEventListener("click", () => {
-  localStorage.removeItem(LS_KEY);
-  profiles = structuredClone(DEFAULT_PROFILES);
-  renderProfiles();
-});
-
-// Delegate clicks inside profiles grid
-profilesContainer.addEventListener("click", (e) => {
-  const addBtn = e.target.closest("#addProfileBtn");
-  if (addBtn) {
-    profiles.push({ name: "New Profile", img: "default.png", kids: false });
-    saveProfiles();
-    renderProfiles();
-    return;
-  }
-
-  const card = e.target.closest(".profile-card");
-  if (!card) return;
-
-  // Edit
-  if (e.target.classList.contains("edit-btn")) {
-    selectedProfileIndex = Number(card.dataset.index);
-    const p = profiles[selectedProfileIndex];
-
-    editName.value = p.name;
-    editKids.checked = p.kids;
-
-    // set current avatar into preview and highlight
-    selectedAvatar.src = p.img;
-    selectedAvatar.dataset.img = p.img;
-    highlightAvatar(p.img);
-
-    editProfileModal.show();
-    return;
-  }
-
-  // Remove
-  if (e.target.classList.contains("remove-btn")) {
-    const idx = Number(card.dataset.index);
-    profiles.splice(idx, 1);
-    saveProfiles();
-    renderProfiles();
-    return;
-  }
-
-  // Normal click on card → scroll iframe (your original behavior)
-  document.getElementById("myListFrame")?.scrollIntoView({ behavior: "smooth" });
-});
-
-// Choose avatar in modal
-avatarChoices.addEventListener("click", (e) => {
-  const choice = e.target.closest(".avatar-option");
-  if (!choice) return;
-  const path = choice.dataset.img; // already relative
-  selectedAvatar.src = path;
-  selectedAvatar.dataset.img = path;
-  highlightAvatar(path);
-});
-
-// Save changes from modal
-saveEditBtn.addEventListener("click", () => {
-  if (selectedProfileIndex === null) return;
-
-  const p = profiles[selectedProfileIndex];
-  p.name = editName.value.trim() || "Profile";
-  p.kids = !!editKids.checked;
-
-  // Always store the relative path we tracked on the preview element
-  const chosen = selectedAvatar.dataset.img || selectedAvatar.getAttribute("src");
-  p.img = normalizeRelative(chosen);
-
-  saveProfiles();
-  renderProfiles();
-
-  // clear selection + close
-  selectedProfileIndex = null;
-  editProfileModal.hide();
-});
-
-// Prevent the aria-hidden warning by letting Bootstrap handle focus safely
-editProfileModalEl.addEventListener("hidden.bs.modal", () => {
-  // No-op; Bootstrap returns focus to trigger automatically.
-});
-
-/* ---------- Init ---------- */
-renderProfiles();
-
-
-  const profileList = JSON.parse(localStorage.getItem("myList")) || [];
-  const profileContainer = document.getElementById("profileMyList");
-
-  function renderProfileList() {
-    profileContainer.innerHTML = "";
-
-    if (profileList.length === 0) {
-      profileContainer.innerHTML = "<p class='text-white'>No items in your list yet.</p>";
-      return;
-    }
-
-    profileList.forEach(item => {
-      const card = document.createElement("div");
-      card.className = "card bg-dark text-white";
-      card.style.minWidth = "180px";   // ensures horizontal layout
-      card.style.flex = "0 0 auto";    // prevents shrinking
-
-      card.innerHTML = `
-        <img src="${item.img}" class="card-img-top rounded" alt="${item.title}" style="height: 250px; object-fit: cover;">
-        <div class="card-body p-2">
-          <h6 class="card-title mb-1">${item.title}</h6>
-          <p class="card-text"><small>${item.genre}</small></p>
-        </div>
-      `;
-      profileContainer.appendChild(card);
-    });
-  }
-
-  renderProfileList();
-</script>
 </body>
 </html>
