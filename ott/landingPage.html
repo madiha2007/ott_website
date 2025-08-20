@@ -428,6 +428,7 @@
 
       document.addEventListener("DOMContentLoaded", function () {
         const sections = document.querySelectorAll('.random-section');
+        // Get a random index to show one of the sections
         const randomIndex = Math.floor(Math.random() * sections.length);
     
         sections.forEach((section, index) => {
